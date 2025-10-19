@@ -1,0 +1,228 @@
+<view class="pb130 data-v-773ca2ce">
+  <view class="qdh data-v-773ca2ce">
+    <view class="wh data-v-773ca2ce">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-773ca2ce"
+        src="{{config.icon}}"
+        vueId="f24c74c2-1"
+      ></mg-img>
+    </view>
+  </view>
+  <view class="qdc p-r data-v-773ca2ce">
+    <view class="m03 mt10 data-v-773ca2ce">
+      <view class="bf mb30 bs20 p3 data-v-773ca2ce">
+        <view class="f-row p24 posi-r w630 data-v-773ca2ce">
+          <view
+            class="{{['qddays','f-col','f-bt','p-r','data-v-773ca2ce',v.sign==1?'bf2':'be6']}}"
+            wx:for="{{jsqd.weeklist}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view
+              class="{{['c6','f26','f-x-c','f-g-0','dhe','p050','data-v-773ca2ce',v.sign==1?'cf':'c6']}}"
+              >{{v.name+'天'}}</view
+            >
+            <view class="f-g-1 f-x-c data-v-773ca2ce">
+              <view class="icw data-v-773ca2ce">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-773ca2ce"
+                  src="{{v.icon}}"
+                  vueId="{{'f24c74c2-2-'+i}}"
+                ></mg-img>
+              </view>
+            </view>
+            <view
+              class="qddayw be6 posi-a r0 data-v-773ca2ce"
+              wx:if="{{v.hasjl&&(v.type==3||v.type==4)}}"
+            >
+              <mg-img
+                bind:__l="__l"
+                class="data-v-773ca2ce"
+                src="/static/wd/signin/hb.png"
+                vueId="{{'f24c74c2-3-'+i}}"
+              ></mg-img>
+            </view>
+          </view>
+        </view>
+        <view class="f-col f-y-c m20 data-v-773ca2ce">
+          <button
+            bindtap="__e"
+            class="clearbtn sbtn f-c cf f30 data-v-773ca2ce"
+            data-event-opts="{{[ [ 'tap',[ [ 'ljqd',['$event'] ] ] ] ]}}"
+            disabled="{{disabled}}"
+            wx:if="{{goSignin=='1'}}"
+          >
+            立即签到
+          </button>
+          <view class="sbtn ysbtn f-c f30 data-v-773ca2ce" wx:else
+            >今日已签到</view
+          >
+          <view class="f22 c9 f-g-1 mt10 data-v-773ca2ce" wx:if="{{$root.g0}}"
+            >已经签到<text class="cfc m01 data-v-773ca2ce"
+              >{{jsqd.totalSignDay}}</text
+            >天，再签<text class="cfc m01 data-v-773ca2ce"
+              >{{jsqd.totalDay}}</text
+            >天必得好礼</view
+          >
+        </view>
+      </view>
+      <view class="bf mb30 bs20 p30 data-v-773ca2ce">
+        <view class="f-c c0 f32 wei data-v-773ca2ce">我的签到</view>
+        <view class="f-row f-bt c6 p30 data-v-773ca2ce">
+          <view
+            bindtap="__e"
+            class="f-1 f-y-c f-col data-v-773ca2ce"
+            data-event-opts="{{[ [ 'tap',[ [ 'mysignin',[ [ 'o',['type',1] ] ] ] ] ] ]}}"
+          >
+            <view class="f26 data-v-773ca2ce">
+              <text class="f46 wei cfc mr10 data-v-773ca2ce"
+                >{{mySignData.integral}}</text
+              >{{jfName}}</view
+            >
+            <view class="f24 data-v-773ca2ce">{{'累计已获'+jfName}}</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="f-1 f-y-c f-col data-v-773ca2ce"
+            data-event-opts="{{[ [ 'tap',[ ['mycoupon'] ] ] ]}}"
+          >
+            <view class="f26 data-v-773ca2ce">
+              <text class="f46 wei cfc mr10 data-v-773ca2ce"
+                >{{mySignData.couponNum}}</text
+              >张</view
+            >
+            <view class="f24 data-v-773ca2ce">累计已获优惠券</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="f-1 f-y-c f-col data-v-773ca2ce"
+            data-event-opts="{{[ [ 'tap',[ [ 'mysignin',[ [ 'o',['type',2] ] ] ] ] ] ]}}"
+          >
+            <view class="f26 data-v-773ca2ce">
+              <text class="f46 wei cfc mr10 data-v-773ca2ce"
+                >{{mySignData.signNum}}</text
+              >次</view
+            >
+            <view class="f24 data-v-773ca2ce">累计签到</view>
+          </view>
+        </view>
+      </view>
+      <view class="bf mb30 bs20 p3 data-v-773ca2ce">
+        <view class="f-c c0 f32 wei data-v-773ca2ce">签到说明</view>
+        <view class="p3 c6 data-v-773ca2ce">{{config.introduce}}</view>
+      </view>
+      <view class="bf mb30 bs20 p3 data-v-773ca2ce">
+        <view class="f-bt f-y-c data-v-773ca2ce">
+          <view class="f-g-1 c3 data-v-773ca2ce">
+            <view class="f32 wei data-v-773ca2ce"
+              >{{'下单获取额外'+jfName+'奖励'}}</view
+            >
+            <view class="c9 f22 mt10 data-v-773ca2ce"
+              >据您最近的门店<text class="f26 c3 ml10 data-v-773ca2ce"
+                >{{storeInfo.name}}</text
+              >
+            </view>
+          </view>
+          <view class="f-g-0 data-v-773ca2ce">
+            <view
+              bindtap="__e"
+              class="goxd f-c ml30 cf2 data-v-773ca2ce"
+              data-event-opts="{{[ [ 'tap',[ [ 'qxd',['$event'] ] ] ] ]}}"
+            >
+              <text
+                class="iconfont f28 iconshangjia cf2 mr10 data-v-773ca2ce"
+              ></text>
+              <text class="f24 data-v-773ca2ce">去下单</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="bf mb30 bs20 p3 data-v-773ca2ce">
+        <mg-cell
+          arrow="1"
+          bind:__l="__l"
+          bind:tab="__e"
+          btt="兑换商品"
+          bttc="f32"
+          class="data-v-773ca2ce"
+          cname="p0"
+          data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/my/integral/shop-index'] ] ] ] ] ] ]}}"
+          ft="查看全部"
+          ftc="f24 c9"
+          hc="1"
+          last="1"
+          vueId="f24c74c2-4"
+        ></mg-cell>
+        <view class="bf f-raw f-bt pt30 data-v-773ca2ce" wx:if="{{$root.g1}}">
+          <view
+            bindtap="__e"
+            class="bf goodsc mb20 bs15 b-s-1 data-v-773ca2ce"
+            data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/my/integral/details?id='+v.id] ] ] ] ] ] ]}}"
+            wx:if="{{i<4}}"
+            wx:for="{{dataList}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view class="goodsimg be6 data-v-773ca2ce">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-773ca2ce"
+                src="{{v.icon}}"
+                vueId="{{'f24c74c2-5-'+i}}"
+              ></mg-img>
+            </view>
+            <view class="p-10-20 data-v-773ca2ce">
+              <view class="f-bt data-v-773ca2ce">
+                <text
+                  class="bf2 cf f24 mr10 boxs f-g-0 data-v-773ca2ce"
+                  wx:if="{{v.type=='2'}}"
+                  >红</text
+                >
+                <text class="t-o-e f-g-1 data-v-773ca2ce">{{v.name}}</text>
+              </view>
+              <view class="cfa data-v-773ca2ce">
+                <view
+                  class="t-o-e f30 data-v-773ca2ce"
+                  style="{{'color:'+tColor+';'}}"
+                >
+                  <text class="data-v-773ca2ce" wx:if="{{v.score>0}}"
+                    >{{v.score}}</text
+                  >
+                  <text
+                    class="f22 c9 nowei data-v-773ca2ce"
+                    wx:if="{{v.score>0}}"
+                    >{{jfName}}</text
+                  >
+                  <text
+                    class="nowei c9 data-v-773ca2ce"
+                    wx:if="{{v.score>0&&v.money>0}}"
+                    >+</text
+                  >
+                  <text class="data-v-773ca2ce" wx:if="{{v.money>0}}"
+                    >{{v.money}}<text class="f22 c9 data-v-773ca2ce"
+                      >{{dw}}</text
+                    >
+                  </text>
+                </view>
+                <view class="t-o-e t-d-l c9 f22 wei4 data-v-773ca2ce"
+                  >{{sl+v.price}}</view
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <tab-bar bind:__l="__l" class="data-v-773ca2ce" vueId="f24c74c2-6"></tab-bar>
+  <load
+    bind:__l="__l"
+    class="data-v-773ca2ce"
+    vueId="f24c74c2-7"
+    wx:if="{{showLoading}}"
+  ></load>
+</view>

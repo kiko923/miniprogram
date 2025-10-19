@@ -1,0 +1,68 @@
+<view class="wrap data-v-302b1c2d">
+  <swiper
+    autoplay="{{autoplay}}"
+    bindchange="__e"
+    circular="{{loop}}"
+    class="swiper data-v-302b1c2d"
+    current="{{current}}"
+    data-event-opts="{{[ [ 'change',[ [ 'change',['$event'] ] ] ] ]}}"
+    duration="{{duration}}"
+    interval="{{interval}}"
+    nextMargin="{{nextMargin+'rpx'}}"
+    previousMargin="{{previousMargin+'rpx'}}"
+    style="{{'height:'+(height*2)+'rpx'+';'}}"
+  >
+    <swiper-item
+      bindtap="__e"
+      class="data-v-302b1c2d"
+      data-event-opts="{{[ [ 'tap',[ [ '$emit',['clickItem','$0'],[ [ ['list','',index] ] ] ] ] ] ]}}"
+      wx:for="{{list}}"
+      wx:key="index"
+    >
+      <view
+        class="{{['item','data-v-302b1c2d',!crown?'':current==index?'crown-active':'crown']}}"
+        wx:if="{{$root.g0}}"
+      >
+        <view
+          class="bs20 imgc p-r data-v-302b1c2d"
+          style="{{'background:'+(item.bgType=='1'?item.color||tColor:'')+';'}}"
+          wx:if="{{item}}"
+        >
+          <view class="p-a wh data-v-302b1c2d">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-302b1c2d"
+              src="{{item.bgType==2?item.bgImg:'/static/wd/vip/vipbg.png'}}"
+              vueId="{{'2c9f41d0-1-'+index}}"
+            ></mg-img>
+          </view>
+          <view class="p-r wh cf data-v-302b1c2d">
+            <view class="p34 f-y-c data-v-302b1c2d">
+              <view class="f-1 f32 wei data-v-302b1c2d">{{item.name}}</view>
+              <view class="rdj b-d f26 l-n data-v-302b1c2d"
+                >{{'VIP'+item.level}}</view
+              >
+            </view>
+            <view class="p3 mt30 f-y-e data-v-302b1c2d">
+              <view class="f40 l-n data-v-302b1c2d">{{item.condition}}</view>
+              <view class="ml20 f26 data-v-302b1c2d">成长值</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view
+    class="dots flex data-v-302b1c2d"
+    style="{{'bottom:'+bottom*2+'rpx'+';'}}"
+    wx:if="{{dots}}"
+  >
+    <view
+      class="{{['dot','data-v-302b1c2d',current==i?'curr-dot':'']}}"
+      wx:for="{{list}}"
+      wx:for-index="i"
+      wx:for-item="d"
+      wx:key="i"
+    ></view>
+  </view>
+</view>

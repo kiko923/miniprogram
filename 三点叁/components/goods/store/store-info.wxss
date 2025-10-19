@@ -1,0 +1,36 @@
+.gdmdxx.data-v-2de9d8c0 {
+  border-radius: 35rpx 35rpx 0 0;
+  padding: 10rpx 30rpx 40rpx;
+}
+.gdmdxx .svbd.data-v-2de9d8c0 {
+  max-height: 900rpx;
+}
+.gdmdxx .lbtn.data-v-2de9d8c0 {
+  font-size: 20rpx;
+  color: #666;
+  padding: 3rpx 25rpx;
+  border: 1px solid #ddd;
+  border-radius: 5rpx;
+}
+.gdmdxx .lbtn2.data-v-2de9d8c0 {
+  color: #ff5f2f;
+  border-color: #f3d8db;
+}
+.gdmdxx .lbtn3.data-v-2de9d8c0 {
+  color: #4bc436;
+  border-color: #98ed8b;
+}
+.dzic.data-v-2de9d8c0 {
+  width: 58rpx;
+  height: 58rpx;
+  background: #f2f3f5;
+}
+.dzic .dzi.data-v-2de9d8c0 {
+  color: #5b688b;
+}
+.dzic .dd.data-v-2de9d8c0 {
+  background: #ffefea;
+  padding: 3rpx 10rpx;
+  top: -10%;
+  right: -70%;
+}

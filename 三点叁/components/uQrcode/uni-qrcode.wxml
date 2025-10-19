@@ -1,0 +1,7 @@
+<view class="hidecanvas">
+  <canvas
+    canvasId="{{cid}}"
+    id="{{cid}}"
+    style="{{'width:'+size+'px'+';'+'height:'+size+'px'+';'}}"
+  ></canvas>
+</view>

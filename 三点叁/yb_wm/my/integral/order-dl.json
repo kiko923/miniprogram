@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "mg-cell": "/components/common/mg-cell",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img"
+  }
+}

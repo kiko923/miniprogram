@@ -1,0 +1,65 @@
+<mg-form bind:__l="__l" class="data-v-67ed81c3" vueId="21d3bdfb-1" vueSlots="{{['default']}}">
+    <view class="f-col h100 data-v-67ed81c3">
+        <mg-cell bbt="{{'名称:'+(shopinfo.name||'')}}" bgc="transparent" bind:__l="__l" btt="付款给商家" bttc="f32 wei" class="data-v-67ed81c3" last="1" sname="{{snameData}}" vueId="{{'21d3bdfb-2'+','+'21d3bdfb-1'}}" vueSlots="{{['ft']}}">
+            <view class="sjimg bsf data-v-67ed81c3" slot="ft">
+                <mg-img bind:__l="__l" class="data-v-67ed81c3" src="{{shopinfo.icon||''}}" vueId="{{'21d3bdfb-3'+','+'21d3bdfb-2'}}"></mg-img>
+            </view>
+        </mg-cell>
+        <view class="f-g-1 bf mdbd p30 data-v-67ed81c3">
+            <view class="mdbdt data-v-67ed81c3">
+                <view class="c9 f-x-bt data-v-67ed81c3">
+                    <text class="data-v-67ed81c3">金额</text>
+                    <text class="data-v-67ed81c3">请询问服务员后输入</text>
+                </view>
+                <view class="p20 b-b-e f-row data-v-67ed81c3" style="align-items:flex-start;">
+                    <text class="mr20 f56 wei data-v-67ed81c3" style="margin-top:-6rpx;">{{sl}}</text>
+                    <input bindinput="__e" class="f-g-1 mdinput wei data-v-67ed81c3" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','money','$event',[] ] ],[ 'minput',['$event'] ] ] ] ]}}" focus="true" maxlength="6" placeholder="输入金额" placeholderClass="mdps itpc" placeholderStyle="line-height: normal;" style="{{'caret-color:'+tColor+';'}}" type="digit" value="{{money}}"></input>
+                </view>
+            </view>
+            <view class="mdbdb mt30 data-v-67ed81c3" wx:if="{{discountData.discount&&discountData.newMoney>0&&discountData.discountMoney>0}}">
+                <mg-cell bind:__l="__l" class="data-v-67ed81c3" cname="p30" ft="{{'-'+sl+discountData.discountMoney}}" ftc="f32" isl="1" last="1" vueId="{{'21d3bdfb-4'+','+'21d3bdfb-1'}}" vueSlots="{{['bd']}}">
+                    <view class="data-v-67ed81c3" slot="bd">
+                        <text class="f30 wei data-v-67ed81c3">会员折扣</text>
+                        <text class="ml10 cfc data-v-67ed81c3">{{'（'+discountData.discount+'折）'}}</text>
+                    </view>
+                </mg-cell>
+            </view>
+            <view class="mdbdb mt30 data-v-67ed81c3" wx:if="{{mdconfig}}">
+                <mg-cell arrow="1" bind:__l="__l" bind:tab="__e" btt="优惠券抵扣" bttc="f30 wei" class="data-v-67ed81c3" cname="p30" color="{{kyhb.n>0?tColor:''}}" data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],['url','/yb_o2o/my/coupon/use-coupon?storeId='+params.storeId] ] ] ] ] ] ]}}" isl="1" last="1" vueId="{{'21d3bdfb-5'+','+'21d3bdfb-1'}}" vueSlots="{{['ft']}}" wx:if="{{yhq}}">
+                    <view class="data-v-67ed81c3" slot="ft">
+                        <text class="f32 data-v-67ed81c3" wx:if="{{couponInfo}}">{{'-'+sl+couponInfo.money}}</text>
+                        <block wx:else>
+                            <view class="hongbao bs5 f20 f-y-c data-v-67ed81c3" wx:if="{{kyhb.n>0}}">
+                                <text class="iconfont iconhb cf mr10 f26 data-v-67ed81c3"></text>{{kyhb.n+'个可用'}}</view>
+                            <block wx:else>
+                                <view class="f24 f-y-c data-v-67ed81c3" wx:if="{{kyhb.n==0}}">暂无可用</view>
+                            </block>
+                        </block>
+                    </view>
+                </mg-cell>
+                <mg-cell bind:__l="__l" class="data-v-67ed81c3" cname="p30" ft="{{'-'+sl+zkmoney}}" ftc="f32" isl="1" last="1" vueId="{{'21d3bdfb-6'+','+'21d3bdfb-1'}}" vueSlots="{{['bd']}}" wx:if="{{vip}}">
+                    <view class="data-v-67ed81c3" slot="bd">
+                        <text class="f30 wei data-v-67ed81c3">会员折扣</text>
+                        <text class="ml10 cfc data-v-67ed81c3" wx:if="{{user.discount}}">{{'（'+user.discount+'折）'}}</text>
+                    </view>
+                </mg-cell>
+            </view>
+            <view class="mdbdb mt30 data-v-67ed81c3">
+                <mg-cell bind:__l="__l" btt="实际应付" bttc="f30 wei" class="data-v-67ed81c3" cname="p30" isl="1" last="1" vueId="{{'21d3bdfb-7'+','+'21d3bdfb-1'}}" vueSlots="{{['ft']}}">
+                    <view class="c3 data-v-67ed81c3" slot="ft">
+                        <text class="mr20 data-v-67ed81c3">合计</text>
+                        <text class="f26 data-v-67ed81c3">{{sl}}</text>
+                        <text class="f40 data-v-67ed81c3">{{money?total:0}}</text>
+                    </view>
+                </mg-cell>
+                <view class="p20 f-y-c data-v-67ed81c3">
+                    <view class="mr30 data-v-67ed81c3">备注</view>
+                    <input bindinput="__e" class="weui-input f-1 data-v-67ed81c3" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','userNote','$event',[] ],['params'] ] ] ] ]}}" maxlength="20" placeholder="添加备注(20字以内)" placeholderClass="itpc" value="{{params.userNote}}"></input>
+                </view>
+            </view>
+            <view class="p3 data-v-67ed81c3" wx:if="{{shopinfo.id}}">
+                <button bindtap="__e" class="foot-btn data-v-67ed81c3" data-event-opts="{{[ [ 'tap',[ [ 'qdzf',['$event'] ] ] ] ]}}" disabled="{{loading}}" loading="{{loading}}" style="{{'background:'+tColor+';'}}">已和店员确认，立即买单</button>
+            </view>
+        </view>
+    </view>
+</mg-form>

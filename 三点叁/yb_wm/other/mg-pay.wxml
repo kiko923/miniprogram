@@ -1,0 +1,147 @@
+<view class="mh100 bf pb130 data-v-2f5ab8d8">
+  <view
+    class="paytop f-c-c cf p-r data-v-2f5ab8d8"
+    style="{{'background:'+xzcolor+';'}}"
+  >
+    <image
+      class="p-a payimg b0 r0 data-v-2f5ab8d8"
+      src="{{'/static/pay/'+xzzfimg+'.png'}}"
+    ></image>
+    <view
+      class="f30 mb10 data-v-2f5ab8d8"
+      style="opacity: 0.8"
+      wx:if="{{payObj.orderType}}"
+      >{{payObj.info.storeName}}</view
+    >
+    <view class="paymoeny wei f60 data-v-2f5ab8d8">
+      <text class="data-v-2f5ab8d8">{{sl}}</text>
+      <text class="data-v-2f5ab8d8">{{pmoney}}</text>
+    </view>
+    <view class="p13 f26 data-v-2f5ab8d8" wx:if="{{payObj.orderType}}"
+      >{{payObj.info.type}}</view
+    >
+    <view class="f26 djsc data-v-2f5ab8d8" wx:if="{{info}}"
+      >支付剩余时间：<text class="ml10 data-v-2f5ab8d8" wx:if="{{stime}}"
+        >{{stime[2]+':'+stime[3]}}</text
+      >
+    </view>
+  </view>
+  <form
+    bindsubmit="__e"
+    class="data-v-2f5ab8d8"
+    data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}"
+  >
+    <view class="data-v-2f5ab8d8">
+      <radio-group
+        bindchange="__e"
+        class="data-v-2f5ab8d8"
+        data-event-opts="{{[ [ 'change',[ [ 'radioChange',['$event'] ] ] ] ]}}"
+        name="radiogroup"
+      >
+        <label
+          class="weui-cell right30 f-s data-v-2f5ab8d8"
+          wx:for="{{$root.l1}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="f-y-c data-v-2f5ab8d8">
+            <image
+              class="hdimg data-v-2f5ab8d8"
+              mode="aspectFit"
+              src="{{v.$orig.img}}"
+            ></image>
+          </view>
+          <view class="weui-cell__bd data-v-2f5ab8d8">
+            <view class="f-row data-v-2f5ab8d8">
+              <view class="f34 f-1 l-n data-v-2f5ab8d8">{{v.$orig.name}}</view>
+              <view class="weui-cell__ft_in-radio data-v-2f5ab8d8">
+                <text
+                  class="{{['iconfont','f40','data-v-2f5ab8d8',v.$orig.value==radioVal?'icongx':'iconwgx']}}"
+                  style="{{'color:'+(v.$orig.value==radioVal?v.$orig.color||tColor:'')+';'}}"
+                ></text>
+                <radio
+                  checked="{{v.$orig.value==radioVal}}"
+                  class="weui-check data-v-2f5ab8d8"
+                  value="{{v.$orig.value}}"
+                ></radio>
+              </view>
+            </view>
+            <view
+              class="yezf f24 mt10 data-v-2f5ab8d8"
+              style="{{'color:'+tColor+';'}}"
+              wx:if="{{v.$orig.value=='ye'}}"
+              >{{'可用'+balanceName+sl+user.balance+''}}</view
+            >
+            <view class="mt20 mswz bf5 bs10 l-n f24 c9 data-v-2f5ab8d8"
+              >{{v.$orig.text}}</view
+            >
+            <block wx:if="{{v.$orig.value=='ye'}}">
+              <view
+                class="f-y-c f22 mt20 data-v-2f5ab8d8"
+                wx:if="{{i<2}}"
+                wx:for="{{v.l0}}"
+                wx:for-index="i"
+                wx:for-item="v"
+                wx:key="i"
+              >
+                <view class="hdc f18 mr15 f-g-0 cf data-v-2f5ab8d8">惠</view>
+                <view class="c6 f-raw data-v-2f5ab8d8">
+                  <view class="data-v-2f5ab8d8"
+                    >{{'充'+v.$orig.money+'赠送：'}}</view
+                  >
+                  <view
+                    class="data-v-2f5ab8d8"
+                    wx:if="{{v.$orig.moneyOpen==1}}"
+                    >{{sl+v.$orig.giveMoney+','}}</view
+                  >
+                  <view
+                    class="data-v-2f5ab8d8"
+                    wx:if="{{v.$orig.integralOpen==1}}"
+                    >{{v.$orig.integral+jfName+','}}</view
+                  >
+                  <view class="data-v-2f5ab8d8" wx:if="{{v.$orig.growOpen==1}}"
+                    >{{v.$orig.giveGrow+'成长值,'}}</view
+                  >
+                  <view
+                    class="data-v-2f5ab8d8"
+                    wx:if="{{v.$orig.couponOpen==1}}"
+                    >{{v.g0+'张代金券'}}</view
+                  >
+                </view>
+              </view>
+              <view
+                catchtap="__e"
+                class="f-y-c mt20 data-v-2f5ab8d8"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/other/recharge/index'] ] ] ] ] ] ]}}"
+                wx:if="{{v.g1}}"
+              >
+                <view class="c6 f24 f-1 data-v-2f5ab8d8">更多优惠</view>
+                <text
+                  class="{{['iconfont','iconright','arrow','ml5','data-v-2f5ab8d8',ftc]}}"
+                  style="color: #c4c4c4"
+                ></text>
+              </view>
+            </block>
+          </view>
+        </label>
+      </radio-group>
+    </view>
+    <view class="foot-btnc data-v-2f5ab8d8" wx:if="{{$root.g2}}">
+      <button
+        class="foot-btn b-s-2 bs0 f30 wei data-v-2f5ab8d8"
+        disabled="{{loading}}"
+        formType="submit"
+        loading="{{loading}}"
+        style="{{'background:'+xzcolor+';'}}"
+      >
+        确认支付
+      </button>
+    </view>
+  </form>
+  <subscribe-msg
+    bind:__l="__l"
+    class="data-v-2f5ab8d8"
+    vueId="ce2cb83e-1"
+  ></subscribe-msg>
+</view>

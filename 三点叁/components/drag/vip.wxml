@@ -1,0 +1,166 @@
+<view class="dragvip data-v-3bd3fbeb">
+  <view
+    class="{{['posi-r','f-x-c','data-v-3bd3fbeb',styles.vipStatus==1?'header':'']}}"
+    style="{{'background:'+(styles.bgType==1?styles.colorBg:'')+';'}}"
+  >
+    <view
+      class="posi-a mywh bgimg data-v-3bd3fbeb"
+      wx:if="{{styles.bgType!=1&&styles.img}}"
+    >
+      <mg-img
+        bind:__l="__l"
+        class="data-v-3bd3fbeb"
+        src="{{styles.img}}"
+        vueId="3f4ca4a9-1"
+      ></mg-img>
+    </view>
+    <view class="posi-r mywh cf data-v-3bd3fbeb">
+      <view
+        class="posi-r data-v-3bd3fbeb"
+        style="{{'height:'+($root.g0.customNavh-10)+'px'+';'}}"
+        wx:if="{{ptype=='my'&&showpr==2}}"
+      ></view>
+      <view class="my-header f-row data-v-3bd3fbeb" wx:if="{{isLogin}}">
+        <view class="f-g-0 posi-r data-v-3bd3fbeb">
+          <image
+            class="posi-a hgimg data-v-3bd3fbeb"
+            src="/static/wd/vip/hg.png"
+            wx:if="{{isVip}}"
+          ></image>
+          <view class="img data-v-3bd3fbeb">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-3bd3fbeb"
+              cname="bsf"
+              src="{{user.portrait||'https://mmbiz.qpic.cn/mmbiz_png/c0PwDajAGp77U0OjoSUmWiaaWM5ZHLeMbQBLPtfZF54ea52ib9Jt2uian7nH06NjCC7yiaIXSVCKbOZg1SeYJPZO9A/0?wx_fmt=png'}}"
+              vueId="3f4ca4a9-2"
+            ></mg-img>
+          </view>
+        </view>
+        <view class="f-g-1 data-v-3bd3fbeb">
+          <view class="f38 wei mb15 f-y-c data-v-3bd3fbeb">
+            <view
+              class="t-o-e mr20 data-v-3bd3fbeb"
+              style="{{'color:'+styles.colorName+';'}}"
+              >{{user.userName}}</view
+            >
+            <view
+              class="f-g-0 f-row f22 o-h data-v-3bd3fbeb"
+              style="max-width: 60%"
+              wx:if="{{isVip}}"
+            >
+              <view class="vname-l t-c t-o-e data-v-3bd3fbeb"
+                >{{vipset.title}}</view
+              >
+              <view class="vname-r t-c t-o-e data-v-3bd3fbeb"
+                >{{user.cardName}}</view
+              >
+            </view>
+          </view>
+          <view class="f-y-c f24 data-v-3bd3fbeb">
+            <text class="mr10 data-v-3bd3fbeb">用户ID:</text>
+            <text class="data-v-3bd3fbeb">{{user.id}}</text>
+            <text
+              bindtap="__e"
+              class="fz data-v-3bd3fbeb"
+              data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+              >复制</text
+            >
+          </view>
+        </view>
+        <view
+          bindtap="__e"
+          class="ml20 f-c data-v-3bd3fbeb"
+          data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/my/other/bjzl'] ] ] ] ] ] ]}}"
+        >
+          <text class="iconfont iconsz cf f46 data-v-3bd3fbeb"></text>
+        </view>
+      </view>
+      <view class="my-header f-y-c data-v-3bd3fbeb" wx:else>
+        <view class="f-g-0 img data-v-3bd3fbeb">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-3bd3fbeb"
+            cname="bsf"
+            src="/static/wd/mrtx.png"
+            vueId="3f4ca4a9-3"
+          ></mg-img>
+        </view>
+        <view class="f-g-1 data-v-3bd3fbeb">
+          <view
+            class="f38 mb15 data-v-3bd3fbeb"
+            style="{{'color:'+styles.colorName+';'}}"
+            >{{user.userName}}</view
+          >
+          <view
+            bindtap="__e"
+            class="text-btn bs30 f24 p0 cf f-c data-v-3bd3fbeb"
+            data-event-opts="{{[ [ 'tap',[ [ 'ljdl',['$event'] ] ] ] ]}}"
+            >立即登录</view
+          >
+        </view>
+      </view>
+      <view class="my-bd c3 data-v-3bd3fbeb" wx:if="{{styles.vipStatus==1}}">
+        <view class="vc f-x-bt f22 data-v-3bd3fbeb" wx:if="{{isVip}}">
+          <view class="f-y-c data-v-3bd3fbeb" style="color: #fadcad">
+            <image
+              class="vimg mr10 data-v-3bd3fbeb"
+              src="/static/wd/vip/mv.png"
+            ></image>
+            <view class="data-v-3bd3fbeb">{{user.cardName}}</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="bs30 p-8-20 dlbtn f-y-c data-v-3bd3fbeb"
+            data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/order/vip/wkk'] ] ] ] ] ] ]}}"
+          >
+            <view class="mr10 data-v-3bd3fbeb">查看详情</view>
+            <view class="ysj data-v-3bd3fbeb"></view>
+          </view>
+        </view>
+        <view class="vc f-x-bt f22 data-v-3bd3fbeb" wx:else>
+          <view class="f-y-c data-v-3bd3fbeb" style="color: #fff">
+            <image
+              class="vimg mr10 data-v-3bd3fbeb"
+              src="/static/wd/vip/mv.png"
+            ></image>
+            <view class="data-v-3bd3fbeb">领取会员卡，各种优惠享不停</view>
+          </view>
+          <view
+            bindtap="__e"
+            class="bs30 p-8-20 dlbtn f-y-c data-v-3bd3fbeb"
+            data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/order/vip/wkk'] ] ] ] ] ] ]}}"
+          >
+            <view class="mr10 data-v-3bd3fbeb">立即领取</view>
+            <view class="ysj data-v-3bd3fbeb"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="my-datac data-v-3bd3fbeb" wx:if="{{$root.g1}}">
+    <view class="my-data bf bs20 f-row data-v-3bd3fbeb">
+      <view
+        bindtap="__e"
+        class="datac f-1 b-r-d f-c-c data-v-3bd3fbeb"
+        data-event-opts="{{[ [ 'tap',[ [ 'myDataClick',['$0'],[ [ ['myData','',i] ] ] ] ] ] ]}}"
+        hidden="{{!!v.hide}}"
+        wx:for="{{myData}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <view
+          class="f36 wei t-o-e t-c data-v-3bd3fbeb"
+          style="{{'width:90%;'+'color:'+styles.colorNumber+';'}}"
+          >{{isLogin?v.num:'***'}}</view
+        >
+        <view
+          class="f24 data-v-3bd3fbeb"
+          style="{{'color:'+styles.colorTitle+';'}}"
+          >{{v.name}}</view
+        >
+      </view>
+    </view>
+  </view>
+</view>

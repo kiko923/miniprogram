@@ -1,0 +1,117 @@
+<view
+  class="jdred mh100 data-v-da2bee2e"
+  style="{{'background:'+'linear-gradient(180deg, '+tColor+', #f5f5f5)'+';'}}"
+  wx:if="{{jdData.orderNum}}"
+>
+  <view class="pb30 data-v-da2bee2e">
+    <view class="hbg = data-v-da2bee2e" wx:if="{{jdData.collectGrant.icon}}">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-da2bee2e"
+        src="{{jdData.collectGrant.icon}}"
+        vueId="36b6040c-1"
+      ></mg-img>
+    </view>
+  </view>
+  <view class="bf p30 bs20 m3 data-v-da2bee2e" style="margin-top: 0">
+    <view class="f-c f30 data-v-da2bee2e" wx:if="{{jdData.state==false}}"
+      >{{'再下'+jdData.saleNum+'单 可返'+jdData.money+'元红包券1张'}}</view
+    >
+    <view class="f30 data-v-da2bee2e" wx:else>
+      <view class="f-c data-v-da2bee2e"
+        >{{'已成功获得'+jdData.money+'元红包券1张'}}</view
+      >
+      <view
+        bindtap="__e"
+        class="f24 f-c mt10 c9 data-v-da2bee2e"
+        data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/my/coupon/my'] ] ] ] ] ] ]}}"
+        >红包已放入：个人中心-我的卡券，去看看 ></view
+      >
+    </view>
+    <view
+      class="f24 c9 f-c mt20 data-v-da2bee2e"
+      wx:if="{{jdData.state==false}}"
+      >{{'*正价消费'+jdData.saleNum+'单，即返红包，当前已消费'+jdData.useNum+'单'}}</view
+    >
+    <view class="jtc f-c mt20 f-w data-v-da2bee2e" wx:if="{{jdData.data}}">
+      <view
+        class="jtitem be6 posi-r o-h data-v-da2bee2e"
+        style="{{'background:'+(v.state==true?tColor:'')+';'}}"
+        wx:for="{{jdData.data}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <view class="posi-a udlr icw data-v-da2bee2e">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-da2bee2e"
+            src="/static/wd/signin/gou.png"
+            vueId="{{'36b6040c-2-'+i}}"
+            wx:if="{{v.state}}"
+          ></mg-img>
+          <mg-img
+            bind:__l="__l"
+            class="data-v-da2bee2e"
+            src="/static/wd/signin/jb.png"
+            vueId="{{'36b6040c-3-'+i}}"
+            wx:else
+          ></mg-img>
+        </view>
+      </view>
+    </view>
+    <view class="f-col f-y-c m20 data-v-da2bee2e">
+      <button
+        bindtap="__e"
+        class="clearbtn sbtn f-c cf f30 data-v-da2bee2e"
+        data-event-opts="{{[ [ 'tap',[ [ 'qxd',['$event'] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+        wx:if="{{jdData.state==false}}"
+      >
+        去下单
+      </button>
+      <button
+        bindtap="__e"
+        class="clearbtn sbtn f-c cf f30 data-v-da2bee2e"
+        data-event-opts="{{[ [ 'tap',[ [ 'qxd',['$event'] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+        wx:else
+      >
+        去使用
+      </button>
+    </view>
+  </view>
+  <view class="bf bs20 m3 data-v-da2bee2e">
+    <mg-cell
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="集点记录"
+      class="data-v-da2bee2e"
+      cname="p3"
+      data-event-opts="{{[ [ '^tab',[ ['ljyq'] ] ] ]}}"
+      hc="1"
+      isl="1"
+      vueId="36b6040c-4"
+    ></mg-cell>
+    <view class="data-v-da2bee2e" wx:if="{{$root.g0}}">
+      <mg-cell
+        bbt="{{v.m0}}"
+        bind:__l="__l"
+        btt="{{v.$orig.outTradeNo}}"
+        bttc="f32"
+        class="data-v-da2bee2e"
+        cname="f-s"
+        ft="{{'-'+v.$orig.money}}"
+        isr="1"
+        vueId="{{'36b6040c-5-'+i}}"
+        wx:for="{{$root.l0}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      ></mg-cell>
+    </view>
+    <view class="p30 data-v-da2bee2e" wx:else>
+      <view class="f24 c9 f-c mt20 data-v-da2bee2e">下一单开启集点活动</view>
+    </view>
+  </view>
+</view>

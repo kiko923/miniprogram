@@ -1,0 +1,152 @@
+<view class="pb130 spxq data-v-3dbf5290">
+  <block wx:if="{{co}}">
+    <mg-swiper
+      bind:__l="__l"
+      class="data-v-3dbf5290"
+      co="{{swiper}}"
+      color="{{tColor}}"
+      u="rpx"
+      vueId="24422f2e-1"
+    ></mg-swiper>
+    <goods
+      addtype="2"
+      bind:__l="__l"
+      bind:add="__e"
+      bind:dec="__e"
+      class="data-v-3dbf5290"
+      co="{{co}}"
+      data-event-opts="{{[ [ '^dec',[ ['decn'] ] ],[ '^add',[ ['addn'] ] ] ]}}"
+      outin="{{outin}}"
+      type="3"
+      vueId="24422f2e-2"
+    ></goods>
+    <view class="bf mt20 p3 data-v-3dbf5290">
+      <view class="f32 wei data-v-3dbf5290">商品详情</view>
+      <view class="mt15 data-v-3dbf5290" wx:if="{{co.details}}">
+        <mg-rtext
+          bind:__l="__l"
+          class="data-v-3dbf5290"
+          content="{{co.details}}"
+          type="2"
+          vueId="24422f2e-3"
+        ></mg-rtext>
+      </view>
+    </view>
+    <view
+      class="f-y-c p-f w100 b0 gwcc bf data-v-3dbf5290"
+      style="{{'bottom:'+(isIpx?'40rpx':0)+';'}}"
+    >
+      <view class="f-1 f-row f22 c3 l-h1 data-v-3dbf5290">
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c data-v-3dbf5290"
+          data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',6],['url','/yb_wm/index/goods'] ] ] ] ] ] ]}}"
+        >
+          <text class="iconfont iconsy f42 c3 data-v-3dbf5290"></text>
+          <text class="mt10 data-v-3dbf5290">首页</text>
+        </view>
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c data-v-3dbf5290"
+          data-event-opts="{{[ [ 'tap',[ [ 'ljyq',['$event'] ] ] ] ]}}"
+        >
+          <text class="iconfont iconfx f46 c3 data-v-3dbf5290"></text>
+          <text class="mt10 data-v-3dbf5290">分享</text>
+        </view>
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c p-r data-v-3dbf5290"
+          data-event-opts="{{[ [ 'tap',[ [ 'gwc',['$event'] ] ] ] ]}}"
+        >
+          <text class="iconfont icongwc1 f48 c3 data-v-3dbf5290"></text>
+          <text class="mt10 data-v-3dbf5290">购物车</text>
+          <view
+            class="posi-a dot bsf f-c data-v-3dbf5290"
+            style="{{'background:'+tColor+';'}}"
+            wx:if="{{$root.g0}}"
+            >{{getTotal.num}}</view
+          >
+        </view>
+      </view>
+      <button
+        bindtap="__e"
+        class="jrgwc cf f-c f32 data-v-3dbf5290"
+        data-event-opts="{{[ [ 'tap',[ [ 'dlgoPay',['$event'] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+        wx:if="{{getTotal.num>0}}"
+      >
+        去结算
+      </button>
+      <button
+        bindtap="__e"
+        class="jrgwc cf f-c f32 data-v-3dbf5290"
+        data-event-opts="{{[ [ 'tap',[ [ 'tsgwc',['$event'] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+        wx:else
+      >
+        去结算
+      </button>
+    </view>
+    <view class="bgf data-v-3dbf5290" wx:if="{{isIpx}}"></view>
+    <spec
+      bind:__l="__l"
+      bind:add="__e"
+      bind:input="__e"
+      class="data-v-3dbf5290"
+      co="{{goodsInfo}}"
+      data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^input',[ [ '__set_model',[ '','showGg','$event',[] ] ] ] ] ]}}"
+      outin="{{outin}}"
+      storeid="{{co.storeId}}"
+      systemGood="{{system}}"
+      value="{{showGg}}"
+      vueId="24422f2e-4"
+    ></spec>
+    <mg-share
+      bind:__l="__l"
+      bind:input="__e"
+      class="data-v-3dbf5290"
+      co="{{shareCo}}"
+      data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','shareshow','$event',[] ] ] ] ] ]}}"
+      hbs="{{true}}"
+      ptype="1"
+      value="{{shareshow}}"
+      vueId="24422f2e-5"
+      wxs="1"
+    ></mg-share>
+    <goods-car
+      bind:__l="__l"
+      bind:add="__e"
+      bind:celar="__e"
+      bind:dec="__e"
+      bind:updateShow="__e"
+      buytype="{{buyType}}"
+      carBtm="{{40}}"
+      carlistPab="{{130}}"
+      class="data-v-3dbf5290 vue-ref"
+      data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showCar','$event'],[''] ] ] ],[ '^dec',[ ['dec'] ] ],[ '^add',[ ['add'] ] ],[ '^celar',[ ['celarCar'] ] ] ]}}"
+      data-ref="goodscar"
+      goodsList="{{catrgoryList}}"
+      id="goodscar"
+      show="{{showCar}}"
+      sjxx="{{sjxx}}"
+      startmoney="{{startMoney}}"
+      type="{{4}}"
+      vueId="24422f2e-6"
+    ></goods-car>
+  </block>
+  <load
+    bind:__l="__l"
+    class="data-v-3dbf5290"
+    vueId="24422f2e-7"
+    wx:if="{{!co.id}}"
+  ></load>
+  <load
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-3dbf5290"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showjz','$event',[] ] ] ] ] ]}}"
+    type="2"
+    value="{{showjz}}"
+    vueId="24422f2e-8"
+  ></load>
+</view>

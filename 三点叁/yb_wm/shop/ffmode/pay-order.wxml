@@ -1,0 +1,569 @@
+<view class="pb130 data-v-0a3145d4" hidden="{{!carInfo.sjxx}}">
+  <view class="header data-v-0a3145d4" style="{{'background:'+'#fff'+';'}}">
+    <view
+      class="w100 t0 f-y-c p23 data-v-0a3145d4"
+      style="{{'background:'+'rgba('+$root.m0+',0.1)'+';'}}"
+      wx:if="{{carInfo.sjxx&&carInfo.sjxx.moreSet.fastOrderNotice}}"
+    >
+      <text
+        class="iconfont icontishi data-v-0a3145d4"
+        style="{{'color:'+tColor+';'}}"
+      ></text>
+      <view class="f-1 data-v-0a3145d4" style="{{'color:'+tColor+';'}}">
+        <uni-notice-bar
+          backgroundColor="transparent"
+          bind:__l="__l"
+          class="data-v-0a3145d4"
+          color="{{tColor}}"
+          scrollable="{{true}}"
+          single="{{true}}"
+          speed="{{25}}"
+          text="{{carInfo.sjxx.moreSet.fastOrderNotice}}"
+          vueId="5a3e17de-1"
+        ></uni-notice-bar>
+      </view>
+    </view>
+    <view class="p-r data-v-0a3145d4">
+      <get-ztd
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        sjxx="{{carInfo.sjxx}}"
+        vueId="5a3e17de-2"
+        wx:if="{{params.deliveryMode==1}}"
+      ></get-ztd>
+      <view class="p-a psmsc f-x-bt bf6 data-v-0a3145d4" wx:if="{{$root.g0}}">
+        <view
+          bindtap="__e"
+          class="{{['psms','f-c','f24','c9','data-v-0a3145d4',v.value==params.deliveryMode?'f28':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'clickMode',['$0'],[ [ ['ModeArr','',i] ] ] ] ] ] ]}}"
+          style="{{'color:'+(v.value==params.deliveryMode?'#fff':'')+';'+'background:'+(v.value==params.deliveryMode?'#333':'')+';'}}"
+          wx:for="{{ModeArr}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+          >{{v.name}}</view
+        >
+      </view>
+    </view>
+  </view>
+  <view class="mainc data-v-0a3145d4" hidden="{{!showLoading}}">
+    <view class="mt20 bs20 data-v-0a3145d4">
+      <view class="data-v-0a3145d4" hidden="{{!(params.deliveryMode==1)}}">
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-0a3145d4"
+          last="1"
+          vueId="5a3e17de-3"
+          vueSlots="{{['bd']}}"
+          wx:if="{{$root.g1}}"
+        >
+          <view class="f-x-bt data-v-0a3145d4" slot="bd">
+            <view
+              bindtap="__e"
+              class="pstypec bs10 f-c data-v-0a3145d4"
+              data-event-opts="{{[ [ 'tap',[ [ 'clickztMode',['$0'],[ [ ['ztTypeArr','',i] ] ] ] ] ] ]}}"
+              style="{{'color:'+(v.value==params.isOut?tColor:'')+';'+'border-color:'+(v.value==params.isOut?tColor:'')+';'}}"
+              wx:for="{{ztTypeArr}}"
+              wx:for-index="i"
+              wx:for-item="v"
+              wx:key="i"
+            >
+              <text
+                class="{{['iconfont','c3','mr20','data-v-0a3145d4',v.icon]}}"
+                style="{{'color:'+(v.value==params.isOut?tColor:'')+';'}}"
+              ></text>
+              <text class="f32 data-v-0a3145d4">{{v.name}}</text>
+              <view
+                class="yddsj posi-a data-v-0a3145d4"
+                style="{{'border-bottom:'+(v.value==params.isOut?'41rpx solid '+tColor:'')+';'}}"
+              ></view>
+              <text
+                class="gou posi-a iconfont icongou cf f20 data-v-0a3145d4"
+                wx:if="{{v.value==params.isOut}}"
+              ></text>
+            </view>
+          </view>
+        </mg-cell>
+      </view>
+    </view>
+    <view class="mt20 p03 bf bs20 data-v-0a3145d4">
+      <mg-cell
+        bind:__l="__l"
+        btt="商品明细"
+        bttc="f30"
+        class="data-v-0a3145d4"
+        cname="p2 pl0"
+        isl="1"
+        vueId="5a3e17de-4"
+      ></mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        brs="12rpx"
+        class="data-v-0a3145d4"
+        cname="p2 pl0 pr0 la124"
+        h="104"
+        img="{{v.$orig.icon}}"
+        isl="{{v.g2}}"
+        last="1"
+        vueId="{{'5a3e17de-5-'+i}}"
+        vueSlots="{{['bd']}}"
+        w="104"
+        wx:for="{{$root.l0}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <view class="data-v-0a3145d4" slot="bd">
+          <view class="f-bt data-v-0a3145d4">
+            <view class="f-row data-v-0a3145d4">
+              <view
+                class="f-g-0 yhic f18 cf bf5f f-c hdspan data-v-0a3145d4"
+                wx:if="{{v.$orig.ishd&&v.$orig.discountType!=4}}"
+                >{{''+(v.$orig.discountType==1?'特':v.$orig.discountType==2?'折':v.$orig.discountType==5?'赠':'减')+''}}</view
+              >
+              <view class="l-h1 data-v-0a3145d4">{{v.$orig.name}}</view>
+            </view>
+            <view class="f-g-0 f32 data-v-0a3145d4"
+              >{{''+sl+(v.$orig.ishd?v.m1:v.m2)+''}}</view
+            >
+          </view>
+          <view
+            class="f-row cf5f data-v-0a3145d4"
+            wx:if="{{v.$orig.ishd&&v.$orig.discountType==4}}"
+          >
+            <view
+              class="f20 bs5 b-d p-3-10 data-v-0a3145d4"
+              style="{{'border-color:'+'#FF5F2F'+';'}}"
+              >{{''+(v.$orig.discountType==4?'第二件打折':'买一送一')+''}}</view
+            >
+          </view>
+          <view class="f-bt mt10 f24 c9 data-v-0a3145d4">
+            <view class="f-g-1 f-raw data-v-0a3145d4">
+              <text class="ml10 data-v-0a3145d4" wx:if="{{v.$orig.groupName}}"
+                >{{v.$orig.groupName}}</text
+              >
+              <text class="data-v-0a3145d4" wx:if="{{v.$orig.attribute}}"
+                >{{'('+v.$orig.attribute+')'}}</text
+              >
+              <text
+                class="ml10 data-v-0a3145d4"
+                wx:if="{{v.$orig.materialName}}"
+                >{{'+'+v.$orig.materialName}}</text
+              >
+            </view>
+            <view class="ml10 data-v-0a3145d4">{{'x'+v.$orig.spnum}}</view>
+          </view>
+        </view>
+      </mg-cell>
+      <mg-cell
+        bdmw="180rpx"
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        last="1"
+        vueId="5a3e17de-6"
+        vueSlots="{{['bd','ft']}}"
+        wx:if="{{carInfo.getTotal.hyzk>0}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="bd">
+          <view
+            class="yhic f22 cf f-c f-g-0 data-v-0a3145d4"
+            style="background: #eda555"
+            >V</view
+          >
+          <view class="data-v-0a3145d4">会员折扣</view>
+        </view>
+        <view class="f32 cf7 data-v-0a3145d4" slot="ft"
+          >{{sl+carInfo.getTotal.hyzk}}</view
+        >
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        btt="商品小计"
+        class="data-v-0a3145d4"
+        cname="p15"
+        ft="{{''+sl+carInfo.getTotal.spzj}}"
+        ftc="f32 c3"
+        last="1"
+        vueId="5a3e17de-7"
+      ></mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        btt="包装费"
+        class="data-v-0a3145d4"
+        cname="p15"
+        last="1"
+        vueId="5a3e17de-8"
+        vueSlots="{{['ft']}}"
+        wx:if="{{carInfo.getTotal.bzf>=0}}"
+      >
+        <view class="f32 c3 data-v-0a3145d4" slot="ft">
+          <text
+            class="mr30 t-d-l f24 c9 data-v-0a3145d4"
+            wx:if="{{params.deliveryMode==1&&params.isOut==1}}"
+            >{{sl+carInfo.getTotal.bzf}}</text
+          >
+          <text class="data-v-0a3145d4">{{sl+xjMoney.bzf}}</text>
+        </view>
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        ft="{{'-'+sl+carInfo.mjInfo.mjMoney}}"
+        ftc="f32 cf5f"
+        last="1"
+        vueId="5a3e17de-9"
+        vueSlots="{{['bd']}}"
+        wx:if="{{carInfo.mjInfo.mjMoney>0}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="bd">
+          <view class="yhic f18 cf bf5f f-c data-v-0a3145d4">减</view>
+          <view class="data-v-0a3145d4">商品满减</view>
+        </view>
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        ft="{{'-'+sl+orderMuster.newReduction}}"
+        ftc="f32 cf5f"
+        last="1"
+        vueId="5a3e17de-10"
+        vueSlots="{{['bd']}}"
+        wx:if="{{orderMuster.newReduction>0}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="bd">
+          <view class="yhic f18 cf b00 f-c data-v-0a3145d4">新</view>
+          <view class="data-v-0a3145d4">门店新客立减</view>
+        </view>
+      </mg-cell>
+      <mg-cell
+        bdmw="180rpx"
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        last="1"
+        vueId="5a3e17de-11"
+        vueSlots="{{['bd','ft']}}"
+        wx:if="{{jsInfo.mzInfo.title}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="bd">
+          <view class="yhic f18 cf bf5f f-c f-g-0 data-v-0a3145d4">赠</view>
+          <view class="data-v-0a3145d4">{{jsInfo.mzInfo.name}}</view>
+        </view>
+        <view class="cf5f data-v-0a3145d4" slot="ft"
+          >{{jsInfo.mzInfo.title}}</view
+        >
+      </mg-cell>
+      <mg-cell
+        bdmw="180rpx"
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        last="1"
+        vueId="5a3e17de-12"
+        vueSlots="{{['bd','ft']}}"
+        wx:if="{{jsInfo.mfInfo.title}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="bd">
+          <view class="yhic f18 cf bf5f f-c f-g-0 data-v-0a3145d4">返</view>
+          <view class="data-v-0a3145d4">{{jsInfo.mfInfo.name}}</view>
+        </view>
+        <view class="cf5f data-v-0a3145d4" slot="ft"
+          >{{jsInfo.mfInfo.title}}</view
+        >
+      </mg-cell>
+      <mg-cell
+        arrow="1"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-0a3145d4"
+        cname="p15"
+        color="{{kyhb.dpyhq.n>0?tColor:''}}"
+        data-event-opts="{{[ [ '^tab',[ [ 'tzxqyhq',[1] ] ] ] ]}}"
+        last="1"
+        vueId="5a3e17de-13"
+        vueSlots="{{['hd','ft']}}"
+        wx:if="{{orderMuster.newReduction<=0||orderMuster.newandcoupon==1}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="hd">
+          <view class="yhic f18 cf bf5f f-c data-v-0a3145d4">券</view>
+          <view class="data-v-0a3145d4">门店代金券</view>
+        </view>
+        <view class="data-v-0a3145d4" slot="ft">
+          <text class="f32 cf5f data-v-0a3145d4" wx:if="{{couponInfo.store}}"
+            >{{'-'+sl+yhqPreferential.store}}</text
+          >
+          <block wx:else>
+            <view
+              class="hongbao bs5 f20 f-y-c data-v-0a3145d4"
+              wx:if="{{kyhb.dpyhq.n>0}}"
+            >
+              <text class="iconfont iconhb cf mr10 f26 data-v-0a3145d4"></text
+              >{{kyhb.dpyhq.n+'个可用'}}</view
+            >
+            <block wx:else>
+              <view
+                class="f24 f-y-c data-v-0a3145d4"
+                wx:if="{{kyhb.dpyhq.n==0}}"
+                >暂无可用</view
+              >
+            </block>
+          </block>
+        </view>
+      </mg-cell>
+      <mg-cell
+        arrow="1"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-0a3145d4"
+        cname="p15"
+        color="{{kyhb.ptyhq.n>0?tColor:''}}"
+        data-event-opts="{{[ [ '^tab',[ [ 'tzxqyhq',[2] ] ] ] ]}}"
+        last="1"
+        vueId="5a3e17de-14"
+        vueSlots="{{['hd','ft']}}"
+        wx:if="{{orderMuster.newReduction<=0||orderMuster.newandcoupon==1}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="hd">
+          <view class="yhic f18 cf bf5f f-c data-v-0a3145d4">券</view>
+          <view class="data-v-0a3145d4">{{system.custom.systemRedbag}}</view>
+        </view>
+        <view class="data-v-0a3145d4" slot="ft">
+          <text class="f32 cf5f data-v-0a3145d4" wx:if="{{couponInfo.platform}}"
+            >{{'-'+sl+yhqPreferential.platform}}</text
+          >
+          <block wx:else>
+            <view
+              class="hongbao bs5 f20 f-y-c data-v-0a3145d4"
+              wx:if="{{kyhb.ptyhq.n>0}}"
+            >
+              <text class="iconfont iconhb cf mr10 f26 data-v-0a3145d4"></text
+              >{{kyhb.ptyhq.n+'个可用'}}</view
+            >
+            <block wx:else>
+              <view
+                class="f24 f-y-c data-v-0a3145d4"
+                wx:if="{{kyhb.ptyhq.n==0}}"
+                >暂无可用</view
+              >
+            </block>
+          </block>
+        </view>
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        isl="1"
+        vueId="5a3e17de-15"
+        vueSlots="{{['bd','ft']}}"
+      >
+        <view
+          bindtap="__e"
+          class="f-y-c c9 f24 data-v-0a3145d4"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+          slot="bd"
+          >优惠说明<text
+            class="iconfont iconwen f20 c9 ml10 data-v-0a3145d4"
+          ></text>
+        </view>
+        <view class="ml10 c3 data-v-0a3145d4" slot="ft">
+          <text class="f24 data-v-0a3145d4"
+            >{{'共'+carInfo.getTotal.num+'件商品'}}</text
+          >
+          <text class="m02 data-v-0a3145d4">小计</text>
+          <text class="f34 data-v-0a3145d4">{{sl+(xjMoney.total||0)}}</text>
+        </view>
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-0a3145d4"
+        cname="p15"
+        isl="1"
+        vueId="5a3e17de-16"
+        vueSlots="{{['bd','ft']}}"
+        wx:if="{{system.taxRatio>0}}"
+      >
+        <view class="f-y-c data-v-0a3145d4" slot="bd"
+          >税率<text class="ml10 c6 f24 data-v-0a3145d4"
+            >{{'('+system.taxRatio+'%)'}}</text
+          >
+        </view>
+        <view class="f32 c3 data-v-0a3145d4" slot="ft"
+          >{{'+'+sl+(xjMoney.slje||0)}}</view
+        >
+      </mg-cell>
+    </view>
+    <view
+      class="mt20 p30 bf bs20 data-v-0a3145d4"
+      wx:if="{{orderMuster.changePay&&orderMuster.changePay.goodsArr}}"
+    >
+      <view class="p03 mb10 f-y-c data-v-0a3145d4">
+        <view class="yhic f18 cf bf5f f-c data-v-0a3145d4">换</view>
+        <view class="data-v-0a3145d4">超值换购</view>
+        <view
+          class="ml20 f22 c9 data-v-0a3145d4"
+          hidden="{{!(hgInfo.id&&hgInfo.price>hgInfo.money)}}"
+          >{{'商品最多可为您节省'+sl+$root.m3}}</view
+        >
+      </view>
+      <view class="bf f-row o-x-s p13 data-v-0a3145d4">
+        <view
+          bindtap="__e"
+          class="bf f-g-0 hgic mr30 bs15 b-s-4 f-row p-r data-v-0a3145d4"
+          data-event-opts="{{[ [ 'tap',[ [ 'xzhg',['$0'],[ [ ['orderMuster.changePay.goodsArr','',i] ] ] ] ] ] ]}}"
+          wx:for="{{$root.l1}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="hgimg data-v-0a3145d4">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-0a3145d4"
+              src="{{v.$orig.icon}}"
+              vueId="{{'5a3e17de-17-'+i}}"
+            ></mg-img>
+            <view class="p-a spzk t0 f18 cf bf5f l-n data-v-0a3145d4"
+              >{{v.m4+'折'}}</view
+            >
+          </view>
+          <view class="f-1 f-y-bt p-10-15 f24 data-v-0a3145d4">
+            <view class="t-o-e data-v-0a3145d4">{{v.$orig.name}}</view>
+            <view class="f-y-c data-v-0a3145d4">
+              <view class="f-1 t-o-e f22 data-v-0a3145d4"
+                >{{sl}}<text class="f28 data-v-0a3145d4"
+                  >{{v.$orig.money}}</text
+                >
+                <text class="t-d-l ml10 data-v-0a3145d4"
+                  >{{sl+v.$orig.price}}</text
+                >
+              </view>
+              <text
+                class="{{['iconfont','icongx','f38','ce','mt0','ml10','data-v-0a3145d4',hgInfo.id==v.$orig.id?'cf5f':'']}}"
+              ></text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="mt20 p03 bf bs20 data-v-0a3145d4">
+      <mg-cell
+        arrow="1"
+        bdmw="100rpx"
+        bind:__l="__l"
+        bind:tab="__e"
+        btt="备注"
+        bttc="f30"
+        class="data-v-0a3145d4"
+        cname="p30"
+        data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/shop/out/bz?note='+params.userNote] ] ] ] ] ] ]}}"
+        ft="{{params.userNote||'请填写你的其他要求'}}"
+        isl="1"
+        vueId="5a3e17de-18"
+      ></mg-cell>
+    </view>
+  </view>
+  <view
+    class="dbbtnc data-v-0a3145d4"
+    style="{{'bottom:'+(isIpx?'40rpx':0)+';'}}"
+  >
+    <view class="dbbtn data-v-0a3145d4">
+      <view class="f-g-1 lt f-c-xc data-v-0a3145d4">
+        <view class="data-v-0a3145d4">
+          <text class="mr10 data-v-0a3145d4">合计</text>
+          <text class="f36 data-v-0a3145d4">{{sl+(jsInfo.hjMoney||0)}}</text>
+        </view>
+        <view class="f-y-c f22 c9 data-v-0a3145d4">
+          <view class="data-v-0a3145d4">为您节省</view>
+          <view class="data-v-0a3145d4">{{sl+(jsInfo.yhzj||0)}}</view>
+        </view>
+      </view>
+      <button
+        bindtap="__e"
+        class="rt f-c data-v-0a3145d4"
+        data-event-opts="{{[ [ 'tap',[ [ 'ljzf',['$event'] ] ] ] ]}}"
+        disabled="{{loading}}"
+        loading="{{loading}}"
+        style="{{'background:'+tColor+';'}}"
+      >
+        立即支付
+      </button>
+    </view>
+  </view>
+  <view class="bgf data-v-0a3145d4" wx:if="{{isIpx}}"></view>
+  <mg-modal
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-0a3145d4"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showyhgz','$event',[] ] ] ] ] ]}}"
+    ismr="{{true}}"
+    value="{{showyhgz}}"
+    vueId="5a3e17de-19"
+    vueSlots="{{['default']}}"
+    width="630rpx"
+    zIndex="{{3000}}"
+  >
+    <view class="bf bs10 data-v-0a3145d4">
+      <view class="p3 c9 data-v-0a3145d4">
+        <view class="t-c f32 c0 mb20 data-v-0a3145d4">优惠规则详情</view>
+        <view
+          class="p10 f-y-c data-v-0a3145d4"
+          wx:if="{{carInfo.mjInfo.mjMoney>0}}"
+        >
+          <view class="f-1 data-v-0a3145d4">满减</view>
+          <view class="data-v-0a3145d4">{{'-'+sl+carInfo.mjInfo.mjMoney}}</view>
+        </view>
+        <view
+          class="p10 f-y-c data-v-0a3145d4"
+          wx:if="{{orderMuster.newReduction>0}}"
+        >
+          <view class="f-1 data-v-0a3145d4">新客立减</view>
+          <view class="data-v-0a3145d4"
+            >{{'-'+''+sl+orderMuster.newReduction}}</view
+          >
+        </view>
+        <view class="p10 f-y-c data-v-0a3145d4">
+          <view class="f-1 data-v-0a3145d4">门店代金券抵扣</view>
+          <view class="data-v-0a3145d4"
+            >{{'-'+''+sl+yhqPreferential.store}}</view
+          >
+        </view>
+        <view
+          class="p10 f-y-c data-v-0a3145d4"
+          wx:if="{{carInfo.getTotal.hyzk>0}}"
+        >
+          <view class="f-1 data-v-0a3145d4">会员折扣</view>
+          <view class="data-v-0a3145d4"
+            >{{'-'+''+sl+carInfo.getTotal.hyzk}}</view
+          >
+        </view>
+        <view
+          class="p10 f-y-c data-v-0a3145d4"
+          wx:if="{{params.deliveryMode==1&&params.isOut==1}}"
+        >
+          <view class="f-1 data-v-0a3145d4">包装费优惠</view>
+          <view class="data-v-0a3145d4"
+            >{{'-'+''+sl+carInfo.getTotal.bzf}}</view
+          >
+        </view>
+        <view class="p10 f-y-c c0 data-v-0a3145d4">
+          <view class="f-1 data-v-0a3145d4">总计</view>
+          <view class="data-v-0a3145d4">{{'-'+''+sl+jsInfo.yhzj}}</view>
+        </view>
+      </view>
+      <view class="hlt data-v-0a3145d4" style="height: 100rpx">
+        <button
+          catchtap="__e"
+          class="tcbtn f-1 bf h100 f28 f-c cf70 data-v-0a3145d4"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+          hoverClass="be"
+        >
+          我知道了
+        </button>
+      </view>
+    </view>
+  </mg-modal>
+</view>

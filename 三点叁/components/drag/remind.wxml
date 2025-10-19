@@ -1,0 +1,5 @@
+<view
+  class="remind data-v-00153027"
+  style="{{'margin-top:'+co.marginTop+'px'+';'+'margin-bottom:'+co.marginBottom+'px'+';'}}"
+  wx:if="{{co}}"
+></view>

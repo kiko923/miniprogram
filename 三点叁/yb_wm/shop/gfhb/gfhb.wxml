@@ -1,0 +1,134 @@
+<view class="mh100 gfhb" hidden="{{!!showLoading}}">
+  <view class="imggfgb posi-a">
+    <mg-img
+      bind:__l="__l"
+      src="{{onImgurl+'gfhb/hbbg.jpg'}}"
+      vueId="9444a682-1"
+    ></mg-img>
+  </view>
+  <view class="main posi-r f-col f-y-c">
+    <view class="gfbg posi-r">
+      <block wx:if="{{!isLogin}}">
+        <view class="posi-a t0 wh">
+          <mg-img
+            bind:__l="__l"
+            src="{{onImgurl+'gfhb/wdlbg2.png'}}"
+            vueId="9444a682-2"
+          ></mg-img>
+        </view>
+        <view class="posi-r wh f-col f-y-c">
+          <view class="top f40">最多可获得红包10元</view>
+          <view class="btm mt20">
+            <view class="yjyq posi-r f-c">
+              <view class="wh">
+                <mg-img
+                  bind:__l="__l"
+                  src="{{onImgurl+'gfhb/btn1.png'}}"
+                  vueId="9444a682-3"
+                ></mg-img>
+              </view>
+              <view class="posi-a top3 wh f-c">
+                <view
+                  bindtap="__e"
+                  class="posi-r tl f38 l-h1"
+                  data-event-opts="{{[ [ 'tap',[ [ 'yjdllq',['$event'] ] ] ] ]}}"
+                  >一键登录领取</view
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="posi-a t0 wh">
+          <mg-img
+            bind:__l="__l"
+            src="{{onImgurl+'gfhb/dlbgh2.png'}}"
+            vueId="9444a682-4"
+          ></mg-img>
+        </view>
+        <view class="posi-r wh p2" wx:if="{{divinfo.money}}">
+          <view class="f-bt mt30">
+            <view></view>
+            <view class="flex c6 mr20 l-h1">
+              <view
+                bindtap="__e"
+                class="tl f26"
+                data-event-opts="{{[ [ 'tap',[ [ 'seelist',['$event'] ] ] ] ]}}"
+                >看看大家手气</view
+              >
+              <view class="iconfont iconright tr f26"></view>
+            </view>
+          </view>
+          <view class="f-c flex hbt f-y-e mt10">
+            <view class="wei">￥</view>
+            <view class="f80 wei l-h1">{{divinfo.money}}</view>
+          </view>
+          <view class="c3 f34 wei f-c mt20" wx:if="{{divinfo.lucky=='1'}}"
+            >拼手气大红包</view
+          >
+          <view class="c3 f34 wei f-c mt20" wx:else>拼手气小红包</view>
+          <view class="f-c flex l-h1 mt10 czdy t-o-e">
+            <view class="leftv">{{'满'+divinfo.fullMoney+'元可用'}}</view>
+            <view class="rightv">{{divinfo.useDay+'天后过期'}}</view>
+          </view>
+          <view class="f-col f-y-c">
+            <view class="ljyq posi-r">
+              <view class="wh">
+                <mg-img
+                  bind:__l="__l"
+                  src="{{onImgurl+'gfhb/btn2.png'}}"
+                  vueId="9444a682-5"
+                ></mg-img>
+              </view>
+              <view class="posi-a top3 wh f-c">
+                <view
+                  bindtap="__e"
+                  class="posi-r tl f38 wei l-h1"
+                  data-event-opts="{{[ [ 'tap',[ [ 'use',['$event'] ] ] ] ]}}"
+                  disabled="{{loading}}"
+                  loading="{{loading}}"
+                  >去使用</view
+                >
+              </view>
+            </view>
+          </view>
+          <view
+            bindtap="__e"
+            class="f24 f-c mt10 ckco"
+            data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/my/coupon/my'] ] ] ] ] ] ]}}"
+            >红包已放入：个人中心-我的卡券，去看看 ></view
+          >
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="p2">
+    <mg-cell
+      bgc="#FFD99A"
+      bind:__l="__l"
+      cname="p0 bs20"
+      last="1"
+      vueId="9444a682-6"
+      vueSlots="{{['bd']}}"
+    >
+      <view slot="bd">
+        <view>
+          <view class="posi-r f-c p02">
+            <view class="bee posi-a poswz"></view>
+            <view class="bff posi-r p3 c3 f-y-c f34 mt5">活动规则</view>
+          </view>
+        </view>
+        <view class="plrb f28 c3">
+          <book-text
+            bind:__l="__l"
+            content="{{divinfo.details}}"
+            type="2"
+            vueId="{{'9444a682-7'+','+'9444a682-6'}}"
+          ></book-text>
+        </view>
+      </view>
+    </mg-cell>
+  </view>
+  <load bind:__l="__l" vueId="9444a682-8" wx:if="{{showLoading}}"></load>
+</view>

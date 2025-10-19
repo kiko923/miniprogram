@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "mg-rtext": "/components/common/functionCmp/rich-text",
+    "mg-popup": "/components/common/popup",
+    "get-address": "/components/address/get-address",
+    "get-ztjf": "/components/address/get-ztjf",
+    "zi-list": "/yb_wm/my/integral/zi-list",
+    "number-box": "/components/form/number-box",
+    "load": "/components/common/load",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

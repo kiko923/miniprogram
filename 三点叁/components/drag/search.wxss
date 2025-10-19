@@ -1,0 +1,14 @@
+.search.data-v-e2c7a822 {
+  padding: 25rpx;
+}
+.search .searchbd.data-v-e2c7a822 {
+  height: 68rpx;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+}
+.search .weui-input.data-v-e2c7a822 {
+  height: 100%;
+  line-height: 68rpx;
+}

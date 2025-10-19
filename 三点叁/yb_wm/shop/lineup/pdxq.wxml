@@ -1,0 +1,96 @@
+<view class="mvh100 bf p3 pb130 data-v-735b2ec1" wx:if="{{info.id}}">
+  <view class="ptc p23 p-r mb20 data-v-735b2ec1">
+    <view class="f30 f-x-bt data-v-735b2ec1">
+      <text class="data-v-735b2ec1">我的号码</text>
+      <text class="data-v-735b2ec1">{{info.code}}</text>
+    </view>
+    <view class="mt10 f-x-bt data-v-735b2ec1" style="{{'color:'+tColor+';'}}">
+      <view class="f50 wei data-v-735b2ec1">{{info.name}}</view>
+      <view class="{{['f-g-0','data-v-735b2ec1',info.state>2?'c9':'']}}"
+        >{{pdState}}</view
+      >
+    </view>
+    <block wx:if="{{info.state==1}}">
+      <view class="f28 mt20 data-v-735b2ec1"
+        >前方等待桌数<text
+          class="data-v-735b2ec1"
+          style="{{'color:'+tColor+';'}}"
+          >{{info.waitNum}}</text
+        >桌</view
+      >
+      <view class="c6 f26 mt10 data-v-735b2ec1"
+        >{{'预计等待时长'+info.waitMinute+'分钟'}}</view
+      >
+    </block>
+    <mg-cell
+      bind:__l="__l"
+      class="data-v-735b2ec1"
+      cname="p30 mt20"
+      isl="1"
+      vueId="6b6a313e-1"
+      vueSlots="{{['bd']}}"
+    >
+      <view class="f26 c6 data-v-735b2ec1" slot="bd">
+        <view class="flex mt5 data-v-735b2ec1" wx:if="{{info.state!=2}}">
+          <view class="flex-0 leftw data-v-735b2ec1">已等待：</view>
+          <view class="flex-1 data-v-735b2ec1"
+            >{{info.alreadyWaiting+'分钟'}}</view
+          >
+        </view>
+        <view class="flex mt5 data-v-735b2ec1">
+          <view class="flex-0 leftw data-v-735b2ec1">手机号码：</view>
+          <view class="flex-1 data-v-735b2ec1">{{$root.m0}}</view>
+        </view>
+        <view class="flex mt5 data-v-735b2ec1">
+          <view class="flex-0 leftw data-v-735b2ec1">取号时间：</view>
+          <view class="flex-1 data-v-735b2ec1">{{$root.m1}}</view>
+        </view>
+        <view class="flex mt5 data-v-735b2ec1">
+          <view class="flex-0 leftw data-v-735b2ec1">取号渠道：</view>
+          <view class="flex-1 data-v-735b2ec1">在线取号</view>
+        </view>
+      </view>
+    </mg-cell>
+    <view class="c6 f24 tips pt20 data-v-735b2ec1">
+      <view class="mb10 f-y-c _div data-v-735b2ec1">
+        <text
+          class="iconfont iconjfgz mr10 data-v-735b2ec1"
+          style="{{'color:'+tColor+';'}}"
+        ></text
+        >商家提醒：</view
+      >
+      <book-text
+        bind:__l="__l"
+        class="data-v-735b2ec1"
+        content="{{info.notice}}"
+        type="2"
+        vueId="6b6a313e-2"
+      ></book-text>
+    </view>
+    <view class="p-a w100 ptcdb data-v-735b2ec1">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-735b2ec1"
+        m="aspectFill"
+        src="{{onImgurl+'/img/pdbg.png'}}"
+        vueId="6b6a313e-3"
+      ></mg-img>
+    </view>
+  </view>
+  <view
+    bindtap="__e"
+    class="foot-btnc bf data-v-735b2ec1"
+    data-event-opts="{{[ [ 'tap',[ [ 'qxpd',['$event'] ] ] ] ]}}"
+    wx:if="{{info.state!=2}}"
+  >
+    <view class="f22 t-c c6 mb20 data-v-735b2ec1" wx:if="{{info.state!=1}}"
+      >{{(info.state==3?'您已过号':'订单已取消')+'，可点击下方按钮重新排队取号'}}</view
+    >
+    <button
+      class="foot-btn data-v-735b2ec1"
+      style="{{'background:'+'transparent'+';'+'border:'+'1px solid '+tColor+';'+'color:'+tColor+';'}}"
+    >
+      {{info.state==1?'取消排队':'重新排队取号'}}
+    </button>
+  </view>
+</view>

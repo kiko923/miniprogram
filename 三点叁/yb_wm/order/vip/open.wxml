@@ -1,0 +1,134 @@
+<view class="container pb115 data-v-6cbb0bfa">
+  <view class="main data-v-6cbb0bfa">
+    <view class="bf bs10 mainc data-v-6cbb0bfa">
+      <view class="p03 data-v-6cbb0bfa">
+        <view class="p30 f32 wei t-c data-v-6cbb0bfa"
+          >{{(isbj?'修改':'填写')+'个人资料'}}</view
+        >
+        <view class="mb30 f24 c6 data-v-6cbb0bfa"
+          >*请提供正确的个人资料与联系方式，以便获得最新会员优惠信息</view
+        >
+      </view>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-6cbb0bfa"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','realName','$event',[] ],['params'] ] ] ] ]}}"
+        ht="姓名"
+        hw="130"
+        isr="1"
+        pr="请输入姓名"
+        value="{{params.realName}}"
+        vueId="5b591ef8-1"
+        wx:if="{{$root.g0}}"
+      ></mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-6cbb0bfa"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userTel','$event',[] ],['params'] ] ] ] ]}}"
+        ht="电话"
+        hw="130"
+        isr="1"
+        max="{{11}}"
+        pr="请输入手机号"
+        t="number"
+        value="{{params.userTel}}"
+        vueId="5b591ef8-2"
+        vueSlots="{{['ft']}}"
+        wx:if="{{$root.g1}}"
+      >
+        <sq-btn
+          bind:__l="__l"
+          bind:refresh="__e"
+          class="data-v-6cbb0bfa"
+          cname="text-btnf f24 ml20 p0 b00"
+          data-event-opts="{{[ [ '^refresh',[ ['setTel'] ] ] ]}}"
+          h="50"
+          slot="ft"
+          t="自动填写"
+          type="2"
+          vueId="{{'5b591ef8-3'+','+'5b591ef8-2'}}"
+          w="120"
+        ></sq-btn>
+      </mg-input>
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-6cbb0bfa"
+        cname="p03"
+        ht="性别"
+        hw="130"
+        isr="1"
+        vueId="5b591ef8-4"
+        vueSlots="{{['bd']}}"
+        wx:if="{{$root.g2}}"
+      >
+        <view class="data-v-6cbb0bfa" slot="bd">
+          <mg-radio
+            arr="{{sexArr}}"
+            bind:__l="__l"
+            bind:input="__e"
+            class="data-v-6cbb0bfa"
+            color="#07C160"
+            data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','sex','$event',[] ],['params'] ] ] ] ]}}"
+            value="{{params.sex}}"
+            vueId="{{'5b591ef8-5'+','+'5b591ef8-4'}}"
+          ></mg-radio>
+        </view>
+      </mg-cell>
+      <block wx:if="{{$root.g3}}">
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-6cbb0bfa"
+          ht="生日"
+          hw="130"
+          isr="1"
+          last="1"
+          vueId="5b591ef8-6"
+          vueSlots="{{['bd']}}"
+          wx:if="{{!isbj}}"
+        >
+          <picker
+            bindchange="__e"
+            class="data-v-6cbb0bfa"
+            data-event-opts="{{[ [ 'change',[ [ 'bindDateChange',['$event'] ] ] ] ]}}"
+            end="{{endDate}}"
+            mode="date"
+            slot="bd"
+            start="{{startDate}}"
+            value="{{date}}"
+          >
+            <view class="c6 data-v-6cbb0bfa">{{date}}</view>
+          </picker>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          btt="{{date}}"
+          bttc="c9"
+          class="data-v-6cbb0bfa"
+          ht="生日"
+          hw="130"
+          isr="1"
+          last="1"
+          vueId="5b591ef8-7"
+          wx:else
+        ></mg-cell>
+      </block>
+      <view class="p13 f24 c9 data-v-6cbb0bfa"
+        >*温馨提示：生日时间一旦保存后，将不能再次修改哦！</view
+      >
+    </view>
+  </view>
+  <view class="foot-btnc posi-r mt30 data-v-6cbb0bfa">
+    <button
+      bindtap="__e"
+      class="foot-btn b00 bs15 data-v-6cbb0bfa"
+      data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      hoverClass="btnhc"
+      loading="{{loading}}"
+    >
+      提交
+    </button>
+  </view>
+</view>

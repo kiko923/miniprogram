@@ -1,0 +1,160 @@
+<mg-popup
+  bind:__l="__l"
+  bind:input="__e"
+  class="data-v-2de9d8c0"
+  data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+  value="{{show}}"
+  vueId="3a953c6a-1"
+  vueSlots="{{['default']}}"
+  zIndex="{{5000}}"
+>
+  <view class="gdmdxx o-y-s bf7 data-v-2de9d8c0">
+    <view class="p3 p-r f40 c0 wei t-c data-v-2de9d8c0"
+      >{{co.shopData.name+''}}<text
+        bindtap="__e"
+        class="{{['iconfont','iconx','f38','p-a','r0','mr10','data-v-2de9d8c0',isIpx?'c6':'cd']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      ></text>
+    </view>
+    <scroll-view class="svbd f24 c9 data-v-2de9d8c0" scrollY="{{true}}">
+      <block wx:if="{{$root.g0}}">
+        <view class="p20 c0 f28 data-v-2de9d8c0">优惠购</view>
+        <view class="data-v-2de9d8c0">
+          <mg-coupon
+            cname
+            bind:__l="__l"
+            bind:btntap="__e"
+            class="data-v-2de9d8c0"
+            co="{{v}}"
+            data-event-opts="{{[ [ '^btntap',[ [ 'btntap',['$0'],[ [ ['sjqb','',i,'id'] ] ] ] ] ] ]}}"
+            ptype="8"
+            vueId="{{'3a953c6a-2-'+i+','+'3a953c6a-1'}}"
+            wx:if="{{i<2||zkshow}}"
+            wx:for="{{sjqb}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          ></mg-coupon>
+        </view>
+      </block>
+      <block wx:if="{{$root.g1}}">
+        <view class="p20 c0 f28 data-v-2de9d8c0">代金券</view>
+        <view class="data-v-2de9d8c0">
+          <mg-coupon
+            cname
+            bind:__l="__l"
+            bind:btntap="__e"
+            class="data-v-2de9d8c0"
+            co="{{v}}"
+            data-event-opts="{{[ [ '^btntap',[ [ 'btntap',['$0'],[ [ ['sjyhqArr','',i,'id'] ] ] ] ] ] ]}}"
+            ptype="5"
+            vueId="{{'3a953c6a-3-'+i+','+'3a953c6a-1'}}"
+            wx:if="{{i<2||zkshow}}"
+            wx:for="{{sjyhqArr}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          ></mg-coupon>
+          <view
+            bindtap="__e"
+            class="p23 f-c f24 l-h1 data-v-2de9d8c0"
+            data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+            wx:if="{{$root.g2>2}}"
+          >
+            <view class="data-v-2de9d8c0">{{zkshow?'收起':'展开更多'}}</view>
+            <text
+              class="{{['iconfont','icontop','c3','ml5','f28','data-v-2de9d8c0',!zkshow?'xzdw':'']}}"
+            ></text>
+          </view>
+        </view>
+      </block>
+      <view
+        class="p20 c0 f28 data-v-2de9d8c0"
+        wx:if="{{co.discount.newReduction>0||co.discount.reduce.type||co.discount.give.id||co.discount.grantCoupon.name}}"
+        >优惠活动</view
+      >
+      <view
+        class="f-s mb20 data-v-2de9d8c0"
+        wx:if="{{co.discount.newReduction>0}}"
+      >
+        <view class="yhic f18 cf b00 f-c data-v-2de9d8c0">新</view>
+        <view class="f-1 ml10 data-v-2de9d8c0"
+          >{{'本店新用户立减'+sl+co.discount.newReduction}}</view
+        >
+      </view>
+      <view
+        class="f-s mb20 data-v-2de9d8c0"
+        wx:if="{{co.discount.reduce.type}}"
+      >
+        <view class="yhic f18 cf bf5f f-c data-v-2de9d8c0">减</view>
+        <view class="f-1 ml10 data-v-2de9d8c0"
+          >{{'('+(co.discount.reduce.people==1?'全部人群':co.discount.reduce.people==2?'新客专享':'VIP专享')+')'}}<text
+            class="ml20 data-v-2de9d8c0"
+            >{{mjtxt}}</text
+          >
+        </view>
+      </view>
+      <view class="f-s mb20 data-v-2de9d8c0" wx:if="{{co.discount.give.id}}">
+        <view class="yhic f18 cf bf5f f-c data-v-2de9d8c0">赠</view>
+        <view class="f-1 ml10 data-v-2de9d8c0"
+          >{{'('+co.discount.give.name+')'}}<text class="ml20 data-v-2de9d8c0"
+            >{{mztxt}}</text
+          >
+        </view>
+      </view>
+      <view
+        class="f-s mb20 data-v-2de9d8c0"
+        wx:if="{{co.discount.grantCoupon.name}}"
+      >
+        <view class="yhic f18 cf bf5f f-c data-v-2de9d8c0">返</view>
+        <view class="f-1 ml10 data-v-2de9d8c0"
+          >{{'(满'+co.discount.grantCoupon.orderMoney+'返代金券)'}}<text
+            class="ml20 data-v-2de9d8c0"
+            >{{co.discount.grantCoupon.name}}</text
+          >
+        </view>
+      </view>
+      <view class="p20 c0 f28 data-v-2de9d8c0">公告</view>
+      <view class="data-v-2de9d8c0"
+        >{{type==1||type==3?co.moreSet.notice:type==2?co.moreSet.fastNotice:''}}</view
+      >
+      <block wx:if="{{type==1}}">
+        <view class="p20 c0 f28 data-v-2de9d8c0">配送信息</view>
+        <block wx:if="{{$root.g3}}">
+          <view class="data-v-2de9d8c0"
+            >{{'满'+co.shopData.distribution.startMoney+'起送'+($root.g4?'，支持到店自取':'')+'；'}}</view
+          >
+          <view class="data-v-2de9d8c0" wx:if="{{co.shopData.deliveryMode}}"
+            >{{'由'+co.shopData.deliveryMode+'提供配送服务，距门店'+co.shopData.delivery+'km范围内配送，配送费用受天气、时间等多方因素影响，以实际配送费为准。'}}</view
+          >
+        </block>
+        <view class="data-v-2de9d8c0" wx:else>仅支持到店自取</view>
+      </block>
+      <view class="p20 c0 f28 data-v-2de9d8c0">门店信息</view>
+      <view class="data-v-2de9d8c0">{{'营业时间：'+yysj}}</view>
+      <view class="data-v-2de9d8c0">{{'联系电话：'+co.shopData.storeTel}}</view>
+      <view class="f-row data-v-2de9d8c0">
+        <view class="data-v-2de9d8c0">门店地址：</view>
+        <view class="f-1 mr20 data-v-2de9d8c0">{{co.shopData.address}}</view>
+        <view class="f-y-c data-v-2de9d8c0">
+          <view
+            bindtap="__e"
+            class="f-c dzic bsf mr60 p-r o-v data-v-2de9d8c0"
+            data-event-opts="{{[ [ 'tap',[ [ 'ckwz',['$event'] ] ] ] ]}}"
+            wx:if="{{orderset.distanceDisplay!=2}}"
+          >
+            <text class="iconfont icondtdh dzi data-v-2de9d8c0"></text>
+            <text class="p-a dd cf5f f18 bs10 data-v-2de9d8c0">到店</text>
+          </view>
+          <view
+            bindtap="__e"
+            class="f-c dzic bsf data-v-2de9d8c0"
+            data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+          >
+            <text class="iconfont icondh dzi data-v-2de9d8c0"></text>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</mg-popup>

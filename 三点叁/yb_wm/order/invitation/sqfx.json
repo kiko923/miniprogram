@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "mg-input": "/components/form/mg-input",
+    "mg-radio": "/components/form/mg-radio",
+    "mg-cell": "/components/common/mg-cell",
+    "bk-b": "/components/common/block-b",
+    "sq-btn": "/components/common/sq-btn",
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "mg-agree": "/components/form/mg-agree",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img"
+  }
+}

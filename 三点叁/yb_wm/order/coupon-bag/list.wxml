@@ -1,0 +1,105 @@
+<view class="h100v p-f w100 f-col data-v-6fa68336">
+  <view
+    class="qb1c p-f wh data-v-6fa68336"
+    style="{{'background:'+'linear-gradient(90deg, #FF876F, #FF654D)'+';'}}"
+  ></view>
+  <view class="qb2c data-v-6fa68336">
+    <uni-nav-bar
+      bind:__l="__l"
+      border="{{false}}"
+      class="data-v-6fa68336"
+      id="uninavbar"
+      statusBar="{{true}}"
+      uriconopcity="{{0.1}}"
+      uropcity="{{0}}"
+      vueId="443c05c8-1"
+      vueSlots="{{['default']}}"
+    >
+      <view class="cf data-v-6fa68336">{{title}}</view>
+    </uni-nav-bar>
+    <mg-swiper
+      bind:__l="__l"
+      class="data-v-6fa68336"
+      co="{{swiper}}"
+      color="{{tColor}}"
+      u="rpx"
+      vueId="443c05c8-2"
+    ></mg-swiper>
+    <nav-tab
+      bind:__l="__l"
+      bind:changeTab="__e"
+      bind:input="__e"
+      class="data-v-6fa68336"
+      cname="bt"
+      color="#fff"
+      data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+      height="80"
+      icname="f26"
+      isname="{{isnameData}}"
+      isnname="{{isnnameData}}"
+      sname="{{snameData}}"
+      tabs="{{tabs}}"
+      uw="60"
+      value="{{aIdx}}"
+      vueId="443c05c8-3"
+      wx:if="{{$root.g0}}"
+    ></nav-tab>
+  </view>
+  <view class="qb3c f-1 data-v-6fa68336">
+    <swiper
+      bindchange="__e"
+      class="h100 data-v-6fa68336"
+      current="{{aIdx}}"
+      data-event-opts="{{[ [ 'change',[ [ 'swiperTab',['$event'] ] ] ] ]}}"
+      style="{{'padding-bottom:'+(hasTabbar?'130rpx':'')+';'}}"
+    >
+      <swiper-item
+        class="data-v-6fa68336"
+        wx:for="{{$root.l0}}"
+        wx:for-index="ti"
+        wx:for-item="tv"
+        wx:key="ti"
+      >
+        <scroll-view
+          bindscrolltolower="__e"
+          class="h100 p3 data-v-6fa68336"
+          data-event-opts="{{[ [ 'scrolltolower',[ [ 'lower',['$event'] ] ] ] ]}}"
+          scrollY="true"
+          wx:if="{{ti==aIdx}}"
+        >
+          <mg-coupon
+            bind:__l="__l"
+            bind:btntap="__e"
+            class="data-v-6fa68336"
+            cname="mb30"
+            co="{{v}}"
+            color="{{tColor}}"
+            data-event-opts="{{[ [ '^btntap',[ [ 'btntap',['$0'],[ [ ['dataList','',i,'id'] ] ] ] ] ] ]}}"
+            ptype="9"
+            vueId="{{'443c05c8-4-'+ti+'-'+i}}"
+            wx:for="{{dataList}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          ></mg-coupon>
+          <jzz
+            bgcolor="transparent"
+            bind:__l="__l"
+            class="data-v-6fa68336"
+            mygd="{{mygd}}"
+            nodata="{{tv.g1}}"
+            tcolor="#fff"
+            vueId="{{'443c05c8-5-'+ti}}"
+          ></jzz>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+  <tab-bar
+    bind:__l="__l"
+    bind:refresh="__e"
+    class="data-v-6fa68336"
+    data-event-opts="{{[ [ '^refresh',[ ['tbrh'] ] ] ]}}"
+    vueId="443c05c8-6"
+  ></tab-bar>
+</view>

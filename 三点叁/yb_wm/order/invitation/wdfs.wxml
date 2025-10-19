@@ -1,0 +1,55 @@
+<view class="bf mh100 data-v-c96418b6">
+  <view class="xqyfixedtop data-v-c96418b6">
+    <nav-tab
+      bind:__l="__l"
+      bind:changeTab="__e"
+      bind:input="__e"
+      class="data-v-c96418b6"
+      cname="hlb"
+      color="#FF3535"
+      data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+      tabs="{{tabs}}"
+      value="{{aIdx}}"
+      vueId="33d97298-1"
+      wx:if="{{aIdx!=-1}}"
+    ></nav-tab>
+  </view>
+  <view class="{{['p03','data-v-c96418b6',aIdx!=-1?'mt90':'']}}">
+    <mg-cell
+      bind:__l="__l"
+      brs="50%"
+      class="data-v-c96418b6"
+      cname="p30"
+      color="#F10D24"
+      ftc="f-s-1 wei"
+      h="72"
+      hc="1"
+      img="{{v.$orig.portrait}}"
+      isl="1"
+      vueId="{{'33d97298-2-'+i}}"
+      vueSlots="{{['bd']}}"
+      w="72"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="data-v-c96418b6" slot="bd">
+        <view class="f26 data-v-c96418b6"
+          >{{v.$orig.userName}}<text class="f22 c9 ml5 data-v-c96418b6"
+            >{{'（UID：'+v.$orig.bindId+'）'}}</text
+          >
+        </view>
+        <view class="f22 c9 mt10 data-v-c96418b6">{{'推荐时间：'+v.g0}}</view>
+      </view>
+    </mg-cell>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-c96418b6"
+      mygd="{{mygd}}"
+      nodata="{{$root.g1}}"
+      vueId="33d97298-3"
+    ></jzz>
+  </view>
+</view>

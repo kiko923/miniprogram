@@ -1,0 +1,302 @@
+<view class="{{['pb130','mh100','data-v-06b25330',type==2?'bf':'']}}">
+  <block wx:if="{{type==1}}">
+    <view class="o-h data-v-06b25330">
+      <view
+        class="wk1 data-v-06b25330"
+        style="{{'background:'+tColor+';'}}"
+      ></view>
+      <view class="wk1ic data-v-06b25330">
+        <ls-swiper
+          bind:__l="__l"
+          bind:change="__e"
+          class="data-v-06b25330"
+          crown="{{true}}"
+          data-event-opts="{{[ [ '^change',[ ['lschange'] ] ] ]}}"
+          height="180"
+          imgKey="imgUrl"
+          imgRadius="15"
+          list="{{lsarr}}"
+          loop="{{true}}"
+          nextMargin="{{NM}}"
+          previousMargin="{{PM}}"
+          shadow="{{true}}"
+          slots="{{true}}"
+          swcurrent="{{swcurrent}}"
+          vueId="fb34f8ba-1"
+        ></ls-swiper>
+      </view>
+    </view>
+    <view class="p03 data-v-06b25330">
+      <view class="p03 bf bs20 mb30 pb10 data-v-06b25330">
+        <view class="f30 wei c0 mt30 data-v-06b25330">会员权益</view>
+        <btn-group
+          bind:__l="__l"
+          class="data-v-06b25330"
+          co="{{qyarr}}"
+          vueId="fb34f8ba-2"
+        ></btn-group>
+      </view>
+      <view class="p03 bf bs20 mb30 data-v-06b25330">
+        <view class="f30 wei c0 p30 data-v-06b25330">升级礼包</view>
+        <block wx:if="{{xzdjinfo.isCoupon==1}}">
+          <mg-cell
+            bind:__l="__l"
+            class="data-v-06b25330"
+            isl="1"
+            vueId="{{'fb34f8ba-3-'+i}}"
+            vueSlots="{{['bd']}}"
+            wx:for="{{xzdjinfo.couponList}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view class="f-row data-v-06b25330" slot="bd">
+              <view class="mr30 data-v-06b25330">
+                <text class="iconfont iconzyhq f48 c3 data-v-06b25330"></text>
+              </view>
+              <view class="f22 f-1 data-v-06b25330">
+                <view class="f-row data-v-06b25330">
+                  <view class="f24 wei data-v-06b25330"
+                    >{{v.name}}<text
+                      class="ml10 nowei data-v-06b25330"
+                      style="{{'color:'+tColor+';'}}"
+                      >x1</text
+                    >
+                  </view>
+                  <view
+                    bindtap="__e"
+                    class="cf xqc f-c ml10 f-g-0 f20 data-v-06b25330"
+                    data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/my/coupon/coupon-dl?nobtn=1&id='+v.id] ] ] ] ] ] ]}}"
+                    style="{{'background:'+tColor+';'}}"
+                    >详情</view
+                  >
+                </view>
+                <view class="c6 mt10 data-v-06b25330">自动转入您的账户中</view>
+              </view>
+            </view>
+          </mg-cell>
+        </block>
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-06b25330"
+          isl="1"
+          vueId="fb34f8ba-4"
+          vueSlots="{{['bd']}}"
+          wx:if="{{xzdjinfo.isBalance==1}}"
+        >
+          <view class="f-row data-v-06b25330" slot="bd">
+            <view class="mr30 data-v-06b25330">
+              <text class="iconfont iconye1 f48 c3 data-v-06b25330"></text>
+            </view>
+            <view class="f22 f-1 data-v-06b25330">
+              <view class="f24 wei data-v-06b25330"
+                >{{'赠送'+system.custom.balance}}<text
+                  class="m01 data-v-06b25330"
+                  style="{{'color:'+tColor+';'}}"
+                  >{{xzdjinfo.balance}}</text
+                >{{dw}}</view
+              >
+              <view class="c6 mt10 data-v-06b25330"
+                >{{'自动转入您的'+system.custom.balance+'中'}}</view
+              >
+            </view>
+          </view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-06b25330"
+          isl="1"
+          vueId="fb34f8ba-5"
+          vueSlots="{{['bd']}}"
+          wx:if="{{xzdjinfo.isIntegral==1}}"
+        >
+          <view class="f-row data-v-06b25330" slot="bd">
+            <view class="mr30 data-v-06b25330">
+              <text class="iconfont iconjf f48 c3 data-v-06b25330"></text>
+            </view>
+            <view class="f22 f-1 data-v-06b25330">
+              <view class="f24 wei data-v-06b25330"
+                >{{'赠送'+system.custom.integral}}<text
+                  class="m01 data-v-06b25330"
+                  style="{{'color:'+tColor+';'}}"
+                  >{{xzdjinfo.integral}}</text
+                >{{system.custom.integral}}</view
+              >
+              <view class="c6 mt10 data-v-06b25330"
+                >{{'自动转入您的'+system.custom.integral+'中'}}</view
+              >
+            </view>
+          </view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-06b25330"
+          isl="1"
+          vueId="fb34f8ba-6"
+          vueSlots="{{['bd']}}"
+          wx:if="{{xzdjinfo.isGrowth==1}}"
+        >
+          <view class="f-row data-v-06b25330" slot="bd">
+            <view class="mr30 data-v-06b25330">
+              <text class="iconfont iconwc f48 c3 data-v-06b25330"></text>
+            </view>
+            <view class="f22 f-1 data-v-06b25330">
+              <view class="f24 wei data-v-06b25330"
+                >赠送成长值<text
+                  class="m01 data-v-06b25330"
+                  style="{{'color:'+tColor+';'}}"
+                  >{{xzdjinfo.growth}}</text
+                >成长值</view
+              >
+              <view class="c6 mt10 data-v-06b25330">自动转入您的成长值中</view>
+            </view>
+          </view>
+        </mg-cell>
+      </view>
+    </view>
+    <view class="foot-btnc p-r data-v-06b25330" wx:if="{{!isVip}}">
+      <button
+        bindtap="__e"
+        class="foot-btn data-v-06b25330"
+        data-event-opts="{{[ [ 'tap',[ [ 'ljkk',['$event'] ] ] ] ]}}"
+        disabled="{{loading}}"
+        loading="{{loading}}"
+        style="{{'background:'+tColor+';'}}"
+      >
+        立即开卡
+      </button>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="p34 data-v-06b25330">
+      <view class="p-r data-v-06b25330">
+        <view
+          class="wk2img bs20 mb20 data-v-06b25330"
+          style="{{'background:'+(vipInfo.bgType==1?vipInfo.color||tColor:'')+';'}}"
+        >
+          <mg-img
+            bind:__l="__l"
+            class="data-v-06b25330"
+            src="{{vipInfo.bgType==2?vipInfo.bgImg:'/static/wd/vip/vipbg.png'}}"
+            vueId="fb34f8ba-7"
+          ></mg-img>
+        </view>
+        <view class="p-a t0 wh cf f-col data-v-06b25330">
+          <view class="f-1 data-v-06b25330">
+            <view class="wk2c1 data-v-06b25330">
+              <view class="f-y-c data-v-06b25330">
+                <view class="himg bsf mr20 data-v-06b25330">
+                  <mg-img
+                    bind:__l="__l"
+                    class="data-v-06b25330"
+                    src="{{user.portrait||'/static/wd/mrtx.png'}}"
+                    vueId="fb34f8ba-8"
+                  ></mg-img>
+                </view>
+                <view class="f-1 data-v-06b25330">
+                  <view class="f32 data-v-06b25330">{{vipset.title}}</view>
+                  <view class="f20 mt10 data-v-06b25330">{{vipInfo.name}}</view>
+                </view>
+                <view class="rdj b-d f26 mb20 l-n data-v-06b25330"
+                  >{{'VIP'+vipInfo.level}}</view
+                >
+              </view>
+              <view class="f-x-e mt15 data-v-06b25330">
+                <text
+                  bindtap="__e"
+                  class="iconfont iconewm cf f56 data-v-06b25330"
+                  data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/other/recharge/smzf'] ] ] ] ] ] ]}}"
+                ></text>
+              </view>
+            </view>
+          </view>
+          <view class="p2 f26 mb10 data-v-06b25330"
+            >{{'NO.'+user.vipCode}}</view
+          >
+        </view>
+      </view>
+      <view class="p23 f-row data-v-06b25330">
+        <view
+          bindtap="__e"
+          class="f-1 wei t-c data-v-06b25330"
+          data-event-opts="{{[ [ 'tap',[ [ 'myDataClick',['$0'],[ [ ['darr','',i] ] ] ] ] ] ]}}"
+          wx:for="{{darr}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="f38 wbba data-v-06b25330">{{v.num}}</view>
+          <view class="data-v-06b25330">{{v.name}}</view>
+        </view>
+      </view>
+      <view class="mt20 data-v-06b25330">
+        <mg-cell
+          ac="iconright1"
+          arrow="1"
+          bind:__l="__l"
+          bind:tab="__e"
+          btt="{{v.name}}"
+          bttc="f30"
+          class="data-v-06b25330"
+          cname="p30"
+          data-event-opts="{{[ [ '^tab',[ [ 'myDataClick',['$0'],[ [ ['arr','',i] ] ] ] ] ] ]}}"
+          ftc="f24 cd"
+          iconn="{{v.icn+' icname'}}"
+          last="1"
+          vueId="{{'fb34f8ba-9-'+i}}"
+          wx:for="{{arr}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        ></mg-cell>
+      </view>
+    </view>
+    <view
+      class="foot-btnc p-r p34 data-v-06b25330"
+      wx:if="{{vipset.wechatCard==1}}"
+    >
+      <navigator
+        appId="wxeb490c6f9b154ef9"
+        class="data-v-06b25330"
+        extraData="{{adata}}"
+        hoverClass="none"
+        target="miniProgram"
+        wx:if="{{adata&&user.WeChatCard==2}}"
+      >
+        <button
+          class="foot-btn f30 wei bf b-f5 data-v-06b25330"
+          style="{{'border-color:'+tColor+';'+'color:'+tColor+';'}}"
+        >
+          同步微信卡包
+        </button>
+      </navigator>
+      <navigator
+        appId="wxeb490c6f9b154ef9"
+        class="data-v-06b25330"
+        extraData="{{adata}}"
+        hoverClass="none"
+        target="miniProgram"
+        wx:if="{{user.WeChatCard==1}}"
+      >
+        <button
+          class="foot-btn f30 wei bf b-f5 data-v-06b25330"
+          style="{{'border-color:'+tColor+';'+'color:'+tColor+';'}}"
+        >
+          查看微信卡包
+        </button>
+      </navigator>
+    </view>
+  </block>
+  <tab-bar
+    bind:__l="__l"
+    class="data-v-06b25330"
+    vueId="fb34f8ba-10"
+    wx:if="{{!query.type}}"
+  ></tab-bar>
+  <load
+    bind:__l="__l"
+    class="data-v-06b25330"
+    vueId="fb34f8ba-11"
+    wx:if="{{showloading}}"
+  ></load>
+</view>

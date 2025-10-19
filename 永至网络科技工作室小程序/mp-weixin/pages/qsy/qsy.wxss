@@ -1,0 +1,157 @@
+/* 容器样式 */
+.container {
+  padding: 20px;
+}
+
+/* 输入框样式 */
+.input-box {
+  width: 100%;
+  height: 150px; /* 设置为多行 */
+  margin-bottom: 20px; /* 设置底部间距 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  resize: none; /* 禁止用户调整大小 */
+}
+
+/* 公共按钮样式 */
+.button {
+  width: 100%;  /* 让按钮宽度自适应 */
+  height: 50px; /* 统一按钮高度 */
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 16px;
+  margin-bottom: 5px; /* 每个按钮之间留5px的间隔 */
+}
+
+/* 提交按钮 */
+.submit-btn {
+  background-color: #007BFF;
+  color: #fff;
+}
+
+.submit-btn:active {
+  background-color: #0056b3;
+}
+
+/* 复制按钮 */
+.copy-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.copy-btn:active {
+  background-color: #218838;
+}
+
+/* 清空按钮 */
+.clear-btn {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.clear-btn:active {
+  background-color: #e53935;
+}
+
+/* 标题框样式 */
+.title-box {
+  width: 100%;
+  height: 40px; /* 设置标题框的高度 */
+  padding: 0px;
+  padding-left: 10px; /* 添加左侧内边距，避免文字贴边 */
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5rpx;
+  background-color: #f5f5f5;
+  margin-bottom: 20px; /* 增加标题框与输入框之间的间距 */
+  box-sizing: border-box;
+}
+/* 粘贴按钮 */
+.paste-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.paste-btn:active {
+  background-color: #e0a800;
+}
+.download-btn{
+  background-color: #000000;
+  color: #fff;
+}
+/* 预览框容器 */
+.preview-container {
+  flex: 1; /* 填充剩余空间 */
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* 预览框标题样式 */
+.preview-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* 预览框的滚动区域 */
+.preview-scroll {
+  height: 100%; /* 确保滚动区域占满剩余空间 */
+}
+
+/* 每个预览项 */
+.preview-item {
+  margin-bottom: 10px;
+}
+
+/* 图片的样式，填满容器并保持比例 */
+.preview-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;  /* 保持图片比例 */
+}
+/* 密码输入框样式 */
+.password-input {
+  width: 100%; /* 使输入框自适应屏幕宽度 */
+  height: 60px; /* 设置输入框高度，避免太扁 */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box; /* 确保 padding 和 border 包括在宽度内 */
+  line-height: 20px; /* 保证文字不与边框重叠 */
+  margin-bottom: 20px; /* 输入框与按钮之间的间隔 */
+  max-width: 100%; /* 最大宽度100%，防止挤压 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 为输入框添加阴影，提升视觉效果 */
+}
+
+/* 解锁按钮样式 */
+.unlock-btn {
+  font-weight: bold;
+  width: 100%; /* 按钮宽度 */
+  padding: 0px; /* 增加按钮的内边距，提升按钮点击感 */
+  background-color: #07c160; /* 背景色 */
+  color: white;
+  text-align: center; /* 文本居中 */
+  border-radius: 4px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 100%; /* 最大宽度100%，防止挤压 */
+  margin-bottom: 20px; /* 按钮下方间隔 */
+}
+
+/* 解锁按钮点击效果 */
+.unlock-btn:active {
+  background-color: #1db667;
+  transform: scale(0.95); /* 点击时按钮缩小 */
+}

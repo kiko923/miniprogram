@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "uni-nav-bar": "/components/third/uni-nav-bar",
+    "mg-coupon": "/components/common/mg-coupon",
+    "mg-rtext": "/components/common/functionCmp/rich-text",
+    "load": "/components/common/load",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

@@ -1,0 +1,8 @@
+.img.data-v-7f6d515a {
+  width: 660rpx;
+  margin-top: 100rpx;
+  box-shadow: 0 0 12rpx 3rpx hsla(0, 0%, 86.7%, 0.6);
+}
+.bcan.data-v-7f6d515a {
+  width: 650rpx;
+}

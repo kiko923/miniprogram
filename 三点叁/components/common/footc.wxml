@@ -1,0 +1,14 @@
+<view
+  class="bfooter f-c-c c9 f26 t-c data-v-13f45034"
+  wx:if="{{system&&system.copyright}}"
+>
+  <view class="f-c data-v-13f45034">
+    <view
+      bindtap="__e"
+      class="data-v-13f45034"
+      data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$event'] ] ] ] ]}}"
+      wx:if="{{system.copyright.support}}"
+      >{{system.copyright.support}}</view
+    >
+  </view>
+</view>

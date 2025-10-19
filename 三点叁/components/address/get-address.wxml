@@ -1,0 +1,22 @@
+<mg-cell
+  acolor="{{color}}"
+  bgc="transparent"
+  bind:__l="__l"
+  bind:tab="__e"
+  class="data-v-2df17046"
+  data-event-opts="{{[ [ '^tab',[ ['goChoose'] ] ] ]}}"
+  last="1"
+  vueId="ab08fe22-1"
+  vueSlots="{{['bd']}}"
+>
+  <view class="f34 data-v-2df17046" slot="bd" style="{{'color:'+color+';'}}">
+    <view class="f-y-c data-v-2df17046">
+      <view class="t-o-e3 dzpd data-v-2df17046"
+        >{{(address&&address.address+address.details||'暂无地址')+''}}<text
+          class="iconfont iconright c6 data-v-2df17046"
+        ></text>
+      </view>
+    </view>
+    <view class="mt10 f24 data-v-2df17046">{{desc}}</view>
+  </view>
+</mg-cell>

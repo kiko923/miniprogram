@@ -1,0 +1,229 @@
+<view class="container pb115 data-v-fdcd396e">
+  <mg-input
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-fdcd396e"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userName','$event',[] ],['params'] ] ] ] ]}}"
+    ht="联系人"
+    hw="130"
+    pr="请输入联系人"
+    value="{{params.userName}}"
+    vueId="2fb9fb3f-1"
+  ></mg-input>
+  <mg-cell
+    bind:__l="__l"
+    class="data-v-fdcd396e"
+    cname="p03"
+    ht="性别"
+    hw="130"
+    vueId="2fb9fb3f-2"
+    vueSlots="{{['bd']}}"
+  >
+    <view class="data-v-fdcd396e" slot="bd">
+      <mg-radio
+        arr="{{sexArr}}"
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-fdcd396e"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','sex','$event',[] ],['params'] ] ] ] ]}}"
+        value="{{params.sex}}"
+        vueId="{{'2fb9fb3f-3'+','+'2fb9fb3f-2'}}"
+      ></mg-radio>
+    </view>
+  </mg-cell>
+  <mg-input
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-fdcd396e"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userTel','$event',[] ],['params'] ] ] ] ]}}"
+    ht="手机号"
+    hw="130"
+    isr="1"
+    max="{{20}}"
+    pr="请输入手机号"
+    t="number"
+    value="{{params.userTel}}"
+    vueId="2fb9fb3f-4"
+    vueSlots="{{['ft']}}"
+  >
+    <sq-btn
+      bind:__l="__l"
+      bind:refresh="__e"
+      class="data-v-fdcd396e"
+      cname="text-btnf f24 ml20 p0"
+      data-event-opts="{{[ [ '^refresh',[ ['setTel'] ] ] ]}}"
+      h="50"
+      slot="ft"
+      sname="{{({background:tColor})}}"
+      t="自动填写"
+      type="2"
+      vueId="{{'2fb9fb3f-5'+','+'2fb9fb3f-4'}}"
+      w="120"
+    ></sq-btn>
+  </mg-input>
+  <mg-input
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-fdcd396e"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','address','$event',[] ],['params'] ] ] ] ]}}"
+    ht="地址"
+    hw="130"
+    pr="请输入门牌号和路名或者房间号和公寓名/宿舍名/校名等"
+    value="{{params.address}}"
+    vueId="2fb9fb3f-6"
+    wx:if="{{system.overseasModel=='1'}}"
+  ></mg-input>
+  <mg-input
+    arrow="1"
+    bind:__l="__l"
+    bind:tab="__e"
+    class="data-v-fdcd396e"
+    data-event-opts="{{[ [ '^tab',[ ['chooseLocation'] ] ] ]}}"
+    dis="1"
+    ht="地址"
+    hw="130"
+    pr="请选择地址"
+    value="{{params.address}}"
+    vueId="2fb9fb3f-7"
+    wx:else
+  ></mg-input>
+  <view class="f-bt data-v-fdcd396e" wx:if="{{system.overseasModel=='1'}}">
+    <view class="f-0 data-v-fdcd396e">
+      <mg-input
+        arrow="1"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-fdcd396e"
+        data-event-opts="{{[ [ '^tab',[ [ 'toggleTab',['number'] ] ] ] ]}}"
+        dis="1"
+        ftc="c3"
+        ht="邮编"
+        htc="c3 f26"
+        icn="f26 c3 t-r"
+        isr="1"
+        pr="请选择邮编前三位"
+        value="{{params.zipCode}}"
+        vueId="2fb9fb3f-8"
+      ></mg-input>
+    </view>
+    <view class="f-1 data-v-fdcd396e">
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-fdcd396e"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','details','$event',[] ],['params'] ] ] ] ]}}"
+        hw="130"
+        pr="请输入邮编后三位"
+        value="{{params.details}}"
+        vueId="2fb9fb3f-9"
+      ></mg-input>
+    </view>
+  </view>
+  <mg-input
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-fdcd396e"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','details','$event',[] ],['params'] ] ] ] ]}}"
+    ht="门牌号"
+    hw="130"
+    pr="如：5号楼208室"
+    value="{{params.details}}"
+    vueId="2fb9fb3f-10"
+    wx:else
+  ></mg-input>
+  <mg-cell
+    bind:__l="__l"
+    class="data-v-fdcd396e"
+    ht="标签"
+    hw="130"
+    last="1"
+    vueId="2fb9fb3f-11"
+    vueSlots="{{['bd']}}"
+  >
+    <view class="f-raw data-v-fdcd396e" slot="bd">
+      <block wx:if="{{system.overseasModel=='1'}}">
+        <bk-b
+          bind:__l="__l"
+          bind:tab="__e"
+          cName="{{'be6 mr30 '+(params.label!=v&&'c3')}}"
+          class="data-v-fdcd396e"
+          color="{{params.label==v?tColor:''}}"
+          data-event-opts="{{[ [ '^tab',[ [ 'label',['$0'],[ [ ['labels2','',i] ] ] ] ] ] ]}}"
+          sname="{{i==1?{padding:'7rpx 30rpx'}:''}}"
+          t="{{v}}"
+          vueId="{{'2fb9fb3f-12-'+i+','+'2fb9fb3f-11'}}"
+          wx:for="{{labels2}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        ></bk-b>
+      </block>
+      <block wx:else>
+        <bk-b
+          bind:__l="__l"
+          bind:tab="__e"
+          cName="{{'be6 mr30 '+(params.label!=v&&'c3')}}"
+          class="data-v-fdcd396e"
+          color="{{params.label==v?tColor:''}}"
+          data-event-opts="{{[ [ '^tab',[ [ 'label',['$0'],[ [ ['labels','',i] ] ] ] ] ] ]}}"
+          sname="{{i==1?{padding:'7rpx 30rpx'}:''}}"
+          t="{{v}}"
+          vueId="{{'2fb9fb3f-13-'+i+','+'2fb9fb3f-11'}}"
+          wx:for="{{labels}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        ></bk-b>
+      </block>
+    </view>
+  </mg-cell>
+  <mg-cell
+    bind:__l="__l"
+    class="data-v-fdcd396e"
+    last="1"
+    sname="{{snameData}}"
+    vueId="2fb9fb3f-14"
+    vueSlots="{{['ft']}}"
+    wx:if="{{isEdit}}"
+  >
+    <view
+      bindtap="__e"
+      class="f-y-c data-v-fdcd396e"
+      data-event-opts="{{[ [ 'tap',[ [ 'deleteAdd',['$event'] ] ] ] ]}}"
+      slot="ft"
+    >
+      <text class="iconfont iconshanchu f40 data-v-fdcd396e"></text>
+      <text class="ml10 data-v-fdcd396e">删除</text>
+    </view>
+  </mg-cell>
+  <view class="foot-btnc data-v-fdcd396e">
+    <button
+      bindtap="__e"
+      class="foot-btn data-v-fdcd396e"
+      data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      loading="{{loading}}"
+      style="{{'background:'+tColor+';'}}"
+    >
+      保存
+    </button>
+  </view>
+  <mg-map
+    bind:__l="__l"
+    bind:getCl="__e"
+    class="data-v-fdcd396e vue-ref"
+    data-event-opts="{{[ [ '^getCl',[ ['setCLP'] ] ] ]}}"
+    data-ref="mgmap"
+    vueId="2fb9fb3f-15"
+  ></mg-map>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="data-v-fdcd396e vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ [ 'onConfirm',['$event','people'] ] ] ] ]}}"
+    data-ref="number"
+    mode="selector"
+    selectList="{{pArr}}"
+    vueId="2fb9fb3f-16"
+  ></w-picker>
+</view>

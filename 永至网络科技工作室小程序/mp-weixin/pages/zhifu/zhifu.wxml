@@ -1,0 +1,52 @@
+<view class="container">
+  <!-- 顶部 Logo 和标题 -->
+  <view class="header">
+    <text class="title">永至科技收款工具</text>
+  </view>
+
+<!-- 选择支付类型 -->
+<picker mode="selector" range="{{payTypes}}" bindchange="onSelectPayType">
+  <view class="pay-type">支付类型：{{selectedPayTypeDisplay}}</view>
+</picker>
+
+<!-- 如果选择二维码支付，显示支付方式选择（微信/支付宝） -->
+<picker mode="selector" range="{{qrPayTypes}}" bindchange="onSelectQrPayType" wx:if="{{isQrPaySelected}}">
+  <view class="pay-type">支付方式：{{selectedQrPayTypeDisplay}}</view>
+</picker>
+
+
+  <!-- 金额输入框 -->
+  <view class="amount-box">
+    <text class="currency">¥</text>
+    <input class="amount-input" type="digit" value="{{amount}}" disabled />
+  </view>
+
+  <view class="status-text">{{pollingStatus}}</view>
+
+  <!-- <view>
+  显示二维码 
+  <image src="{{qrCodeUrl}}" mode="widthFix" style="max-width: 100%; height: auto;"></image>
+</view>-->
+
+
+  <!-- 自定义数字键盘 -->
+  <view class="keyboard">
+  <view class="key" bindtap="onKeyPress" data-value="1">1</view>
+  <view class="key" bindtap="onKeyPress" data-value="2">2</view>
+  <view class="key" bindtap="onKeyPress" data-value="3">3</view>
+  <view class="key delete" bindtap="onKeyPress" data-value="⌫">⌫</view>
+
+  <view class="key" bindtap="onKeyPress" data-value="4">4</view>
+  <view class="key" bindtap="onKeyPress" data-value="5">5</view>
+  <view class="key" bindtap="onKeyPress" data-value="6">6</view>
+  <view class="confirm-key" bindtap="onConfirm">确认</view>
+
+  <view class="key" bindtap="onKeyPress" data-value="7">7</view>
+  <view class="key" bindtap="onKeyPress" data-value="8">8</view>
+  <view class="key" bindtap="onKeyPress" data-value="9">9</view>
+
+  <view class="key zero" bindtap="onKeyPress" data-value="0">0</view>
+  <view class="key" bindtap="onKeyPress" data-value=".">.</view>
+</view>
+
+</view>

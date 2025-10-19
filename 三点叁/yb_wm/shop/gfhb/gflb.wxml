@@ -1,0 +1,84 @@
+<view class="mh100 gflb data-v-75993e33">
+  <view class="p2 data-v-75993e33">
+    <mg-cell
+      bgc="#fff"
+      bind:__l="__l"
+      class="data-v-75993e33"
+      cname="p0 bs20"
+      last="1"
+      vueId="ed12cc7a-1"
+      vueSlots="{{['bd']}}"
+    >
+      <view class="data-v-75993e33" slot="bd">
+        <view class="data-v-75993e33">
+          <view class="posi-r f-c p02 data-v-75993e33">
+            <view class="posi-a lIcon data-v-75993e33">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-75993e33"
+                src="{{onImgurl+'gfhb/left.png'}}"
+                vueId="{{'ed12cc7a-2'+','+'ed12cc7a-1'}}"
+              ></mg-img>
+            </view>
+            <view class="posi-r p3 c3 f-y-c f34 data-v-75993e33"
+              >看看大家手气</view
+            >
+            <view class="posi-a RIcon data-v-75993e33">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-75993e33"
+                src="{{onImgurl+'gfhb/right.png'}}"
+                vueId="{{'ed12cc7a-3'+','+'ed12cc7a-1'}}"
+              ></mg-img>
+            </view>
+          </view>
+        </view>
+        <view class="data-v-75993e33">
+          <mg-cell
+            bgc="#fff"
+            bind:__l="__l"
+            btt="{{v.userName}}"
+            bttc="f32"
+            class="data-v-75993e33"
+            cname="p43 f-s c3 weui-cellt posi-r"
+            vueId="{{'ed12cc7a-4-'+i+','+'ed12cc7a-1'}}"
+            vueSlots="{{['hd','bd','ft']}}"
+            wx:for="{{divinfolist}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view class="data-v-75993e33" slot="hd">
+              <view class="icon bsf data-v-75993e33">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-75993e33"
+                  cname="imgshape1"
+                  src="{{v.portrait}}"
+                  vueId="{{'ed12cc7a-5-'+i+','+'ed12cc7a-4-'+i}}"
+                ></mg-img>
+              </view>
+            </view>
+            <view class="c6 data-v-75993e33" slot="bd">{{v.createdAt}}</view>
+            <view class="c3 data-v-75993e33" color="{{tColor}}" slot="ft">
+              <view class="flex data-v-75993e33">
+                <view
+                  class="sqzj mr10 data-v-75993e33"
+                  wx:if="{{v.lucky=='1'}}"
+                >
+                  <mg-img
+                    bind:__l="__l"
+                    class="data-v-75993e33"
+                    src="{{onImgurl+'gfhb/sqzj4.png'}}"
+                    vueId="{{'ed12cc7a-6-'+i+','+'ed12cc7a-4-'+i}}"
+                  ></mg-img>
+                </view>
+                <view class="data-v-75993e33">{{v.money+'元'}}</view>
+              </view>
+            </view>
+          </mg-cell>
+        </view>
+      </view>
+    </mg-cell>
+  </view>
+</view>

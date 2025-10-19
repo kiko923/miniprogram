@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mg-input": "/components/form/mg-input",
+    "book-text": "/components/common/functionCmp/rich-text",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

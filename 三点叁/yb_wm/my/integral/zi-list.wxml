@@ -1,0 +1,46 @@
+<view class="data-v-d99ee3d4">
+  <mg-modal
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-d99ee3d4"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showGg','$event',[] ] ] ] ] ]}}"
+    ismr="{{true}}"
+    value="{{showGg}}"
+    vueId="2235ffaa-1"
+    vueSlots="{{['default']}}"
+    width="90%"
+    zIndex="{{2000}}"
+  >
+    <view class="ggc p20 bf posi-r bs20 data-v-d99ee3d4">
+      <scroll-view class="ggb data-v-d99ee3d4" scrollY="{{true}}">
+        <view class="p23 data-v-d99ee3d4">
+          <view
+            bindtap="__e"
+            class="bf bs20 p23 mb20 f-row data-v-d99ee3d4"
+            data-event-opts="{{[ [ 'tap',[ [ 'chooseAdd',['$0'],[ [ ['co','',i] ] ] ] ] ] ]}}"
+            wx:for="{{co}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view class="f-g-1 data-v-d99ee3d4">
+              <view class="f-row data-v-d99ee3d4">
+                <view
+                  class="f32 mr10 t-o-e data-v-d99ee3d4"
+                  style="max-width: 80%"
+                  >{{v.address}}</view
+                >
+              </view>
+              <view class="f-row f24 c6 mt15 data-v-d99ee3d4">
+                <text class="mr20 data-v-d99ee3d4">{{v.name}}</text>
+                <text class="data-v-d99ee3d4">{{'('+v.linkMan+')'}}</text>
+                <text class="data-v-d99ee3d4">{{v.tel}}</text>
+              </view>
+            </view>
+            <view class="f-g-0 data-v-d99ee3d4">{{'ID:'+v.id}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </mg-modal>
+</view>

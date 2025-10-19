@@ -1,0 +1,285 @@
+<view class="{{['pb115','data-v-39c963f6',showCoupon||showCancel?'bgfix':'']}}">
+  <view class="fixedtop data-v-39c963f6">
+    <uni-nav-bar
+      bind:__l="__l"
+      bind:onMore="__e"
+      border="{{false}}"
+      class="data-v-39c963f6"
+      custommore="{{true}}"
+      data-event-opts="{{[ [ '^onMore',[ ['onmore'] ] ] ]}}"
+      fixed="{{false}}"
+      id="uninavbar"
+      isleft="{{false}}"
+      ispr="{{false}}"
+      statusBar="{{true}}"
+      uriconopcity="{{0}}"
+      uropcity="{{1}}"
+      vueId="5f35cbf1-1"
+      vueSlots="{{['default','left']}}"
+    >
+      <view
+        bindtap="__e"
+        class="hdsy bsf f-c data-v-39c963f6"
+        data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',6],['url','/yb_wm/index/index'] ] ] ] ] ] ]}}"
+        slot="left"
+      >
+        <text class="iconfont iconjiayuan c0 f38 data-v-39c963f6"></text>
+      </view>
+      <view class="oi1c be f-y-c bs15 data-v-39c963f6">
+        <view
+          bindtap="__e"
+          class="{{['item','f-c','bs10','f26','wei','data-v-39c963f6',i==taIdx?'bf':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'tClick',[i] ] ] ] ]}}"
+          wx:if="{{v.show}}"
+          wx:for="{{tarr}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+          >{{''+v.name+''}}</view
+        >
+      </view>
+    </uni-nav-bar>
+    <nav-tab
+      cname
+      bind:__l="__l"
+      bind:changeTab="__e"
+      bind:input="__e"
+      class="data-v-39c963f6"
+      data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+      ifsize="32"
+      tabs="{{tabs}}"
+      value="{{aIdx}}"
+      vueId="5f35cbf1-2"
+      wx:if="{{taIdx==0&&system.powerList.takeout=='1'}}"
+    ></nav-tab>
+    <block wx:else>
+      <view class="f-row bf data-v-39c963f6" wx:if="{{$root.g0}}">
+        <view class="f-1 b-r-d data-v-39c963f6">
+          <nav-tab
+            cname
+            bind:__l="__l"
+            bind:changeTab="__e"
+            bind:input="__e"
+            class="data-v-39c963f6"
+            data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+            ifsize="32"
+            tabs="{{tntabs}}"
+            value="{{aIdx}}"
+            vueId="5f35cbf1-3"
+          ></nav-tab>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="mt90 p2 data-v-39c963f6" style="{{'margin-top:'+toph+';'}}">
+    <block wx:if="{{isLogin}}">
+      <block
+        wx:if="{{system.powerList.takeout=='1'||system.powerList.instore=='1'}}"
+      >
+        <block wx:if="{{taIdx==0}}">
+          <my-order
+            bind:__l="__l"
+            bind:operation="__e"
+            class="data-v-39c963f6"
+            co="{{v}}"
+            data-event-opts="{{[ [ '^operation',[ ['operation'] ] ] ]}}"
+            vueId="{{'5f35cbf1-4-'+i}}"
+            wx:for="{{dataList}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          ></my-order>
+        </block>
+        <dn-order
+          bind:__l="__l"
+          bind:input="__e"
+          bind:refresh="__e"
+          class="data-v-39c963f6"
+          data-event-opts="{{[ [ '^refresh',[ ['dnrefresh'] ] ],[ '^input',[ [ '__set_model',[ '','laIdx','$event',[] ] ] ] ] ]}}"
+          datalist="{{dataList}}"
+          labelarr="{{labelArr}}"
+          ltop="{{toph}}"
+          otype="{{tntabs[aIdx].type}}"
+          value="{{laIdx}}"
+          vueId="5f35cbf1-5"
+          wx:else
+        ></dn-order>
+        <jzz
+          bgcolor="transparent"
+          bind:__l="__l"
+          class="data-v-39c963f6"
+          mygd="{{mygd}}"
+          nodata="{{$root.g1}}"
+          otext="您今天还没有下单"
+          ttext="快去选择喜欢的商品吧"
+          vueId="5f35cbf1-6"
+        ></jzz>
+        <view
+          bindtap="__e"
+          class="oiqdd bs5 f-c f34 cf ma data-v-39c963f6"
+          data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',6],['url','goods'] ] ] ] ] ] ]}}"
+          hidden="{{!$root.g2}}"
+          style="{{'background:'+tColor+';'}}"
+          wx:if="{{taIdx==0}}"
+          >去点单</view
+        >
+      </block>
+    </block>
+    <view class="f-c-c data-v-39c963f6" wx:else>
+      <view class="wdlimg data-v-39c963f6">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-39c963f6"
+          src="{{onImgurl+'zwdd.png'}}"
+          vueId="5f35cbf1-7"
+        ></mg-img>
+      </view>
+      <view class="c6 data-v-39c963f6">登录后才能查看订单哦</view>
+      <view
+        bindtap="__e"
+        class="ljdl bs15 cf data-v-39c963f6"
+        data-event-opts="{{[ [ 'tap',[ [ 'checkLogin',['$event'] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+        >立即登录</view
+      >
+    </view>
+    <footc bind:__l="__l" class="data-v-39c963f6" vueId="5f35cbf1-8"></footc>
+  </view>
+  <tab-bar bind:__l="__l" class="data-v-39c963f6" vueId="5f35cbf1-9"></tab-bar>
+  <mg-modal
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-39c963f6"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showCoupon','$event',[] ] ] ] ] ]}}"
+    ismr="{{true}}"
+    value="{{showCoupon}}"
+    vueId="5f35cbf1-10"
+    vueSlots="{{['default']}}"
+    width="630rpx"
+    zIndex="{{3000}}"
+  >
+    <view class="bf bs10 data-v-39c963f6" wx:if="{{!tcCoupon.couponInfo}}">
+      <view class="data-v-39c963f6">
+        <view class="p330 f-c-c data-v-39c963f6">
+          <image
+            class="payimg data-v-39c963f6"
+            mode="widthFix"
+            src="/static/pay/payok.png"
+          ></image>
+          <view class="mt20 f30 wei data-v-39c963f6">支付成功</view>
+          <view class="mt5 f50 wei data-v-39c963f6"
+            >{{sl+tcCoupon.paymoney}}</view
+          >
+        </view>
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-39c963f6"
+          last="1"
+          vueId="{{'5f35cbf1-11'+','+'5f35cbf1-10'}}"
+          vueSlots="{{['bd']}}"
+        >
+          <view class="f-y-c c6 data-v-39c963f6" slot="bd">
+            <view class="f-g-0 c3 mr30 data-v-39c963f6">返赠</view>
+            <view class="f-g-1 c9 f26 data-v-39c963f6"
+              >{{'恭喜你获得1张优惠券共'+tcCoupon.money+'元'}}</view
+            >
+          </view>
+        </mg-cell>
+      </view>
+      <view
+        class="p25 hlt data-v-39c963f6"
+        style="{{'background:'+'linear-gradient(45deg,rgba('+$root.m0+',0.5),'+tColor+')'+';'}}"
+      >
+        <view
+          class="data-v-39c963f6"
+          wx:for="{{tcCoupon.couponInfo}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <mg-coupon
+            cname
+            bind:__l="__l"
+            class="data-v-39c963f6"
+            co="{{v}}"
+            color="{{color}}"
+            ptype="5"
+            vueId="{{'5f35cbf1-12-'+i+','+'5f35cbf1-10'}}"
+          ></mg-coupon>
+        </view>
+      </view>
+      <view class="f-row hlt data-v-39c963f6" style="height: 100rpx">
+        <button
+          bindtap="__e"
+          class="btn f-1 bf f30 h100 f-c c9 data-v-39c963f6"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+          hoverClass="be"
+        >
+          关闭
+        </button>
+        <button
+          bindtap="__e"
+          class="btn f-1 bf f30 h100 f-c hll data-v-39c963f6"
+          data-event-opts="{{[ [ 'tap',[ [ 'ljck',['$event'] ] ] ] ]}}"
+          hoverClass="be"
+          style="{{'color:'+tColor+';'}}"
+        >
+          立即查看
+        </button>
+      </view>
+    </view>
+  </mg-modal>
+  <mg-popup
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-39c963f6"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showCancel','$event',[] ] ] ] ] ]}}"
+    position="bottom"
+    value="{{showCancel}}"
+    vueId="5f35cbf1-13"
+    vueSlots="{{['default']}}"
+  >
+    <view
+      class="bf bs3000 data-v-39c963f6"
+      style="{{'padding-bottom:'+(isIpx?'155rpx':'115rpx')+';'}}"
+    >
+      <view class="p3 c0 t-c wei data-v-39c963f6">取消订单</view>
+      <view class="p20 o-y-s data-v-39c963f6" style="max-height: 600rpx">
+        <view class="bs10 p23 bf5 f24 m03 data-v-39c963f6">
+          <view class="mb20 data-v-39c963f6">温馨提示</view>
+          <view class="data-v-39c963f6"
+            >1.限时特价、预约资格等购买优惠可能一并取消</view
+          >
+          <view class="data-v-39c963f6">2.支付券不予返还;支付优惠一并取消</view>
+          <view class="data-v-39c963f6">3.订单一旦取消,无法恢复</view>
+        </view>
+        <view class="mt30 c0 wei p03 data-v-39c963f6"
+          >请选择取消订单的原因(必选):</view
+        >
+        <mg-radio
+          arr="{{yyArr}}"
+          bind:__l="__l"
+          bind:input="__e"
+          bttc="f24"
+          class="data-v-39c963f6"
+          data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','yyradio','$event',[] ] ] ] ] ]}}"
+          last="1"
+          ranktype="2"
+          rtype="2"
+          value="{{yyradio}}"
+          vueId="{{'5f35cbf1-14'+','+'5f35cbf1-13'}}"
+        ></mg-radio>
+      </view>
+      <view class="foot-btnc p-r hlt data-v-39c963f6">
+        <button
+          bindtap="__e"
+          class="foot-btn bd6 data-v-39c963f6"
+          data-event-opts="{{[ [ 'tap',[ [ 'qdyy',['$event'] ] ] ] ]}}"
+          style="{{'background:'+(yyradio==''?'':tColor)+';'}}"
+        >
+          确定
+        </button>
+      </view>
+    </view>
+  </mg-popup>
+</view>

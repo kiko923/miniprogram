@@ -1,0 +1,102 @@
+<view class="data-v-9b61d1ce" wx:if="{{co.id}}">
+  <mg-swiper
+    bind:__l="__l"
+    class="data-v-9b61d1ce"
+    co="{{swiper}}"
+    color="{{tColor}}"
+    u="rpx"
+    vueId="211ee720-1"
+  ></mg-swiper>
+  <view class="bf p3 data-v-9b61d1ce">
+    <view class="f-y-c data-v-9b61d1ce">
+      <view class="f-g-1 data-v-9b61d1ce">
+        <text class="t-o-e cff0 data-v-9b61d1ce"
+          >{{sl}}<text class="f36 wei data-v-9b61d1ce">{{$root.m0}}</text>
+        </text>
+        <text class="t-o-e ml10 t-d-l cb f24 data-v-9b61d1ce"
+          >{{sl+$root.m1}}</text
+        >
+      </view>
+      <view class="f26 c9 data-v-9b61d1ce">{{'剩余'+co.stock+'份'}}</view>
+    </view>
+    <view class="f34 c0 wei mt10 data-v-9b61d1ce">{{co.name}}</view>
+  </view>
+  <view class="bf p3 mt15 f26 data-v-9b61d1ce">
+    <view class="f34 wei c0 mb10 data-v-9b61d1ce">购买须知</view>
+    <view class="f30 data-v-9b61d1ce">本订单包含以下代金券</view>
+    <view class="f-row p10 data-v-9b61d1ce">
+      <view class="yd bsf data-v-9b61d1ce"></view>
+      <view class="data-v-9b61d1ce">
+        <text
+          class="data-v-9b61d1ce"
+          wx:for="{{co.coupon}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+          >{{(v.fullMoney>0?'满'+v.fullMoney+'减'+v.money:v.money+dw+'无门槛')+'代金券'+v.num+'张,'}}</text
+        >
+      </view>
+    </view>
+    <view class="f30 mt15 data-v-9b61d1ce">可购数量</view>
+    <view class="f-row p10 data-v-9b61d1ce">
+      <view class="yd bsf data-v-9b61d1ce"></view>
+      <view class="data-v-9b61d1ce"
+        >{{co.isLimit==1?'每个用户限购'+co.limitNum+'份':'每位用户每天可购卡券数量限制'+co.dayNum+'份'}}</view
+      >
+    </view>
+    <view class="f30 mt15 data-v-9b61d1ce">抢购时间</view>
+    <view class="f-row p10 data-v-9b61d1ce">
+      <view class="yd bsf data-v-9b61d1ce"></view>
+      <view class="data-v-9b61d1ce">{{$root.m2+'至'+$root.m3}}</view>
+    </view>
+    <view class="f30 mt15 data-v-9b61d1ce">有效期限</view>
+    <view class="f-row p10 data-v-9b61d1ce">
+      <view class="yd bsf data-v-9b61d1ce"></view>
+      <view class="data-v-9b61d1ce"
+        >{{'自购买日起'+co.days+'天内使用有效'}}</view
+      >
+    </view>
+    <view class="f30 mt15 data-v-9b61d1ce">适用商家</view>
+    <view class="f-row p10 data-v-9b61d1ce">
+      <view class="yd bsf data-v-9b61d1ce"></view>
+      <view class="data-v-9b61d1ce">{{co.storeName}}</view>
+    </view>
+    <view class="f30 mt15 data-v-9b61d1ce">使用限制</view>
+    <view class="f-row p10 data-v-9b61d1ce">
+      <view class="yd bsf data-v-9b61d1ce"></view>
+      <view class="data-v-9b61d1ce">须分次使用，每次可使用一张</view>
+    </view>
+  </view>
+  <view class="bf mt15 p3 pb130 data-v-9b61d1ce">
+    <view class="f34 wei c0 data-v-9b61d1ce">使用须知</view>
+    <view class="mt20 data-v-9b61d1ce" wx:if="{{co.details}}">
+      <mg-rtext
+        bind:__l="__l"
+        class="data-v-9b61d1ce"
+        content="{{co.details}}"
+        type="2"
+        vueId="211ee720-2"
+      ></mg-rtext>
+    </view>
+  </view>
+  <view class="foot-btnc data-v-9b61d1ce">
+    <view class="qbbtn o-h f-row data-v-9b61d1ce">
+      <view class="f-1 p3 b3 f-y-c cf data-v-9b61d1ce">
+        <text class="f24 ml10 data-v-9b61d1ce">{{sl}}</text>
+        <text class="f40 data-v-9b61d1ce" style="margin-top: -10rpx"
+          >{{$root.m4}}</text
+        >
+        <text class="t-d-l c9 f18 ml10 data-v-9b61d1ce">{{sl+$root.m5}}</text>
+      </view>
+      <button
+        bindtap="__e"
+        class="ljgm f30 cf f-c bs0 data-v-9b61d1ce"
+        data-event-opts="{{[ [ 'tap',[ [ 'ljgm',['$event'] ] ] ] ]}}"
+        style="{{'background:'+(co.canBuy==1?tColor:'#ddd')+';'}}"
+      >
+        {{co.canBuy==1?'立即购买':'已购买过了'}}
+      </button>
+    </view>
+  </view>
+</view>
+<load bind:__l="__l" class="data-v-9b61d1ce" vueId="211ee720-3" wx:else></load>

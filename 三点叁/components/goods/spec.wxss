@@ -1,0 +1,73 @@
+.bs15.data-v-e38afce0 {
+  border-radius: 30rpx 30rpx 0 0;
+}
+.f54.data-v-e38afce0 {
+  font-size: 52rpx;
+}
+.ggjz.data-v-e38afce0 {
+  padding: 50rpx 50rpx 200rpx;
+}
+.jzi1.data-v-e38afce0 {
+  height: 350rpx;
+}
+.jzi2.data-v-e38afce0 {
+  margin-top: 50rpx;
+}
+.ggc .ggx.data-v-e38afce0 {
+  padding: 20rpx 20rpx 40rpx 40rpx;
+  opacity: 0.7;
+}
+.ggc .ggtop.data-v-e38afce0 {
+  padding: 40rpx 30rpx 0;
+}
+.ggc .ggh.data-v-e38afce0 {
+  width: 240rpx;
+  height: 240rpx;
+}
+.ggc .ggb.data-v-e38afce0 {
+  max-height: calc(86vh - 233rpx - 280rpx);
+}
+.ggc .ggb .specv.data-v-e38afce0 {
+  min-width: 185rpx;
+  padding: 0 30rpx;
+  height: 70rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #f5f5f7;
+  margin: 0 20rpx 20rpx 0;
+}
+.ggc .ggf.data-v-e38afce0 {
+  box-shadow: 0-2rpx 9rpx 2rpx hsla(0, 0%, 86.7%, 0.6);
+  padding: 20rpx 36rpx;
+  min-height: 153rpx;
+}
+.ggc .ggbtn.data-v-e38afce0 {
+  border-radius: 80rpx;
+  height: 90rpx;
+}
+@-webkit-keyframes backOpacity-data-v-e38afce0 {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes backOpacity-data-v-e38afce0 {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.dhtmd.data-v-e38afce0 {
+  animation: backOpacity-data-v-e38afce0 0.7s ease-in-out infinite;
+}

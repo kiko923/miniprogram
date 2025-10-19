@@ -1,0 +1,57 @@
+<view class="open data-v-3925e17c" wx:if="{{!hasKp&&co.status==1}}">
+  <view
+    class="posi-f wh t0 data-v-3925e17c"
+    style="z-index: 9998"
+    wx:if="{{co.type==1}}"
+  >
+    <pic-lunbo-by
+      bind:__l="__l"
+      class="data-v-3925e17c"
+      co="{{swiper}}"
+      color="{{tColor}}"
+      u="vh"
+      vueId="d24481a8-1"
+    ></pic-lunbo-by>
+    <view
+      bindtap="__e"
+      class="posi-a f-c countC cf data-v-3925e17c"
+      data-event-opts="{{[ [ 'tap',[ [ 'tg',['$event'] ] ] ] ]}}"
+      wx:if="{{co.pageCategory!=0}}"
+      >{{second+' 跳过'}}</view
+    >
+  </view>
+  <mg-popup
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-3925e17c"
+    close="{{false}}"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+    dhsj="0.8s"
+    mask="{{true}}"
+    msname="{{$root.a0}}"
+    value="{{show}}"
+    vueId="d24481a8-2"
+    vueSlots="{{['default']}}"
+    wx:else
+  >
+    <view class="tcggc h100v f-c-c data-v-3925e17c">
+      <view class="tcgg data-v-3925e17c">
+        <pic-lunbo-by
+          bind:__l="__l"
+          class="data-v-3925e17c"
+          co="{{swiper2}}"
+          color="{{tColor}}"
+          u="rpx"
+          vueId="{{'d24481a8-3'+','+'d24481a8-2'}}"
+        ></pic-lunbo-by>
+        <view
+          bindtap="__e"
+          class="tcbtm f-c data-v-3925e17c"
+          data-event-opts="{{[ [ 'tap',[ [ 'gbtc',['$event'] ] ] ] ]}}"
+        >
+          <text class="iconfont iconx2 cf data-v-3925e17c"></text>
+        </view>
+      </view>
+    </view>
+  </mg-popup>
+</view>

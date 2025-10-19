@@ -1,0 +1,54 @@
+<view class="bf f-col h100 data-v-56e540f1">
+  <view class="sttab f-row o-x-s data-v-56e540f1">
+    <view
+      bindtap="__e"
+      class="p02 f-g-0 data-v-56e540f1"
+      data-event-opts="{{[ [ 'tap',[ [ 'changeTab',[i] ] ] ] ]}}"
+      wx:for="{{tabs}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view
+        class="{{['h100','f-c','f30','data-v-56e540f1',aIdx==i?'wei c0 xzc':'']}}"
+        >{{v.name}}</view
+      >
+    </view>
+  </view>
+  <view class="f-1 data-v-56e540f1">
+    <swiper
+      bindchange="__e"
+      class="{{['data-v-56e540f1',zfbH]}}"
+      current="{{aIdx}}"
+      data-event-opts="{{[ [ 'change',[ [ 'swiperTab',['$event'] ] ] ] ]}}"
+    >
+      <swiper-item
+        catchtouchmove="__e"
+        class="data-v-56e540f1"
+        data-event-opts="{{[ [ 'touchmove',[ [ 'stopTouchMove',['$event'] ] ] ] ]}}"
+        wx:for="{{arr}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <scroll-view class="h100 data-v-56e540f1" scrollY="true">
+          <view
+            bindtap="__e"
+            class="p23 f-x-bt data-v-56e540f1"
+            data-event-opts="{{[ [ 'tap',[ [ 'xzitem',[i,ci] ] ] ] ]}}"
+            wx:for="{{arr[i]}}"
+            wx:for-index="ci"
+            wx:for-item="cv"
+            wx:key="ci"
+          >
+            <view class="data-v-56e540f1">{{cv.name}}</view>
+            <view
+              class="iconfont icongou c0 ml20 f24 wei data-v-56e540f1"
+              wx:if="{{ci==xzarr[i]}}"
+            ></view>
+          </view>
+        </scroll-view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

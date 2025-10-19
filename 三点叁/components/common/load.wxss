@@ -1,0 +1,49 @@
+@-webkit-keyframes backOpacity-data-v-514193de {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes backOpacity-data-v-514193de {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.animation_opactiy.data-v-514193de {
+  animation: backOpacity-data-v-514193de 1s ease-in-out infinite;
+}
+.jzzc.data-v-514193de {
+  width: 300rpx;
+  height: 300rpx;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.weui-loading.data-v-514193de {
+  width: 80rpx;
+  height: 80rpx;
+}

@@ -1,0 +1,74 @@
+.cl-main.data-v-36c968a2 {
+  padding: 50rpx 30rpx;
+}
+.timg.data-v-36c968a2 {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+}
+.cl-bd.data-v-36c968a2 {
+  padding: 70rpx 0 0;
+  margin-top: -60rpx;
+  border-radius: 12rpx;
+}
+.bbd.data-v-36c968a2 {
+  border-bottom: 1px dashed #ebebed;
+}
+.yd.data-v-36c968a2 {
+  width: 6rpx;
+  height: 6rpx;
+  border-radius: 50%;
+  background: #999;
+  margin: 17rpx 12rpx 0 5rpx;
+}
+.ljsy.data-v-36c968a2 {
+  width: 60%;
+  height: 75rpx;
+}
+.ydl.data-v-36c968a2,
+.ydr.data-v-36c968a2 {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  top: -20rpx;
+}
+.ydl.data-v-36c968a2 {
+  left: -17rpx;
+}
+.ydr.data-v-36c968a2 {
+  right: -17rpx;
+}
+.jtactive.data-v-36c968a2 {
+  transform: rotate(90deg);
+}
+.coubb.data-v-36c968a2 {
+  height: 0;
+  transition: all 0.3s ease-in-out;
+}
+.coubb.cactive.data-v-36c968a2 {
+  height: auto;
+}
+.coubbv.data-v-36c968a2 {
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: 0.3s ease-in-out;
+}
+.coubbv.show.data-v-36c968a2 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cdlht.data-v-36c968a2 {
+  min-width: 170rpx;
+}
+.zqmimg.data-v-36c968a2 {
+  width: 380rpx;
+  height: 380rpx;
+  margin: 10rpx auto;
+}
+.zqmimg .zzc.data-v-36c968a2 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #ccc;
+  opacity: 0.8;
+}

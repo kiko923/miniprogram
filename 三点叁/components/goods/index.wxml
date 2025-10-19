@@ -1,0 +1,404 @@
+<view class="{{['data-v-6c5f6738',last?'mb80':'']}}" wx:if="{{type==1}}">
+  <view
+    class="conw2 f-row p2 data-v-6c5f6738"
+    wx:for="{{$root.l0}}"
+    wx:for-index="i"
+    wx:for-item="co"
+    wx:key="i"
+  >
+    <view
+      bindtap="__e"
+      class="f-g-0 bf6 left bs5 p-r data-v-6c5f6738"
+      data-event-opts="{{[ [ 'tap',[ [ 'goodinfo',['$event'] ] ] ] ]}}"
+    >
+      <mg-img
+        bind:__l="__l"
+        class="data-v-6c5f6738"
+        cname="wh"
+        src="{{co.$orig.icon}}"
+        vueId="{{'22e0cc58-1-'+i}}"
+      ></mg-img>
+      <view
+        class="p-a ysq f-c b0 cf w100 f26 data-v-6c5f6738"
+        wx:if="{{outin==1?co.$orig.outStock<=0:co.$orig.inStock<=0}}"
+        >已售罄</view
+      >
+    </view>
+    <view class="f-g-1 right ml20 f24 c9 data-v-6c5f6738">
+      <view class="f30 t-o-e c0 data-v-6c5f6738">{{co.$orig.name}}</view>
+      <view class="mt10 data-v-6c5f6738">
+        <bk-b
+          bind:__l="__l"
+          cName="f22 bf7 cb mr10 p-3-10"
+          class="data-v-6c5f6738"
+          t="含茶"
+          vueId="{{'22e0cc58-2-'+i}}"
+        ></bk-b>
+        <bk-b
+          bind:__l="__l"
+          cName="f22 bf7 cb mr10 p-3-10"
+          class="data-v-6c5f6738"
+          t="含乳制品"
+          vueId="{{'22e0cc58-3-'+i}}"
+        ></bk-b>
+      </view>
+      <view class="mt10 t-o-e2 f20 data-v-6c5f6738"
+        >{{'防疫期间，为减少接触，如有不便请您谅解。'||co.$orig.body}}</view
+      >
+      <view
+        class="mt10 f-raw data-v-6c5f6738"
+        wx:if="{{orderset.sales==1&&co.$orig.salesNum>0}}"
+      >
+        <text class="mr30 data-v-6c5f6738">{{'销量 '+co.$orig.salesNum}}</text>
+      </view>
+      <view class="mt10 f-row data-v-6c5f6738" wx:if="{{co.m0}}">
+        <view class="vipr f-y-c data-v-6c5f6738">VIP</view>
+        <view class="vipl f-y-c data-v-6c5f6738">
+          <view class="data-v-6c5f6738">{{sl+co.m1}}</view>
+        </view>
+      </view>
+      <add-goods
+        bind:__l="__l"
+        bind:add="__e"
+        bind:dec="__e"
+        class="data-v-6c5f6738"
+        cname="mt10"
+        co="{{co.$orig}}"
+        data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],[ [ ['dList','',i] ] ] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],[ [ ['dList','',i] ] ] ] ] ] ]}}"
+        isunit="{{co.m2}}"
+        isyprice="{{co.m3}}"
+        outin="{{outin}}"
+        pcname="f36 c3"
+        vueId="{{'22e0cc58-4-'+i}}"
+      ></add-goods>
+      <view
+        class="data-v-6c5f6738"
+        wx:if="{{co.$orig.maxNum>0||co.$orig.minNum>1}}"
+      >
+        <text class="crb mr20 data-v-6c5f6738" wx:if="{{co.$orig.minNum>1}}"
+          >{{co.$orig.minNum+'份起售'}}</text
+        >
+        <text class="crb data-v-6c5f6738" wx:if="{{co.$orig.maxNum>0}}"
+          >{{'限'+co.$orig.maxNum+'份'}}</text
+        >
+      </view>
+    </view>
+  </view>
+</view>
+<block wx:else>
+  <scroll-view
+    class="ws-n mb10 data-v-6c5f6738"
+    scrollX="{{true}}"
+    wx:if="{{type==2}}"
+  >
+    <view
+      class="dis-in conw mr20 bs15 data-v-6c5f6738"
+      wx:for="{{dList}}"
+      wx:for-index="i"
+      wx:for-item="co"
+      wx:key="i"
+    >
+      <view
+        bindtap="__e"
+        class="goodsimg data-v-6c5f6738"
+        data-event-opts="{{[ [ 'tap',[ [ 'goodinfo',['$0'],[ [ ['dList','',i,'id'] ] ] ] ] ] ]}}"
+      >
+        <mg-img
+          bind:__l="__l"
+          class="data-v-6c5f6738"
+          cname="wh"
+          src="{{co.icon}}"
+          vueId="{{'22e0cc58-5-'+i}}"
+        ></mg-img>
+      </view>
+      <view class="conwb data-v-6c5f6738">
+        <view class="t-o-e f26 data-v-6c5f6738">{{co.name}}</view>
+        <add-goods
+          addgb="{{addgb}}"
+          bind:__l="__l"
+          bind:add="__e"
+          bind:dec="__e"
+          class="data-v-6c5f6738"
+          co="{{co}}"
+          data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],[ [ ['dList','',i] ] ] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],[ [ ['dList','',i] ] ] ] ] ] ]}}"
+          outin="{{outin}}"
+          pcname="f26"
+          vueId="{{'22e0cc58-6-'+i}}"
+        ></add-goods>
+      </view>
+    </view>
+  </scroll-view>
+  <block wx:else>
+    <view class="p23 bf data-v-6c5f6738" wx:if="{{type==3}}">
+      <view class="data-v-6c5f6738">
+        <view class="c0 f-y-c f-1 data-v-6c5f6738" style="min-width: 60%">
+          <text
+            class="text-btnf f22 mr20 p-3-10 bs5 f-g-0 data-v-6c5f6738"
+            style="{{'background:'+'rgba('+$root.m4+',0.1)'+';'+'color:'+co.labelColor+';'}}"
+            wx:if="{{co.labelName}}"
+            >{{co.labelName}}</text
+          >
+          <text class="f34 wei data-v-6c5f6738">{{co.name}}</text>
+        </view>
+        <view class="c6 f24 mt10 data-v-6c5f6738">
+          <text
+            class="mr30 data-v-6c5f6738"
+            wx:if="{{system.switch.saleShow==1&&co.salesNum>0}}"
+            >{{'销量'+co.salesNum}}</text
+          >
+          <text class="data-v-6c5f6738" wx:if="{{system.switch.stockShow==1}}"
+            >{{'库存'+co.stock}}</text
+          >
+        </view>
+      </view>
+      <view class="c9 f24 m10 data-v-6c5f6738">{{co.body}}</view>
+      <view class="mt10 f-row data-v-6c5f6738" wx:if="{{$root.m5<$root.m6}}">
+        <view class="vipr f-y-c data-v-6c5f6738">
+          <view class="vipimg data-v-6c5f6738">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-6c5f6738"
+              src="{{onImgurl+'vipimg.png'}}"
+              vueId="22e0cc58-7"
+            ></mg-img>
+          </view>
+        </view>
+        <view class="vipl f-y-c data-v-6c5f6738">
+          <view class="data-v-6c5f6738">{{sl+co.vipPrice}}</view>
+        </view>
+      </view>
+      <view class="data-v-6c5f6738" wx:else>
+        <view
+          bindtap="__e"
+          class="jrhy f-bt mt10 f24 data-v-6c5f6738"
+          data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/order/vip/wkk'] ] ] ] ] ] ]}}"
+          wx:if="{{system.switch.vipMsg==1}}"
+        >
+          <view class="f-1 data-v-6c5f6738">加入会员，尊享会员特价</view>
+          <view class="f-0 data-v-6c5f6738">立即加入></view>
+        </view>
+      </view>
+      <add-goods
+        bind:__l="__l"
+        bind:add="__e"
+        bind:dec="__e"
+        class="data-v-6c5f6738"
+        cname="mt10"
+        co="{{co}}"
+        data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],['co'] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],['co'] ] ] ] ]}}"
+        isunit="{{$root.m7}}"
+        isyprice="{{$root.m8}}"
+        nocheckgd="{{true}}"
+        numc="f36"
+        outin="{{outin}}"
+        pcname="f44"
+        showjj="{{co.isSpecs!=1&&co.isMaterial!=1&&co.isAttr!=1}}"
+        showspec="{{xsSpec}}"
+        vueId="22e0cc58-8"
+      ></add-goods>
+      <view
+        class="mt5 f-row f20 mb10 data-v-6c5f6738"
+        style="{{'color:'+tColor+';'}}"
+        wx:if="{{co.activityGoodData.type>0}}"
+      >
+        <view
+          class="f-row bs5 b-d p1 l-h1 data-v-6c5f6738"
+          style="{{'border-color:'+tColor+';'}}"
+          wx:if="{{co.activityGoodData.type<3}}"
+        >
+          <view class="data-v-6c5f6738"
+            >{{co.activityGoodData.type==1?'特价':$root.m9+'折'}}</view
+          >
+          <view
+            class="ml10 sphdir data-v-6c5f6738"
+            style="{{'border-color:'+tColor+';'}}"
+            wx:if="{{co.activityGoodData.limitNum>0}}"
+            >{{'限'+co.activityGoodData.limitNum+'份'}}</view
+          >
+        </view>
+        <block wx:else>
+          <view class="data-v-6c5f6738" wx:if="{{co.activityGoodData.type==3}}">
+            <text class="data-v-6c5f6738"
+              >{{'商品立减'+sl+co.activityGoodData.discount}}</text
+            >
+            <text
+              class="ml10 data-v-6c5f6738"
+              wx:if="{{co.activityGoodData.limitNum>0}}"
+              >{{'限'+co.activityGoodData.limitNum+'份'}}</text
+            >
+          </view>
+          <view class="data-v-6c5f6738" wx:else
+            >{{co.activityGoodData.type==4?'第二件'+$root.m10+'折':'买一送一'}}</view
+          >
+        </block>
+      </view>
+      <view class="f24 data-v-6c5f6738" wx:if="{{co.maxNum>0||co.minNum>1}}">
+        <text class="cf5f mr20 data-v-6c5f6738" wx:if="{{co.minNum>1}}"
+          >{{co.minNum+'份起售'}}</text
+        >
+        <text class="cf5f data-v-6c5f6738" wx:if="{{co.maxNum>0}}"
+          >{{'限'+co.maxNum+'份'}}</text
+        >
+      </view>
+    </view>
+    <block wx:else>
+      <view class="data-v-6c5f6738" wx:if="{{type==6}}">
+        <mg-cell
+          bind:__l="__l"
+          brs="5rpx"
+          class="data-v-6c5f6738"
+          cname="f-sh"
+          h="160"
+          hdc="f-s"
+          img="{{co.$orig.icon}}"
+          vueId="{{'22e0cc58-9-'+i}}"
+          vueSlots="{{['bd']}}"
+          w="160"
+          wx:for="{{$root.l1}}"
+          wx:for-index="i"
+          wx:for-item="co"
+          wx:key="i"
+        >
+          <view class="h100 f-y-bt data-v-6c5f6738" slot="bd">
+            <view class="f-bt data-v-6c5f6738">
+              <view class="t-o-e f32 c0 data-v-6c5f6738"
+                >{{co.$orig.name}}</view
+              >
+            </view>
+            <view class="f-bt mt10 data-v-6c5f6738">
+              <view class="f-g-1 f24 c9 data-v-6c5f6738">
+                <text class="data-v-6c5f6738" wx:if="{{co.$orig.groupName}}"
+                  >{{co.$orig.groupName}}</text
+                >
+                <text class="data-v-6c5f6738" wx:if="{{co.$orig.attribute}}"
+                  >{{'('+co.$orig.attribute+')'}}</text
+                >
+                <text
+                  class="ml10 data-v-6c5f6738"
+                  wx:if="{{co.$orig.materialName}}"
+                  >{{'+'+co.$orig.materialName}}</text
+                >
+              </view>
+            </view>
+            <view class="f-x-bt mt10 data-v-6c5f6738">
+              <view class="f-g-0 data-v-6c5f6738" style="color: #ff560a"
+                >{{sl}}<text class="f36 wei data-v-6c5f6738">{{co.m11}}</text>
+              </view>
+              <add-goods
+                addwz="2"
+                bind:__l="__l"
+                bind:add="__e"
+                bind:dec="__e"
+                class="data-v-6c5f6738"
+                cname="f-g-0 mt10"
+                co="{{co.$orig}}"
+                color="#ff560a"
+                data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],[ [ ['dList','',i] ] ] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],[ [ ['dList','',i] ] ] ] ] ] ]}}"
+                isprice="{{0}}"
+                numc="f36"
+                showspec="{{false}}"
+                vueId="{{'22e0cc58-10-'+i+','+'22e0cc58-9-'+i}}"
+              ></add-goods>
+            </view>
+          </view>
+        </mg-cell>
+      </view>
+      <block wx:else>
+        <view class="p23 bf data-v-6c5f6738" wx:if="{{type==7}}">
+          <view class="data-v-6c5f6738">
+            <view class="c0 f-y-c f-1 data-v-6c5f6738" style="min-width: 60%">
+              <text
+                class="text-btnf f22 mr20 p-3-10 bs5 f-g-0 data-v-6c5f6738"
+                style="{{'background:'+'rgba('+$root.m12+',0.1)'+';'+'color:'+co.labelColor+';'}}"
+                wx:if="{{co.labelName}}"
+                >{{co.labelName}}</text
+              >
+              <text class="f34 wei data-v-6c5f6738">{{co.name}}</text>
+            </view>
+            <view class="c6 f24 mt10 data-v-6c5f6738">
+              <text
+                class="mr30 data-v-6c5f6738"
+                wx:if="{{system.switch.saleShow==1&&co.salesNum>0}}"
+                >{{'销量'+co.salesNum}}</text
+              >
+              <text
+                class="data-v-6c5f6738"
+                wx:if="{{system.switch.stockShow==1}}"
+                >{{'库存'+co.stock}}</text
+              >
+            </view>
+          </view>
+          <view class="c9 f24 m10 data-v-6c5f6738">{{co.body}}</view>
+          <view
+            class="mt10 f-row data-v-6c5f6738"
+            wx:if="{{$root.m13<$root.m14}}"
+          >
+            <view class="vipr f-y-c data-v-6c5f6738">
+              <view class="vipimg data-v-6c5f6738">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-6c5f6738"
+                  src="{{onImgurl+'vipimg.png'}}"
+                  vueId="22e0cc58-11"
+                ></mg-img>
+              </view>
+            </view>
+            <view class="vipl f-y-c data-v-6c5f6738">
+              <view class="data-v-6c5f6738">{{sl+co.vipPrice}}</view>
+            </view>
+          </view>
+          <view
+            class="mt5 f-row f20 mb10 data-v-6c5f6738"
+            style="{{'color:'+tColor+';'}}"
+            wx:if="{{co.activityGoodData.type>0}}"
+          >
+            <view
+              class="f-row bs5 b-d p1 l-h1 data-v-6c5f6738"
+              style="{{'border-color:'+tColor+';'}}"
+              wx:if="{{co.activityGoodData.type<3}}"
+            >
+              <view class="data-v-6c5f6738"
+                >{{co.activityGoodData.type==1?'特价':$root.m15+'折'}}</view
+              >
+              <view
+                class="ml10 sphdir data-v-6c5f6738"
+                style="{{'border-color:'+tColor+';'}}"
+                wx:if="{{co.activityGoodData.limitNum>0}}"
+                >{{'限'+co.activityGoodData.limitNum+'份'}}</view
+              >
+            </view>
+            <block wx:else>
+              <view
+                class="data-v-6c5f6738"
+                wx:if="{{co.activityGoodData.type==3}}"
+              >
+                <text class="data-v-6c5f6738"
+                  >{{'商品立减'+sl+co.activityGoodData.discount}}</text
+                >
+                <text
+                  class="ml10 data-v-6c5f6738"
+                  wx:if="{{co.activityGoodData.limitNum>0}}"
+                  >{{'限'+co.activityGoodData.limitNum+'份'}}</text
+                >
+              </view>
+              <view class="data-v-6c5f6738" wx:else
+                >{{co.activityGoodData.type==4?'第二件'+$root.m16+'折':'买一送一'}}</view
+              >
+            </block>
+          </view>
+          <view
+            class="f24 data-v-6c5f6738"
+            wx:if="{{co.maxNum>0||co.minNum>1}}"
+          >
+            <text class="cf5f mr20 data-v-6c5f6738" wx:if="{{co.minNum>1}}"
+              >{{co.minNum+'份起售'}}</text
+            >
+            <text class="cf5f data-v-6c5f6738" wx:if="{{co.maxNum>0}}"
+              >{{'限'+co.maxNum+'份'}}</text
+            >
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+</block>

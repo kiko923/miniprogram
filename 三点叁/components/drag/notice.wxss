@@ -1,0 +1,15 @@
+.ggbt.data-v-9f0938dc {
+  transform: skew(-12deg, 0deg);
+  padding: 1rpx 12rpx;
+  font-size: 24rpx;
+  border-radius: 7rpx;
+  background: linear-gradient(90deg, #fe8f43, #fd4c44);
+}
+.limg.data-v-9f0938dc {
+  width: 48rpx;
+  height: 48rpx;
+}
+.ngr.data-v-9f0938dc {
+  padding: 10rpx 0rpx;
+  height: 80rpx;
+}

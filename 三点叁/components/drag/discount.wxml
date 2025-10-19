@@ -1,0 +1,26 @@
+<view
+  class="discount data-v-1bd14fc0"
+  style="{{'margin-top:'+styles.marginTop+'px'+';'+'margin-bottom:'+styles.marginBottom+'px'+';'+'margin-left:'+styles.marginLR+'px'+';'+'margin-right:'+styles.marginLR+'px'+';'}}"
+>
+  <view class="discount-list data-v-1bd14fc0">
+    <view class="discount-list-detail data-v-1bd14fc0">
+      <view class="data-v-1bd14fc0">
+        <view class="data-v-1bd14fc0">
+          <text class="data-v-1bd14fc0">￥</text>
+          <text class="data-v-1bd14fc0">5</text>
+        </view>
+        <view class="data-v-1bd14fc0">
+          <view class="_p data-v-1bd14fc0">满105可用</view>
+          <view class="_p data-v-1bd14fc0">全品类可用(特殊商品除外)</view>
+        </view>
+      </view>
+      <view class="data-v-1bd14fc0">
+        <view class="data-v-1bd14fc0">
+          <text class="data-v-1bd14fc0"></text>
+        </view>
+        <view class="data-v-1bd14fc0">今日限量1万张</view>
+        <view class="receive data-v-1bd14fc0">立即领取</view>
+      </view>
+    </view>
+  </view>
+</view>

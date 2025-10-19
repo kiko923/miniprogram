@@ -1,0 +1,45 @@
+.b-s.data-v-18dcc0a4 {
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+}
+.scmain.data-v-18dcc0a4 {
+  padding: 300rpx 20rpx 160rpx;
+}
+.scmain .bd.data-v-18dcc0a4 {
+  padding: 30rpx 40rpx;
+}
+.ysc .img.data-v-18dcc0a4 {
+  margin: 70rpx auto 0;
+  width: 190rpx;
+}
+.sjlic.data-v-18dcc0a4 {
+  margin: 60rpx 0 60rpx;
+  padding: 0 30rpx;
+}
+.sjlic .sjli.data-v-18dcc0a4 {
+  width: 265rpx;
+  background: #ffe6b4;
+  margin-bottom: 40rpx;
+}
+.sjlic .t0.data-v-18dcc0a4 {
+  font-size: 65rpx;
+}
+.sjlic .t1.data-v-18dcc0a4 {
+  color: #d18d37;
+}
+.sjlic .t2.data-v-18dcc0a4 {
+  color: #a13b00;
+}
+.sjlic .ck.data-v-18dcc0a4,
+.sjlic .qsy.data-v-18dcc0a4 {
+  padding: 9rpx 20rpx;
+  border-radius: 50rpx;
+}
+.sjlic .ck.data-v-18dcc0a4 {
+  color: #ffa115;
+}
+.sjlic .qsy.data-v-18dcc0a4 {
+  background: #ff8c00;
+}
+.cf1c.data-v-18dcc0a4 {
+  color: #ffab1c;
+}

@@ -1,0 +1,740 @@
+<view class="data-v-5bbb627c" wx:if="{{type==1||type==2}}">
+  <view
+    class="posi-f carc1 c9 f22 data-v-5bbb627c"
+    hidden="{{!cshow}}"
+    style="{{$root.s0}}"
+  >
+    <view class="mjts cartopmj cf5f data-v-5bbb627c" hidden="{{!$root.g0}}">
+      <block wx:if="{{$root.g1}}"
+        >满减<text class="data-v-5bbb627c" wx:if="{{$root.g2}}"
+          >{{mjInfo.text}}</text
+        >
+        <block wx:else>
+          <text
+            class="data-v-5bbb627c"
+            wx:for="{{$root.l0}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+            >{{'满'+v.$orig.fullMoney+'减'+v.$orig.money}}<text
+              class="m01 data-v-5bbb627c"
+              wx:if="{{i<v.g3-1}}"
+              >,</text
+            >
+          </text>
+        </block>
+      </block>
+      <text
+        class="ml20 data-v-5bbb627c"
+        wx:if="{{buytype==1&&sjxx.shopData.distribution.delivery&&sjxx.shopData.distribution.delivery.deliveryMoney}}"
+        >配送费<text
+          class="data-v-5bbb627c"
+          wx:if="{{sjxx.shopData.distribution.delivery.type=='1'}}"
+          >{{'立减：'+sjxx.shopData.distribution.delivery.deliveryMoney+''}}</text
+        >
+        <text
+          class="data-v-5bbb627c"
+          wx:if="{{sjxx.shopData.distribution.delivery.type=='2'}}"
+          wx:for="{{sjxx.shopData.distribution.delivery.deliveryMoney}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+          >{{'满'+v.fullMoney+''}}<text
+            class="data-v-5bbb627c"
+            wx:if="{{v.isFree==1}}"
+            >免配送费</text
+          >
+          <text class="data-v-5bbb627c" wx:else>{{'减'+v.money}}</text>
+        </text>
+      </text>
+    </view>
+    <view class="car posi-r f-row data-v-5bbb627c">
+      <view
+        bindtap="__e"
+        class="f-g-1 carb f-row data-v-5bbb627c"
+        data-event-opts="{{[ [ 'tap',[ [ 'openCar',['$event'] ] ] ] ]}}"
+      >
+        <view
+          class="{{['carb-img','posi-r','f-c','animated','data-v-5bbb627c',$root.g4?'bounceIn':'']}}"
+        >
+          <view class="carb-i bsf bf f-c data-v-5bbb627c">
+            <text class="iconfont iconshangpin c0 f42 data-v-5bbb627c"></text>
+          </view>
+          <view
+            class="posi-a dot bsf f-c data-v-5bbb627c"
+            style="{{'background:'+tColor+';'}}"
+            wx:if="{{$root.g5}}"
+            >{{''+getTotal.num+''}}</view
+          >
+        </view>
+        <view class="f-c-xc data-v-5bbb627c">
+          <view class="data-v-5bbb627c">
+            <text class="f34 c3 data-v-5bbb627c" wx:if="{{$root.g6}}"
+              >{{sl+carPrice.nowPrice}}</text
+            >
+            <text class="f28 data-v-5bbb627c" wx:else>未选购商品</text>
+            <text
+              class="ml10 t-d-l data-v-5bbb627c"
+              wx:if="{{carPrice.reduceMoney>0}}"
+              >{{sl+getTotal.total}}</text
+            >
+          </view>
+          <view class="data-v-5bbb627c">
+            <text class="data-v-5bbb627c" wx:if="{{buytype==1}}"
+              >{{'预估另需配送费'+sl+$root.m0}}</text
+            >
+            <text class="m01 data-v-5bbb627c" wx:if="{{buytype==1&&havezq}}"
+              >|</text
+            >
+            <text class="data-v-5bbb627c" wx:if="{{havezq&&type==1}}"
+              >支持自取</text
+            >
+          </view>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="f-g-0 carf f-c data-v-5bbb627c"
+        data-event-opts="{{[ [ 'tap',[ ['goPay'] ] ] ]}}"
+        style="{{'background:'+(qsText.reach?tColor:'#999')+';'+'border:'+(qsText.reach?'1rpx solid '+tColor:'')+';'}}"
+      >
+        <view class="f32 cf data-v-5bbb627c">{{qsText.text}}</view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="posi-f closec data-v-5bbb627c"
+    hidden="{{!xxshow}}"
+    style="{{'bottom:'+carBtm+'rpx'+';'}}"
+  >
+    <view class="h100 f34 cf f-c-c data-v-5bbb627c">
+      <view class="t-c data-v-5bbb627c"
+        >{{(sjxx.shopData.storeOpen==3?'门店已打烊':sjxx.moreSet.status==1?'门店接受预定中':'门店休息中')+''}}</view
+      >
+      <view
+        class="f24 data-v-5bbb627c"
+        style="color: #ccc"
+        wx:if="{{sjxx.shopData.storeOpen==2}}"
+        >{{'营业时间：'+yysj}}</view
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="p-a r0 t0 f-c p-10-15 data-v-5bbb627c"
+      data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      wx:if="{{sjxx.shopData.storeOpen==2&&sjxx.moreSet.status==1}}"
+    >
+      <text class="iconfont iconyx cf f36 data-v-5bbb627c"></text>
+    </view>
+  </view>
+  <mg-popup
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-5bbb627c"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showCar','$event',[] ] ] ] ] ]}}"
+    value="{{showCar}}"
+    vueId="ab5895a6-1"
+    vueSlots="{{['default']}}"
+  >
+    <view class="mjts cf5f data-v-5bbb627c" hidden="{{!$root.g7}}">
+      <text class="data-v-5bbb627c" wx:if="{{$root.g8}}">{{mjInfo.text}}</text>
+      <block wx:else>
+        <text
+          class="data-v-5bbb627c"
+          wx:for="{{$root.l1}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+          >{{'满'+v.$orig.fullMoney+'减'+v.$orig.money}}<text
+            class="m01 data-v-5bbb627c"
+            wx:if="{{i<v.g9-1}}"
+            >,</text
+          >
+        </text>
+      </block>
+    </view>
+    <view
+      class="carlistc p03 bf data-v-5bbb627c"
+      style="{{'padding-bottom:'+carlistPab+'rpx'+';'}}"
+    >
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-5bbb627c"
+        cname="p30"
+        isl="1"
+        vueId="{{'ab5895a6-2'+','+'ab5895a6-1'}}"
+        vueSlots="{{['bd','ft']}}"
+      >
+        <view class="f-y-c data-v-5bbb627c" slot="bd">
+          <text class="f24 data-v-5bbb627c">已选商品</text>
+        </view>
+        <view
+          bindtap="__e"
+          class="f-y-c f24 c9 data-v-5bbb627c"
+          data-event-opts="{{[ [ 'tap',[ [ 'clearCar',['$event'] ] ] ] ]}}"
+          slot="ft"
+          >清空购物车</view
+        >
+      </mg-cell>
+      <scroll-view class="p0 carbody data-v-5bbb627c" scrollY="{{true}}">
+        <mg-cell
+          bind:__l="__l"
+          brs="5rpx"
+          class="data-v-5bbb627c"
+          cname="p30 la124"
+          h="136"
+          img="{{v.$orig.icon}}"
+          last="{{i==v.g10-1}}"
+          vueId="{{'ab5895a6-3-'+i+','+'ab5895a6-1'}}"
+          vueSlots="{{['bd']}}"
+          w="136"
+          wx:for="{{$root.l2}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="data-v-5bbb627c" slot="bd">
+            <view class="t-o-e f30 data-v-5bbb627c">{{v.$orig.name}}</view>
+            <view class="f24 c9 f-raw data-v-5bbb627c">
+              <text class="data-v-5bbb627c" wx:if="{{v.$orig.groupName}}"
+                >{{v.$orig.groupName}}</text
+              >
+              <text class="data-v-5bbb627c" wx:if="{{v.$orig.attribute}}"
+                >{{'('+v.$orig.attribute+')'}}</text
+              >
+              <text
+                class="ml10 data-v-5bbb627c"
+                wx:if="{{v.$orig.materialName}}"
+                >{{'+'+v.$orig.materialName}}</text
+              >
+            </view>
+            <view
+              class="f-row mt10 data-v-5bbb627c"
+              style="{{'color:'+tColor+';'}}"
+              wx:if="{{v.$orig.discountNum>0}}"
+            >
+              <view
+                class="f20 bs5 b-d p-3-10 data-v-5bbb627c"
+                style="{{'border-color:'+tColor+';'}}"
+                >{{''+(v.$orig.discountType==1?'特价':v.$orig.discountType==2?'折扣':v.$orig.discountType==3?'立减':v.$orig.discountType==4?'第二件打折':'买一送一')+''}}</view
+              >
+            </view>
+            <view class="f-x-bt mt10 data-v-5bbb627c">
+              <view class="f-g-0 f30 data-v-5bbb627c"
+                >{{sl+v.$orig.totalMoney}}<text
+                  class="t-d-l ml10 c9 f26 data-v-5bbb627c"
+                  wx:if="{{v.$orig.discountNum>0}}"
+                  >{{sl+v.m1}}</text
+                >
+              </view>
+              <add-goods
+                addgb="{{addgb}}"
+                addwz="2"
+                bind:__l="__l"
+                bind:add="__e"
+                bind:dec="__e"
+                class="data-v-5bbb627c"
+                cname="f-g-0 mt10"
+                co="{{v.$orig}}"
+                data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],[ [ ['carList','',i] ] ] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],[ [ ['carList','',i] ] ] ] ] ] ]}}"
+                isprice="{{0}}"
+                showspec="{{false}}"
+                vueId="{{'ab5895a6-4-'+i+','+'ab5895a6-3-'+i}}"
+              ></add-goods>
+            </view>
+          </view>
+        </mg-cell>
+      </scroll-view>
+      <view class="f-y-c p30 hlt f30 data-v-5bbb627c">
+        <view class="data-v-5bbb627c" style="width: 156rpx">包装费</view>
+        <view class="data-v-5bbb627c">
+          <view
+            bindtap="__e"
+            class="data-v-5bbb627c"
+            data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/shop/out/bzf'] ] ] ] ] ] ]}}"
+            hidden="{{!(getTotal.bzf>=0)}}"
+          >
+            <text class="data-v-5bbb627c">{{sl+getTotal.bzf}}</text>
+            <text class="iconfont iconwen f24 m01 data-v-5bbb627c"></text>
+          </view>
+          <view class="f20 c9 data-v-5bbb627c">包装费不参与满减</view>
+        </view>
+      </view>
+    </view>
+  </mg-popup>
+  <sq-btn
+    bind:__l="__l"
+    bind:input="__e"
+    bind:refresh="__e"
+    class="data-v-5bbb627c"
+    data-event-opts="{{[ [ '^refresh',[ ['goPay'] ] ],[ '^input',[ [ '__set_model',[ '','showSqtel','$event',[] ] ] ] ] ]}}"
+    type="4"
+    value="{{showSqtel}}"
+    vueId="ab5895a6-5"
+  ></sq-btn>
+</view>
+<block wx:else>
+  <view class="data-v-5bbb627c" wx:if="{{type==3}}">
+    <view
+      class="posi-f carc2 cf f22 data-v-5bbb627c"
+      hidden="{{!cshow}}"
+      style="{{$root.s1}}"
+    >
+      <view class="mjts cartopmj2 cf5f data-v-5bbb627c" hidden="{{!$root.g11}}">
+        <text class="data-v-5bbb627c" wx:if="{{$root.g12}}"
+          >{{mjInfo.text}}</text
+        >
+        <block wx:else>
+          <text
+            class="data-v-5bbb627c"
+            wx:for="{{$root.l3}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+            >{{'满'+v.$orig.fullMoney+'减'+v.$orig.money}}<text
+              class="m01 data-v-5bbb627c"
+              wx:if="{{i<v.g13-1}}"
+              >,</text
+            >
+          </text>
+        </block>
+      </view>
+      <view class="car posi-r f-row data-v-5bbb627c">
+        <view
+          bindtap="__e"
+          class="f-g-1 carb f-row data-v-5bbb627c"
+          data-event-opts="{{[ [ 'tap',[ [ 'openCar',['$event'] ] ] ] ]}}"
+          style="background: #393939"
+        >
+          <view
+            class="{{['carb-img','posi-r','f-c','animated','data-v-5bbb627c',$root.g14?'bounceIn':'']}}"
+          >
+            <text class="iconfont icongwc2 cf f46 data-v-5bbb627c"></text>
+            <view
+              class="posi-a dot f-c data-v-5bbb627c"
+              style="{{'background:'+tColor+';'}}"
+              wx:if="{{$root.g15}}"
+              >{{getTotal.num+''}}</view
+            >
+          </view>
+          <view class="f-c-xc ml30 data-v-5bbb627c">
+            <view class="data-v-5bbb627c">
+              <text class="wei f34 cf data-v-5bbb627c" wx:if="{{$root.g16}}"
+                >{{sl+carPrice.nowPrice}}</text
+              >
+              <text class="f28 data-v-5bbb627c" wx:else>未选购商品</text>
+              <text
+                class="ml10 t-d-l data-v-5bbb627c"
+                wx:if="{{carPrice.reduceMoney>0}}"
+                >{{sl+getTotal.total}}</text
+              >
+            </view>
+          </view>
+        </view>
+        <view
+          bindtap="__e"
+          class="f-g-0 carf f-c data-v-5bbb627c"
+          data-event-opts="{{[ [ 'tap',[ [ 'goPay',[2] ] ] ] ]}}"
+          style="{{'background:'+(qsText.reach?tColor:'#323232')+';'+'border:'+(qsText.reach?'1rpx solid '+tColor:'')+';'}}"
+        >
+          <view class="f28 data-v-5bbb627c">{{qsText.text}}</view>
+        </view>
+      </view>
+    </view>
+    <view
+      class="posi-f closec data-v-5bbb627c"
+      hidden="{{!xxshow}}"
+      style="{{'bottom:'+carBtm+'rpx'+';'}}"
+    >
+      <view class="h100 f34 cf f-c-c data-v-5bbb627c">
+        <view class="t-c data-v-5bbb627c"
+          >{{(sjxx.shopData.storeOpen==3?'门店已打烊':sjxx.moreSet.status==1?'门店接受预定中':'门店休息中')+''}}</view
+        >
+        <view
+          class="f24 data-v-5bbb627c"
+          style="color: #ccc"
+          wx:if="{{sjxx.shopData.storeOpen==2}}"
+          >{{'营业时间：'+yysj}}</view
+        >
+      </view>
+    </view>
+    <mg-popup
+      bind:__l="__l"
+      bind:input="__e"
+      class="data-v-5bbb627c"
+      data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showCar','$event',[] ] ] ] ] ]}}"
+      value="{{showCar}}"
+      vueId="ab5895a6-6"
+      vueSlots="{{['default']}}"
+    >
+      <view class="mjts cf5f data-v-5bbb627c" hidden="{{!$root.g17}}">
+        <text class="data-v-5bbb627c" wx:if="{{$root.g18}}"
+          >{{mjInfo.text}}</text
+        >
+        <block wx:else>
+          <text
+            class="data-v-5bbb627c"
+            wx:for="{{$root.l4}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+            >{{'满'+v.$orig.fullMoney+'减'+v.$orig.money}}<text
+              class="m01 data-v-5bbb627c"
+              wx:if="{{i<v.g19-1}}"
+              >,</text
+            >
+          </text>
+        </block>
+      </view>
+      <view
+        class="carlistc p03 bf data-v-5bbb627c"
+        style="{{'padding-bottom:'+carlistPab+'rpx'+';'}}"
+      >
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-5bbb627c"
+          cname="p30"
+          isl="1"
+          vueId="{{'ab5895a6-7'+','+'ab5895a6-6'}}"
+          vueSlots="{{['bd']}}"
+        >
+          <view class="f-y-c data-v-5bbb627c" slot="bd">
+            <text class="f24 data-v-5bbb627c">已选商品</text>
+          </view>
+        </mg-cell>
+        <scroll-view class="p0 carbody data-v-5bbb627c" scrollY="{{true}}">
+          <mg-cell
+            bind:__l="__l"
+            brs="5rpx"
+            class="data-v-5bbb627c"
+            cname="p30 la124"
+            h="136"
+            img="{{v.$orig.icon}}"
+            last="{{i==v.g20-1}}"
+            vueId="{{'ab5895a6-8-'+i+','+'ab5895a6-6'}}"
+            vueSlots="{{['bd']}}"
+            w="136"
+            wx:for="{{$root.l5}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view class="data-v-5bbb627c" slot="bd">
+              <view class="t-o-e f30 data-v-5bbb627c">{{v.$orig.name}}</view>
+              <view class="f24 c9 f-raw data-v-5bbb627c">
+                <text class="data-v-5bbb627c" wx:if="{{v.$orig.groupName}}"
+                  >{{v.$orig.groupName}}</text
+                >
+                <text class="data-v-5bbb627c" wx:if="{{v.$orig.attribute}}"
+                  >{{'('+v.$orig.attribute+')'}}</text
+                >
+                <text
+                  class="ml10 data-v-5bbb627c"
+                  wx:if="{{v.$orig.materialName}}"
+                  >{{'+'+v.$orig.materialName}}</text
+                >
+              </view>
+              <view
+                class="f-row mt10 data-v-5bbb627c"
+                style="{{'color:'+tColor+';'}}"
+                wx:if="{{v.$orig.discountNum>0}}"
+              >
+                <view
+                  class="f20 bs5 b-d p-3-10 data-v-5bbb627c"
+                  style="{{'border-color:'+tColor+';'}}"
+                  >{{''+(v.$orig.discountType==1?'特价':v.$orig.discountType==2?'折扣':v.$orig.discountType==3?'立减':v.$orig.discountType==4?'第二件打折':'买一送一')+''}}</view
+                >
+              </view>
+              <view class="f-x-bt mt10 data-v-5bbb627c">
+                <view class="f-g-0 f30 data-v-5bbb627c">{{sl+v.m2}}</view>
+                <add-goods
+                  addgb="{{addgb}}"
+                  addwz="2"
+                  bind:__l="__l"
+                  bind:add="__e"
+                  bind:dec="__e"
+                  class="data-v-5bbb627c"
+                  cname="f-g-0 mt10"
+                  co="{{v.$orig}}"
+                  data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],[ [ ['carList','',i] ] ] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],[ [ ['carList','',i] ] ] ] ] ] ]}}"
+                  isprice="{{0}}"
+                  showspec="{{false}}"
+                  vueId="{{'ab5895a6-9-'+i+','+'ab5895a6-8-'+i}}"
+                ></add-goods>
+              </view>
+            </view>
+          </mg-cell>
+        </scroll-view>
+      </view>
+    </mg-popup>
+    <sq-btn
+      bind:__l="__l"
+      bind:input="__e"
+      bind:refresh="__e"
+      class="data-v-5bbb627c"
+      data-event-opts="{{[ [ '^refresh',[ ['goPay'] ] ],[ '^input',[ [ '__set_model',[ '','showSqtel','$event',[] ] ] ] ] ]}}"
+      type="4"
+      value="{{showSqtel}}"
+      vueId="ab5895a6-10"
+    ></sq-btn>
+  </view>
+  <block wx:else>
+    <view class="data-v-5bbb627c" wx:if="{{type==4}}">
+      <view
+        class="posi-f carc1 c9 f22 data-v-5bbb627c"
+        hidden="{{!(cshow&&showCar)}}"
+        style="{{$root.s2}}"
+      >
+        <view
+          class="mjts cartopmj cf5f data-v-5bbb627c"
+          hidden="{{!$root.g21}}"
+        >
+          <text class="data-v-5bbb627c" wx:if="{{$root.g22}}"
+            >{{mjInfo.text}}</text
+          >
+          <block wx:else>
+            <text
+              class="data-v-5bbb627c"
+              wx:for="{{$root.l6}}"
+              wx:for-index="i"
+              wx:for-item="v"
+              wx:key="i"
+              >{{'满'+v.$orig.fullMoney+'减'+v.$orig.money}}<text
+                class="m01 data-v-5bbb627c"
+                wx:if="{{i<v.g23-1}}"
+                >,</text
+              >
+            </text>
+          </block>
+        </view>
+        <view class="car posi-r f-row data-v-5bbb627c">
+          <view
+            bindtap="__e"
+            class="f-g-1 carb f-row data-v-5bbb627c"
+            data-event-opts="{{[ [ 'tap',[ [ 'openCar',['$event'] ] ] ] ]}}"
+          >
+            <view
+              class="{{['carb-img','posi-r','f-c','animated','data-v-5bbb627c',$root.g24?'bounceIn':'']}}"
+            >
+              <view class="carb-i bsf bf f-c data-v-5bbb627c">
+                <text
+                  class="iconfont iconshangpin c0 f42 data-v-5bbb627c"
+                ></text>
+              </view>
+              <view
+                class="posi-a dot bsf f-c data-v-5bbb627c"
+                style="{{'background:'+tColor+';'}}"
+                wx:if="{{$root.g25}}"
+                >{{''+getTotal.num+''}}</view
+              >
+            </view>
+            <view class="f-c-xc data-v-5bbb627c">
+              <view class="data-v-5bbb627c">
+                <text class="f34 c3 data-v-5bbb627c" wx:if="{{$root.g26}}"
+                  >{{sl+carPrice.nowPrice}}</text
+                >
+                <text class="f28 data-v-5bbb627c" wx:else>未选购商品</text>
+                <text
+                  class="ml10 t-d-l data-v-5bbb627c"
+                  wx:if="{{carPrice.reduceMoney>0}}"
+                  >{{sl+getTotal.total}}</text
+                >
+              </view>
+              <view class="data-v-5bbb627c">
+                <text class="data-v-5bbb627c" wx:if="{{buytype==1}}"
+                  >{{'预估另需配送费'+sl+$root.m3}}</text
+                >
+                <text class="m01 data-v-5bbb627c" wx:if="{{buytype==1&&havezq}}"
+                  >|</text
+                >
+                <text class="data-v-5bbb627c" wx:if="{{havezq&&type==1}}"
+                  >支持自取</text
+                >
+              </view>
+            </view>
+          </view>
+          <view
+            bindtap="__e"
+            class="f-g-0 carf f-c data-v-5bbb627c"
+            data-event-opts="{{[ [ 'tap',[ ['goPay'] ] ] ]}}"
+            style="{{'background:'+(qsText.reach?tColor:'#999')+';'+'border:'+(qsText.reach?'1rpx solid '+tColor:'')+';'}}"
+          >
+            <view class="f32 cf data-v-5bbb627c">{{qsText.text}}</view>
+          </view>
+        </view>
+      </view>
+      <view
+        class="posi-f closec data-v-5bbb627c"
+        hidden="{{!xxshow}}"
+        style="{{'bottom:'+carBtm+'rpx'+';'}}"
+      >
+        <view class="h100 f34 cf f-c-c data-v-5bbb627c">
+          <view class="t-c data-v-5bbb627c"
+            >{{(sjxx.shopData.storeOpen==3?'门店已打烊':sjxx.moreSet.status==1?'门店接受预定中':'门店休息中')+''}}</view
+          >
+          <view
+            class="f24 data-v-5bbb627c"
+            style="color: #ccc"
+            wx:if="{{sjxx.shopData.storeOpen==2}}"
+            >{{'营业时间：'+yysj}}</view
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="p-a r0 t0 f-c p-10-15 data-v-5bbb627c"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+          wx:if="{{sjxx.shopData.storeOpen==2&&sjxx.moreSet.status==1}}"
+        >
+          <text class="iconfont iconyx cf f36 data-v-5bbb627c"></text>
+        </view>
+      </view>
+      <mg-popup
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-5bbb627c"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showCar','$event',[] ] ] ] ] ]}}"
+        value="{{showCar}}"
+        vueId="ab5895a6-11"
+        vueSlots="{{['default']}}"
+      >
+        <view class="mjts cf5f data-v-5bbb627c" hidden="{{!$root.g27}}">
+          <text class="data-v-5bbb627c" wx:if="{{$root.g28}}"
+            >{{mjInfo.text}}</text
+          >
+          <block wx:else>
+            <text
+              class="data-v-5bbb627c"
+              wx:for="{{$root.l7}}"
+              wx:for-index="i"
+              wx:for-item="v"
+              wx:key="i"
+              >{{'满'+v.$orig.fullMoney+'减'+v.$orig.money}}<text
+                class="m01 data-v-5bbb627c"
+                wx:if="{{i<v.g29-1}}"
+                >,</text
+              >
+            </text>
+          </block>
+        </view>
+        <view
+          class="carlistc p03 bf data-v-5bbb627c"
+          style="{{'padding-bottom:'+carlistPab+'rpx'+';'}}"
+        >
+          <mg-cell
+            bind:__l="__l"
+            class="data-v-5bbb627c"
+            cname="p30"
+            isl="1"
+            vueId="{{'ab5895a6-12'+','+'ab5895a6-11'}}"
+            vueSlots="{{['bd','ft']}}"
+          >
+            <view class="f-y-c data-v-5bbb627c" slot="bd">
+              <text class="f24 data-v-5bbb627c">已选商品</text>
+            </view>
+            <view
+              bindtap="__e"
+              class="f-y-c f24 c9 data-v-5bbb627c"
+              data-event-opts="{{[ [ 'tap',[ [ 'clearCar',['$event'] ] ] ] ]}}"
+              slot="ft"
+              >清空购物车</view
+            >
+          </mg-cell>
+          <scroll-view class="p0 carbody data-v-5bbb627c" scrollY="{{true}}">
+            <mg-cell
+              bind:__l="__l"
+              brs="5rpx"
+              class="data-v-5bbb627c"
+              cname="p30 la124"
+              h="136"
+              img="{{v.$orig.icon}}"
+              last="{{i==v.g30-1}}"
+              vueId="{{'ab5895a6-13-'+i+','+'ab5895a6-11'}}"
+              vueSlots="{{['bd']}}"
+              w="136"
+              wx:for="{{$root.l8}}"
+              wx:for-index="i"
+              wx:for-item="v"
+              wx:key="i"
+            >
+              <view class="data-v-5bbb627c" slot="bd">
+                <view class="t-o-e f30 data-v-5bbb627c">{{v.$orig.name}}</view>
+                <view class="f24 c9 f-raw data-v-5bbb627c">
+                  <text class="data-v-5bbb627c" wx:if="{{v.$orig.groupName}}"
+                    >{{v.$orig.groupName}}</text
+                  >
+                  <text class="data-v-5bbb627c" wx:if="{{v.$orig.attribute}}"
+                    >{{'('+v.$orig.attribute+')'}}</text
+                  >
+                  <text
+                    class="ml10 data-v-5bbb627c"
+                    wx:if="{{v.$orig.materialName}}"
+                    >{{'+'+v.$orig.materialName}}</text
+                  >
+                </view>
+                <view
+                  class="f-row mt10 data-v-5bbb627c"
+                  style="{{'color:'+tColor+';'}}"
+                  wx:if="{{v.$orig.discountNum>0}}"
+                >
+                  <view
+                    class="f20 bs5 b-d p-3-10 data-v-5bbb627c"
+                    style="{{'border-color:'+tColor+';'}}"
+                    >{{''+(v.$orig.discountType==1?'特价':v.$orig.discountType==2?'折扣':v.$orig.discountType==3?'立减':v.$orig.discountType==4?'第二件打折':'买一送一')+''}}</view
+                  >
+                </view>
+                <view class="f-x-bt mt10 data-v-5bbb627c">
+                  <view class="f-g-0 f30 data-v-5bbb627c"
+                    >{{sl+v.$orig.totalMoney}}<text
+                      class="t-d-l ml10 c9 f26 data-v-5bbb627c"
+                      wx:if="{{v.$orig.discountNum>0}}"
+                      >{{sl+v.m4}}</text
+                    >
+                  </view>
+                  <add-goods
+                    addgb="{{addgb}}"
+                    addwz="2"
+                    bind:__l="__l"
+                    bind:add="__e"
+                    bind:dec="__e"
+                    class="data-v-5bbb627c"
+                    cname="f-g-0 mt10"
+                    co="{{v.$orig}}"
+                    data-event-opts="{{[ [ '^add',[ [ 'add',['$event','$0'],[ [ ['carList','',i] ] ] ] ] ],[ '^dec',[ [ 'dec',['$event','$0'],[ [ ['carList','',i] ] ] ] ] ] ]}}"
+                    isprice="{{0}}"
+                    showspec="{{false}}"
+                    vueId="{{'ab5895a6-14-'+i+','+'ab5895a6-13-'+i}}"
+                  ></add-goods>
+                </view>
+              </view>
+            </mg-cell>
+          </scroll-view>
+          <view class="f-y-c p30 hlt f30 data-v-5bbb627c">
+            <view class="data-v-5bbb627c" style="width: 156rpx">包装费</view>
+            <view class="data-v-5bbb627c">
+              <view
+                bindtap="__e"
+                class="data-v-5bbb627c"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/shop/out/bzf'] ] ] ] ] ] ]}}"
+                hidden="{{!(getTotal.bzf>=0)}}"
+              >
+                <text class="data-v-5bbb627c">{{sl+getTotal.bzf}}</text>
+                <text class="iconfont iconwen f24 m01 data-v-5bbb627c"></text>
+              </view>
+              <view class="f20 c9 data-v-5bbb627c">包装费不参与满减</view>
+            </view>
+          </view>
+        </view>
+      </mg-popup>
+      <sq-btn
+        bind:__l="__l"
+        bind:input="__e"
+        bind:refresh="__e"
+        class="data-v-5bbb627c"
+        data-event-opts="{{[ [ '^refresh',[ ['goPay'] ] ],[ '^input',[ [ '__set_model',[ '','showSqtel','$event',[] ] ] ] ] ]}}"
+        type="4"
+        value="{{showSqtel}}"
+        vueId="ab5895a6-15"
+      ></sq-btn>
+    </view>
+  </block>
+</block>

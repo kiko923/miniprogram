@@ -1,0 +1,52 @@
+<view class="mh100 data-v-0a4cf88e">
+  <nav-tab
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-0a4cf88e"
+    cname="fixedtop"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+    tabs="{{tabs}}"
+    value="{{aIdx}}"
+    vueId="686d4867-1"
+  ></nav-tab>
+  <view class="mt90 data-v-0a4cf88e">
+    <view class="f26 c9 t-c data-v-0a4cf88e">
+      <view class="p2 data-v-0a4cf88e" hidden="{{!(aIdx==0)}}"
+        >{{'我的'+system.custom.balance+'：'+sl+user.balance}}<text
+          class="ml50 data-v-0a4cf88e"
+          >{{'累计支出：'+sl+(info.expenditure||0)}}</text
+        >
+      </view>
+      <view class="p2 data-v-0a4cf88e" hidden="{{!(aIdx==1)}}"
+        >{{'累计充值：'+sl+(info.money||0)}}<text class="ml50 data-v-0a4cf88e"
+          >{{'累计赠送：'+sl+(info.giveMoney||0)}}</text
+        >
+      </view>
+    </view>
+    <mg-cell
+      bbt="{{v.createdAt}}"
+      bind:__l="__l"
+      btt="{{v.note}}"
+      bttc="f32"
+      class="data-v-0a4cf88e"
+      cname="p43 f-s"
+      ft="{{v.type==1?'+'+v.money:'-'+v.money}}"
+      isr="1"
+      vueId="{{'686d4867-2-'+i}}"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    ></mg-cell>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-0a4cf88e"
+    imgn="zwye"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="686d4867-3"
+  ></jzz>
+</view>

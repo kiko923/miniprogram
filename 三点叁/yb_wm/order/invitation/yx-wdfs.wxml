@@ -1,0 +1,56 @@
+<view class="bf mh100 pt110 pb130 data-v-541fc3bd">
+  <nav-tab
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-541fc3bd"
+    cname="fixedtop"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+    tabs="{{tabs}}"
+    value="{{aIdx}}"
+    vueId="8458ef3c-1"
+  ></nav-tab>
+  <view class="p03 data-v-541fc3bd">
+    <mg-cell
+      bind:__l="__l"
+      brs="50%"
+      class="data-v-541fc3bd"
+      cname="p30"
+      h="72"
+      img="{{v.$orig.portrait}}"
+      isl="1"
+      vueId="{{'8458ef3c-2-'+i}}"
+      vueSlots="{{['bd','ft']}}"
+      w="72"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="data-v-541fc3bd" slot="bd">
+        <view class="f26 data-v-541fc3bd"
+          >{{v.$orig.userName}}<text class="f22 c9 ml5 data-v-541fc3bd"
+            >{{'（UID：'+v.$orig.bindId+'）'}}</text
+          >
+        </view>
+        <view class="f22 c9 mt10 data-v-541fc3bd">{{'推荐时间：'+v.g0}}</view>
+      </view>
+      <view class="data-v-541fc3bd" slot="ft">
+        <view class="cgreen data-v-541fc3bd" wx:if="{{v.$orig.state=='1'}}"
+          >已完成</view
+        >
+        <view class="cf5 data-v-541fc3bd" wx:if="{{v.$orig.state=='2'}}"
+          >未完成</view
+        >
+      </view>
+    </mg-cell>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-541fc3bd"
+      mygd="{{mygd}}"
+      nodata="{{$root.g1}}"
+      vueId="8458ef3c-3"
+    ></jzz>
+  </view>
+</view>

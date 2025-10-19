@@ -1,0 +1,10 @@
+<view class="bf data-v-2ffd4a21">
+  <jzz
+    bind:__l="__l"
+    class="data-v-2ffd4a21"
+    mygd="{{true}}"
+    nodata="{{true}}"
+    vueId="71a8ce10-1"
+  ></jzz>
+  <tab-bar bind:__l="__l" class="data-v-2ffd4a21" vueId="71a8ce10-2"></tab-bar>
+</view>

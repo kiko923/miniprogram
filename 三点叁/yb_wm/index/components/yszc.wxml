@@ -1,0 +1,67 @@
+<view class="p30 posi-f wh bf t0 z9999 data-v-9bfba510" wx:if="{{value}}">
+  <mask
+    bind:__l="__l"
+    class="data-v-9bfba510"
+    customStyle="{{({background:tColor})}}"
+    show="{{value}}"
+    vueId="588a55f0-1"
+    vueSlots="{{['default']}}"
+    zoom="{{false}}"
+  >
+    <view class="p-a p-a-c w100 data-v-9bfba510">
+      <view class="f-c data-v-9bfba510">
+        <view
+          class="wh dlb data-v-9bfba510"
+          style="width: 140rpx; height: 140rpx; border-radius: 50%"
+        >
+          <mg-img
+            bind:__l="__l"
+            class="data-v-9bfba510"
+            sname="{{snameData}}"
+            src="{{system.icon}}"
+            vueId="{{'588a55f0-2'+','+'588a55f0-1'}}"
+          ></mg-img>
+        </view>
+      </view>
+      <view class="mla bf bs30 p43 data-v-9bfba510" style="width: 650rpx">
+        <view class="t-c data-v-9bfba510">
+          <view class="f38 wei data-v-9bfba510">隐私权政策提示</view>
+          <view class="f26 c9 mt20 data-v-9bfba510">
+            <text class="data-v-9bfba510" style="padding-left: 30rpx"></text
+            >{{'欢迎您使用'+system.name+'，请您仔细阅读并充分理解'}}<text
+              bindtap="__e"
+              class="data-v-9bfba510"
+              data-event-opts="{{[ [ 'tap',[ [ 'ysxyRule',['$event'] ] ] ] ]}}"
+              style="{{'color:'+tColor+';'}}"
+              >《隐私权政策》</text
+            >。如您同意<text
+              bindtap="__e"
+              class="data-v-9bfba510"
+              data-event-opts="{{[ [ 'tap',[ [ 'ysxyRule',['$event'] ] ] ] ]}}"
+              style="{{'color:'+tColor+';'}}"
+              >《隐私权政策》</text
+            >的全部内容，请点击"同意并继续"开始使用我们的服务</view
+          >
+        </view>
+        <view class="mt90 f-c data-v-9bfba510">
+          <button
+            bindtap="__e"
+            class="clearbtn sbtn sbtn2 f-c cf f36 qdsbtn wei data-v-9bfba510"
+            data-event-opts="{{[ [ 'tap',[ [ 'tyxy',['$event'] ] ] ] ]}}"
+            style="{{'background:'+tColor+';'}}"
+          >
+            同意并继续
+          </button>
+        </view>
+        <view class="c9 mt30 t-c f36 data-v-9bfba510">
+          <navigator
+            class="data-v-9bfba510"
+            openType="exit"
+            target="miniProgram"
+            >不同意</navigator
+          >
+        </view>
+      </view>
+    </view>
+  </mask>
+</view>

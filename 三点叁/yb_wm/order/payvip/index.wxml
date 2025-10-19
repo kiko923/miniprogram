@@ -1,0 +1,498 @@
+<view
+  class="pb130 mh100 data-v-7d026c72"
+  style="{{'background:#f0f0f0;'+'padding-bottom:'+(hasTabbar?'275rpx':'160rpx')+';'}}"
+>
+  <view
+    class="mb20 data-v-7d026c72"
+    style="{{'padding:30rpx 18rpx 0;'+'background:'+'linear-gradient(180deg, #181818 70%, #f0f0f0)'+';'}}"
+  >
+    <view
+      class="f-y-c tggc mb20 data-v-7d026c72"
+      style="{{'background:'+'linear-gradient(135deg, #F4D9B1, #F2D5A9)'+';'}}"
+    >
+      <text class="iconfont icongg c0 data-v-7d026c72"></text>
+      <view class="f-1 data-v-7d026c72">
+        <uni-notice-bar
+          backgroundColor="transparent"
+          bind:__l="__l"
+          class="data-v-7d026c72"
+          color="#000"
+          fs="24"
+          scrollable="{{true}}"
+          single="{{true}}"
+          speed="{{36}}"
+          text="{{payVipset.notice}}"
+          vueId="5113e1bc-1"
+        ></uni-notice-bar>
+      </view>
+    </view>
+    <view class="pvt1c p-r bs20 data-v-7d026c72" wx:if="{{ffhysj.state==1}}">
+      <view class="p-a t0 wh bgimg data-v-7d026c72">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-7d026c72"
+          src="{{payVipset.vipBg||onImgurl+'img/payvipbg.png'}}"
+          vueId="5113e1bc-2"
+        ></mg-img>
+      </view>
+      <view class="p-r pvt1 t-c data-v-7d026c72">
+        <text
+          class="iconfont iconhg f56 data-v-7d026c72"
+          style="color: #b9884a"
+        ></text>
+        <view class="f38 wei jbc mt5 data-v-7d026c72">{{payVipset.title}}</view>
+        <view class="f24 m10 data-v-7d026c72" style="color: #6e481c"
+          >开通会员，最高可省<text
+            class="data-v-7d026c72"
+            style="color: #c13215"
+            >{{ffhysj.economizeMoney+dw}}</text
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="sgyk f-c p-r o-h data-v-7d026c72"
+          data-event-opts="{{[ [ 'tap',[ [ 'dktc',['$event'] ] ] ] ]}}"
+          style="width: 550rpx"
+          wx:if="{{xztcinfo}}"
+          >{{'购'+xztcinfo.day+'天卡'+(xztcinfo.first==1&&ffhysj.state==1?xztcinfo.firstMoney:xztcinfo.money)+dw+''}}<view
+            class="p-a xsth f-c data-v-7d026c72"
+            >限时特惠</view
+          >
+        </view>
+      </view>
+    </view>
+    <block wx:else>
+      <view class="data-v-7d026c72" wx:if="{{ffhysj.state==2}}">
+        <view class="pvt1c p-r bs20 mt30 data-v-7d026c72">
+          <view class="p-a t0 wh bgimg data-v-7d026c72">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-7d026c72"
+              src="{{payVipset.vipBg||onImgurl+'img/payvipbg.png'}}"
+              vueId="5113e1bc-3"
+            ></mg-img>
+          </view>
+          <view class="p-r pvt3 data-v-7d026c72">
+            <view class="f-row mb30 data-v-7d026c72">
+              <view class="imgc mr30 data-v-7d026c72">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-7d026c72"
+                  cname="bsf"
+                  src="{{user.portrait||'/static/wd/mrtx.png'}}"
+                  vueId="5113e1bc-4"
+                ></mg-img>
+              </view>
+              <view class="f-1 data-v-7d026c72">
+                <view class="f-y-c data-v-7d026c72">
+                  <view class="f-1 data-v-7d026c72">
+                    <view class="f30 wei data-v-7d026c72" style="color: #5d360a"
+                      >{{user.userName}}</view
+                    >
+                    <view
+                      class="mt10 f24 data-v-7d026c72"
+                      style="color: #b28e5d"
+                      >{{'将于'+$root.m0+'到期'}}</view
+                    >
+                  </view>
+                  <view
+                    bindtap="__e"
+                    class="rbtn data-v-7d026c72"
+                    data-event-opts="{{[ [ 'tap',[ [ 'xfhyk',['$event'] ] ] ] ]}}"
+                    >续费</view
+                  >
+                </view>
+                <view class="mt10 f24 data-v-7d026c72" style="color: #7b562a"
+                  >{{'会员券累计节省'+sl+ffhysj.cumulative+','+ffhysj.waitNum+'张会员券可用'}}</view
+                >
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="hyxfc p-r data-v-7d026c72">
+          <view class="p-a xfyj data-v-7d026c72"></view>
+          <view class="p-a xfyj2 data-v-7d026c72"></view>
+          <view class="p-a zsj data-v-7d026c72"></view>
+          <view class="p-a ysj data-v-7d026c72"></view>
+          <view class="p23 top f-row data-v-7d026c72" style="color: #ffe8c7">
+            <view class="f-1 t-c b-r-d data-v-7d026c72">
+              <view class="data-v-7d026c72"
+                >待使用<text class="f42 data-v-7d026c72"
+                  >{{ffhysj.waitNum}}</text
+                >张</view
+              >
+              <view class="f24 data-v-7d026c72" style="color: #897e73"
+                >{{'可优惠'+sl+ffhysj.waitMoney}}</view
+              >
+            </view>
+            <view class="f-1 t-c b-r-d data-v-7d026c72">
+              <view class="data-v-7d026c72"
+                >已使用<text class="f42 data-v-7d026c72"
+                  >{{ffhysj.alreadyNum}}</text
+                >张</view
+              >
+              <view class="f24 data-v-7d026c72" style="color: #897e73"
+                >{{'已优惠'+sl+ffhysj.alreadyMoney}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+      <block wx:else>
+        <view
+          class="pvt1c p-r bs20 mt30 data-v-7d026c72"
+          wx:if="{{ffhysj.state==3}}"
+        >
+          <view class="p-a t0 wh bgimg data-v-7d026c72">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-7d026c72"
+              src="{{payVipset.vipBg||onImgurl+'img/payvipbg.png'}}"
+              vueId="5113e1bc-5"
+            ></mg-img>
+          </view>
+          <view class="p-r pvt3 data-v-7d026c72">
+            <view class="f-row data-v-7d026c72">
+              <view class="imgc mr30 data-v-7d026c72">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-7d026c72"
+                  cname="bsf"
+                  src="{{user.portrait||'/static/wd/mrtx.png'}}"
+                  vueId="5113e1bc-6"
+                ></mg-img>
+              </view>
+              <view class="f-1 data-v-7d026c72">
+                <view class="f-y-c data-v-7d026c72">
+                  <view class="f-1 data-v-7d026c72">
+                    <view class="f30 wei data-v-7d026c72" style="color: #5d360a"
+                      >{{user.userName}}</view
+                    >
+                    <view
+                      class="mt10 f24 data-v-7d026c72"
+                      style="color: #75664e"
+                      >{{'已于'+$root.m1+'到期'}}</view
+                    >
+                  </view>
+                  <view
+                    bindtap="__e"
+                    class="rbtn data-v-7d026c72"
+                    data-event-opts="{{[ [ 'tap',[ [ 'dktc',['$event'] ] ] ] ]}}"
+                    >开通</view
+                  >
+                </view>
+                <view class="mt10 f24 data-v-7d026c72" style="color: #7b562a"
+                  >{{'会员期间累计节省'+sl+ffhysj.cumulative}}</view
+                >
+              </view>
+            </view>
+            <view class="p-a ygqc f-c data-v-7d026c72">已过期</view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+  <view class="p03 data-v-7d026c72" style="padding: 0 18rpx">
+    <view class="p03 bs20 mb20 pb10 bf data-v-7d026c72">
+      <view class="f-c p13 f30 hytq data-v-7d026c72">
+        <view class="tjdx data-v-7d026c72"></view>
+        <view class="m02 wei f34 data-v-7d026c72">会员特权</view>
+        <view class="tjdx data-v-7d026c72"></view>
+      </view>
+      <view
+        class="t-c f24 data-v-7d026c72"
+        style="color: #666; margin-top: -6rpx"
+        >{{'共'+qyarr.total+'项特权，全平台使用'}}</view
+      >
+      <btn-group
+        bind:__l="__l"
+        class="data-v-7d026c72"
+        co="{{qyarr}}"
+        vueId="5113e1bc-7"
+      ></btn-group>
+    </view>
+    <view
+      class="pvt2c p3 bs20 mb20 data-v-7d026c72"
+      wx:if="{{ffhysj.payVipRebate&&ffhysj.payVipRebate.couponInfo}}"
+    >
+      <mg-cell
+        acolor="#666"
+        arrow="1"
+        asize="22"
+        bgc="transparent"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-7d026c72"
+        cname="p0"
+        color="#666"
+        data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['url','/yb_wm/my/coupon/my'] ] ] ] ] ] ]}}"
+        ft="去使用"
+        ftc="f24"
+        last="1"
+        vueId="5113e1bc-8"
+        vueSlots="{{['bd']}}"
+      >
+        <view class="f-y-c data-v-7d026c72" slot="bd">
+          <view class="qxc f22 f-c bs5 mr10 data-v-7d026c72">权益1</view>
+          <view class="f34 wei data-v-7d026c72" style="color: #000"
+            >{{ffhysj.payVipRebate.rebateTitle}}</view
+          >
+        </view>
+      </mg-cell>
+      <view class="mt5 f24 data-v-7d026c72" style="color: #666"
+        >{{ffhysj.payVipRebate.rebateSubtitle}}</view
+      >
+      <view class="f-bt f-w mt10 data-v-7d026c72">
+        <view
+          class="yhqc p-r o-h data-v-7d026c72"
+          wx:for="{{$root.l0}}"
+          wx:for-index="i"
+          wx:for-item="v"
+        >
+          <view class="p-a wh data-v-7d026c72">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-7d026c72"
+              src="/static/yhq/pvyhq.png"
+              vueId="{{'5113e1bc-9-'+i}}"
+            ></mg-img>
+          </view>
+          <view class="p-r yhq wh f-c-c data-v-7d026c72">
+            <view
+              class="yhqt l-h1 wei f-y-c data-v-7d026c72"
+              style="color: #ff5f00"
+              >{{''+v.m2+''}}<text class="f28 mt15 ml5 data-v-7d026c72"
+                >{{dw}}</text
+              >
+              <text class="f28 m01 nowei data-v-7d026c72" style="color: #fc9751"
+                >x</text
+              >{{''+(v.$orig.num||1)+''}}<text
+                class="f28 mt15 ml5 data-v-7d026c72"
+                >张</text
+              >
+            </view>
+            <view class="yhqb f24 mt5 data-v-7d026c72" style="color: #ac8447"
+              >{{''+(v.$orig.isFull==1?'无门槛':'满'+v.m3+'可用')+''}}</view
+            >
+          </view>
+          <view class="yhqbg3 p-a f20 data-v-7d026c72"
+            >{{v.$orig.storeType==2?'通用':'指定门店'}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class="pvt2c p3 bs20 mb20 data-v-7d026c72"
+      wx:if="{{ffhysj.payVipCycleRebate&&ffhysj.payVipCycleRebate.open==1}}"
+    >
+      <mg-cell
+        acolor="#666"
+        arrow="1"
+        asize="22"
+        bgc="transparent"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-7d026c72"
+        cname="p0"
+        color="#666"
+        data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['url','/yb_wm/my/coupon/my'] ] ] ] ] ] ]}}"
+        ft="去使用"
+        ftc="f24"
+        last="1"
+        vueId="5113e1bc-10"
+        vueSlots="{{['bd']}}"
+      >
+        <view class="f-y-c data-v-7d026c72" slot="bd">
+          <view class="qxc f22 f-c bs5 mr10 data-v-7d026c72">权益2</view>
+          <view class="f34 wei data-v-7d026c72" style="color: #000"
+            >{{ffhysj.payVipCycleRebate.cycleTitle}}</view
+          >
+        </view>
+      </mg-cell>
+      <view class="mt5 f24 data-v-7d026c72" style="color: #666"
+        >{{ffhysj.payVipCycleRebate.cycleSubtitle}}</view
+      >
+      <view class="pt10 data-v-7d026c72">
+        <view
+          class="bf bs10 mt20 yhq2c f-row data-v-7d026c72"
+          wx:for="{{$root.l1}}"
+          wx:for-index="i"
+          wx:for-item="v"
+        >
+          <view class="f-1 left f-row data-v-7d026c72">
+            <view
+              class="leftl f-c wei f52 data-v-7d026c72"
+              style="color: #75481c"
+              >{{v.m4+''}}<text class="f28 mt20 ml5 data-v-7d026c72"
+                >{{dw}}</text
+              >
+              <text class="f28 m01 nowei data-v-7d026c72" style="color: #75481c"
+                >x</text
+              >{{''+(v.$orig.num||1)+''}}<text
+                class="f28 mt15 ml5 data-v-7d026c72"
+                >张</text
+              >
+            </view>
+            <view class="f-1 f-col f-c-xc data-v-7d026c72">
+              <view class="f30 data-v-7d026c72" style="color: #8a6a47"
+                >{{''+(v.$orig.isFull==1?'无门槛':'满'+v.m5+'可用')+''}}</view
+              >
+              <view class="f-y-c mt10 data-v-7d026c72">
+                <view class="f22 t-o-e data-v-7d026c72" style="color: #9a6649"
+                  >{{v.$orig.explain}}</view
+                >
+              </view>
+            </view>
+          </view>
+          <view class="right f-c-c p-r data-v-7d026c72">
+            <view class="lq f-c f26 wei data-v-7d026c72">代金券</view>
+            <view class="p-a yd syd data-v-7d026c72"></view>
+            <view class="p-a yd xyd data-v-7d026c72"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="foot-btnc data-v-7d026c72"
+    style="{{'bottom:'+(hasTabbar?'115rpx':'')+';'}}"
+    wx:if="{{ffhysj.state==1||ffhysj.state==3}}"
+  >
+    <view
+      bindtap="__e"
+      class="kttcc f-row p-r data-v-7d026c72"
+      data-event-opts="{{[ [ 'tap',[ [ 'dktc',['$event'] ] ] ] ]}}"
+    >
+      <view class="left f-y-c data-v-7d026c72">
+        <view class="data-v-7d026c72" style="color: #75572b"
+          >{{xztcinfo.day+'天：'}}</view
+        >
+        <view class="c3 wei data-v-7d026c72">{{sl}}</view>
+        <view class="f50 c3 mb20 wei data-v-7d026c72"
+          >{{xztcinfo.first==1&&ffhysj.state==1?xztcinfo.firstMoney:xztcinfo.money}}</view
+        >
+        <view
+          class="ml30 t-d-l data-v-7d026c72"
+          style="color: #a2865c"
+          wx:if="{{xztcinfo.first==1&&ffhysj.state==1}}"
+          >{{'原价'+sl+xztcinfo.money+''}}</view
+        >
+      </view>
+      <view class="o-h right p-a data-v-7d026c72">
+        <view class="p-a cfx f34 wei f-c data-v-7d026c72">立即购买</view>
+        <view class="p-a xsj data-v-7d026c72"></view>
+      </view>
+    </view>
+  </view>
+  <mg-popup
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-7d026c72"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+    value="{{show}}"
+    vueId="5113e1bc-11"
+    vueSlots="{{['default']}}"
+  >
+    <view
+      class="tctcc bf5 o-h data-v-7d026c72"
+      style="{{'padding-bottom:'+(hasTabbar?'115rpx':'')+';'}}"
+    >
+      <view class="p3 bf data-v-7d026c72">
+        <view class="f-bt f-w tctcc1 data-v-7d026c72">
+          <view
+            bindtap="__e"
+            class="{{['tcc','f-c-c','bs10','o-v','p-r','mb20','data-v-7d026c72',i==xzidx?'xz':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'xztc',[i] ] ] ] ]}}"
+            wx:for="{{tcarr}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view
+              class="{{['ysjc','p-a','f22','cf','data-v-7d026c72',i!=0?'ysjcyh':'']}}"
+              >{{i==0?'推荐':'特惠'}}</view
+            >
+            <view class="data-v-7d026c72">{{v.title}}</view>
+            <view class="f24 mt5 wbba data-v-7d026c72">
+              <text class="wei data-v-7d026c72">{{sl}}</text>
+              <text class="f48 wei data-v-7d026c72"
+                >{{v.first==1&&ffhysj.state==1?v.firstMoney:v.money}}</text
+              >
+              <text
+                class="c9 t-d-l ml5 data-v-7d026c72"
+                wx:if="{{v.first==1&&ffhysj.state==1}}"
+                >{{v.money}}</text
+              >
+            </view>
+            <view class="{{['f22','mt10','data-v-7d026c72',i!=xzidx?'c6':'']}}"
+              >{{v.subtitle}}</view
+            >
+          </view>
+        </view>
+        <view
+          bindtap="__e"
+          class="mt10 f-y-c data-v-7d026c72"
+          data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+        >
+          <view
+            class="dgc bsf f-c mr20 data-v-7d026c72"
+            style="{{'background:'+(gmxz?'':'#ededed')+';'}}"
+          >
+            <text
+              class="iconfont icongou f22 data-v-7d026c72"
+              style="{{'color:'+(gmxz?'#F7C780':'#999')+';'}}"
+            ></text>
+          </view>
+          <view class="f-1 f26 data-v-7d026c72">阅读并同意《购买须知》</view>
+          <text
+            catchtap="__e"
+            class="iconfont iconwen data-v-7d026c72"
+            data-event-opts="{{[ [ 'tap',[ [ 'ckxy',['$event'] ] ] ] ]}}"
+          ></text>
+        </view>
+      </view>
+      <view class="p3 bf mt20 data-v-7d026c72">
+        <view class="pb20 data-v-7d026c72">
+          <view class="kttcc f-row p-r data-v-7d026c72">
+            <view class="left f-y-c data-v-7d026c72">
+              <view class="data-v-7d026c72" style="color: #75572b"
+                >{{xztcinfo.day+'天：'}}</view
+              >
+              <view class="c3 wei data-v-7d026c72">{{sl}}</view>
+              <view class="f50 c3 mb20 wei data-v-7d026c72"
+                >{{(xztcinfo.first==1&&ffhysj.state==1?xztcinfo.firstMoney:xztcinfo.money)+''}}</view
+              >
+              <view
+                class="ml30 t-d-l data-v-7d026c72"
+                style="color: #a2865c"
+                wx:if="{{xztcinfo.first==1&&ffhysj.state==1}}"
+                >{{'原价'+sl+xztcinfo.money+''}}</view
+              >
+            </view>
+            <view
+              bindtap="__e"
+              class="o-h right p-a data-v-7d026c72"
+              data-event-opts="{{[ [ 'tap',[ [ 'ljkt',['$event'] ] ] ] ]}}"
+            >
+              <view class="p-a cfx f34 wei f-c data-v-7d026c72">立即开通</view>
+              <view class="p-a xsj data-v-7d026c72"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </mg-popup>
+  <tab-bar
+    bind:__l="__l"
+    bind:refresh="__e"
+    class="data-v-7d026c72"
+    data-event-opts="{{[ [ '^refresh',[ ['tbrh'] ] ] ]}}"
+    vueId="5113e1bc-12"
+  ></tab-bar>
+  <load
+    bind:__l="__l"
+    class="data-v-7d026c72"
+    vueId="5113e1bc-13"
+    wx:if="{{showloading}}"
+  ></load>
+</view>

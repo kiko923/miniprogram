@@ -1,0 +1,76 @@
+<view class="data-v-167d8bf1">
+    <view class="bf p3 data-v-167d8bf1" wx:if="{{xtData.open}}">
+        <mg-cell arrow="1" bind:__l="__l" bind:tab="__e" btt="转出方式" bttc="f30" class="data-v-167d8bf1" data-event-opts="{{[ [ '^tab',[ ['ljyq'] ] ] ]}}" hc="1" isr="1" vueId="c1e768a4-1" vueSlots="{{['ft']}}">
+            <text class="cf7 data-v-167d8bf1" slot="ft">{{txName||'设置转出方式'}}</text>
+        </mg-cell>
+        <view class="data-v-167d8bf1" wx:if="{{params.type==1}}">
+            <mg-input bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" cname="p23" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','wxUserName','$event',[] ],['params'] ] ] ] ]}}" ht="真实姓名" htc="f30" icn="f30" isr="1" pr="请输入真实姓名" value="{{params.wxUserName}}" vueId="c1e768a4-2"></mg-input>
+        </view>
+        <view class="data-v-167d8bf1" wx:if="{{params.type==2}}">
+            <mg-input bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" cname="p23" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','aliUserName','$event',[] ],['params'] ] ] ] ]}}" ht="支付宝姓名" htc="f30" icn="f30" isr="1" pr="请输入支付宝姓名" value="{{params.aliUserName}}" vueId="c1e768a4-3"></mg-input>
+            <mg-input bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" cname="p23" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','aliAccount','$event',[] ],['params'] ] ] ] ]}}" ht="支付宝账号" htc="f30" icn="f30" isr="1" pr="请输入支付宝账号" value="{{params.aliAccount}}" vueId="c1e768a4-4"></mg-input>
+        </view>
+        <view class="data-v-167d8bf1" wx:if="{{params.type==3}}">
+            <mg-input bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" cname="p23" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','bankName','$event',[] ],['params'] ] ] ] ]}}" ht="所属银行" htc="f30" icn="f30" isr="1" pr="请输入所属银行" value="{{params.bankName}}" vueId="c1e768a4-5"></mg-input>
+            <mg-input bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" cname="p23" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','bankAccount','$event',[] ],['params'] ] ] ] ]}}" ht="银行卡号" htc="f30" icn="f30" isr="1" pr="请输入银行卡号" t="number" value="{{params.bankAccount}}" vueId="c1e768a4-6"></mg-input>
+            <mg-input bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" cname="p23" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','bankUserName','$event',[] ],['params'] ] ] ] ]}}" ht="户主姓名" htc="f30" icn="f30" isr="1" last="1" pr="请输入户主姓名" value="{{params.bankUserName}}" vueId="c1e768a4-7"></mg-input>
+        </view>
+        <view class="f-g-1 bf mdbd p30 data-v-167d8bf1">
+            <view class="mdbdt data-v-167d8bf1">
+                <view class="c9 data-v-167d8bf1">
+                    <text class="c6 f28 data-v-167d8bf1">提现金额</text>
+                    <text class="f24 ml10 data-v-167d8bf1">{{'最低提现金额'+xtData.downMoney+'元'}}</text>
+                </view>
+                <view class="p20 b-b-e f-row data-v-167d8bf1" style="align-items:flex-start;">
+                    <text class="mr20 f56 wei data-v-167d8bf1" style="margin-top:0rpx;">{{sl}}</text>
+                    <input bindinput="__e" class="f-g-1 mdinput wei data-v-167d8bf1" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '$0','money','$event',[] ],['params'] ] ] ] ]}}" focus="true" maxlength="{{$root.g0}}" placeholder="请输入提现金额" placeholderClass="cd f32 nowei" style="{{'caret-color:'+tColor+';'}}" type="digit" value="{{params.money}}"></input>
+                </view>
+            </view>
+            <view class="mdbdb mt15 data-v-167d8bf1">
+                <view class="c9 f-x-bt f24 data-v-167d8bf1">
+                    <text class="data-v-167d8bf1">{{'可提现金额：'+sl+(txMoney?txMoney:0)}}</text>
+                    <text bindtap="__e" class="cf7 data-v-167d8bf1" data-event-opts="{{[ [ 'tap',[ [ 'qbtx',['$event'] ] ] ] ]}}">全部提现</text>
+                </view>
+            </view>
+            <mg-cell bind:__l="__l" btt="结算周期" bttc="f30" class="data-v-167d8bf1" ft="{{'t+'+xtData.day}}" ftc="c3" vueId="c1e768a4-8"></mg-cell>
+            <view class="bf p3 data-v-167d8bf1">
+                <view class="f30 mb10 data-v-167d8bf1">提现说明</view>
+                <mg-rtext bind:__l="__l" class="data-v-167d8bf1" content="{{xtData.explain}}" type="2" vueId="c1e768a4-9"></mg-rtext>
+            </view>
+            <view class="foot-btnc p-r mt10 data-v-167d8bf1">
+                <button bindtap="__e" class="foot-btn data-v-167d8bf1" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}" disabled="{{loading}}" hoverClass="be" loading="{{loading}}" style="{{'background:'+tColor+';'}}">提现</button>
+            </view>
+        </view>
+    </view>
+    <mg-popup bind:__l="__l" bind:input="__e" class="data-v-167d8bf1" close="1" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','shareshow','$event',[] ] ] ] ] ]}}" value="{{shareshow}}" vueId="c1e768a4-10" vueSlots="{{['default']}}" zIndex="{{5000}}">
+        <view class="p0 data-v-167d8bf1">
+            <view class="bf p3 fxc data-v-167d8bf1">
+                <view class="f-c data-v-167d8bf1">
+                    <view class="m02 f32 wei data-v-167d8bf1">请选择提现方式</view>
+                </view>
+                <view class="sharec data-v-167d8bf1">
+                    <mg-cell ac="iconright1" bind:__l="__l" bind:tab="__e" bttc="f30" class="data-v-167d8bf1" cname="p30" data-event-opts="{{[ [ '^tab',[ [ 'changeTab',[i,'$0'],[ [ ['tabs','',i] ] ] ] ] ] ]}}" ftc="f24 cd" vueId="{{'c1e768a4-11-'+i+','+'c1e768a4-10'}}" vueSlots="{{['bd','ft']}}" wx:if="{{$root.g1}}" wx:for="{{tabs}}" wx:for-index="i" wx:for-item="v" wx:key="i">
+                        <view class="data-v-167d8bf1" slot="bd">
+                            <view class="flex data-v-167d8bf1">
+                                <view class="iconimg data-v-167d8bf1">
+                                    <mg-img bind:__l="__l" class="data-v-167d8bf1" src="{{onImgurl+'tx/'+v.icn+'.png'}}" vueId="{{'c1e768a4-12-'+i+','+'c1e768a4-11-'+i}}"></mg-img>
+                                </view>
+                                <view class="ml20 data-v-167d8bf1">{{v.name}}</view>
+                            </view>
+                        </view>
+                        <view class="data-v-167d8bf1" slot="ft">
+                            <view class="flex data-v-167d8bf1">
+                                <view class="iconimg data-v-167d8bf1" wx:if="{{i==aIdx}}">
+                                    <mg-img bind:__l="__l" class="data-v-167d8bf1" src="{{onImgurl+'tx/xzhover.png'}}" vueId="{{'c1e768a4-13-'+i+','+'c1e768a4-11-'+i}}"></mg-img>
+                                </view>
+                                <view class="iconimg data-v-167d8bf1" wx:else>
+                                    <mg-img bind:__l="__l" class="data-v-167d8bf1" src="{{onImgurl+'tx/xz.png'}}" vueId="{{'c1e768a4-14-'+i+','+'c1e768a4-11-'+i}}"></mg-img>
+                                </view>
+                            </view>
+                        </view>
+                    </mg-cell>
+                </view>
+            </view>
+        </view>
+    </mg-popup>
+</view>

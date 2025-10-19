@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "iz-popup": "/components/izhar-popup"
+  }
+}

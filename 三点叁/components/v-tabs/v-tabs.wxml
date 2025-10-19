@@ -1,0 +1,39 @@
+<view
+  class="v-tabs data-v-11596c78"
+  id="{{elId}}"
+  style="{{'background:'+bgColor+';'+'padding:'+padding+';'}}"
+>
+  <scroll-view
+    class="data-v-11596c78"
+    scrollLeft="{{scroll?scrollLeft:0}}"
+    scrollWithAnimation="{{scroll}}"
+    scrollX="{{scroll}}"
+  >
+    <view
+      class="v-tabs__container data-v-11596c78"
+      style="{{'display:'+(scroll?'inline-flex':'flex')+';'+'white-space:'+(scroll?'nowrap':'normal')+';'+'height:'+height+';'}}"
+    >
+      <view
+        bindtap="__e"
+        class="v-tabs__container-item data-v-11596c78"
+        data-event-opts="{{[ [ 'tap',[ [ 'change',[i] ] ] ] ]}}"
+        style="{{'color:'+(current==i?activeColor:color)+';'+'font-size:'+(current==i?fontSize:fontSize)+';'+'font-weight:'+(bold&&current==i?'bold':'')+';'+'justify-content:'+(!scroll?'center':'')+';'}}"
+        wx:for="{{tabs}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+        >{{''+(field?v[field]:v)+''}}</view
+      >
+      <view
+        class="v-tabs__container-line data-v-11596c78"
+        style="{{'background:'+lineColor+';'+'width:'+lineWidth+'px'+';'+'height:'+lineHeight+';'+'border-radius:'+lineRadius+';'+'left:'+lineLeft+'px'+';'+'transform:'+'translateX(-'+lineWidth/2+'px)'+';'}}"
+        wx:if="{{!pills}}"
+      ></view>
+      <view
+        class="v-tabs__container-pills data-v-11596c78"
+        style="{{'background:'+pillsColor+';'+'border-radius:'+pillsBorderRadius+';'+'left:'+pillsLeft+'px'+';'+'width:'+currentWidth+'px'+';'+'height:'+height+';'}}"
+        wx:else
+      ></view>
+    </view>
+  </scroll-view>
+</view>

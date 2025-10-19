@@ -1,0 +1,109 @@
+<view class="{{['navTabBox',cname]}}" style="{{$root.s0}}" wx:if="{{type==1}}">
+  <view class="shortTab" wx:if="{{$root.g0}}">
+    <view class="navTab" style="{{'height:'+height+'rpx'+';'}}">
+      <view
+        bindtap="__e"
+        class="{{['navTabItem',icname]}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'navClick',[index] ] ] ] ]}}"
+        style="{{item.s1}}"
+        wx:for="{{$root.l0}}"
+        wx:key="index"
+      >
+        <text
+          class="{{['iconfont','mr15','f36',item.$orig.icon]}}"
+          style="{{'color:'+(index==tabClick?item.$orig.color||color:'')+';'}}"
+          wx:if="{{item.$orig.icon}}"
+        ></text>
+        <view class="p-r"
+          >{{item.$orig.name+''}}<text
+            class="p-a c9 f24 onum"
+            wx:if="{{item.$orig.num}}"
+            >{{item.$orig.num}}</text
+          >
+          <view
+            class="dot p-a r0 f20 cf nowei f-c bsf"
+            wx:if="{{item.$orig.dot>0}}"
+            >{{item.$orig.dot}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class="underlineBox"
+      style="{{'transform:'+'translateX('+isLeft+'px)'+';'+'width:'+isWidth+'px'+';'}}"
+      wx:if="{{isWidth>0}}"
+    >
+      <view
+        class="underline"
+        style="{{'background:'+(xhxjb||color||tColor)+';'}}"
+      ></view>
+    </view>
+  </view>
+  <view class="longTab" wx:if="{{$root.g1}}">
+    <scroll-view
+      scrollIntoView="{{toView}}"
+      scrollWithAnimation="{{true}}"
+      scrollX="true"
+      style="white-space: nowrap; display: flex"
+    >
+      <view
+        bindtap="__e"
+        class="{{['longItem',icname]}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'longClick',[index] ] ] ] ]}}"
+        data-index="{{index}}"
+        id="{{'id'+index}}"
+        style="{{item.s2}}"
+        wx:for="{{$root.l1}}"
+        wx:key="index"
+        >{{item.$orig.name}}</view
+      >
+      <view
+        class="underlineBox"
+        style="{{'transform:'+(isscroll?'translateX('+100*tabClick+'%)':'translateX('+isLeft+'px)')+';'+'width:'+itw+';'}}"
+      >
+        <view
+          class="underline"
+          style="{{'background:'+(xhxjb||color||tColor)+';'+'width:'+uw+'rpx'+';'}}"
+        ></view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="{{['navTabBox',cname]}}" wx:else>
+  <scroll-view
+    class="ws-n p20 longTab"
+    scrollIntoView="{{toView}}"
+    scrollWithAnimation="{{true}}"
+    scrollX="true"
+  >
+    <view
+      bindtap="__e"
+      class="{{['p-r','longItem','longItem2',icname]}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'longClick',[index] ] ] ] ]}}"
+      id="{{'id'+index}}"
+      style="{{'color:'+(index==tabClick?color||tColor:ncolor)+';'+'width:'+itw+';'}}"
+      wx:for="{{tabs}}"
+      wx:key="index"
+    >
+      <view class="f-c mt10">
+        <view class="typeimg bf6 bsf">
+          <mg-img
+            bind:__l="__l"
+            src="{{item.icon}}"
+            vueId="{{'1a90c7a5-1-'+index}}"
+          ></mg-img>
+        </view>
+      </view>
+      <view
+        style="{{'height:'+height+'rpx'+';'+'line-height:'+height+'rpx'+';'}}"
+        >{{item.name}}</view
+      >
+      <view class="p-a underlineBox b0" style="{{'width:'+'100%'+';'}}">
+        <view
+          class="underline"
+          style="{{'background:'+(index==tabClick?color||tColor:'')+';'+'width:'+uw+'rpx'+';'}}"
+        ></view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

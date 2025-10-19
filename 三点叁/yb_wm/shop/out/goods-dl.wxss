@@ -1,0 +1,30 @@
+.spxq .gwcc.data-v-3dbf5290 {
+  height: 120rpx;
+}
+.spxq .jrgwc.data-v-3dbf5290 {
+  width: 400rpx;
+  margin-right: 20rpx;
+  height: 76rpx;
+  border-radius: 90rpx;
+}
+.spxq .dname-l.data-v-3dbf5290 {
+  width: 210rpx;
+  height: 76rpx;
+  padding: 3rpx 10rpx 3rpx 15rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  background: #313131;
+}
+.spxq .dname-r.data-v-3dbf5290 {
+  width: 210rpx;
+  height: 76rpx;
+  padding: 3rpx 15rpx 3rpx 10rpx;
+  border-radius: 0 50rpx 50rpx 0;
+  background: linear-gradient(90deg, #fff3a6, #fcd96f);
+}
+.spxq .dot.data-v-3dbf5290 {
+  min-width: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  top: -20rpx;
+  right: 15rpx;
+}

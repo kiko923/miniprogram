@@ -1,0 +1,220 @@
+<view class="mvh100 pb130 data-v-2d2bc790">
+  <nav-tab
+    cname
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-2d2bc790"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','tIdx','$event',[] ] ] ] ] ]}}"
+    ifsize="32"
+    tabs="{{tabs}}"
+    value="{{tIdx}}"
+    vueId="13c5a562-1"
+  ></nav-tab>
+  <block wx:if="{{tIdx==0}}">
+    <view class="p230 data-v-2d2bc790" wx:if="{{notice}}">
+      <view
+        class="p03 bs60 f-y-c data-v-2d2bc790"
+        style="{{'background:'+tbgo+';'}}"
+      >
+        <text
+          class="iconfont iconsgg cf f36 data-v-2d2bc790"
+          style="{{'color:'+tColor+';'}}"
+        ></text>
+        <view class="f-1 data-v-2d2bc790">
+          <uni-notice-bar
+            backgroundColor="transparent"
+            bind:__l="__l"
+            class="data-v-2d2bc790"
+            color="{{tColor}}"
+            scrollable="{{true}}"
+            single="{{true}}"
+            speed="{{25}}"
+            text="{{notice}}"
+            vueId="13c5a562-2"
+          ></uni-notice-bar>
+        </view>
+      </view>
+    </view>
+    <view class="yd1 data-v-2d2bc790">
+      <scroll-view
+        class="ws-n ydsv data-v-2d2bc790"
+        scrollIntoView="{{siv1}}"
+        scrollWithAnimation="{{true}}"
+        scrollX="true"
+      >
+        <view
+          bindtap="__e"
+          class="dis-in svic data-v-2d2bc790"
+          data-event-opts="{{[ [ 'tap',[ [ 'click1',[i] ] ] ] ]}}"
+          id="{{'v1'+i}}"
+          wx:for="{{arr1}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view
+            class="{{['svitem','f-c-c','data-v-2d2bc790',i==aIdx1?'wei':'']}}"
+            style="{{'color:'+(i==aIdx1?tColor:'')+';'+'background:'+(i==aIdx1?tbgo:'')+';'}}"
+          >
+            <view class="data-v-2d2bc790">{{v+'人'}}</view>
+          </view>
+        </view>
+      </scroll-view>
+      <scroll-view
+        class="ws-n ydsv data-v-2d2bc790"
+        scrollIntoView="{{siv2}}"
+        scrollWithAnimation="{{true}}"
+        scrollX="true"
+      >
+        <view class="f-row data-v-2d2bc790">
+          <view
+            bindtap="__e"
+            class="svic data-v-2d2bc790"
+            data-event-opts="{{[ [ 'tap',[ [ 'click2',[i] ] ] ] ]}}"
+            id="{{'v2'+i}}"
+            wx:for="{{arr2}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view
+              class="{{['svitem','f-c-c','data-v-2d2bc790',i==aIdx2?'wei':'']}}"
+              style="{{'color:'+(i==aIdx2?tColor:'')+';'+'background:'+(i==aIdx2?tbgo:'')+';'}}"
+            >
+              <view
+                class="data-v-2d2bc790"
+                style="{{'color:'+(v.isAppointment==2?'#999':'')+';'}}"
+                >{{v.day}}</view
+              >
+              <view
+                class="f20 nowei data-v-2d2bc790"
+                style="{{'color:'+(v.isAppointment==2?'#999':'')+';'}}"
+                >{{v.isAppointment==2?'不可订':v.weekName}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <scroll-view
+        class="ws-n ydsv data-v-2d2bc790"
+        scrollIntoView="{{siv3}}"
+        scrollWithAnimation="{{true}}"
+        scrollX="true"
+      >
+        <view
+          bindtap="__e"
+          class="dis-in svic data-v-2d2bc790"
+          data-event-opts="{{[ [ 'tap',[ [ 'click3',[i] ] ] ] ]}}"
+          id="{{'v3'+i}}"
+          wx:for="{{arr3}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view
+            class="{{['svitem','f-c-c','data-v-2d2bc790',i==aIdx3?'wei':'']}}"
+            style="{{'color:'+(i==aIdx3?tColor:'')+';'+'background:'+(i==aIdx3?tbgo:'')+';'}}"
+          >
+            <view class="data-v-2d2bc790">{{v}}</view>
+          </view>
+        </view>
+      </scroll-view>
+      <scroll-view
+        class="ws-n ydsv data-v-2d2bc790"
+        scrollIntoView="{{siv4}}"
+        scrollWithAnimation="{{true}}"
+        scrollX="true"
+      >
+        <view class="f-row data-v-2d2bc790">
+          <view
+            bindtap="__e"
+            class="svic data-v-2d2bc790"
+            data-event-opts="{{[ [ 'tap',[ [ 'click4',[i] ] ] ] ]}}"
+            id="{{'v4'+i}}"
+            wx:for="{{$root.l0}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view
+              class="{{['svitem','f-c-c','data-v-2d2bc790',i==aIdx4?'wei':'']}}"
+              style="{{'color:'+(i==aIdx4?tColor:'')+';'+'background:'+(i==aIdx4?tbgo:'')+';'}}"
+            >
+              <view
+                class="data-v-2d2bc790"
+                style="{{'color:'+(v.$orig.minNum>peopleNum||v.$orig.maxNum<peopleNum?'#999':'')+';'}}"
+                >{{v.$orig.name}}</view
+              >
+              <view
+                class="f20 nowei data-v-2d2bc790"
+                style="{{'color:'+(v.$orig.minNum>peopleNum||v.$orig.maxNum<peopleNum?'#999':'')+';'}}"
+                >{{v.m0}}</view
+              >
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="foot-btnc data-v-2d2bc790" wx:if="{{xzyy}}">
+      <view
+        class="p-a ydjc bf f24 data-v-2d2bc790"
+        wx:if="{{aIdx4>-1&&arr4[aIdx4].money>0}}"
+      >
+        <view class="f-y-c data-v-2d2bc790"
+          >{{'每单需预付'+sl+arr4[aIdx4].money+' 订金'}}<text
+            class="iconfont iconwen f26 c3 ml10 data-v-2d2bc790"
+          ></text>
+        </view>
+        <view class="f20 c9 data-v-2d2bc790"
+          >{{'若不能及时到店，就餐前'+yyxx.set.cancelTime+'分钟可取消订单'}}</view
+        >
+        <view class="p-a xxsj data-v-2d2bc790"></view>
+      </view>
+      <view
+        class="yd2 f-row cf data-v-2d2bc790"
+        style="{{'background:'+'linear-gradient(90deg,rgba('+$root.m1+',0.65),'+tColor+')'+';'}}"
+      >
+        <view class="f-1 o-x-s f-y-c yd2l data-v-2d2bc790">
+          <text class="f-g-0 mr10 data-v-2d2bc790">{{xzyy[0].name}}</text>
+          <text class="f-g-0 mr10 data-v-2d2bc790">{{xzyy[1].name}}</text>
+          <text class="f-g-0 data-v-2d2bc790">{{xzyy[2].name+'，'}}</text>
+          <text class="f-g-0 data-v-2d2bc790">{{xzyy[3].name+'，'}}</text>
+          <text class="f-g-0 data-v-2d2bc790">{{xzyy[4].name}}</text>
+        </view>
+        <view
+          bindtap="__e"
+          class="yd2r f34 f-y-c b-r-d data-v-2d2bc790"
+          data-event-opts="{{[ [ 'tap',[ [ 'ljdz',['$event'] ] ] ] ]}}"
+          >立即订座</view
+        >
+      </view>
+    </view>
+  </block>
+  <view class="mt10 p2 data-v-2d2bc790">
+    <block wx:if="{{tIdx==1}}">
+      <dn-order
+        bind:__l="__l"
+        bind:input="__e"
+        bind:refresh="__e"
+        class="data-v-2d2bc790"
+        data-event-opts="{{[ [ '^refresh',[ ['dnrefresh'] ] ],[ '^input',[ [ '__set_model',[ '','laIdx','$event',[] ] ] ] ] ]}}"
+        datalist="{{dataList}}"
+        labelarr="{{labelArr}}"
+        otype="{{tntabs[0].type}}"
+        value="{{laIdx}}"
+        vueId="13c5a562-3"
+      ></dn-order>
+      <jzz
+        bgcolor="transparent"
+        bind:__l="__l"
+        class="data-v-2d2bc790"
+        mygd="{{mygd}}"
+        nodata="{{$root.g0}}"
+        otext="您今天还没有预约订单"
+        ttext="快去预约吧"
+        vueId="13c5a562-4"
+      ></jzz>
+    </block>
+  </view>
+</view>

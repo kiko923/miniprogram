@@ -1,0 +1,78 @@
+<view
+  class="notice data-v-9f0938dc"
+  style="{{'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'}}"
+>
+  <view
+    class="f-y-c p02 data-v-9f0938dc"
+    style="{{'background:'+co.colorBg+';'+'border-radius:'+co.circle+u+';'}}"
+  >
+    <view class="f-g-0 data-v-9f0938dc">
+      <view
+        class="ggbt wei mr20 data-v-9f0938dc"
+        style="{{'color:'+co.color+';'}}"
+        wx:if="{{co.title}}"
+        >{{co.title}}</view
+      >
+      <block wx:else>
+        <view class="limg mr20 data-v-9f0938dc" wx:if="{{co.hand[0].img}}">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-9f0938dc"
+            m="aspectFit"
+            src="{{co.hand[0].img}}"
+            vueId="46be255e-1"
+          ></mg-img>
+        </view>
+        <text
+          class="iconfont icongg mt0 f38 mr10 data-v-9f0938dc"
+          wx:else
+        ></text>
+      </block>
+    </view>
+    <view
+      class="f-g-1 ngr b-s1 bs10 data-v-9f0938dc"
+      style="{{'height:'+(notice?'70rpx':'')+';'}}"
+    >
+      <uni-notice-bar
+        backgroundColor="{{co.backgroundColor}}"
+        bind:__l="__l"
+        class="data-v-9f0938dc"
+        color="{{ptype==1?co.colorWord:co.hand[0].img?tColor:'#8B5C42'}}"
+        scrollable="{{true}}"
+        single="{{true}}"
+        text="{{notice}}"
+        vueId="46be255e-2"
+        wx:if="{{type==1&&notice}}"
+      ></uni-notice-bar>
+      <swiper
+        autoplay="{{true}}"
+        circular="true"
+        class="wh data-v-9f0938dc"
+        interval="2000"
+        vertical="true"
+        wx:else
+      >
+        <swiper-item
+          catchtap="__e"
+          class="f-c-xc data-v-9f0938dc"
+          data-event-opts="{{[ [ 'tap',[ [ 'goDl',['$0'],[ [ ['nlist','',i] ] ] ] ] ] ]}}"
+          wx:for="{{nlist}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view
+            class="c6 f24 t-o-e data-v-9f0938dc"
+            style="{{'color:'+co.colorWord+';'}}"
+            >{{v.title}}</view
+          >
+        </swiper-item>
+      </swiper>
+    </view>
+    <text
+      class="iconfont iconright data-v-9f0938dc"
+      style="{{'color:'+co.colorWord+';'}}"
+      wx:if="{{arrow&&!notice}}"
+    ></text>
+  </view>
+</view>

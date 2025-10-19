@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "ls-swiper": "/components/third/ls-swiper/index",
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "btn-group": "/components/drag/btnm",
+    "load": "/components/common/load",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

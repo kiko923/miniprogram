@@ -1,0 +1,61 @@
+<view class="pb130 data-v-7abb0ab0">
+  <view class="posi-f w100 t0 czztm bf5 data-v-7abb0ab0">
+    <view class="bf data-v-7abb0ab0">
+      <view class="f-c-c p30 data-v-7abb0ab0">
+        <view class="f28 data-v-7abb0ab0">当前成长值</view>
+        <view class="f56 cf7 wei data-v-7abb0ab0">{{user.growth}}</view>
+      </view>
+      <view class="f-x-bt data-v-7abb0ab0">
+        <view class="p03 f-row f22 o-h data-v-7abb0ab0">
+          <view class="vname-l t-c t-o-e data-v-7abb0ab0"
+            >{{'VIP'+user.level}}</view
+          >
+          <view class="vname-r t-c t-o-e data-v-7abb0ab0"
+            >{{user.cardName}}</view
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="f-c p3 data-v-7abb0ab0"
+          data-event-opts="{{[ [ 'tap',[ [ 'integralRule',['$event'] ] ] ] ]}}"
+        >
+          <text class="iconfont iconjfgz mr10 cf7 f34 data-v-7abb0ab0"></text>
+          <text class="data-v-7abb0ab0">会员权益</text>
+        </view>
+      </view>
+    </view>
+    <view class="bf mt30 data-v-7abb0ab0">
+      <view class="f32 wei p3 bor-b data-v-7abb0ab0">成长值记录</view>
+    </view>
+  </view>
+  <view class="data-v-7abb0ab0" style="{{'margin-top:'+topH+'px'+';'}}">
+    <view
+      class="p3 bf bor-b data-v-7abb0ab0"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="f-x-bt data-v-7abb0ab0">
+        <view class="t-o-e f28 data-v-7abb0ab0">{{v.note}}</view>
+        <view class="cf7 f28 data-v-7abb0ab0">
+          <text class="data-v-7abb0ab0" wx:if="{{v.type=='1'}}">+</text>
+          <text class="data-v-7abb0ab0" if="v.type=='2'" wx:else>-</text
+          >{{v.growth}}</view
+        >
+      </view>
+      <view class="f-x-bt data-v-7abb0ab0">
+        <view class="c9 f24 m10 data-v-7abb0ab0">{{v.createdAt}}</view>
+      </view>
+    </view>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-7abb0ab0"
+      imgn="zwjf"
+      mygd="{{mygd}}"
+      nodata="{{$root.g0}}"
+      vueId="d037a752-1"
+    ></jzz>
+  </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mg-img": "/components/common/mg-img",
+    "mask": "/yb_wm/index/components/mask",
+    "tab-bar": "/components/common/tabbar",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

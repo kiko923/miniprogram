@@ -1,0 +1,219 @@
+<view class="{{['pb115','data-v-4c19eb0d',showCoupon||showCancel?'bgfix':'']}}">
+  <nav-tab
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-4c19eb0d"
+    cname="fixedtop"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+    tabs="{{tabs}}"
+    value="{{aIdx}}"
+    vueId="1a637abc-1"
+  ></nav-tab>
+  <view class="p253 bf5 ft data-v-4c19eb0d" wx:if="{{$root.g0}}">
+    <scroll-view class="ws-n ipolcs f-y-c data-v-4c19eb0d" scrollX="true">
+      <bk-b
+        bind:__l="__l"
+        bind:tab="__e"
+        cName="{{'f-g-0 dis-in mr20 bs60 '+(i!=laIdx&&'c3')}}"
+        class="data-v-4c19eb0d"
+        color="{{i==laIdx?tColor:'#F1F2F3'}}"
+        data-event-opts="{{[ [ '^tab',[ [ 'lTab',[i] ] ] ] ]}}"
+        sname="{{snameData}}"
+        t="{{v}}"
+        vueId="{{'1a637abc-2-'+i}}"
+        wx:for="{{labelArr}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      ></bk-b>
+    </scroll-view>
+  </view>
+  <view class="ipomt p3 data-v-4c19eb0d">
+    <view
+      class="bs30 bf mb30 data-v-4c19eb0d"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-4c19eb0d"
+        cname="p253"
+        isr="1"
+        noc="1"
+        vueId="{{'1a637abc-3-'+i}}"
+        vueSlots="{{['bd']}}"
+      >
+        <view class="f-y-c data-v-4c19eb0d" slot="bd">
+          <view
+            class="mrltc bsf f-c mr15 data-v-4c19eb0d"
+            style="{{'background:'+$root.m0+';'}}"
+          >
+            <text class="iconfont iconmd cf f28 data-v-4c19eb0d"></text>
+          </view>
+          <view class="flex-1 data-v-4c19eb0d">
+            <view class="f-x-bt data-v-4c19eb0d">
+              <view
+                catchtap="__e"
+                class="f-y-c data-v-4c19eb0d"
+                data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$event'] ] ] ] ]}}"
+              >
+                <text class="t-o-e f28 data-v-4c19eb0d"
+                  >{{v.$orig.storeName}}</text
+                >
+              </view>
+            </view>
+          </view>
+          <view class="f-g-0 ml10 data-v-4c19eb0d" style="{{'color:'+v.m1+';'}}"
+            >{{''+v.m2}}</view
+          >
+        </view>
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        brs="10rpx"
+        class="data-v-4c19eb0d"
+        cname="p23"
+        h="110"
+        img="{{v.$orig.logo}}"
+        last="1"
+        noc="1"
+        vueId="{{'1a637abc-4-'+i}}"
+        vueSlots="{{['bd']}}"
+        w="110"
+      >
+        <view class="data-v-4c19eb0d" slot="bd">
+          <view class="wei data-v-4c19eb0d">
+            <view class="data-v-4c19eb0d">{{'寄存品牌：'+v.$orig.name}}</view>
+          </view>
+          <view class="mt10 c6 data-v-4c19eb0d">
+            <blcok
+              bind:__l="__l"
+              class="data-v-4c19eb0d"
+              vueId="{{'1a637abc-5-'+i+','+'1a637abc-4-'+i}}"
+              vueSlots="{{['default']}}"
+              wx:if="{{v.$orig.type=='1'}}"
+            >
+              <view class="data-v-4c19eb0d"
+                >{{'订单编号：'+v.$orig.outTradeNo}}</view
+              >
+              <view class="data-v-4c19eb0d"
+                >{{'联系名称：'+v.$orig.userName}}</view
+              >
+              <view class="data-v-4c19eb0d"
+                >{{'联系电话：'+v.$orig.userTel}}</view
+              >
+              <view class="data-v-4c19eb0d">{{'寄存时间：'+v.m3}}</view>
+              <view class="data-v-4c19eb0d">{{'过期时间：'+v.m4}}</view>
+              <view class="data-v-4c19eb0d"
+                >{{'寄存数量：'+v.$orig.totalNum}}</view
+              >
+              <view class="data-v-4c19eb0d"
+                >{{'寄存剩余：'+v.$orig.totalNum-v.$orig.takeNum}}</view
+              >
+              <view class="data-v-4c19eb0d" wx:if="{{v.$orig.note}}"
+                >{{'订单备注：'+v.$orig.note}}</view
+              >
+            </blcok>
+            <blcok
+              bind:__l="__l"
+              class="data-v-4c19eb0d"
+              vueId="{{'1a637abc-6-'+i+','+'1a637abc-4-'+i}}"
+              vueSlots="{{['default']}}"
+              wx:else
+            >
+              <view class="data-v-4c19eb0d"
+                >{{'订单编号：'+v.$orig.outTradeNo}}</view
+              >
+              <view class="data-v-4c19eb0d"
+                >{{'联系名称：'+v.$orig.userName}}</view
+              >
+              <view class="data-v-4c19eb0d"
+                >{{'联系电话：'+v.$orig.userTel}}</view
+              >
+              <view class="data-v-4c19eb0d">{{'领取时间：'+v.m5}}</view>
+              <view class="data-v-4c19eb0d"
+                >{{'领取数量：'+v.$orig.takeNum}}</view
+              >
+              <view class="data-v-4c19eb0d"
+                >{{'寄存剩余：'+v.$orig.surplusNum}}</view
+              >
+            </blcok>
+          </view>
+        </view>
+      </mg-cell>
+      <view
+        class="p23 data-v-4c19eb0d"
+        wx:if="{{v.$orig.state==2&&v.$orig.type=='1'}}"
+      >
+        <view class="f-row data-v-4c19eb0d">
+          <view class="f-g-1 f-x-e data-v-4c19eb0d">
+            <view
+              bindtap="__e"
+              class="obtn b-d data-v-4c19eb0d"
+              data-event-opts="{{[ [ 'tap',[ [ 'lqjc',['$0'],[ [ ['dataList','',i] ] ] ] ] ] ]}}"
+              >领取</view
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-4c19eb0d"
+      mygd="{{mygd}}"
+      nodata="{{$root.g1}}"
+      vueId="1a637abc-7"
+    ></jzz>
+  </view>
+  <mg-modal
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-4c19eb0d"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showCancel','$event',[] ] ] ] ] ]}}"
+    ismr="{{true}}"
+    value="{{showCancel}}"
+    vs="{{true}}"
+    vueId="1a637abc-8"
+    vueSlots="{{['default']}}"
+    width="600rpx"
+    zIndex="{{3000}}"
+  >
+    <view class="bs10 bf p-r data-v-4c19eb0d">
+      <view class="p20 ggh f-c f32 data-v-4c19eb0d">
+        <view class="t-o-e t-c data-v-4c19eb0d" style="width: 80%"
+          >领取寄存</view
+        >
+      </view>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-4c19eb0d"
+        cname="p23"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','lqsl','$event',[] ] ] ] ] ]}}"
+        ht="领取数量"
+        htc="f30"
+        icn="f30"
+        isr="1"
+        pr="请输入领取数量"
+        t="number"
+        value="{{lqsl}}"
+        vueId="{{'1a637abc-9'+','+'1a637abc-8'}}"
+      ></mg-input>
+      <button
+        bindtap="__e"
+        class="foot-btn3 w33 cf data-v-4c19eb0d"
+        data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+        disabled="{{loading}}"
+        hoverClass="btnhc"
+        loading="{{loading}}"
+        style="{{'margin:30rpx auto;'+'background:'+tColor+';'}}"
+      >
+        确定
+      </button>
+    </view>
+  </mg-modal>
+</view>

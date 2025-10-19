@@ -1,0 +1,79 @@
+<view class="container pb115 data-v-1aa9ed0f">
+  <view class="p23 data-v-1aa9ed0f">
+    <view
+      bindtap="__e"
+      class="{{['bf','bs20','p23','mb20','f-row','data-v-1aa9ed0f',v.$orig.isClick==2?'bggray ce5':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'chooseAdd',['$0'],[ [ ['dataList','',i] ] ] ] ] ] ]}}"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="f-g-1 data-v-1aa9ed0f">
+        <view class="f-row data-v-1aa9ed0f">
+          <view class="f32 mr10 t-o-e data-v-1aa9ed0f" style="max-width: 80%"
+            >{{v.$orig.address}}</view
+          >
+          <bk-b
+            bind:__l="__l"
+            cName="f-g-0 f22 c6 mr20 p-5-10"
+            class="data-v-1aa9ed0f"
+            color="{{v.m0}}"
+            t="{{v.$orig.label}}"
+            type="2"
+            vueId="{{'4c825661-1-'+i}}"
+          ></bk-b>
+        </view>
+        <view class="f24 mr10 t-o-e data-v-1aa9ed0f"
+          >{{v.$orig.details+''}}<text
+            class="ml20 data-v-1aa9ed0f"
+            wx:if="{{system.overseasModel=='1'&&v.$orig.zipCode}}"
+            >{{v.$orig.zipCode}}</text
+          >
+        </view>
+        <view
+          class="{{['f-row','f24','c6','mt15','data-v-1aa9ed0f',v.$orig.isClick==2?'ce5':'']}}"
+        >
+          <text class="mr20 data-v-1aa9ed0f"
+            >{{v.$orig.userName+'('+(v.$orig.sex=='女生'?'女士':v.$orig.sex)+'）'}}</text
+          >
+          <text class="data-v-1aa9ed0f">{{v.$orig.userTel}}</text>
+        </view>
+        <view
+          class="f24 mt10 data-v-1aa9ed0f"
+          style="color: #f00"
+          wx:if="{{v.$orig.isClick==2}}"
+          >超出配送范围</view
+        >
+      </view>
+      <view
+        catchtap="__e"
+        class="f-g-0 f-c ml20 data-v-1aa9ed0f"
+        data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','address?id='+v.$orig.id] ] ] ] ] ] ]}}"
+      >
+        <text class="iconfont iconbianji f40 data-v-1aa9ed0f"></text>
+      </view>
+    </view>
+  </view>
+  <view class="foot-btnc data-v-1aa9ed0f">
+    <button
+      bindtap="__e"
+      class="foot-btn data-v-1aa9ed0f"
+      data-event-opts="{{[ [ 'tap',[ [ 'xzdz',['$event'] ] ] ] ]}}"
+      style="{{'background:'+tColor+';'}}"
+    >
+      +新增地址
+    </button>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-1aa9ed0f"
+    imgn="zwdz"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    otext="暂无地址信息"
+    ttext="请点击底部按钮添加地址"
+    vueId="4c825661-2"
+  ></jzz>
+</view>

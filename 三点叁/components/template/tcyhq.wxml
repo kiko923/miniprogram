@@ -1,0 +1,289 @@
+<mg-modal
+  bind:__l="__l"
+  bind:input="__e"
+  class="data-v-458665e2"
+  data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+  ismr="{{true}}"
+  value="{{show}}"
+  vueId="80c486e6-1"
+  vueSlots="{{['default']}}"
+  width="{{type==1?'632rpx':type==2?'632rpx':'562rpx'}}"
+  zIndex="{{3000}}"
+>
+  <view class="data-v-458665e2" wx:if="{{type==1&&co.couponList}}">
+    <view class="tctop posi-r data-v-458665e2">
+      <view class="tcimg data-v-458665e2">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-458665e2"
+          src="{{co.icon||onImgurl+'img/yhqbg.png'}}"
+          vueId="{{'80c486e6-2'+','+'80c486e6-1'}}"
+        ></mg-img>
+      </view>
+      <view class="posi-a tctopbd f-col data-v-458665e2">
+        <view class="f-g-0 tctopbdt t-c data-v-458665e2">
+          <view class="f34 wei cf f-c data-v-458665e2">
+            <view class="hx data-v-458665e2"></view>
+            <view class="zfls4 data-v-458665e2">{{co.name||'活动名称'}}</view>
+            <view class="hx data-v-458665e2"></view>
+          </view>
+        </view>
+        <scroll-view
+          class="f-1 tctopbdb o-h data-v-458665e2"
+          scrollY="{{true}}"
+        >
+          <view
+            class="mb20 data-v-458665e2"
+            wx:for="{{co.couponList}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <mg-coupon
+              bind:__l="__l"
+              class="data-v-458665e2"
+              cname="mb20"
+              co="{{v}}"
+              color="{{color}}"
+              ptype="2"
+              vueId="{{'80c486e6-3-'+i+','+'80c486e6-1'}}"
+            ></mg-coupon>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="posi-a w100 tctopft f-c f22 data-v-458665e2">
+        <button
+          bindtap="__e"
+          class="lqbtn bs10 cf f28 f-c zfls4 wei bt data-v-458665e2"
+          data-event-opts="{{[ [ 'tap',[ [ 'ljlq',['$event'] ] ] ] ]}}"
+          disabled="{{loading}}"
+          style="{{'background:'+(loading?'transparent':'')+';'}}"
+        >
+          立即领取
+        </button>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="tcbtm f-c data-v-458665e2"
+      data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+    >
+      <text
+        class="iconfont iconx2 cf data-v-458665e2"
+        style="font-size: 66rpx"
+      ></text>
+    </view>
+  </view>
+  <block wx:else>
+    <block wx:if="{{type==2&&co.couponArr}}">
+      <view class="tctop posi-r data-v-458665e2">
+        <view class="tcimg2 data-v-458665e2">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-458665e2"
+            src="{{co.bgImg||onImgurl+'img/yhqbg.png'}}"
+            vueId="{{'80c486e6-4'+','+'80c486e6-1'}}"
+          ></mg-img>
+        </view>
+        <view class="posi-a tctopbd2 f-col data-v-458665e2">
+          <view class="f-g-0 tctopbdt t-c data-v-458665e2">
+            <view class="f34 wei cf f-c data-v-458665e2">
+              <view class="hx data-v-458665e2"></view>
+              <view class="zfls4 data-v-458665e2">{{co.name||'活动名称'}}</view>
+              <view class="hx data-v-458665e2"></view>
+            </view>
+          </view>
+          <scroll-view
+            class="f-1 tctopbd2b o-h data-v-458665e2"
+            scrollY="{{true}}"
+          >
+            <view
+              class="mb20 data-v-458665e2"
+              wx:for="{{co.couponArr}}"
+              wx:for-index="i"
+              wx:for-item="v"
+              wx:key="i"
+            >
+              <mg-coupon
+                bind:__l="__l"
+                class="data-v-458665e2"
+                cname="mb20"
+                co="{{v}}"
+                color="{{color}}"
+                ptype="2"
+                vueId="{{'80c486e6-5-'+i+','+'80c486e6-1'}}"
+              ></mg-coupon>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="posi-a w100 tctopft f-c f22 data-v-458665e2">
+          <button
+            bindtap="__e"
+            class="lqbtn bs10 cf f28 f-c zfls4 wei bt data-v-458665e2"
+            data-event-opts="{{[ [ 'tap',[ [ 'ljlq',['$event'] ] ] ] ]}}"
+            disabled="{{loading}}"
+            style="{{'background:'+(loading?'transparent':'')+';'}}"
+          >
+            立即领取
+          </button>
+        </view>
+      </view>
+      <view
+        bindtap="__e"
+        class="tcbtm2 f-c data-v-458665e2"
+        data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+      >
+        <text
+          class="iconfont iconx2 cf data-v-458665e2"
+          style="font-size: 66rpx"
+        ></text>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:if="{{type==3}}">
+        <view class="tctop posi-r data-v-458665e2">
+          <view class="tcimg3 data-v-458665e2">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-458665e2"
+              src="{{co.icon||onImgurl+'img/xrzxbg.png'}}"
+              vueId="{{'80c486e6-6'+','+'80c486e6-1'}}"
+            ></mg-img>
+          </view>
+          <view class="posi-a tctopbd3 f-col data-v-458665e2">
+            <scroll-view
+              class="f-1 tctopbd3b o-h data-v-458665e2"
+              scrollY="{{true}}"
+            >
+              <block wx:if="{{$root.g0}}">
+                <view class="jlbt f-y-c data-v-458665e2">
+                  <view class="xhx data-v-458665e2"></view>
+                  <view class="f-g-0 data-v-458665e2">优惠券奖励</view>
+                  <view class="xhx data-v-458665e2"></view>
+                </view>
+                <view class="jlic data-v-458665e2">
+                  <mg-coupon
+                    bind:__l="__l"
+                    class="data-v-458665e2"
+                    cname="mb20"
+                    co="{{v}}"
+                    color="{{color}}"
+                    ptype="2"
+                    vueId="{{'80c486e6-7-'+i+','+'80c486e6-1'}}"
+                    wx:for="{{co.couponArr}}"
+                    wx:for-index="i"
+                    wx:for-item="v"
+                    wx:key="i"
+                  ></mg-coupon>
+                </view>
+              </block>
+              <block wx:if="{{co.balance>0}}">
+                <view class="jlbt f-y-c data-v-458665e2">
+                  <view class="xhx data-v-458665e2"></view>
+                  <view class="f-g-0 data-v-458665e2"
+                    >{{system.custom.balance+'奖励'}}</view
+                  >
+                  <view class="xhx data-v-458665e2"></view>
+                </view>
+                <view class="jlic p-r data-v-458665e2">
+                  <view class="bgimg data-v-458665e2">
+                    <image class="wh data-v-458665e2" src="{{yhqbg}}"></image>
+                  </view>
+                  <view class="p-a coubd wh f-row data-v-458665e2">
+                    <view class="coubdl p20 f-c-c cf5 data-v-458665e2">
+                      <view class="data-v-458665e2">
+                        <text class="data-v-458665e2">{{sl}}</text>
+                        <text class="f50 ml5 wei data-v-458665e2"
+                          >{{co.balance}}</text
+                        >
+                      </view>
+                    </view>
+                    <view class="p-10-30 f-1 f-y-c data-v-458665e2">
+                      <view class="f-g-1 f26 data-v-458665e2"
+                        >{{'新人赠送'+system.custom.balance}}</view
+                      >
+                    </view>
+                  </view>
+                </view>
+              </block>
+              <block wx:if="{{co.integral>0}}">
+                <view class="jlbt f-y-c data-v-458665e2">
+                  <view class="xhx data-v-458665e2"></view>
+                  <view class="f-g-0 data-v-458665e2"
+                    >{{system.custom.integral+'奖励'}}</view
+                  >
+                  <view class="xhx data-v-458665e2"></view>
+                </view>
+                <view class="jlic p-r data-v-458665e2">
+                  <view class="bgimg data-v-458665e2">
+                    <image class="wh data-v-458665e2" src="{{yhqbg}}"></image>
+                  </view>
+                  <view class="p-a coubd wh f-row data-v-458665e2">
+                    <view class="coubdl p20 f-c-c cf5 data-v-458665e2">
+                      <view class="f-y-c data-v-458665e2">
+                        <text class="f50 wei data-v-458665e2"
+                          >{{co.integral}}</text
+                        >
+                        <text class="f22 ml5 data-v-458665e2"
+                          >{{system.custom.integral}}</text
+                        >
+                      </view>
+                    </view>
+                    <view class="p-10-30 f-1 f-y-c data-v-458665e2">
+                      <view class="f-g-1 f26 data-v-458665e2"
+                        >{{'新人赠送'+system.custom.integral}}</view
+                      >
+                    </view>
+                  </view>
+                </view>
+              </block>
+              <block wx:if="{{co.growth>0}}">
+                <view class="jlbt f-y-c data-v-458665e2">
+                  <view class="xhx data-v-458665e2"></view>
+                  <view class="f-g-0 data-v-458665e2">成长值奖励</view>
+                  <view class="xhx data-v-458665e2"></view>
+                </view>
+                <view class="jlic p-r data-v-458665e2">
+                  <view class="bgimg data-v-458665e2">
+                    <image class="wh data-v-458665e2" src="{{yhqbg}}"></image>
+                  </view>
+                  <view class="p-a coubd wh f-row data-v-458665e2">
+                    <view class="coubdl p20 f-c-c cf5 data-v-458665e2">
+                      <view class="f-y-c data-v-458665e2">
+                        <text class="f50 wei data-v-458665e2"
+                          >{{co.growth}}</text
+                        >
+                        <text class="f22 ml5 data-v-458665e2">成长值</text>
+                      </view>
+                    </view>
+                    <view class="p-10-30 f-1 f-y-c data-v-458665e2">
+                      <view class="f-g-1 f26 data-v-458665e2"
+                        >新人赠送成长值</view
+                      >
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </scroll-view>
+            <button
+              bindtap="__e"
+              class="lqbtn bs10 cf f28 f-c zfls4 wei bt data-v-458665e2"
+              data-event-opts="{{[ [ 'tap',[ [ 'dllq',['$event'] ] ] ] ]}}"
+              disabled="{{loading}}"
+              style="{{'background:'+tColor+';'}}"
+            >
+              登录领取
+            </button>
+          </view>
+        </view>
+        <view
+          bindtap="__e"
+          class="tcbtm3 f-c data-v-458665e2"
+          data-event-opts="{{[ [ 'tap',[ [ '$emit',['input',false] ] ] ] ]}}"
+        >
+          <text class="iconfont iconx2 cf f60 data-v-458665e2"></text>
+        </view>
+      </block>
+    </block>
+  </block>
+</mg-modal>

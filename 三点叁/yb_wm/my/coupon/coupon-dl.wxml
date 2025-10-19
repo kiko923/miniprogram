@@ -1,0 +1,218 @@
+<view
+  class="mh100 data-v-36c968a2"
+  hidden="{{!dataInfo.id}}"
+  style="{{'background:'+color+';'}}"
+>
+  <view class="cl-main data-v-36c968a2">
+    <view class="timg bsf posi-r data-v-36c968a2">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-36c968a2"
+        src="{{dataInfo.shareImg||system.icon}}"
+        vueId="7c585e7e-1"
+      ></mg-img>
+    </view>
+    <view class="cl-bd bf data-v-36c968a2">
+      <view class="p03 data-v-36c968a2">
+        <view class="t-c f32 wei data-v-36c968a2">{{dataInfo.name}}</view>
+        <view class="p20 bbd data-v-36c968a2">
+          <view class="data-v-36c968a2">适用金额</view>
+          <view class="mt20 f30 wei data-v-36c968a2"
+            >{{dataInfo.fullMoney>0?'满'+sl+dataInfo.fullMoney+'可用':'无门槛'}}</view
+          >
+        </view>
+        <view class="p20 bbd data-v-36c968a2">
+          <view class="mb10 data-v-36c968a2">卡券类型</view>
+          <view class="f-row mb30 f24 c9 data-v-36c968a2">
+            <view class="yd f-g-0 data-v-36c968a2"></view>
+            <view class="data-v-36c968a2">{{qlx}}</view>
+          </view>
+          <view class="mb10 data-v-36c968a2">有效期限</view>
+          <view class="mb30 f24 c9 data-v-36c968a2">
+            <view
+              class="f-row mb10 data-v-36c968a2"
+              wx:if="{{dataInfo.startTime}}"
+            >
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="data-v-36c968a2"
+                >{{'活动时间：'+$root.m0+'至'+$root.m1}}</view
+              >
+            </view>
+            <view class="f-row data-v-36c968a2">
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="data-v-36c968a2"
+                >{{'使用时间：'+dataInfo.useExplain}}</view
+              >
+            </view>
+          </view>
+          <view class="mb10 data-v-36c968a2">卡券面额</view>
+          <view class="mb30 f24 c9 data-v-36c968a2">
+            <view
+              class="f-row mb10 data-v-36c968a2"
+              wx:if="{{dataInfo.type!=3}}"
+            >
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="data-v-36c968a2"
+                >{{'面额：'+(dataInfo.type==1?''+sl+dataInfo.money:dataInfo.discount+'折')}}</view
+              >
+            </view>
+            <view class="f-row data-v-36c968a2" wx:if="{{dataInfo.stock}}">
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="data-v-36c968a2"
+                >{{'库存：'+dataInfo.stock+'张'}}</view
+              >
+            </view>
+          </view>
+          <view class="mb10 data-v-36c968a2">适用规则</view>
+          <view class="mb30 f24 c9 data-v-36c968a2">
+            <view class="f-row mb10 data-v-36c968a2">
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="f-row data-v-36c968a2">
+                <view class="f-g-0 data-v-36c968a2">适用门店：</view>
+                <view
+                  class="data-v-36c968a2"
+                  wx:if="{{dataInfo.storeType=='2'}}"
+                  >全部门店</view
+                >
+                <view class="data-v-36c968a2" wx:else>
+                  <block wx:if="{{dataInfo.storeData}}">
+                    <view
+                      bindtap="__e"
+                      class="data-v-36c968a2"
+                      data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$0'],[ [ ['dataInfo.storeData','',i] ] ] ] ] ] ]}}"
+                      wx:for="{{dataInfo.storeData}}"
+                      wx:for-index="i"
+                      wx:for-item="v"
+                      wx:key="i"
+                      >{{v.name}}</view
+                    >
+                  </block>
+                </view>
+              </view>
+            </view>
+            <view
+              class="f-row mb10 data-v-36c968a2"
+              wx:if="{{dataInfo.type!='3'}}"
+            >
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="f-g-0 data-v-36c968a2">适用商品：</view>
+              <view class="data-v-36c968a2"
+                >{{dataInfo.goodsType==1?'全部商品可用':dataInfo.goodsType==2?'指定商品可用':dataInfo.goodsType==3?'指定商品不可用':'指定商品分类可用'}}</view
+              >
+            </view>
+            <view
+              class="f-row mb10 data-v-36c968a2"
+              wx:if="{{dataInfo.type=='3'}}"
+            >
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="f-g-0 data-v-36c968a2">适用商品：</view>
+              <view class="data-v-36c968a2">{{dataInfo.goodsName}}</view>
+            </view>
+            <view class="f-row mb10 data-v-36c968a2">
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="f-row data-v-36c968a2">
+                <view class="f-g-0 data-v-36c968a2">适用场景：</view>
+                <view class="data-v-36c968a2">{{sycjName}}</view>
+              </view>
+            </view>
+            <view class="f-row data-v-36c968a2">
+              <view class="yd f-g-0 data-v-36c968a2"></view>
+              <view class="f-row data-v-36c968a2">
+                <view class="f-g-0 data-v-36c968a2">发行门店：</view>
+                <view class="data-v-36c968a2">{{dataInfo.storeName}}</view>
+              </view>
+            </view>
+          </view>
+          <block wx:if="{{!query.islq}}">
+            <view class="mb10 data-v-36c968a2">领取规则</view>
+            <view class="mb30 f24 c9 data-v-36c968a2">
+              <view class="f-row mb10 data-v-36c968a2">
+                <view class="yd f-g-0 data-v-36c968a2"></view>
+                <view class="f-row data-v-36c968a2">
+                  <view class="cdlht data-v-36c968a2">每人限领次数：</view
+                  >{{(dataInfo.isMax==1?'不限次数':'每人限领'+dataInfo.maxNum+'次')+''}}</view
+                >
+              </view>
+              <view class="f-row data-v-36c968a2">
+                <view class="yd f-g-0 data-v-36c968a2"></view>
+                <view class="f-row data-v-36c968a2">
+                  <view class="cdlht data-v-36c968a2">领取人限制：</view
+                  >{{(dataInfo.memberType==1?'所有人均可领':dataInfo.memberType==2?'会员可领':'指定标签用户可领')+''}}</view
+                >
+              </view>
+            </view>
+          </block>
+          <view
+            class="p3 t-c data-v-36c968a2"
+            wx:if="{{dataInfo.useState>=2&&query.receiveId&&dataInfo.isHx=='1'}}"
+          >
+            <view class="data-v-36c968a2">请出示此码给收银员核销</view>
+            <view class="f-c data-v-36c968a2">
+              <view class="zqmimg p-r data-v-36c968a2">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-36c968a2"
+                  src="{{qcmsrc}}"
+                  vueId="7c585e7e-2"
+                ></mg-img>
+                <view
+                  class="p-a zzc data-v-36c968a2"
+                  style="{{'background:'+(dataInfo.useState>2?'#ccc':'')+';'}}"
+                  wx:if="{{dataInfo.useState>2}}"
+                ></view>
+              </view>
+            </view>
+          </view>
+          <view class="f-c mb10 data-v-36c968a2" wx:if="{{query.nobtn!=1}}">
+            <button
+              bindtap="__e"
+              class="ljsy cf f32 bs15 f-c data-v-36c968a2"
+              data-event-opts="{{[ [ 'tap',[ [ 'ljsy',['$event'] ] ] ] ]}}"
+              disabled="{{loading}}"
+              style="{{'background:'+(dataInfo.useState>2?'#ddd':color)+';'}}"
+            >
+              {{anlx}}
+            </button>
+          </view>
+        </view>
+      </view>
+      <view class="p-r p03 data-v-36c968a2">
+        <view class="p30 data-v-36c968a2">
+          <view
+            catchtap="__e"
+            class="{{['f-x-bt','data-v-36c968a2',active?'active':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+          >
+            <view class="data-v-36c968a2">注意事项</view>
+            <text
+              class="{{['iconfont','iconright','data-v-36c968a2',active?'jtactive':'']}}"
+            ></text>
+          </view>
+          <view
+            class="{{['coubb','o-h','data-v-36c968a2',active?'cactive':'']}}"
+          >
+            <view
+              class="{{['coubbv','pt10','data-v-36c968a2',active?'show':'']}}"
+            >
+              <mg-rtext
+                bind:__l="__l"
+                class="data-v-36c968a2"
+                content="{{dataInfo.details||dataInfo.couponDetails}}"
+                type="2"
+                vueId="7c585e7e-3"
+              ></mg-rtext>
+            </view>
+          </view>
+        </view>
+        <view
+          class="ydl p-a data-v-36c968a2"
+          style="{{'background:'+color+';'}}"
+        ></view>
+        <view
+          class="ydr p-a data-v-36c968a2"
+          style="{{'background:'+color+';'}}"
+        ></view>
+      </view>
+    </view>
+  </view>
+</view>

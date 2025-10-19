@@ -1,0 +1,13 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/components/third/uni-nav-bar",
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "mg-coupon": "/components/common/mg-coupon",
+    "jzz": "/components/common/jzz",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

@@ -1,0 +1,26 @@
+<mg-cell
+  bgc="transparent"
+  bind:__l="__l"
+  class="data-v-a77b7d0c"
+  isr="1"
+  vueId="513c60b9-1"
+  vueSlots="{{['bd']}}"
+>
+  <view class="f34 data-v-a77b7d0c" slot="bd">
+    <view
+      bindtap="__e"
+      class="f-y-c data-v-a77b7d0c"
+      data-event-opts="{{[ [ 'tap',[ [ 'ckwz',['$event'] ] ] ] ]}}"
+    >
+      <view class="t-o-e data-v-a77b7d0c" style="max-width: 360rpx"
+        >{{sjxx.shopData.name||'商家名称'}}</view
+      >
+    </view>
+    <view class="mt15 f24 f-y-c data-v-a77b7d0c">
+      <text class="iconfont iconlocation mr10 f28 data-v-a77b7d0c"></text>
+      <view class="f24 c9 data-v-a77b7d0c"
+        >{{'您距离当前门店'+storeInfo.distance+'，请确认下单门店是否正确'}}</view
+      >
+    </view>
+  </view>
+</mg-cell>

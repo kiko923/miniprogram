@@ -1,0 +1,31 @@
+<!--pages/clogin/clogin.wxml-->
+<view class="clogin-container">
+  <view class="clogin-userinfo" wx:if="{{!inputUserInfo}}">
+    <block wx:if="{{!hasUserInfo}}">
+      <view class="clogin-userinfo-avatar">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName" class="clogin-userinfo-nickname"></open-data>
+    </block>
+    <block wx:else>
+      <image class="clogin-userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="clogin-userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <view class="clogin-btngroup" wx:if="{{canGetUserInfo}}">
+      <button type="primary" bindtap="getUserProfile">确认登录</button>
+      <button bindtap="cancelLogin">取消登录</button>
+    </view>
+  </view>
+  <view class="clogin-userinfo" wx:if="{{inputUserInfo}}">
+    <text>完善个人信息</text>
+    <button class="clogin-avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <image class="avatar" src="{{avatarUrl?avatarUrl:defaultAvatarUrl}}"></image>
+      <span>选择头像</span>
+    </button>
+    <form catchsubmit="submitUserInfo" class="clogin-nickname-input">
+      <input type="nickname" placeholder="请输入昵称" name="nickname"/>
+      <button type="primary" formType="submit">确认登录</button>
+      <button bindtap="cancelLogin">取消登录</button>
+    </form>
+  </view>
+</view>

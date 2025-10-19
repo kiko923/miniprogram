@@ -1,0 +1,205 @@
+<view
+  class="pb130 o-h data-v-5a12d560"
+  style="{{'background:'+(layout.pageSetting?layout.pageSetting[0].styles.moduleTitle==1?layout.pageSetting[0].styles.colorIcon:'url('+layout.pageSetting[0].styles.img+')':'')+';'}}"
+>
+  <uni-nav-bar
+    bg="{{layout.pageSetting[0].styles.colorBg}}"
+    bind:__l="__l"
+    border="{{false}}"
+    class="data-v-5a12d560"
+    color="{{layout.pageSetting[0].styles.colorWord}}"
+    fixed="{{true}}"
+    id="uninavbar"
+    isleft="{{false}}"
+    ispr="{{true}}"
+    statusBar="{{true}}"
+    title="{{layout.pageSetting[0].styles.navTitle}}"
+    uropcity="1"
+    vueId="ac84abb2-1"
+    wx:if="{{layout.pageSetting[0].styles.modulePage==1}}"
+  ></uni-nav-bar>
+  <uni-nav-bar
+    bind:__l="__l"
+    border="{{opcity>=1}}"
+    class="data-v-5a12d560"
+    fixed="{{true}}"
+    id="uninavbar"
+    isleft="{{false}}"
+    ispr="{{false}}"
+    statusBar="{{true}}"
+    title="{{layout.pageSetting[0].styles.navTitle}}"
+    uropcity="{{opcity}}"
+    vueId="ac84abb2-2"
+    wx:else
+  ></uni-nav-bar>
+  <atten-tion
+    bind:__l="__l"
+    class="data-v-5a12d560"
+    co="{{v.styles}}"
+    vueId="{{'ac84abb2-3-'+i}}"
+    wx:if="{{v.name=='attention'&&v.styles.status==1}}"
+    wx:for="{{layout.attention}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  ></atten-tion>
+  <block wx:for="{{layout.list}}" wx:for-index="i" wx:for-item="v" wx:key="i">
+    <members-vip
+      bind:__l="__l"
+      class="data-v-5a12d560"
+      showpr="{{layout.pageSetting[0].styles.modulePage}}"
+      styles="{{v.styles}}"
+      vueId="{{'ac84abb2-4-'+i}}"
+      wx:if="{{v.name=='vip'}}"
+    ></members-vip>
+    <block wx:else>
+      <tj-tools
+        bind:__l="__l"
+        class="data-v-5a12d560"
+        co="{{v.styles}}"
+        vueId="{{'ac84abb2-5-'+i}}"
+        wx:if="{{v.name=='btn2'}}"
+      ></tj-tools>
+      <block wx:else>
+        <search-box
+          bind:__l="__l"
+          class="data-v-5a12d560"
+          co="{{v.styles}}"
+          vueId="{{'ac84abb2-6-'+i}}"
+          wx:if="{{v.name=='search'}}"
+        ></search-box>
+        <block wx:else>
+          <notice-sue
+            bind:__l="__l"
+            class="data-v-5a12d560"
+            co="{{v.styles}}"
+            vueId="{{'ac84abb2-7-'+i}}"
+            wx:if="{{v.name=='notice'}}"
+          ></notice-sue>
+          <block wx:else>
+            <pic-lunbo-by
+              bind:__l="__l"
+              class="data-v-5a12d560"
+              co="{{v.styles}}"
+              vueId="{{'ac84abb2-8-'+i}}"
+              wx:if="{{v.name=='picLunbo'}}"
+            ></pic-lunbo-by>
+            <block wx:else>
+              <btn-group
+                bind:__l="__l"
+                class="data-v-5a12d560"
+                co="{{v.styles}}"
+                oheight="{{20}}"
+                vueId="{{'ac84abb2-9-'+i}}"
+                wx:if="{{v.name=='btn'}}"
+              ></btn-group>
+              <block wx:else>
+                <pictures
+                  bind:__l="__l"
+                  class="data-v-5a12d560"
+                  co="{{v.styles}}"
+                  vueId="{{'ac84abb2-10-'+i}}"
+                  wx:if="{{v.name=='pictures'}}"
+                ></pictures>
+                <block wx:else>
+                  <titles-bar
+                    bind:__l="__l"
+                    class="data-v-5a12d560"
+                    co="{{v.styles}}"
+                    vueId="{{'ac84abb2-11-'+i}}"
+                    wx:if="{{v.name=='titles'}}"
+                  ></titles-bar>
+                  <block wx:else>
+                    <blank
+                      bind:__l="__l"
+                      class="data-v-5a12d560"
+                      co="{{v.styles}}"
+                      vueId="{{'ac84abb2-12-'+i}}"
+                      wx:if="{{v.name=='blank'}}"
+                    ></blank>
+                    <block wx:else>
+                      <lines-wire
+                        bind:__l="__l"
+                        class="data-v-5a12d560"
+                        co="{{v.styles}}"
+                        vueId="{{'ac84abb2-13-'+i}}"
+                        wx:if="{{v.name=='lines'}}"
+                      ></lines-wire>
+                      <block wx:else>
+                        <book-text
+                          bind:__l="__l"
+                          class="data-v-5a12d560"
+                          co="{{v.styles}}"
+                          vueId="{{'ac84abb2-14-'+i}}"
+                          wx:if="{{v.name=='book'}}"
+                        ></book-text>
+                        <block wx:else>
+                          <hot-spots
+                            bind:__l="__l"
+                            class="data-v-5a12d560"
+                            co="{{v.styles}}"
+                            vueId="{{'ac84abb2-15-'+i}}"
+                            wx:if="{{v.name=='hot'}}"
+                          ></hot-spots>
+                          <block wx:else>
+                            <margic-cube
+                              bind:__l="__l"
+                              class="data-v-5a12d560"
+                              co="{{v.styles}}"
+                              vueId="{{'ac84abb2-16-'+i}}"
+                              wx:if="{{v.name=='margic'}}"
+                            ></margic-cube>
+                            <block wx:else>
+                              <list-nav
+                                bind:__l="__l"
+                                class="data-v-5a12d560"
+                                co="{{v.styles}}"
+                                vueId="{{'ac84abb2-17-'+i}}"
+                                wx:if="{{v.name=='listNav'}}"
+                              ></list-nav>
+                              <block wx:else>
+                                <att-account
+                                  bind:__l="__l"
+                                  class="data-v-5a12d560"
+                                  co="{{v.styles}}"
+                                  vueId="{{'ac84abb2-18-'+i}}"
+                                  wx:if="{{v.name=='attAccount'}}"
+                                ></att-account>
+                              </block>
+                            </block>
+                          </block>
+                        </block>
+                      </block>
+                    </block>
+                  </block>
+                </block>
+              </block>
+            </block>
+          </block>
+        </block>
+      </block>
+    </block>
+  </block>
+  <sus-btn
+    bind:__l="__l"
+    class="data-v-5a12d560"
+    co="{{layout.susBtn[0].styles}}"
+    vueId="ac84abb2-19"
+    wx:if="{{layout.susBtn&&layout.susBtn[0]}}"
+  ></sus-btn>
+  <order-prompt
+    bind:__l="__l"
+    class="data-v-5a12d560"
+    co="{{layout.remind[0].styles}}"
+    vueId="ac84abb2-20"
+    wx:if="{{layout.remind&&layout.remind[0]}}"
+  ></order-prompt>
+  <footc bind:__l="__l" class="data-v-5a12d560" vueId="ac84abb2-21"></footc>
+  <tab-bar bind:__l="__l" class="data-v-5a12d560" vueId="ac84abb2-22"></tab-bar>
+  <load
+    bind:__l="__l"
+    class="data-v-5a12d560"
+    vueId="ac84abb2-23"
+    wx:if="{{showloading}}"
+  ></load>
+</view>

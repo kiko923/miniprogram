@@ -1,0 +1,27 @@
+.gdmdxx.data-v-0f52476c {
+  border-radius: 35rpx 35rpx 0 0;
+  padding: 10rpx 30rpx 40rpx;
+}
+.gdmdxx .tit.data-v-0f52476c {
+  padding: 10rpx 0 50rpx 0;
+}
+.gdmdxx .qhbtn.data-v-0f52476c {
+  width: 120rpx;
+  border-radius: 30rpx;
+  height: 58rpx;
+  border: 2rpx solid #c2c2c2;
+}
+.gdmdxx .shopbtn.data-v-0f52476c {
+  width: 320rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.gdmdxx .lbg.data-v-0f52476c {
+  background: #333;
+}
+.gdmdxx .rbg.data-v-0f52476c {
+  background: #d7a975;
+}
+.gdmdxx .ml32.data-v-0f52476c {
+  margin-left: 32rpx;
+}

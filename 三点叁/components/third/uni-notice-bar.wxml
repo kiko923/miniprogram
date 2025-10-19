@@ -1,0 +1,25 @@
+<view
+  bindtap="__e"
+  class="uni-noticebar data-v-f2b68db8"
+  data-event-opts="{{[ [ 'tap',[ [ 'onClick',['$event'] ] ] ] ]}}"
+  style="{{'background:'+backgroundColor+';'}}"
+  wx:if="{{show}}"
+>
+  <view
+    class="{{['uni-noticebar__content-wrapper','data-v-f2b68db8','vue-ref',scrollable?'uni-noticebar__content-wrapper--scrollable':'',!scrollable&&(single||moreText)?'uni-noticebar__content-wrapper--single':'']}}"
+    data-ref="textBox"
+  >
+    <view
+      class="{{['uni-noticebar__content','data-v-f2b68db8',scrollable?'uni-noticebar__content--scrollable':'',!scrollable&&(single||moreText)?'uni-noticebar__content--single':'']}}"
+      id="{{elIdBox}}"
+    >
+      <text
+        class="{{['uni-noticebar__content-text','data-v-f2b68db8','vue-ref',scrollable?'uni-noticebar__content-text--scrollable':'',!scrollable&&(single||moreText)?'uni-noticebar__content-text--single':'']}}"
+        data-ref="animationEle"
+        id="{{elId}}"
+        style="{{'color:'+color+';'+'width:'+wrapWidth+'px'+';'+'font-size:'+fs+'rpx'+';'+'animation-duration:'+animationDuration+';'+'-webkit-animation-duration:'+animationDuration+';'+'animation-play-state:'+(webviewHide?'paused':animationPlayState)+';'+'-webkit-animation-play-state:'+(webviewHide?'paused':animationPlayState)+';'+'animation-delay:'+animationDelay+';'+'-webkit-animation-delay:'+animationDelay+';'}}"
+        >{{text}}</text
+      >
+    </view>
+  </view>
+</view>

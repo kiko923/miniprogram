@@ -1,0 +1,39 @@
+.p34.data-v-06b25330 {
+  padding: 30rpx 40rpx;
+}
+.wk1.data-v-06b25330 {
+  width: 140%;
+  margin-left: -20%;
+  height: 345rpx;
+  border-radius: 0 0 50% 50%;
+  overflow: hidden;
+}
+.wk1ic.data-v-06b25330 {
+  margin: -300rpx 0 42rpx;
+}
+.wk1ic .imgc.data-v-06b25330 {
+  height: 360rpx;
+}
+.xqc.data-v-06b25330 {
+  height: 30rpx;
+  padding: 0 16rpx;
+}
+.wk2img.data-v-06b25330 {
+  height: 390rpx;
+}
+.wk2c1.data-v-06b25330 {
+  padding: 40rpx;
+}
+.wk2c1 .himg.data-v-06b25330 {
+  width: 90rpx;
+  height: 90rpx;
+}
+.rdj.data-v-06b25330 {
+  padding: 6rpx 16rpx;
+  border-radius: 30rpx;
+  border-color: #fff;
+}
+.data-v-06b25330 .icname {
+  margin-right: 20rpx;
+  color: #333;
+}

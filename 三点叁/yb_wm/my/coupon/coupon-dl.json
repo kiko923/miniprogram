@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mg-coupon": "/components/common/mg-coupon",
+    "mg-cell": "/components/common/mg-cell",
+    "mg-rtext": "/components/common/functionCmp/rich-text",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img"
+  }
+}

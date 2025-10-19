@@ -1,0 +1,45 @@
+.hdsy.data-v-39c963f6 {
+  width: 64rpx;
+  height: 64rpx;
+  border: 0.5px solid #ddd;
+}
+.btn.data-v-39c963f6 {
+  border-radius: 0;
+}
+.btn.data-v-39c963f6::after {
+  transform-origin: 50% 50%;
+  border-radius: 0;
+}
+.oi1c.data-v-39c963f6 {
+  height: 68rpx;
+  padding: 0 6rpx;
+}
+.oi1c .item.data-v-39c963f6 {
+  padding: 0 10rpx;
+  min-width: 152rpx;
+  height: 56rpx;
+}
+.oiqdd.data-v-39c963f6 {
+  width: 360rpx;
+  height: 88rpx;
+  margin-top: 40rpx;
+}
+.payimg.data-v-39c963f6 {
+  width: 153rpx;
+  height: 155rpx;
+}
+.pt60.data-v-39c963f6 {
+  padding-top: 50rpx;
+}
+.p25.data-v-39c963f6 {
+  padding: 20rpx 50rpx;
+}
+.wdlimg.data-v-39c963f6 {
+  margin: 170rpx 0 0;
+  width: 340rpx;
+  height: 340rpx;
+}
+.ljdl.data-v-39c963f6 {
+  margin-top: 70rpx;
+  padding: 16rpx 48rpx;
+}

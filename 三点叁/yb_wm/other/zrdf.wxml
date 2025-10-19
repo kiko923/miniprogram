@@ -1,0 +1,173 @@
+<view class="container pb130 data-v-1df7f434">
+  <form
+    bindsubmit="__e"
+    class="data-v-1df7f434"
+    data-event-opts="{{[ [ 'submit',[ [ 'formSubmit',['$event'] ] ] ] ]}}"
+  >
+    <view class="data-v-1df7f434">
+      <view class="cf p-r data-v-1df7f434" style="{{'background:'+tColor+';'}}">
+        <view class="rwimg data-v-1df7f434">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-1df7f434"
+            m="aspectFit"
+            src="{{payConfig.icon&&payConfig.icon}}"
+            vueId="7186dd88-1"
+          ></mg-img>
+        </view>
+        <view class="p-a dftxt f32 data-v-1df7f434"
+          >{{payConfig&&payConfig.help}}</view
+        >
+      </view>
+      <view class="zlbd p-r o-h data-v-1df7f434">
+        <view class="bf p3 f24 c9 bs10 f-bt data-v-1df7f434">
+          <view class="data-v-1df7f434">代付金额</view>
+          <view class="data-v-1df7f434" wx:if="{{info}}"
+            >{{'收货人：'+info.receivedName}}</view
+          >
+        </view>
+        <view class="bf p3 f24 c9 f-bt data-v-1df7f434">
+          <view class="paymoeny wei f50 cf0 data-v-1df7f434">
+            <text class="data-v-1df7f434">{{sl}}</text>
+            <text class="cf0 data-v-1df7f434">{{pmoney}}</text>
+          </view>
+          <view class="f26 djsc data-v-1df7f434" wx:if="{{info}}"
+            >剩余支付时间：<text class="ml10 data-v-1df7f434" wx:if="{{stime}}"
+              >{{stime[2]+':'+stime[3]}}</text
+            >
+          </view>
+        </view>
+      </view>
+      <view class="mb30 bs20 mt10 bf data-v-1df7f434" wx:if="{{info}}">
+        <mg-cell
+          bind:__l="__l"
+          brs="12rpx"
+          class="data-v-1df7f434"
+          cname="{{i!=v.g0-1?'la154 p3':'p3'}}"
+          h="104"
+          img="{{v.$orig.icon}}"
+          isr="1"
+          last="1"
+          vueId="{{'7186dd88-2-'+i}}"
+          vueSlots="{{['bd']}}"
+          w="104"
+          wx:for="{{$root.l0}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="data-v-1df7f434" slot="bd">
+            <view
+              class="p-a hgc f18 cf bf5f l-n data-v-1df7f434"
+              wx:if="{{v.$orig.isChange==1}}"
+              >换购</view
+            >
+            <view class="f-bt data-v-1df7f434">
+              <view class="f-row data-v-1df7f434">
+                <view
+                  class="f-g-0 yhic f18 cf bf5f f-c hdspan data-v-1df7f434"
+                  wx:if="{{v.$orig.isActivity>0&&v.$orig.isActivity!=4}}"
+                  >{{''+(v.$orig.isActivity==1?'特':v.$orig.isActivity==2?'折':v.$orig.isActivity==5?'赠':'减')+''}}</view
+                >
+                <view class="l-h1 data-v-1df7f434">{{v.$orig.name}}</view>
+              </view>
+              <view class="f-g-0 f32 data-v-1df7f434">{{sl+v.m0}}</view>
+            </view>
+            <view
+              class="f-row cf5f data-v-1df7f434"
+              wx:if="{{v.$orig.isActivity==4}}"
+            >
+              <view
+                class="f20 bs5 b-d p-3-10 data-v-1df7f434"
+                style="{{'border-color:'+'#FF5F2F'+';'}}"
+                >{{''+(v.$orig.isActivity==4?'第二件打折':'买一送一')+''}}</view
+              >
+            </view>
+            <view class="f-bt mt10 f24 c9 data-v-1df7f434">
+              <view class="f-g-1 f-raw data-v-1df7f434">
+                <text class="ml10 data-v-1df7f434" wx:if="{{v.$orig.data}}"
+                  >{{v.$orig.data}}</text
+                >
+                <text class="data-v-1df7f434" wx:if="{{v.$orig.attribute}}"
+                  >{{'('+v.$orig.attribute+')'}}</text
+                >
+                <text class="ml10 data-v-1df7f434" wx:if="{{v.$orig.material}}"
+                  >{{'+'+v.$orig.material}}</text
+                >
+              </view>
+              <view class="ml10 data-v-1df7f434">{{'x'+v.$orig.num}}</view>
+            </view>
+          </view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          btt="包装费"
+          class="data-v-1df7f434"
+          cname="p13"
+          ft="{{''+sl+info.boxMoney}}"
+          ftc="f32 c3"
+          isr="1"
+          last="1"
+          vueId="7186dd88-3"
+        ></mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          btt="{{info.deliveryPreferential>0?info.deliveryPreferentialType==1?'满免配送费':'满免配送费':''}}"
+          class="data-v-1df7f434"
+          cname="p13"
+          ftc="f32 c3"
+          isr="1"
+          vueId="7186dd88-4"
+          vueSlots="{{['hd','ft']}}"
+          wx:if="{{info.deliveryMode!=10}}"
+        >
+          <view class="mr20 data-v-1df7f434" slot="hd">配送费</view>
+          <view class="data-v-1df7f434" slot="ft">
+            <text
+              class="mr30 t-d-l f32 c9 data-v-1df7f434"
+              wx:if="{{info.deliveryPreferential>0}}"
+              >{{sl+info.deliveryPreferential}}</text
+            >
+            <text class="f32 data-v-1df7f434">{{sl+info.deliveryMoney}}</text>
+          </view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-1df7f434"
+          cname="p13"
+          isr="1"
+          last="1"
+          vueId="7186dd88-5"
+          vueSlots="{{['bd','ft']}}"
+        >
+          <view class="c9 f24 f-row data-v-1df7f434" slot="bd"></view>
+          <view class="ml10 c3 data-v-1df7f434" slot="ft">
+            <text class="f24 data-v-1df7f434">{{'共'+info.num+'件商品'}}</text>
+            <text class="m02 data-v-1df7f434">小计</text>
+            <text class="f34 data-v-1df7f434">{{sl+info.money}}</text>
+          </view>
+        </mg-cell>
+      </view>
+      <view class="mt20 p20 bf data-v-1df7f434">
+        <view class="f24 c9 p253 data-v-1df7f434">付款说明:</view>
+        <view class="p03 f22 c9 data-v-1df7f434"
+          >1、付款前务必和好友再次确认，避免是诈骗行为</view
+        >
+        <view class="p03 f22 c9 data-v-1df7f434"
+          >2、如果发生退款，钱将退还到你的微信账户里</view
+        >
+      </view>
+      <view class="foot-btnc data-v-1df7f434">
+        <button
+          class="foot-btn b-s-2 f30 wei data-v-1df7f434"
+          disabled="{{loading}}"
+          formType="submit"
+          loading="{{loading}}"
+          style="{{'background:'+tColor+';'}}"
+        >
+          立即支付
+        </button>
+      </view>
+    </view>
+  </form>
+</view>

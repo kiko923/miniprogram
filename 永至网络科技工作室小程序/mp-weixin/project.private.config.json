@@ -1,0 +1,65 @@
+{
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+  "projectname": "%E6%B0%B8%E8%87%B3%E7%BD%91%E7%BB%9C%E7%A7%91%E6%8A%80%E5%B7%A5%E4%BD%9C%E5%AE%A4%E5%B0%8F%E7%A8%8B%E5%BA%8F",
+  "setting": {
+    "compileHotReLoad": true,
+    "preloadBackgroundData": false,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/zhifu/zhifu",
+          "pathName": "pages/zhifu/zhifu",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "query": "money=1.00&url=https://www.yzpays.com/pay/wxminipay/2025030303223990902/",
+          "launchMode": "default",
+          "scene": 1065
+        },
+        {
+          "name": "pages/pay/pay",
+          "pathName": "pages/pay/pay",
+          "query": "url=/pay/wxminipay/2025030303053955422/?code=0f3fCu000LV0PT1RpO100XmOyw4fCu0r&money=1",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "参数传入",
+          "pathName": "pages/connectWifi/connectWifi",
+          "query": "data=eyJzc2lkIjoi6L+U5Zue5Y+R6L+H54GrIiwicGFzc3dvcmQiOiJ3d3d3d3d3dyJ9",
+          "launchMode": "default",
+          "scene": 1011
+        },
+        {
+          "name": "scene传入",
+          "pathName": "pages/connectWifi/connectWifi",
+          "query": "",
+          "launchMode": "default",
+          "scene": 1047
+        },
+        {
+          "name": "pages/qsy/qsy",
+          "pathName": "pages/qsy/qsy",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "默认",
+          "pathName": "pages/connectWifi/connectWifi",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "libVersion": "3.7.3"
+}

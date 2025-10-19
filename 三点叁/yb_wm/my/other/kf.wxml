@@ -1,0 +1,55 @@
+<view class="data-v-c0d93464">
+  <view class="dlhd f-c-c data-v-c0d93464">
+    <view class="hdimg bsf data-v-c0d93464">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-c0d93464"
+        src="{{system.icon}}"
+        vueId="33eb5d2a-1"
+      ></mg-img>
+    </view>
+    <view class="c9 f26 p23 data-v-c0d93464">{{system.name}}</view>
+  </view>
+  <view class="foot-btnc posi-r data-v-c0d93464">
+    <button
+      bindtap="__e"
+      class="foot-btn data-v-c0d93464"
+      data-event-opts="{{[ [ 'tap',[ [ 'zxkf',['$event'] ] ] ] ]}}"
+      style="{{'background:'+tColor+';'}}"
+      wx:if="{{system.erviceType=='2'&&system.serviceUrl}}"
+    >
+      在线客服
+    </button>
+    <button
+      class="foot-btn data-v-c0d93464"
+      openType="contact"
+      style="{{'background:'+tColor+';'}}"
+      wx:else
+    >
+      在线客服
+    </button>
+  </view>
+  <view
+    bindtap="__e"
+    class="foot-btnc posi-r data-v-c0d93464"
+    data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+  >
+    <button
+      class="foot-btn f-c data-v-c0d93464"
+      style="{{'background:'+'transparent'+';'+'border:'+'1px solid '+tColor+';'+'color:'+tColor+';'}}"
+    >
+      <text
+        class="iconfont icondh mr20 f42 data-v-c0d93464"
+        style="{{'color:'+tColor+';'}}"
+      ></text
+      >联系电话
+    </button>
+  </view>
+  <view
+    bindtap="__e"
+    class="posi-f b0 w100 data-v-c0d93464"
+    data-event-opts="{{[ [ 'tap',[ [ 'bbh',['$event'] ] ] ] ]}}"
+    style="height: 100rpx"
+  ></view>
+  <tab-bar bind:__l="__l" class="data-v-c0d93464" vueId="33eb5d2a-2"></tab-bar>
+</view>

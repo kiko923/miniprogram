@@ -1,0 +1,7 @@
+.lines .one.data-v-a592ea38 {
+  border-top: 1px solid #eee;
+}
+.lines .two.data-v-a592ea38 {
+  border-width: 1px 0;
+  border-style: solid;
+}

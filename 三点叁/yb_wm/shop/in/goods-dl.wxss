@@ -1,0 +1,16 @@
+.spxq .gwcc.data-v-1616fc66 {
+  height: 120rpx;
+}
+.spxq .jrgwc.data-v-1616fc66 {
+  width: 400rpx;
+  margin-right: 20rpx;
+  height: 86rpx;
+  border-radius: 90rpx;
+}
+.spxq .dot.data-v-1616fc66 {
+  min-width: 40rpx;
+  height: 40rpx;
+  color: #fff;
+  top: -20rpx;
+  right: 15rpx;
+}

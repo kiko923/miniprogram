@@ -1,0 +1,38 @@
+<view class="data-v-a28b04ba">
+  <view class="bf data-v-a28b04ba">
+    <view
+      class="p3 hlb f-row data-v-a28b04ba"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="glimg mr30 bs10 data-v-a28b04ba">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-a28b04ba"
+          src="{{v.bagIcon}}"
+          vueId="{{'a35ca95c-1-'+i}}"
+        ></mg-img>
+      </view>
+      <view class="f-1 data-v-a28b04ba">
+        <view class="f-x-bt data-v-a28b04ba">
+          <view class="t-o-e f28 data-v-a28b04ba">{{v.bagName}}</view>
+          <view class="cf7 f28 data-v-a28b04ba">{{sl+v.money}}</view>
+        </view>
+        <view class="f-x-bt c9 f24 mt10 data-v-a28b04ba">
+          <view class="data-v-a28b04ba">{{v.createdAt}}</view>
+          <view class="data-v-a28b04ba">{{v.payModeName}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-a28b04ba"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="a35ca95c-2"
+  ></jzz>
+</view>

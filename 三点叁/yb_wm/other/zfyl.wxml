@@ -1,0 +1,120 @@
+<view class="h100 data-v-ecd1b404">
+  <view class="data-v-ecd1b404">
+    <view class="cf p-r data-v-ecd1b404" style="{{'background:'+tColor+';'}}">
+      <view class="rwimg p-a b0 r0 data-v-ecd1b404">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-ecd1b404"
+          m="aspectFit"
+          src="/static/pay/ylbg.png"
+          vueId="49ce66d7-1"
+        ></mg-img>
+      </view>
+      <view class="p-r data-v-ecd1b404">
+        <view class="zl1c data-v-ecd1b404">
+          <view class="f-y-c top data-v-ecd1b404">
+            <view class="f-g-1 data-v-ecd1b404">
+              <view class="f42 mb30 wei6 data-v-ecd1b404">支付成功</view>
+              <view class="data-v-ecd1b404">
+                <view class="data-v-ecd1b404"
+                  >{{'实付'+sl+(ylInfo.money||'--')}}</view
+                >
+                <view class="data-v-ecd1b404">{{ylInfo.payModeName}}</view>
+              </view>
+            </view>
+            <view class="f-g-0 gouc f-c data-v-ecd1b404">
+              <image
+                class="img data-v-ecd1b404"
+                mode="widthFix"
+                src="/static/wd/yldd.png"
+              ></image>
+            </view>
+          </view>
+          <view class="p30 data-v-ecd1b404">
+            <block wx:if="{{ylInfo.payPolitely==1}}">
+              <view
+                class="mb20 f-y-c f24 data-v-ecd1b404"
+                wx:if="{{ylInfo.couponName}}"
+              >
+                <view class="f-y-c jli bf cf mr20 f-g-0 data-v-ecd1b404">
+                  <view class="wei f22 data-v-ecd1b404">代金券</view>
+                </view>
+                <view class="data-v-ecd1b404"
+                  >{{'订单完成后，您将获得'+ylInfo.couponName+'门店代金券1张！'}}</view
+                >
+              </view>
+              <view
+                class="mb20 f-y-c f24 data-v-ecd1b404"
+                wx:if="{{ylInfo.balance>0}}"
+              >
+                <view class="f-y-c jli bf cf mr20 f-g-0 data-v-ecd1b404">
+                  <view class="wei f22 data-v-ecd1b404">{{balanceName}}</view>
+                </view>
+                <view class="data-v-ecd1b404"
+                  >{{'订单完成后，您将获得'+ylInfo.balance+balanceName+'！'}}</view
+                >
+              </view>
+              <view
+                class="mb20 f-y-c f24 data-v-ecd1b404"
+                wx:if="{{ylInfo.integral>0}}"
+              >
+                <view class="f-y-c jli bf cf mr20 f-g-0 data-v-ecd1b404">
+                  <view class="wei f22 data-v-ecd1b404">{{jfName}}</view>
+                </view>
+                <view class="data-v-ecd1b404"
+                  >{{'订单完成后，您将获得'+ylInfo.integral+jfName+'！'}}</view
+                >
+              </view>
+              <view
+                class="mb20 f-y-c f24 data-v-ecd1b404"
+                wx:if="{{ylInfo.growth>0}}"
+              >
+                <view class="f-y-c jli bf cf mr20 f-g-0 data-v-ecd1b404">
+                  <view class="wei f22 data-v-ecd1b404">成长值</view>
+                </view>
+                <view class="data-v-ecd1b404"
+                  >{{'订单完成后，您将获得'+ylInfo.growth+'成长值！'}}</view
+                >
+              </view>
+            </block>
+            <view class="f-c p10 data-v-ecd1b404">
+              <view
+                bindtap="__e"
+                class="ckdd b-d f-c mr40 data-v-ecd1b404"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',6],['url','/yb_wm/index/index'] ] ] ] ] ] ]}}"
+                >逛逛首页</view
+              >
+              <view
+                bindtap="__e"
+                class="ckdd b-d f-c data-v-ecd1b404"
+                data-event-opts="{{[ [ 'tap',[ [ 'ckdd',['$event'] ] ] ] ]}}"
+                >完成</view
+              >
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="zlbd p-r o-h data-v-ecd1b404">
+      <view class="bf p3 f24 c9 bs30 data-v-ecd1b404"
+        >{{'注意:'+system.name+'及销售商不会以订单异常、系统升级为由要求您点击任何网址链接进行退款操作。'}}</view
+      >
+      <block wx:if="{{shopinfo.id}}">
+        <view class="f-y-c p23 data-v-ecd1b404">
+          <view class="tjl f-1 data-v-ecd1b404"></view>
+          <view class="f-y-c wntj c9 data-v-ecd1b404">
+            <text class="data-v-ecd1b404">为你推荐</text>
+          </view>
+          <view class="tjr f-1 data-v-ecd1b404"></view>
+        </view>
+        <product-group
+          bind:__l="__l"
+          class="data-v-ecd1b404"
+          co="{{pgco}}"
+          shopinfo="{{shopinfo}}"
+          vueId="49ce66d7-2"
+        ></product-group>
+      </block>
+    </view>
+  </view>
+</view>

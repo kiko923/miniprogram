@@ -1,0 +1,50 @@
+<view
+  class="titles o-h data-v-6a57963a"
+  style="{{'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'+'border-radius:'+co.circle+u+';'}}"
+>
+  <view
+    class="titles-c bf data-v-6a57963a"
+    style="{{'background:'+co.colorBg+';'}}"
+  >
+    <view
+      bindtap="__e"
+      class="p330 f-x-bt data-v-6a57963a"
+      data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/other/info/index'] ] ] ] ] ] ]}}"
+    >
+      <view class="f30 wei c0 data-v-6a57963a">{{co.title}}</view>
+      <view class="f-y-c f-g-0 data-v-6a57963a">
+        <text class="f24 data-v-6a57963a" style="color: #a4a4a4">更多</text>
+        <text class="iconfont iconright c6 arrow f26 data-v-6a57963a"></text>
+      </view>
+    </view>
+    <view
+      bindtap="__e"
+      class="weui-cell f-sh data-v-6a57963a"
+      data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/other/info/detail?id='+v.$orig.id] ] ] ] ] ] ]}}"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="f-1 f-y-bt data-v-6a57963a">
+        <view class="data-v-6a57963a">
+          <view class="f26 t-o-e data-v-6a57963a">{{v.$orig.title}}</view>
+          <view
+            class="f24 t-o-e c9 data-v-6a57963a"
+            wx:if="{{v.$orig.introduction}}"
+            >{{v.$orig.introduction}}</view
+          >
+        </view>
+        <view class="c9 f24 l-n data-v-6a57963a">{{v.m0}}</view>
+      </view>
+      <view class="img ml30 bs10 data-v-6a57963a">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-6a57963a"
+          src="{{v.$orig.icon}}"
+          vueId="{{'25bff60e-1-'+i}}"
+        ></mg-img>
+      </view>
+    </view>
+  </view>
+</view>

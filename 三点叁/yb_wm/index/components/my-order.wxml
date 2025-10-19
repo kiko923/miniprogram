@@ -1,0 +1,162 @@
+<view
+  bindtap="__e"
+  class="bf bs20 mb20 p-r data-v-10b83272"
+  data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/order/order-dl?id='+co.id] ] ] ] ] ] ]}}"
+>
+  <block wx:if="{{co.deliveryMode==10||co.appointment==1}}">
+    <view
+      class="{{['posi-a','molta','cf','data-v-10b83272',co.appointment==1?'yd':'']}}"
+    ></view>
+    <view class="posi-a moltat cf f22 t-c data-v-10b83272"
+      >{{co.appointment==1?'预':'自'}}</view
+    >
+  </block>
+  <mg-cell
+    bind:__l="__l"
+    brs="8rpx"
+    class="data-v-10b83272"
+    cname="p23"
+    h="84"
+    img="{{co.storeIcon}}"
+    last="1"
+    noc="1"
+    vueId="dfc53ec4-1"
+    vueSlots="{{['bd']}}"
+    w="84"
+  >
+    <view class="data-v-10b83272" slot="bd">
+      <view class="f-bt data-v-10b83272">
+        <view class="f-g-1 f30 f-y-c data-v-10b83272">
+          <text class="t-o-e f32 data-v-10b83272"
+            >{{co.storeName+''}}<block wx:if="{{orderset.oIdOpen==1}}"
+              >(<text class="data-v-10b83272" style="{{'color:'+tColor+';'}}"
+                >{{'#'+(co.deliveryMode==10?co.mId:co.oId)}}</text
+              >)</block
+            >
+          </text>
+        </view>
+        <view class="f-g-0 data-v-10b83272" style="{{'color:'+$root.m0+';'}}"
+          >{{''+$root.m1+stime}}</view
+        >
+      </view>
+      <view class="mt5 f-x-bt f22 c9 data-v-10b83272">
+        <text class="data-v-10b83272">{{'下单时间：'+$root.m2}}</text>
+        <text
+          class="wei f24 data-v-10b83272"
+          style="{{'color:'+tColor+';'}}"
+          wx:if="{{co.takeNo}}"
+          >{{system.custom.orderNumber+'：#'+co.takeNo}}</text
+        >
+        <text class="data-v-10b83272" wx:if="{{co.state==7}}"
+          >订单超时未支付</text
+        >
+      </view>
+      <view class="f-row mt20 p-r data-v-10b83272">
+        <scroll-view class="f-1 ws-n f26 data-v-10b83272" scrollX="true">
+          <view
+            class="dis-in mobdli mr20 data-v-10b83272"
+            wx:for="{{co.goodsArr}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view class="img bs10 data-v-10b83272">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-10b83272"
+                src="{{v.icon}}"
+                vueId="{{'dfc53ec4-2-'+i+','+'dfc53ec4-1'}}"
+              ></mg-img>
+            </view>
+            <view class="mt10 f26 t-o-e data-v-10b83272">{{v.name}}</view>
+          </view>
+          <view class="dis-in mobdli mr20 data-v-10b83272"></view>
+        </scroll-view>
+        <view
+          class="{{['p-a','r0','t0','mobdrc','f-c-xc','t-r','data-v-10b83272',$root.g0>2?'zbyy':'']}}"
+        >
+          <view class="f34 wbba l-n data-v-10b83272">
+            <text class="f24 data-v-10b83272">{{co.symbol||sl}}</text
+            >{{$root.m3}}</view
+          >
+          <view class="f26 c9 mt5 data-v-10b83272">{{'共'+co.num+'件'}}</view>
+        </view>
+      </view>
+    </view>
+  </mg-cell>
+  <view
+    class="t-r p03 data-v-10b83272"
+    wx:if="{{co.deliveryMode==10&&co.state==4}}"
+    >取货码：<text class="wei data-v-10b83272" style="{{'color:'+tColor+';'}}"
+      >{{co.selfCode}}</text
+    >
+  </view>
+  <view class="p23 f-y-c data-v-10b83272">
+    <view class="f-1 data-v-10b83272"></view>
+    <view class="f-x-e data-v-10b83272">
+      <view
+        catchtap="__e"
+        class="obtn data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','qxdd'],['co',co],['tip',1] ] ] ] ] ] ]}}"
+        wx:if="{{co.state==1}}"
+        >取消订单</view
+      >
+      <view
+        catchtap="__e"
+        class="obtn cf data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','ljzf'],['co',co] ] ] ] ] ] ]}}"
+        style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+        wx:if="{{co.state==1}}"
+        >立即支付</view
+      >
+      <view
+        catchtap="__e"
+        class="obtn data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','sqtk'],['co',co] ] ] ] ] ] ]}}"
+        wx:if="{{co.isTk==1}}"
+        >{{co.state==2?'取消订单':'取消订单'}}</view
+      >
+      <view
+        catchtap="__e"
+        class="obtn cf data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','cd'],['co',co] ] ] ] ] ] ]}}"
+        style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+        wx:if="{{(co.state==2||co.state==3||co.state==4)&&co.deliveryMode!=10}}"
+        >催单</view
+      >
+      <view
+        catchtap="__e"
+        class="obtn data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','lxsj'],['co',co] ] ] ] ] ] ]}}"
+        wx:if="{{co.state==3||co.state==7}}"
+        >联系商家</view
+      >
+      <view
+        catchtap="__e"
+        class="obtn cf data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','qrsh'],['co',co] ] ] ] ] ] ]}}"
+        style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+        wx:if="{{co.state==4}}"
+        >确认收货</view
+      >
+      <view
+        catchtap="__e"
+        class="obtn cf data-v-10b83272"
+        data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','pj'],['co',co] ] ] ] ] ] ]}}"
+        style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+        wx:if="{{co.state==5&&orderset.orderEvaluate=='1'}}"
+        >评价</view
+      >
+      <view
+        class="obtn cf data-v-10b83272"
+        style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+        wx:if="{{co.state==9}}"
+        >退款中</view
+      >
+      <view class="obtn data-v-10b83272" wx:if="{{co.state==10}}">已退款</view>
+      <view class="obtn c9 data-v-10b83272" wx:if="{{co.state==11}}"
+        >已拒绝</view
+      >
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<view class="data-v-7607955b">
+  <view class="fixedtop bf5 data-v-7607955b">
+    <nav-tab
+      bind:__l="__l"
+      bind:changeTab="__e"
+      bind:input="__e"
+      class="data-v-7607955b"
+      data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+      tabs="{{tabs}}"
+      value="{{aIdx}}"
+      vueId="542f95ff-1"
+    ></nav-tab>
+  </view>
+  <view class="ccbd p3 data-v-7607955b">
+    <dn-order
+      bind:__l="__l"
+      bind:input="__e"
+      bind:refresh="__e"
+      class="data-v-7607955b"
+      data-event-opts="{{[ [ '^refresh',[ ['dnrefresh'] ] ],[ '^input',[ [ '__set_model',[ '','laIdx','$event',[] ] ] ] ] ]}}"
+      datalist="{{dataList}}"
+      labelarr="{{[]}}"
+      ltop="{{0}}"
+      otype="{{1}}"
+      value="{{laIdx}}"
+      vueId="542f95ff-2"
+    ></dn-order>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-7607955b"
+      mygd="{{mygd}}"
+      nodata="{{$root.g0}}"
+      otext="暂无店内订单"
+      vueId="542f95ff-3"
+    ></jzz>
+  </view>
+</view>

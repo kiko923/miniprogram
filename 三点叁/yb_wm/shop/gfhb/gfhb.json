@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell",
+    "book-text": "/components/common/functionCmp/rich-text",
+    "load": "/components/common/load",
+    "tab-bar": "/components/common/tabbar"
+  }
+}

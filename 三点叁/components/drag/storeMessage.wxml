@@ -1,0 +1,32 @@
+<view
+  class="data-v-d3d95948"
+  style="{{'margin:'+''+co.marginTop+u+' '+co.marginLR+u+' '+co.marginBottom+u+';'}}"
+>
+  <view class="f-row o-x-s p0 data-v-d3d95948">
+    <view
+      bindtap="__e"
+      class="f-g-0 w-210 mr20 p2 bs10 bf data-v-d3d95948"
+      data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ] ]}}"
+      wx:if="{{i<10}}"
+      wx:for="{{storelist}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="imgc bsf data-v-d3d95948">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-d3d95948"
+          vueId="{{'5dd1a1e0-1-'+i}}"
+        ></mg-img>
+      </view>
+      <view class="mt10 data-v-d3d95948">
+        <view class="t-o-e data-v-d3d95948">{{'XXXXXXxxxxxx'||v.name}}</view>
+        <view class="mt10 f24 c6 f-row data-v-d3d95948">
+          <text class="iconfont icondw c3 mr10 f28 data-v-d3d95948"></text>
+          <text class="f22 data-v-d3d95948">{{'xxx'||v.distance}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

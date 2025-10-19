@@ -1,0 +1,28 @@
+.mdbd.data-v-167d8bf1 {
+  border-radius: 40rpx 40rpx 0 0;
+}
+.mdbdt.data-v-167d8bf1 {
+  margin: 0 30rpx;
+}
+.mdinput.data-v-167d8bf1 {
+  font-size: 70rpx;
+  height: 2.9rem;
+  line-height: 2.9rem;
+  caret-color: #17e883;
+}
+.mdbdb.data-v-167d8bf1 {
+  padding: 0 50rpx;
+}
+.hdwith.data-v-167d8bf1 {
+  width: 100rpx;
+}
+.fxc.data-v-167d8bf1 {
+  border-radius: 30rpx 30rpx 0 0;
+}
+.sharec.data-v-167d8bf1 {
+  margin-top: 50rpx;
+}
+.iconimg.data-v-167d8bf1 {
+  width: 48rpx;
+  height: 48rpx;
+}

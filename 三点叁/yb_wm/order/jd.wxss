@@ -1,0 +1,22 @@
+.jdred .jtitem.data-v-da2bee2e {
+  width: 90rpx;
+  height: 90rpx;
+  margin: 0 20rpx 40rpx 20rpx;
+  border-radius: 50%;
+}
+.jdred .jtc.data-v-da2bee2e {
+  padding: 40rpx 10rpx 20rpx 10rpx;
+}
+.jdred .icw.data-v-da2bee2e {
+  width: 40rpx;
+  height: 40rpx;
+}
+.jdred .sbtn.data-v-da2bee2e {
+  width: 350rpx;
+  height: 84rpx;
+  border-radius: 47px;
+}
+.jdred .hbg.data-v-da2bee2e {
+  width: 100%;
+  height: 380rpx;
+}

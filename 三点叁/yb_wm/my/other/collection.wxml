@@ -1,0 +1,63 @@
+<view class="data-v-6e46ad8c">
+  <view class="mt9 p3 data-v-6e46ad8c">
+    <view
+      class="bf bs30 mb30 data-v-6e46ad8c"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <mg-cell
+        bind:__l="__l"
+        bind:tab="__e"
+        brs="15rpx"
+        class="data-v-6e46ad8c"
+        cname="p23"
+        data-event-opts="{{[ [ '^tab',[ [ 'goDl',['$0'],[ [ ['dataList','',i,'storeId'] ] ] ] ] ] ]}}"
+        h="130"
+        img="{{v.$orig.icon}}"
+        last="1"
+        vueId="{{'2d72e6c7-1-'+i}}"
+        vueSlots="{{['bd','ft']}}"
+        w="130"
+      >
+        <view class="f24 c9 data-v-6e46ad8c" slot="bd">
+          <view class="f-bt data-v-6e46ad8c">
+            <view class="f-g-1 f32 wei f-y-c data-v-6e46ad8c">
+              <text class="t-o-e c0 data-v-6e46ad8c">{{v.$orig.name}}</text>
+            </view>
+          </view>
+          <view class="mt10 f-y-c data-v-6e46ad8c">
+            <uni-rate
+              activeColor="#FF5B0A"
+              bind:__l="__l"
+              class="data-v-6e46ad8c"
+              disabled="{{true}}"
+              icon="iconxing"
+              margin="{{4}}"
+              size="25"
+              value="{{v.$orig.foodScore||5}}"
+              vueId="{{'2d72e6c7-2-'+i+','+'2d72e6c7-1-'+i}}"
+            ></uni-rate>
+          </view>
+          <view class="mt10 f-x-bt data-v-6e46ad8c">
+            <text class="data-v-6e46ad8c" wx:if="{{v.m0}}">{{v.m1}}</text>
+          </view>
+        </view>
+        <view
+          class="f-g-0 text-btnf bs30 p-5-20 bec c9 data-v-6e46ad8c"
+          slot="ft"
+          >进入</view
+        >
+      </mg-cell>
+    </view>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-6e46ad8c"
+      mygd="{{mygd}}"
+      nodata="{{$root.g0}}"
+      vueId="2d72e6c7-3"
+    ></jzz>
+  </view>
+</view>

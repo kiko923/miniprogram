@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "uni-notice-bar": "/components/third/uni-notice-bar",
+    "mg-popup": "/components/common/popup",
+    "bk-b": "/components/common/block-b",
+    "sq-btn": "/components/common/sq-btn",
+    "mg-radio": "/components/form/mg-radio",
+    "mg-agree": "/components/form/mg-agree",
+    "mg-modal": "/components/common/modal",
+    "load": "/components/common/load",
+    "number-box": "/components/form/number-box",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

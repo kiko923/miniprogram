@@ -1,0 +1,94 @@
+<view
+  class="p0 o-h data-v-401a9232"
+  style="{{'background-color:'+co.colorBg+';'+'margin:'+''+co.marginTop+u+' '+co.marginLR+u+' '+co.marginBottom+u+';'+'border-radius:'+co.circle+u+';'}}"
+>
+  <mg-cell
+    bgc="transparent"
+    bind:__l="__l"
+    class="data-v-401a9232"
+    cname="p0"
+    last="1"
+    vueId="e6969bbe-1"
+    vueSlots="{{['bd']}}"
+  >
+    <view class="data-v-401a9232" slot="bd">
+      <view class="gwglc f-raw f24 data-v-401a9232" wx:if="{{co.arrange==1}}">
+        <view
+          bindtap="__e"
+          class="f-c-c gwgl data-v-401a9232"
+          data-event-opts="{{[ [ 'tap',[ [ 'gwglClick',['$0'],[ [ ['myGwgl','',i] ] ] ] ] ] ]}}"
+          hidden="{{!!v.hide}}"
+          style="{{'width:'+10/co.num*10+'%'+';'}}"
+          wx:for="{{myGwgl}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view
+            class="glimg mb15 data-v-401a9232"
+            style="{{'width:'+ftw.w+'rpx'+';'+'height:'+ftw.w+'rpx'+';'}}"
+          >
+            <mg-img
+              bind:__l="__l"
+              class="data-v-401a9232"
+              src="{{v.img}}"
+              vueId="{{'e6969bbe-2-'+i+','+'e6969bbe-1'}}"
+            ></mg-img>
+          </view>
+          <view
+            class="data-v-401a9232"
+            style="{{'color:'+co.colorWord+';'+'font-size:'+ftw.ft+'rpx'+';'}}"
+            >{{v.word}}</view
+          >
+        </view>
+      </view>
+      <block wx:else>
+        <mg-cell
+          bind:__l="__l"
+          bind:tab="__e"
+          class="data-v-401a9232"
+          cname="p253"
+          data-event-opts="{{[ [ '^tab',[ [ 'gwglClick',['$0'],[ [ ['myGwgl','',i] ] ] ] ] ] ]}}"
+          h="{{ftw.w}}"
+          img="{{v.$orig.img}}"
+          isr="1"
+          last="{{i==v.g0-1}}"
+          vueId="{{'e6969bbe-3-'+i+','+'e6969bbe-1'}}"
+          vueSlots="{{['bd','ft']}}"
+          w="{{ftw.w}}"
+          wx:for="{{$root.l0}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="data-v-401a9232" slot="bd">
+            <view
+              class="f30 data-v-401a9232"
+              style="{{'color:'+co.leftColor+';'+'font-size:'+ftw.ft+'rpx'+';'}}"
+              >{{v.$orig.leftWord}}</view
+            >
+          </view>
+          <view
+            class="f24 f-y-c data-v-401a9232"
+            slot="ft"
+            style="{{'color:'+co.rightColor+';'}}"
+          >
+            <view class="data-v-401a9232">{{v.$orig.rightWord}}</view>
+            <view class="glimg ml20 data-v-401a9232" wx:if="{{co.img}}">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-401a9232"
+                src="{{co.img}}"
+                vueId="{{'e6969bbe-4-'+i+','+'e6969bbe-3-'+i}}"
+              ></mg-img>
+            </view>
+            <text
+              class="iconfont iconright ml20 f28 data-v-401a9232"
+              wx:else
+            ></text>
+          </view>
+        </mg-cell>
+      </block>
+    </view>
+  </mg-cell>
+</view>

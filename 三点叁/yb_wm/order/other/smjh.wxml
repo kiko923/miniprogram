@@ -1,0 +1,8 @@
+<view class="data-v-a6ed0734">
+  <load
+    bind:__l="__l"
+    class="data-v-a6ed0734"
+    vueId="08aa229d-1"
+    wx:if="{{showloading}}"
+  ></load>
+</view>

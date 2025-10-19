@@ -1,0 +1,336 @@
+<view
+  class="pb115 o-h data-v-98d38686"
+  style="{{'background:'+(layout.pageSetting?layout.pageSetting[0].styles.moduleTitle==1?layout.pageSetting[0].styles.colorIcon:'url('+layout.pageSetting[0].styles.img+')':'')+';'}}"
+>
+  <open-list
+    bind:__l="__l"
+    class="data-v-98d38686"
+    co="{{layout.open[0].styles}}"
+    vueId="1de1c492-1"
+    wx:if="{{layout.open&&layout.open[0]}}"
+  ></open-list>
+  <uni-nav-bar
+    bg="{{layout.pageSetting[0].styles.colorBg}}"
+    bind:__l="__l"
+    border="{{false}}"
+    class="data-v-98d38686"
+    color="{{layout.pageSetting[0].styles.colorWord}}"
+    fixed="{{true}}"
+    id="uninavbar"
+    isleft="{{false}}"
+    ispr="{{true}}"
+    statusBar="{{true}}"
+    title="{{layout.pageSetting[0].styles.navTitle}}"
+    uropcity="1"
+    vueId="1de1c492-2"
+    wx:if="{{layout.pageSetting[0].styles.modulePage==1}}"
+  ></uni-nav-bar>
+  <atten-tion
+    bind:__l="__l"
+    class="data-v-98d38686"
+    co="{{v.styles}}"
+    vueId="{{'1de1c492-3-'+i}}"
+    wx:if="{{v.name=='attention'&&v.styles.status==1}}"
+    wx:for="{{layout.attention}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  ></atten-tion>
+  <block wx:for="{{layout.list}}" wx:for-index="i" wx:for-item="v" wx:key="i">
+    <search-box
+      bind:__l="__l"
+      class="data-v-98d38686"
+      co="{{v.styles}}"
+      vueId="{{'1de1c492-4-'+i}}"
+      wx:if="{{v.name=='search'}}"
+    ></search-box>
+    <block wx:else>
+      <fixed-set
+        bind:__l="__l"
+        class="data-v-98d38686"
+        co="{{v.styles}}"
+        vueId="{{'1de1c492-5-'+i}}"
+        wx:if="{{v.name=='fixed'}}"
+      ></fixed-set>
+      <block wx:else>
+        <notice-sue
+          bind:__l="__l"
+          class="data-v-98d38686"
+          co="{{v.styles}}"
+          shopinfo="{{shopinfo}}"
+          vueId="{{'1de1c492-6-'+i}}"
+          wx:if="{{v.name=='notice'}}"
+        ></notice-sue>
+        <block wx:else>
+          <pic-lunbo-by
+            bind:__l="__l"
+            class="data-v-98d38686"
+            co="{{v.styles}}"
+            vueId="{{'1de1c492-7-'+i}}"
+            wx:if="{{v.name=='picLunbo'}}"
+          ></pic-lunbo-by>
+          <block wx:else>
+            <zx-list
+              bind:__l="__l"
+              class="data-v-98d38686"
+              co="{{v.styles}}"
+              shopinfo="{{shopinfo}}"
+              vueId="{{'1de1c492-8-'+i}}"
+              wx:if="{{v.name=='information'}}"
+            ></zx-list>
+            <block wx:else>
+              <btn-group
+                bind:__l="__l"
+                class="data-v-98d38686"
+                co="{{v.styles}}"
+                vueId="{{'1de1c492-9-'+i}}"
+                wx:if="{{v.name=='btn'}}"
+              ></btn-group>
+              <block wx:else>
+                <pictures
+                  bind:__l="__l"
+                  class="data-v-98d38686"
+                  co="{{v.styles}}"
+                  vueId="{{'1de1c492-10-'+i}}"
+                  wx:if="{{v.name=='pictures'}}"
+                ></pictures>
+                <block wx:else>
+                  <titles-bar
+                    bind:__l="__l"
+                    class="data-v-98d38686"
+                    co="{{v.styles}}"
+                    vueId="{{'1de1c492-11-'+i}}"
+                    wx:if="{{v.name=='titles'}}"
+                  ></titles-bar>
+                  <block wx:else>
+                    <blank
+                      bind:__l="__l"
+                      class="data-v-98d38686"
+                      co="{{v.styles}}"
+                      vueId="{{'1de1c492-12-'+i}}"
+                      wx:if="{{v.name=='blank'}}"
+                    ></blank>
+                    <block wx:else>
+                      <lines-wire
+                        bind:__l="__l"
+                        class="data-v-98d38686"
+                        co="{{v.styles}}"
+                        vueId="{{'1de1c492-13-'+i}}"
+                        wx:if="{{v.name=='lines'}}"
+                      ></lines-wire>
+                      <block wx:else>
+                        <store-message
+                          bind:__l="__l"
+                          class="data-v-98d38686"
+                          co="{{v.styles}}"
+                          vueId="{{'1de1c492-14-'+i}}"
+                          wx:if="{{v.name=='storeMessage'}}"
+                        ></store-message>
+                        <block wx:else>
+                          <book-text
+                            bind:__l="__l"
+                            class="data-v-98d38686"
+                            co="{{v.styles}}"
+                            vueId="{{'1de1c492-15-'+i}}"
+                            wx:if="{{v.name=='book'}}"
+                          ></book-text>
+                          <block wx:else>
+                            <hot-spots
+                              bind:__l="__l"
+                              class="data-v-98d38686"
+                              co="{{v.styles}}"
+                              vueId="{{'1de1c492-16-'+i}}"
+                              wx:if="{{v.name=='hot'}}"
+                            ></hot-spots>
+                            <block wx:else>
+                              <margic-cube
+                                bind:__l="__l"
+                                class="data-v-98d38686"
+                                co="{{v.styles}}"
+                                vueId="{{'1de1c492-17-'+i}}"
+                                wx:if="{{v.name=='margic'}}"
+                              ></margic-cube>
+                              <block wx:else>
+                                <list-nav
+                                  bind:__l="__l"
+                                  class="data-v-98d38686"
+                                  co="{{v.styles}}"
+                                  vueId="{{'1de1c492-18-'+i}}"
+                                  wx:if="{{v.name=='listNav'}}"
+                                ></list-nav>
+                                <block wx:else>
+                                  <discount-coupons
+                                    bind:__l="__l"
+                                    class="data-v-98d38686"
+                                    styles="{{v.styles}}"
+                                    vueId="{{'1de1c492-19-'+i}}"
+                                    wx:if="{{v.name=='discount'}}"
+                                  ></discount-coupons>
+                                  <block wx:else>
+                                    <product-group
+                                      bind:__l="__l"
+                                      class="data-v-98d38686"
+                                      co="{{v.styles}}"
+                                      shopinfo="{{shopinfo}}"
+                                      vueId="{{'1de1c492-20-'+i}}"
+                                      wx:if="{{v.name=='product'}}"
+                                    ></product-group>
+                                    <block wx:else>
+                                      <my-balance
+                                        bind:__l="__l"
+                                        class="data-v-98d38686"
+                                        co="{{v.styles}}"
+                                        vueId="{{'1de1c492-21-'+i}}"
+                                        wx:if="{{v.name=='myBalance'}}"
+                                      ></my-balance>
+                                      <block wx:else>
+                                        <store-evaluate
+                                          bind:__l="__l"
+                                          class="data-v-98d38686"
+                                          co="{{v.styles}}"
+                                          color="{{tColor}}"
+                                          storeInfo="{{storeInfo}}"
+                                          vueId="{{'1de1c492-22-'+i}}"
+                                          wx:if="{{v.name=='storeEvaluate'}}"
+                                        ></store-evaluate>
+                                        <block wx:else>
+                                          <store-couponbag
+                                            bind:__l="__l"
+                                            class="data-v-98d38686"
+                                            co="{{v.styles}}"
+                                            color="{{tColor}}"
+                                            storeInfo="{{storeInfo}}"
+                                            vueId="{{'1de1c492-23-'+i}}"
+                                            wx:if="{{v.name=='storeRollbag'}}"
+                                          ></store-couponbag>
+                                          <block wx:else>
+                                            <store-information
+                                              bind:__l="__l"
+                                              class="data-v-98d38686"
+                                              co="{{v.styles}}"
+                                              color="{{tColor}}"
+                                              storeInfo="{{storeInfo}}"
+                                              vueId="{{'1de1c492-24-'+i}}"
+                                              wx:if="{{v.name=='storeInformation'}}"
+                                            ></store-information>
+                                            <block wx:else>
+                                              <att-account
+                                                bind:__l="__l"
+                                                class="data-v-98d38686"
+                                                co="{{v.styles}}"
+                                                vueId="{{'1de1c492-25-'+i}}"
+                                                wx:if="{{v.name=='attAccount'}}"
+                                              ></att-account>
+                                              <block wx:else>
+                                                <view
+                                                  class="data-v-98d38686"
+                                                  style="{{'margin-top:'+v.styles.marginTop+'px'+';'+'margin-bottom:'+v.styles.marginBottom+'px'+';'+'margin-left:'+v.styles.marginLR+'px'+';'+'margin-right:'+v.styles.marginLR+'px'+';'}}"
+                                                  wx:if="{{v.name=='storeVideo'}}"
+                                                >
+                                                  <custom-video
+                                                    bind:__l="__l"
+                                                    class="data-v-98d38686"
+                                                    co="{{v.styles}}"
+                                                    color="{{tColor}}"
+                                                    vueId="{{'1de1c492-26-'+i}}"
+                                                    wx:if="{{v.styles.type==1||v.styles.type==3}}"
+                                                  ></custom-video>
+                                                  <txv-video
+                                                    bind:__l="__l"
+                                                    class="data-v-98d38686"
+                                                    data-com-type="wx"
+                                                    defn="超清"
+                                                    playerid="txv1"
+                                                    vid="{{v.styles.links}}"
+                                                    vueId="{{'1de1c492-27-'+i}}"
+                                                    wx:if="{{v.styles.type==2&&v.styles.links}}"
+                                                  ></txv-video>
+                                                </view>
+                                              </block>
+                                            </block>
+                                          </block>
+                                        </block>
+                                      </block>
+                                    </block>
+                                  </block>
+                                </block>
+                              </block>
+                            </block>
+                          </block>
+                        </block>
+                      </block>
+                    </block>
+                  </block>
+                </block>
+              </block>
+            </block>
+          </block>
+        </block>
+      </block>
+    </block>
+  </block>
+  <sus-btn
+    bind:__l="__l"
+    class="data-v-98d38686"
+    co="{{layout.susBtn[0].styles}}"
+    vueId="1de1c492-28"
+    wx:if="{{layout.susBtn&&layout.susBtn[0]}}"
+  ></sus-btn>
+  <view
+    class="data-v-98d38686"
+    wx:for="{{layout.remind}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  >
+    <order-prompt
+      bind:__l="__l"
+      class="data-v-98d38686"
+      styles="{{v.styles}}"
+      vueId="{{'1de1c492-29-'+i}}"
+      wx:if="{{v.name=='remind'}}"
+    ></order-prompt>
+  </view>
+  <tcyhq
+    bind:__l="__l"
+    bind:close="__e"
+    bind:input="__e"
+    class="data-v-98d38686"
+    co="{{xkzxInfo}}"
+    color="{{tColor}}"
+    data-event-opts="{{[ [ '^close',[ ['e0'] ] ],[ '^input',[ [ '__set_model',[ '','xkzxshow','$event',[] ] ] ] ] ]}}"
+    type="3"
+    value="{{xkzxshow}}"
+    vueId="1de1c492-30"
+    wx:if="{{xkzxInfo}}"
+  ></tcyhq>
+  <tcyhq
+    bind:__l="__l"
+    bind:close="__e"
+    bind:input="__e"
+    class="data-v-98d38686"
+    co="{{fqbInfo}}"
+    data-event-opts="{{[ [ '^close',[ ['e1'] ] ],[ '^input',[ [ '__set_model',[ '','fqbshow','$event',[] ] ] ] ] ]}}"
+    type="2"
+    value="{{fqbshow}}"
+    vueId="1de1c492-31"
+    wx:if="{{fqbInfo}}"
+  ></tcyhq>
+  <yszc
+    bind:__l="__l"
+    bind:close="__e"
+    class="data-v-98d38686"
+    data-event-opts="{{[ [ '^close',[ ['e2'] ] ] ]}}"
+    value="{{fwxyshow}}"
+    vueId="1de1c492-32"
+    wx:if="{{system.yszz&&system.yszz==1}}"
+  ></yszc>
+  <footc bind:__l="__l" class="data-v-98d38686" vueId="1de1c492-33"></footc>
+  <tab-bar bind:__l="__l" class="data-v-98d38686" vueId="1de1c492-34"></tab-bar>
+  <load
+    bind:__l="__l"
+    class="data-v-98d38686"
+    vueId="1de1c492-35"
+    wx:if="{{showloading}}"
+  ></load>
+</view>

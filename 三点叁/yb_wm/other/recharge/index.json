@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "mg-img": "/components/common/mg-img",
+    "mg-input": "/components/form/mg-input",
+    "mg-agree": "/components/form/mg-agree",
+    "uni-fab": "/components/third/uni-fab",
+    "sq-btn": "/components/common/sq-btn",
+    "mg-rtext": "/components/common/functionCmp/rich-text",
+    "w-picker": "/components/form/w-picker",
+    "tab-bar": "/components/common/tabbar",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

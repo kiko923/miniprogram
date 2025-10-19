@@ -1,0 +1,15 @@
+<view
+  class="lines data-v-a592ea38"
+  style="{{'margin:'+''+co.marginTB+u+' 0'+';'}}"
+>
+  <view
+    class="one data-v-a592ea38"
+    style="{{'border-color:'+co.colorBg+';'+'border-width:'+co.height+u+';'+'border-top-style:'+(co.type==1?'solid':co.type==3?'dashed':'dotted')+';'}}"
+    wx:if="{{co.type!=2}}"
+  ></view>
+  <view
+    class="two data-v-a592ea38"
+    style="{{'border-color:'+co.colorBg+';'+'height:'+co.height+u+';'}}"
+    wx:else
+  ></view>
+</view>

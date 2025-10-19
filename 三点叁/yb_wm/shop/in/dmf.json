@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mg-cell": "/components/common/mg-cell",
+    "sq-btn": "/components/common/sq-btn",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img"
+  }
+}

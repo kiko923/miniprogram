@@ -1,0 +1,17 @@
+.vname-l.data-v-7abb0ab0 {
+  min-width: 120rpx;
+  padding: 3rpx 10rpx 3rpx 15rpx;
+  border-radius: 50rpx 0 0 50rpx;
+  background: linear-gradient(90deg, #503215, #55371a);
+  color: #fffadb;
+}
+.vname-r.data-v-7abb0ab0 {
+  min-width: 120rpx;
+  padding: 3rpx 15rpx 3rpx 10rpx;
+  border-radius: 0 50rpx 50rpx 0;
+  background: linear-gradient(90deg, #fff3a6, #fcd96f);
+  color: #7a5d24;
+}
+.bor-b.data-v-7abb0ab0 {
+  border-bottom: 1px solid #eff3f6;
+}

@@ -1,0 +1,432 @@
+<view
+  bindtap="__e"
+  class="bf bs30 mb30 pb10 f24 data-v-97376f32"
+  data-event-opts="{{[ [ 'tap',[ [ 'goDL',['$event'] ] ] ] ]}}"
+>
+  <block wx:if="{{otype==1}}">
+    <mg-cell
+      bind:__l="__l"
+      class="data-v-97376f32"
+      cname="p253"
+      isr="1"
+      noc="1"
+      vueId="01775db0-1"
+      vueSlots="{{['bd']}}"
+    >
+      <view class="f-y-c data-v-97376f32" slot="bd">
+        <view class="mrltc bsf f-c b-l-ts mr15 data-v-97376f32">
+          <text class="iconfont icondndc cf data-v-97376f32"></text>
+        </view>
+        <view class="f-1 data-v-97376f32">
+          <view
+            catchtap="__e"
+            class="f-y-c data-v-97376f32"
+            data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$event'] ] ] ] ]}}"
+          >
+            <text class="t-o-e f28 data-v-97376f32">{{co.storeName+''}}</text>
+            <text class="iconfont iconright c0 f24 data-v-97376f32"></text>
+          </view>
+        </view>
+        <view class="f-g-0 data-v-97376f32" style="{{'color:'+$root.m0+';'}}"
+          >{{''+$root.m1+stime}}</view
+        >
+      </view>
+    </mg-cell>
+    <mg-cell
+      bind:__l="__l"
+      brs="10rpx"
+      class="data-v-97376f32"
+      cname="p23"
+      h="110"
+      img="{{co.goodsArr[0].icon}}"
+      last="1"
+      noc="1"
+      vueId="01775db0-2"
+      vueSlots="{{['bd']}}"
+      w="110"
+    >
+      <view class="data-v-97376f32" slot="bd">
+        <view class="data-v-97376f32">{{'时间：'+$root.m2}}</view>
+        <view class="mt10 data-v-97376f32"
+          >{{co.goodsArr[0].name+' 等 '+co.goodsNum+'件商品'}}</view
+        >
+        <view class="f-y-c mt10 c9 data-v-97376f32">
+          <view class="data-v-97376f32">堂食</view>
+          <view class="b-r data-v-97376f32"></view>
+          <view class="data-v-97376f32">{{co.people+'位'}}</view>
+        </view>
+      </view>
+    </mg-cell>
+    <view class="p23 data-v-97376f32">
+      <view class="f-x-bt mb20 data-v-97376f32">
+        <view class="f-y-c data-v-97376f32" style="{{'color:'+tColor+';'}}"
+          >桌号:<text class="ml20 data-v-97376f32"
+            >{{co.typeName+co.number}}</text
+          >
+        </view>
+        <view class="data-v-97376f32"
+          >{{'共'+co.goodsNum+'件'}}<text class="ml20 data-v-97376f32"
+            >{{''+(co.symbol||sl)+co.money}}</text
+          >
+        </view>
+      </view>
+      <view class="f-row data-v-97376f32">
+        <view class="f-g-0 f-y-c c9 data-v-97376f32">
+          <text class="iconfont icondndc mr10 data-v-97376f32"></text>
+          <text class="data-v-97376f32">堂食订单</text>
+        </view>
+        <view class="f-g-1 f-x-e data-v-97376f32">
+          <view
+            catchtap="__e"
+            class="obtn cf data-v-97376f32"
+            data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','tsljzf'],['co',co] ] ] ] ] ] ]}}"
+            style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+            wx:if="{{co.state==1&&co.eatType==1||co.state==2&&co.eatType==2}}"
+            >立即支付</view
+          >
+          <view
+            catchtap="__e"
+            class="obtn b-d data-v-97376f32"
+            data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','lxsj'],['co',co] ] ] ] ] ] ]}}"
+            wx:if="{{co.state==3}}"
+            >联系商家</view
+          >
+        </view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <block wx:if="{{otype==2}}">
+      <mg-cell
+        bind:__l="__l"
+        class="data-v-97376f32"
+        cname="p253"
+        isr="1"
+        noc="1"
+        vueId="01775db0-3"
+        vueSlots="{{['bd']}}"
+      >
+        <view class="f-y-c data-v-97376f32" slot="bd">
+          <view class="mrltc bsf f-c b-l-sy mr15 data-v-97376f32">
+            <text class="iconfont iconyue cf f28 data-v-97376f32"></text>
+          </view>
+          <view class="f-1 data-v-97376f32">
+            <view
+              catchtap="__e"
+              class="f-y-c data-v-97376f32"
+              data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$event'] ] ] ] ]}}"
+            >
+              <text class="t-o-e f28 data-v-97376f32">{{co.storeName+''}}</text>
+              <text class="iconfont iconright c0 f24 data-v-97376f32"></text>
+            </view>
+          </view>
+          <view class="f-g-0 data-v-97376f32" style="{{'color:'+$root.m3+';'}}"
+            >{{''+$root.m4}}</view
+          >
+        </view>
+      </mg-cell>
+      <mg-cell
+        bind:__l="__l"
+        brs="10rpx"
+        class="data-v-97376f32"
+        cname="p23"
+        h="110"
+        img="{{co.storeIcon}}"
+        last="1"
+        noc="1"
+        vueId="01775db0-4"
+        vueSlots="{{['bd']}}"
+        w="110"
+      >
+        <view class="data-v-97376f32" slot="bd">
+          <view class="data-v-97376f32">{{'时间：'+$root.m5}}</view>
+          <view class="mt10 data-v-97376f32"
+            >{{'实付：'+''+(co.symbol||sl)+co.money}}</view
+          >
+        </view>
+      </mg-cell>
+      <view class="p23 data-v-97376f32">
+        <view class="f-row data-v-97376f32">
+          <view class="f-g-0 f-y-c c9 data-v-97376f32">
+            <text class="iconfont iconyue mr10 data-v-97376f32"></text>
+            <text class="data-v-97376f32">当面付订单</text>
+          </view>
+          <view class="f-g-1 f-x-e data-v-97376f32">
+            <view class="obtn b-d data-v-97376f32">查看详情</view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:if="{{otype==4}}">
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-97376f32"
+          cname="p253"
+          isr="1"
+          noc="1"
+          vueId="01775db0-5"
+          vueSlots="{{['bd']}}"
+        >
+          <view class="f-y-c data-v-97376f32" slot="bd">
+            <view class="mrltc bsf f-c b-l-kc mr15 data-v-97376f32">
+              <text class="iconfont iconmd cf data-v-97376f32"></text>
+            </view>
+            <view class="f-1 data-v-97376f32">
+              <view
+                catchtap="__e"
+                class="f-y-c data-v-97376f32"
+                data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$event'] ] ] ] ]}}"
+              >
+                <text class="t-o-e f28 data-v-97376f32"
+                  >{{co.storeName+''}}</text
+                >
+                <text class="iconfont iconright c0 f24 data-v-97376f32"></text>
+              </view>
+            </view>
+            <view
+              class="f-g-0 data-v-97376f32"
+              style="{{'color:'+$root.m6+';'}}"
+              >{{''+$root.m7+stime}}</view
+            >
+          </view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          brs="10rpx"
+          class="data-v-97376f32"
+          cname="p23"
+          h="110"
+          img="{{co.goodsArr[0].icon}}"
+          last="1"
+          noc="1"
+          vueId="01775db0-6"
+          vueSlots="{{['bd']}}"
+          w="110"
+        >
+          <view class="data-v-97376f32" slot="bd">
+            <view class="data-v-97376f32">{{'时间：'+$root.m8}}</view>
+            <view class="mt10 data-v-97376f32"
+              >{{co.goodsArr[0].name+' 等 '+co.goodsNum+'件商品'}}</view
+            >
+            <view class="mt10 data-v-97376f32"
+              >{{co.isOut==1?thisCustom.dnjc||'店内就餐':thisCustom.dbdz||'打包带走'}}</view
+            >
+          </view>
+        </mg-cell>
+        <view class="p23 data-v-97376f32">
+          <view class="f-x-bt mb20 data-v-97376f32">
+            <view
+              class="f-y-c wei data-v-97376f32"
+              style="{{'color:'+tColor+';'}}"
+              >{{co.callNo?'取单号：'+co.callNo:''}}</view
+            >
+            <view class="data-v-97376f32"
+              >{{'共'+co.goodsNum+'件'}}<text class="ml20 data-v-97376f32"
+                >{{''+(co.symbol||sl)+co.money}}</text
+              >
+            </view>
+          </view>
+          <view class="f-row data-v-97376f32">
+            <view class="f-g-0 f-y-c c9 data-v-97376f32">
+              <text class="iconfont iconmd mr10 data-v-97376f32"></text>
+              <text class="data-v-97376f32"
+                >{{''+(thisCustom.fastName||'快餐')+'订单'}}</text
+              >
+            </view>
+            <view class="f-g-1 f-x-e data-v-97376f32">
+              <view
+                catchtap="__e"
+                class="obtn b-d data-v-97376f32"
+                data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','qxdd'],['co',co],['tip',1] ] ] ] ] ] ]}}"
+                wx:if="{{co.state==1}}"
+                >取消订单</view
+              >
+              <view
+                catchtap="__e"
+                class="obtn cf data-v-97376f32"
+                data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','ljzf'],['co',co] ] ] ] ] ] ]}}"
+                style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+                wx:if="{{co.state==1}}"
+                >立即支付</view
+              >
+              <view
+                catchtap="__e"
+                class="obtn cf data-v-97376f32"
+                data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','sqtk'],['co',co] ] ] ] ] ] ]}}"
+                style="{{'color:'+tColor+';'+'border-color:'+tColor+';'}}"
+                wx:if="{{co.isTk==1}}"
+                >取消订单</view
+              >
+              <view
+                catchtap="__e"
+                class="obtn b-d data-v-97376f32"
+                data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','lxsj'],['co',co] ] ] ] ] ] ]}}"
+                wx:if="{{co.state==3}}"
+                >联系商家</view
+              >
+            </view>
+          </view>
+        </view>
+      </block>
+      <block wx:else>
+        <block wx:if="{{otype==3}}">
+          <mg-cell
+            bind:__l="__l"
+            class="data-v-97376f32"
+            cname="p253"
+            isr="1"
+            noc="1"
+            vueId="01775db0-7"
+            vueSlots="{{['bd']}}"
+          >
+            <view class="f-y-c data-v-97376f32" slot="bd">
+              <view class="mrltc bsf f-c b-l-yy mr15 data-v-97376f32">
+                <text class="iconfont iconmd cf f28 data-v-97376f32"></text>
+              </view>
+              <view class="f-1 data-v-97376f32">
+                <view
+                  catchtap="__e"
+                  class="f-y-c data-v-97376f32"
+                  data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$event'] ] ] ] ]}}"
+                >
+                  <text class="t-o-e f28 data-v-97376f32"
+                    >{{co.storeName+''}}</text
+                  >
+                  <text
+                    class="iconfont iconright c0 f24 data-v-97376f32"
+                  ></text>
+                </view>
+              </view>
+              <view
+                class="f-g-0 data-v-97376f32"
+                style="{{'color:'+$root.m9+';'}}"
+                >{{''+$root.m10}}</view
+              >
+            </view>
+          </mg-cell>
+          <mg-cell
+            bind:__l="__l"
+            brs="10rpx"
+            class="data-v-97376f32"
+            cname="p23"
+            h="110"
+            img="{{co.storeIcon}}"
+            last="1"
+            noc="1"
+            vueId="01775db0-8"
+            vueSlots="{{['bd']}}"
+            w="110"
+          >
+            <view class="data-v-97376f32" slot="bd">
+              <view class="f-y-c wei data-v-97376f32">
+                <view class="mr10 data-v-97376f32">{{co.serviceDay}}</view>
+                <view class="data-v-97376f32">{{co.serviceTime}}</view>
+              </view>
+              <view class="f-y-c mt10 c6 data-v-97376f32">
+                <view class="data-v-97376f32">{{co.regionName}}</view>
+                <view class="b-r data-v-97376f32"></view>
+                <view class="data-v-97376f32">{{co.people+'人就餐'}}</view>
+              </view>
+              <view class="mt10 c6 data-v-97376f32"
+                >{{'下单时间：'+$root.m11}}</view
+              >
+            </view>
+          </mg-cell>
+          <view class="p23 data-v-97376f32">
+            <view class="f-row data-v-97376f32">
+              <view class="f-g-0 f-y-c c9 data-v-97376f32">
+                <text class="iconfont iconmd mr10 data-v-97376f32"></text>
+                <text class="data-v-97376f32">预约订单</text>
+              </view>
+              <view class="f-g-1 f-x-e data-v-97376f32">
+                <view class="obtn b-d data-v-97376f32">查看详情</view>
+              </view>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <block wx:if="{{otype==5}}">
+            <mg-cell
+              bind:__l="__l"
+              class="data-v-97376f32"
+              cname="p253"
+              isr="1"
+              noc="1"
+              vueId="01775db0-9"
+              vueSlots="{{['bd']}}"
+            >
+              <view class="f-y-c data-v-97376f32" slot="bd">
+                <view class="mrltc bsf f-c b-l-pd mr15 data-v-97376f32">
+                  <text class="iconfont icondd cf f28 data-v-97376f32"></text>
+                </view>
+                <view class="f-1 data-v-97376f32">
+                  <view
+                    catchtap="__e"
+                    class="f-y-c data-v-97376f32"
+                    data-event-opts="{{[ [ 'tap',[ [ 'gosjDL',['$event'] ] ] ] ]}}"
+                  >
+                    <text class="t-o-e f28 data-v-97376f32"
+                      >{{co.storeName+''}}</text
+                    >
+                    <text
+                      class="iconfont iconright c0 f24 data-v-97376f32"
+                    ></text>
+                  </view>
+                </view>
+                <view
+                  class="f-g-0 data-v-97376f32"
+                  style="{{'color:'+$root.m12+';'}}"
+                  >{{''+$root.m13}}</view
+                >
+              </view>
+            </mg-cell>
+            <mg-cell
+              bind:__l="__l"
+              brs="10rpx"
+              class="data-v-97376f32"
+              cname="p23"
+              h="110"
+              img="{{co.logo}}"
+              last="1"
+              noc="1"
+              vueId="01775db0-10"
+              vueSlots="{{['bd']}}"
+              w="110"
+            >
+              <view class="data-v-97376f32" slot="bd">
+                <view class="data-v-97376f32">{{'时间：'+$root.m14}}</view>
+                <view class="f-y-c mt10 c6 data-v-97376f32">
+                  <view class="data-v-97376f32">{{co.name}}</view>
+                  <view class="b-r data-v-97376f32"></view>
+                  <view class="data-v-97376f32">{{co.people+'人就餐'}}</view>
+                </view>
+                <view
+                  class="mt10 wei data-v-97376f32"
+                  style="{{'color:'+tColor+';'}}"
+                  >{{'排队号：'+co.code}}</view
+                >
+              </view>
+            </mg-cell>
+            <view class="p23 data-v-97376f32">
+              <view class="f-row data-v-97376f32">
+                <view class="f-g-0 f-y-c c9 data-v-97376f32">
+                  <text class="iconfont icondd mr10 data-v-97376f32"></text>
+                  <text class="data-v-97376f32">排队订单</text>
+                </view>
+                <view class="f-g-1 f-x-e data-v-97376f32">
+                  <view
+                    catchtap="__e"
+                    class="obtn b-d data-v-97376f32"
+                    data-event-opts="{{[ [ 'tap',[ [ '$emit',[ 'operation',[ 'o',['t','scpd'],['co',co] ] ] ] ] ] ]}}"
+                    >删除</view
+                  >
+                </view>
+              </view>
+            </view>
+          </block>
+        </block>
+      </block>
+    </block>
+  </block>
+</view>

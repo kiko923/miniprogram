@@ -1,0 +1,59 @@
+<view class="bf mh100 data-v-bb6a31dc">
+  <view
+    class="sfbg data-v-bb6a31dc"
+    style="{{'background:'+tColor+';'}}"
+  ></view>
+  <view class="sfimg bsf ma data-v-bb6a31dc">
+    <mg-img
+      bind:__l="__l"
+      class="data-v-bb6a31dc"
+      src="{{user.portrait||'/static/wd/mrtx.png'}}"
+      vueId="82544710-1"
+    ></mg-img>
+  </view>
+  <view class="t-c mt15 mb50 data-v-bb6a31dc">{{user.userName}}</view>
+  <view class="sfbd data-v-bb6a31dc">
+    <view
+      bindtap="__e"
+      class="p3 f-c b-be data-v-bb6a31dc"
+      data-event-opts="{{[ [ 'tap',[ [ 'syye',['$event'] ] ] ] ]}}"
+    >
+      <text
+        class="{{['iconfont','iconwgx','mr15','data-v-bb6a31dc',isgx?'icongx c0':'']}}"
+      ></text>
+      <view class="data-v-bb6a31dc"
+        >{{'使用'+system.custom.balance+'支付'}}<text
+          class="ml10 f24 c9 data-v-bb6a31dc"
+          >{{'(可用余额'+sl+user.balance+')'}}</text
+        >
+      </view>
+    </view>
+    <view class="t-c p30 data-v-bb6a31dc">
+      <view class="mt10 mb30 data-v-bb6a31dc">此二维码可累计积分并付款</view>
+      <view class="sfmc f-c data-v-bb6a31dc">
+        <view class="sfm data-v-bb6a31dc">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-bb6a31dc"
+            local="1"
+            src="{{code}}"
+            vueId="82544710-2"
+            wx:if="{{code}}"
+          ></mg-img>
+        </view>
+      </view>
+      <view class="f24 wei4 data-v-bb6a31dc" style="color: #a3a8ae"
+        >会员码每30秒自动刷新—次</view
+      >
+    </view>
+  </view>
+  <uni-qrcode
+    bind:__l="__l"
+    cid="zfewm"
+    class="data-v-bb6a31dc vue-ref"
+    data-ref="zfewm"
+    margin="{{0}}"
+    text="{{ewmlink}}"
+    vueId="82544710-3"
+  ></uni-qrcode>
+</view>

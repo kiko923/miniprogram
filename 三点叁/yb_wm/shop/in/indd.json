@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "dn-order": "/yb_wm/index/components/dn-order",
+    "jzz": "/components/common/jzz",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

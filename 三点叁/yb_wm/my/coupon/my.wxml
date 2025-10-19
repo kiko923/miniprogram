@@ -1,0 +1,75 @@
+<view class="data-v-4737e7d2">
+  <view class="fixedtop bf data-v-4737e7d2">
+    <view class="f-row data-v-4737e7d2">
+      <view class="f-1 data-v-4737e7d2">
+        <nav-tab
+          bind:__l="__l"
+          bind:changeTab="__e"
+          bind:input="__e"
+          class="data-v-4737e7d2"
+          color="#ff3a48"
+          data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+          ifsize="32"
+          isname="{{isnameData}}"
+          isscroll="{{true}}"
+          itw="27%"
+          ncolor="#707070"
+          tabs="{{tabs}}"
+          value="{{aIdx}}"
+          vueId="09db58e3-1"
+        ></nav-tab>
+      </view>
+    </view>
+    <view class="f-row o-x-s stabsc data-v-4737e7d2">
+      <view
+        bindtap="__e"
+        class="f-c p03 f30 data-v-4737e7d2"
+        data-event-opts="{{[ [ 'tap',[ [ 'sclick',[i] ] ] ] ]}}"
+        style="{{'color:'+(saIdx==i?'#ff3a48':'#707070')+';'}}"
+        wx:for="{{stabs}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+        >{{v.name}}</view
+      >
+    </view>
+  </view>
+  <view class="cmymain p3 data-v-4737e7d2">
+    <mg-coupon
+      bind:__l="__l"
+      bind:btntap="__e"
+      bind:operation="__e"
+      class="data-v-4737e7d2"
+      cname="mb30"
+      co="{{v}}"
+      color="{{tColor}}"
+      data-event-opts="{{[ [ '^btntap',[ [ 'btntap',['$0'],[ [ ['dataList','',i] ] ] ] ] ],[ '^operation',[ ['operation'] ] ] ]}}"
+      ttype="2"
+      vueId="{{'09db58e3-2-'+i}}"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    ></mg-coupon>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-4737e7d2"
+      imgn="zwhb"
+      mygd="{{mygd}}"
+      nodata="{{$root.g0}}"
+      vueId="09db58e3-3"
+    ></jzz>
+  </view>
+  <view class="foot-btnc data-v-4737e7d2">
+    <button
+      bindtap="__e"
+      class="tcbtn f-1 bf f-c f32 cf data-v-4737e7d2"
+      data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','dh'] ] ] ] ] ] ]}}"
+      disabled="{{loading}}"
+      style="{{'background:'+tColor+';'}}"
+    >
+      兑换卡券
+    </button>
+  </view>
+</view>

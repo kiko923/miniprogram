@@ -1,0 +1,32 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "mg-cell": "/components/common/mg-cell",
+    "uni-nav-bar": "/components/third/uni-nav-bar",
+    "search-box": "/components/drag/search",
+    "notice-sue": "/components/drag/notice",
+    "pic-lunbo-by": "/components/drag/picLunbo",
+    "btn-group": "/components/drag/btn",
+    "pictures": "/components/drag/pictures",
+    "titles-bar": "/components/drag/titles",
+    "blank": "/components/drag/blank",
+    "lines-wire": "/components/drag/lines",
+    "book-text": "/components/common/functionCmp/rich-text",
+    "card-tab": "/components/drag/card",
+    "hot-spots": "/components/drag/hot",
+    "margic-cube": "/components/drag/margic",
+    "sus-btn": "/components/drag/susBtn",
+    "atten-tion": "/components/drag/attenTion",
+    "order-prompt": "/components/drag/remind",
+    "open-list": "/components/drag/open",
+    "members-vip": "/components/drag/vip",
+    "list-nav": "/components/drag/listNav",
+    "tj-tools": "/components/drag/tj-tools",
+    "load": "/components/common/load",
+    "footc": "/components/common/footc",
+    "att-account": "/components/drag/attAccount",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "txv-video": "plugin://tencentvideo/video"
+  }
+}

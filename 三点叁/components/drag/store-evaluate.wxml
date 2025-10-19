@@ -1,0 +1,41 @@
+<view
+  class="bf data-v-ff039170"
+  style="{{'margin-top:'+''+co.marginTop+u+';'+'margin-bottom:'+''+co.marginBottom+u+';'+'margin-left:'+''+co.marginLR+u+';'+'margin-right:'+''+co.marginLR+u+';'+'border-radius:'+''+co.circle+u+';'}}"
+>
+  <view class="{{['data-v-ff039170','p3']}}">
+    <mg-cell
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="{{co.title||'评价'}}"
+      bttc="f32 wei"
+      class="data-v-ff039170"
+      cname="p0"
+      data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],[ 'url','/yb_wm/order/pl-list?id='+storeInfo.id+'&t='+(co.title||'评价') ] ] ] ] ] ] ]}}"
+      ft="查看更多"
+      ftc="f24 c6"
+      hc="1"
+      last="1"
+      vueId="ca41f75e-1"
+    ></mg-cell>
+  </view>
+  <view class="bf data-v-ff039170" wx:if="{{$root.g0}}">
+    <gf-evaluate
+      bind:__l="__l"
+      class="data-v-ff039170"
+      co="{{v}}"
+      vueId="{{'ca41f75e-2-'+i}}"
+      wx:if="{{i<2}}"
+      wx:for="{{list}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    ></gf-evaluate>
+  </view>
+  <view class="bf p2 t-c data-v-ff039170" wx:else>
+    <view class="pb20 c9 f-c data-v-ff039170">
+      <text class="iconfont icondjs mr10 f28 data-v-ff039170"></text>
+      <text class="data-v-ff039170">暂无评价</text>
+    </view>
+  </view>
+</view>

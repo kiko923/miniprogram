@@ -1,0 +1,44 @@
+<view class="container">
+  <!-- 密码输入框 -->
+  <view wx:if="{{!isUnlocked}}">
+    <input class="password-input" placeholder="请输入密码" bindinput="onPasswordInput" value="{{passwordInput}}" type="password" />
+    <button class="button unlock-btn" bindtap="onUnlock">解锁</button>
+  </view>
+
+  <!-- 只有在解锁后才显示的内容 -->
+  <view wx:if="{{isUnlocked}}">
+    <!-- 只读的输入框，显示返回的 title -->
+    <input class="title-box" placeholder="标题" value="{{title}}" disabled wx:if="{{showTitle}}" />
+
+    <!-- 普通输入框，用于输入数据 -->
+    <textarea class="input-box" placeholder="请输入分享链接" bindinput="onInput" value="{{inputValue}}"></textarea>
+
+    <!-- 粘贴按钮 -->
+    <button class="button paste-btn" bindtap="onPaste">粘贴</button>
+
+    <!-- 复制标题按钮 -->
+    <button class="button copy-btn" bindtap="onCopyTitle">复制标题</button>
+
+    <!-- 提交按钮 -->
+    <button class="button submit-btn" bindtap="onSubmit">提交</button>
+
+    <!-- 下载全部按钮 -->
+    <button class="button download-btn" bindtap="onDownloadClick">下载全部</button>
+
+    <!-- 预览框 -->
+    <!--<view class="preview-container">
+      <text class="preview-title">预览框</text>
+      <scroll-view scroll-y class="preview-scroll">
+        <block wx:for="{{urlList}}" wx:key="*this">
+          <view class="preview-item">
+            <image class="preview-image" src="{{item}}" mode="aspectFill" bindtap="onPreviewImage" data-url="{{item}}" />
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+-->
+
+
+
+  </view>
+</view>

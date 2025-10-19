@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "mg-input": "/components/form/mg-input",
+    "mg-agree": "/components/form/mg-agree",
+    "w-picker": "/components/form/w-picker",
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

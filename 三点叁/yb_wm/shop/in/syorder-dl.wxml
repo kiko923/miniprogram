@@ -1,0 +1,181 @@
+<view class="data-v-2bd3e801">
+  <view class="pb130 data-v-2bd3e801" wx:if="{{info.id}}">
+    <view class="sltop cf data-v-2bd3e801" style="{{'background:'+tColor+';'}}">
+      <view class="p3 f36 data-v-2bd3e801">{{orderState.str1}}</view>
+    </view>
+    <view class="p03 slbd data-v-2bd3e801">
+      <view class="bf mb30 bs20 data-v-2bd3e801">
+        <view class="slbdt1 f30 wei data-v-2bd3e801"
+          >感谢您对我们的信任，期待下次光临</view
+        >
+        <mg-cell
+          bgc="#FAFBFC"
+          bind:__l="__l"
+          bind:tab="__e"
+          class="data-v-2bd3e801"
+          cname="b-t-e"
+          data-event-opts="{{[ [ '^tab',[ ['e0'] ] ] ]}}"
+          last="1"
+          vueId="b38ad1d2-1"
+          vueSlots="{{['bd']}}"
+        >
+          <view class="data-v-2bd3e801" slot="bd">
+            <view class="f30 f-c data-v-2bd3e801">
+              <text class="iconfont f42 icondh c0 mr20 data-v-2bd3e801"></text>
+              <text class="t-o-e data-v-2bd3e801">联系商家</text>
+            </view>
+          </view>
+        </mg-cell>
+      </view>
+      <view class="mb30 bs20 data-v-2bd3e801">
+        <mg-cell
+          bind:__l="__l"
+          bind:tab="__e"
+          class="data-v-2bd3e801"
+          data-event-opts="{{[ [ '^tab',[ [''] ] ] ]}}"
+          isr="1"
+          vueId="b38ad1d2-2"
+          vueSlots="{{['bd']}}"
+        >
+          <view class="data-v-2bd3e801" slot="bd">
+            <view class="f30 f-y-c data-v-2bd3e801">
+              <text class="t-o-e wei data-v-2bd3e801">{{info.storeName}}</text>
+            </view>
+          </view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          btt="订单总额"
+          class="data-v-2bd3e801"
+          ft="{{''+osl+(info.originalMoney||info.money)}}"
+          ftc="f32 c3"
+          isr="1"
+          vueId="b38ad1d2-3"
+        ></mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          btt="会员折扣"
+          class="data-v-2bd3e801"
+          color="{{tColor}}"
+          ft="{{info.vipDiscount*10+'折'}}"
+          ftc="f32"
+          isr="1"
+          vueId="b38ad1d2-4"
+          vueSlots="{{['hd']}}"
+          wx:if="{{info.vipDiscountMoney>0}}"
+        >
+          <view class="itemcon pomj mr20 data-v-2bd3e801" slot="hd">会员</view>
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          btt="优惠券抵扣"
+          class="data-v-2bd3e801"
+          color="{{tColor}}"
+          ft="{{'-'+osl+info.couponPreferential}}"
+          ftc="f32"
+          isr="1"
+          vueId="b38ad1d2-5"
+          vueSlots="{{['hd']}}"
+          wx:if="{{info.couponPreferential>0}}"
+        >
+          <view class="itemcon pomj mr20 data-v-2bd3e801" slot="hd"
+            >优惠券</view
+          >
+        </mg-cell>
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-2bd3e801"
+          isr="1"
+          last="1"
+          vueId="b38ad1d2-6"
+          vueSlots="{{['ft']}}"
+        >
+          <view class="ml10 c3 data-v-2bd3e801" slot="ft">
+            <text class="data-v-2bd3e801" wx:if="{{zyh>0}}"
+              >已优惠<text
+                class="data-v-2bd3e801"
+                style="{{'color:'+tColor+';'}}"
+                >{{osl+zyh}}</text
+              >
+            </text>
+            <text class="m02 data-v-2bd3e801">小计</text>
+            <text class="f34 wei data-v-2bd3e801">{{osl+info.money}}</text>
+          </view>
+        </mg-cell>
+      </view>
+      <view class="mb30 bf bs20 data-v-2bd3e801">
+        <mg-cell
+          bind:__l="__l"
+          btt="订单信息"
+          bttc="f30 wei"
+          class="data-v-2bd3e801"
+          isr="1"
+          vueId="b38ad1d2-7"
+        ></mg-cell>
+        <view class="p20 data-v-2bd3e801">
+          <mg-cell
+            bind:__l="__l"
+            btt="订单号码"
+            bttc="c9"
+            class="data-v-2bd3e801"
+            cname="p13"
+            last="1"
+            vueId="b38ad1d2-8"
+            vueSlots="{{['ft']}}"
+          >
+            <view class="f-y-c data-v-2bd3e801" slot="ft">
+              <text class="c3 data-v-2bd3e801">{{info.outTradeNo}}</text>
+              <bk-b
+                bind:__l="__l"
+                bind:tab="__e"
+                cName="f24 ml20"
+                class="data-v-2bd3e801"
+                data-event-opts="{{[ [ '^tab',[ ['e1'] ] ] ]}}"
+                t="复制"
+                type="2"
+                vueId="{{'b38ad1d2-9'+','+'b38ad1d2-8'}}"
+              ></bk-b>
+            </view>
+          </mg-cell>
+          <mg-cell
+            bind:__l="__l"
+            btt="下单时间"
+            bttc="c9"
+            class="data-v-2bd3e801"
+            cname="p13"
+            ft="{{$root.m0}}"
+            ftc="c3"
+            last="1"
+            vueId="b38ad1d2-10"
+          ></mg-cell>
+          <mg-cell
+            bind:__l="__l"
+            btt="支付方式"
+            bttc="c9"
+            class="data-v-2bd3e801"
+            cname="p13"
+            ft="{{$root.m1}}"
+            ftc="c3"
+            last="1"
+            vueId="b38ad1d2-11"
+            wx:if="{{info.payMode}}"
+          ></mg-cell>
+          <mg-cell
+            bdmw="130rpx"
+            bind:__l="__l"
+            btt="订单备注"
+            bttc="c9"
+            class="data-v-2bd3e801"
+            cname="p13"
+            ft="{{info.userNote}}"
+            ftc="c3 f-s-1"
+            last="1"
+            noc="1"
+            vueId="b38ad1d2-12"
+            wx:if="{{info.userNote}}"
+          ></mg-cell>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

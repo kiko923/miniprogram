@@ -1,0 +1,99 @@
+<view class="pb130 p3 data-v-60a84c42" wx:if="{{co.id}}">
+  <view class="mb30 bs30 bf f24 data-v-60a84c42">
+    <mg-cell
+      bttc
+      bind:__l="__l"
+      brs="50%"
+      btt="{{co.storeName}}"
+      class="data-v-60a84c42"
+      h="45"
+      img="{{co.storeIcon}}"
+      last="1"
+      vueId="3557b939-1"
+      w="45"
+    ></mg-cell>
+    <mg-cell
+      bind:__l="__l"
+      brs="5rpx"
+      class="data-v-60a84c42"
+      cname="f-sh p03"
+      h="160"
+      hdc="f-s"
+      img="{{co.icon}}"
+      last="1"
+      vueId="3557b939-2"
+      vueSlots="{{['bd']}}"
+      w="160"
+    >
+      <view class="f-row data-v-60a84c42" slot="bd">
+        <view class="f-1 data-v-60a84c42">
+          <view class="data-v-60a84c42">{{co.name}}</view>
+        </view>
+        <view class="ml20 t-r data-v-60a84c42">
+          <view class="data-v-60a84c42"
+            >{{sl}}<text class="f28 data-v-60a84c42">{{co.money}}</text>
+          </view>
+          <view class="c9 data-v-60a84c42">{{'x'+params.num}}</view>
+        </view>
+      </view>
+    </mg-cell>
+    <mg-cell
+      bind:__l="__l"
+      btt="购买数量"
+      class="data-v-60a84c42"
+      isl="1"
+      last="1"
+      vueId="3557b939-3"
+      vueSlots="{{['ft']}}"
+    >
+      <view class="data-v-60a84c42" slot="ft">
+        <number-box
+          bind:__l="__l"
+          bind:change="__e"
+          class="data-v-60a84c42"
+          data-event-opts="{{[ [ '^change',[ ['bindChange'] ] ] ]}}"
+          max="{{maxNum}}"
+          min="{{1}}"
+          value="{{params.num}}"
+          vueId="{{'3557b939-4'+','+'3557b939-3'}}"
+        ></number-box>
+      </view>
+    </mg-cell>
+    <view class="cf1 t-r p23 data-v-60a84c42">
+      <text class="c3 data-v-60a84c42">
+        <text class="c9 mr20 data-v-60a84c42">{{'共'+params.num+'件'}}</text
+        >小计：</text
+      >{{sl}}<text class="f28 data-v-60a84c42">{{hjje}}</text>
+    </view>
+  </view>
+  <view class="c9 p02 f24 data-v-60a84c42"
+    >您本次购买的商品不需要收货地址，请仔细确认每个商品所需的购买信息，如手机号码，身份证号码等。</view
+  >
+  <view
+    class="dbbtnc bf f-row f-x-e data-v-60a84c42"
+    style="{{'bottom:'+(isIpx?'40rpx':0)+';'}}"
+  >
+    <view class="f-y-c data-v-60a84c42">
+      <view class="cf1 mr30 data-v-60a84c42">
+        <text class="c9 mr20 f24 data-v-60a84c42"
+          >{{'共'+params.num+'件'}}</text
+        >
+        <text class="c3 data-v-60a84c42">合计：</text>{{sl}}<text
+          class="f36 wei data-v-60a84c42"
+          >{{hjje}}</text
+        >
+      </view>
+    </view>
+    <button
+      bindtap="__e"
+      class="dbr cf f-c ma0 data-v-60a84c42"
+      data-event-opts="{{[ [ 'tap',[ [ 'tjdd',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      loading="{{loading}}"
+      style="{{'background:'+tColor+';'}}"
+    >
+      提交订单
+    </button>
+  </view>
+  <view class="bgf data-v-60a84c42" wx:if="{{isIpx}}"></view>
+</view>

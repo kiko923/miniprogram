@@ -1,0 +1,13 @@
+.bagbg.data-v-70582dc3 {
+  background: #fb6f3e;
+}
+.cbg.data-v-70582dc3 {
+  background: #fb6f3e;
+}
+.mobdli.data-v-70582dc3 {
+  width: 630rpx;
+}
+.mobdli .img.data-v-70582dc3 {
+  width: 100%;
+  height: 120rpx;
+}

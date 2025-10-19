@@ -1,0 +1,16 @@
+{
+  "usingComponents": {
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "goods-car": "/components/goods/goods-car",
+    "spec": "/components/goods/spec",
+    "goods": "/components/goods/index",
+    "mg-rtext": "/components/common/functionCmp/rich-text",
+    "uni-nav-bar": "/components/third/uni-nav-bar",
+    "load": "/components/common/load",
+    "mg-share": "/components/template/share",
+    "uni-qrcode": "/components/uQrcode/uni-qrcode",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

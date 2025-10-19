@@ -1,0 +1,32 @@
+<view class="mh100 bf pb130 data-v-693d24d4">
+  <nav-tab
+    cname
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-693d24d4"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','tIdx','$event',[] ] ] ] ] ]}}"
+    ifsize="32"
+    tabs="{{tabs}}"
+    value="{{tIdx}}"
+    vueId="69253866-1"
+  ></nav-tab>
+  <view class="f-raw f-x-bt p03 data-v-693d24d4">
+    <view
+      bindtap="__e"
+      class="imgc bs10 data-v-693d24d4"
+      data-event-opts="{{[ [ 'tap',[ [ 'yl',[i] ] ] ] ]}}"
+      wx:for="{{list}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <mg-img
+        bind:__l="__l"
+        class="data-v-693d24d4"
+        src="{{v}}"
+        vueId="{{'69253866-2-'+i}}"
+      ></mg-img>
+    </view>
+  </view>
+</view>

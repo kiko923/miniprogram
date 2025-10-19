@@ -1,0 +1,86 @@
+<view
+  class="p0 o-h data-v-3673447c"
+  style="{{'background-color:'+co.colorBg+';'+'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'+'border-radius:'+co.circle+u+';'}}"
+>
+  <mg-cell
+    bgc="transparent"
+    bind:__l="__l"
+    class="data-v-3673447c"
+    cname="p0"
+    last="1"
+    vueId="09ff3c1c-1"
+    vueSlots="{{['bd']}}"
+  >
+    <view class="data-v-3673447c" slot="bd">
+      <mg-cell
+        bgc="transparent"
+        bind:__l="__l"
+        btt="{{co.title}}"
+        bttc="wei f30"
+        class="data-v-3673447c"
+        cname="p23"
+        last="1"
+        vueId="{{'09ff3c1c-2'+','+'09ff3c1c-1'}}"
+      ></mg-cell>
+      <view class="gwglc f-raw f24 data-v-3673447c" wx:if="{{co.arrange==1}}">
+        <view
+          bindtap="__e"
+          class="f-c-c gwgl data-v-3673447c"
+          data-event-opts="{{[ [ 'tap',[ [ 'gwglClick',['$0'],[ [ ['myGwgl','',i] ] ] ] ] ] ]}}"
+          hidden="{{!!v.hide}}"
+          style="{{'width:'+10/co.num*10+'%'+';'}}"
+          wx:for="{{myGwgl}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view
+            class="glimg mb15 data-v-3673447c"
+            style="{{'width:'+ftw.w+'rpx'+';'+'height:'+ftw.w+'rpx'+';'}}"
+          >
+            <mg-img
+              bind:__l="__l"
+              class="data-v-3673447c"
+              src="{{v.img}}"
+              vueId="{{'09ff3c1c-3-'+i+','+'09ff3c1c-1'}}"
+            ></mg-img>
+          </view>
+          <view
+            class="data-v-3673447c"
+            style="{{'color:'+co.colorWord+';'+'font-size:'+ftw.ft+'rpx'+';'}}"
+            >{{v.word}}</view
+          >
+        </view>
+      </view>
+      <block wx:else>
+        <mg-cell
+          arrow="1"
+          bgc="transparent"
+          bind:__l="__l"
+          bind:tab="__e"
+          class="data-v-3673447c"
+          cname="p23"
+          data-event-opts="{{[ [ '^tab',[ [ 'gwglClick',['$0'],[ [ ['myGwgl','',i] ] ] ] ] ] ]}}"
+          h="{{ftw.w}}"
+          img="{{v.img}}"
+          last="1"
+          vueId="{{'09ff3c1c-4-'+i+','+'09ff3c1c-1'}}"
+          vueSlots="{{['bd']}}"
+          w="{{ftw.w}}"
+          wx:for="{{myGwgl}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="data-v-3673447c" slot="bd">
+            <view
+              class="f30 data-v-3673447c"
+              style="{{'color:'+co.colorWord+';'+'font-size:'+ftw.ft+'rpx'+';'}}"
+              >{{v.word}}</view
+            >
+          </view>
+        </mg-cell>
+      </block>
+    </view>
+  </mg-cell>
+</view>

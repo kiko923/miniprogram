@@ -1,0 +1,40 @@
+<view class="page__bd data-v-5bf55010" style="{{'background:'+bgcolor+';'}}">
+  <view
+    class="no-data-tip data-v-5bf55010"
+    style="{{$root.s0}}"
+    wx:if="{{nodata}}"
+  >
+    <image
+      class="no-data-tipimg data-v-5bf55010"
+      src="{{onImgurl+imgn+'.png'}}"
+    ></image>
+    <view class="data-v-5bf55010" style="{{'color:'+tcolor+';'}}"
+      >{{otext||'暂无相关内容~'}}</view
+    >
+    <view
+      class="data-v-5bf55010"
+      style="{{'color:'+tcolor+';'}}"
+      wx:if="{{ttext}}"
+      >{{ttext}}</view
+    >
+  </view>
+  <block wx:else>
+    <view class="weui-loadmore data-v-5bf55010" wx:if="{{!mygd}}">
+      <view class="weui-loading data-v-5bf55010"></view>
+      <view
+        class="weui-loadmore__tips data-v-5bf55010"
+        style="{{'margin:0;'+'color:'+tcolor+';'}}"
+        >正在加载</view
+      >
+    </view>
+    <view class="weui-loadmore data-v-5bf55010" wx:if="{{mygd}}">
+      <view class="hx data-v-5bf55010"></view>
+      <view
+        class="weui-loadmore__tips data-v-5bf55010"
+        style="{{'color:'+tcolor+';'}}"
+        >加载完毕</view
+      >
+      <view class="hx data-v-5bf55010"></view>
+    </view>
+  </block>
+</view>

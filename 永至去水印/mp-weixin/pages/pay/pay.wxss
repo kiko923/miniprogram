@@ -1,0 +1,149 @@
+page {
+  --primary-color: #07c160;
+  --primary-light: #e8f5e8;
+  --primary-lighter: #f0f9f0;
+  --primary-lightest: #f8f9fa;
+  --text-primary: rgba(0,0,0,.9);
+  --text-secondary: rgba(0,0,0,.6);
+  --text-light: #333;
+  --text-lighter: #555;
+  --bg-white: #fff;
+  --bg-light: #f8f9fa;
+  --border-light: rgba(0,0,0,.05);
+  --divider: rgba(0,0,0,.1)
+}
+
+.epay-container {
+  background: linear-gradient(180deg,var(--primary-light) 0,var(--primary-lighter) 30%,var(--primary-lightest) 100%);
+  box-sizing: border-box;
+  color: var(--text-primary);
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh
+}
+
+.epay-container {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex
+}
+
+.epay-container .epay-amount {
+  font-size: 50rpx;
+  margin-top: calc(18vh + env(safe-area-inset-top))
+}
+
+.epay-container .epay-amount .epay-amount-value {
+  font-size: 76rpx;
+  font-weight: 500;
+  margin-left: 8rpx
+}
+
+.epay-container .epay-pay-btn {
+  -webkit-align-items: center;
+  align-items: center;
+  background: var(--primary-color);
+  border-radius: 16rpx;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 32rpx;
+  font-weight: 500;
+  height: 90rpx;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 40vh;
+  max-width: 560rpx;
+  min-width: 360rpx;
+  width: -webkit-fit-content;
+  width: fit-content
+}
+
+.epay-container .epay-pay-btn.disabled {
+  opacity: .5;
+  pointer-events: none
+}
+
+.epay-finish-container {
+  background: linear-gradient(180deg,var(--primary-light) 0,var(--primary-lighter) 30%,var(--primary-lightest) 100%);
+  box-sizing: border-box;
+  height: 100vh;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding-bottom: calc(0rpx + env(safe-area-inset-bottom))
+}
+
+.epay-finish-container,.epay-finish-container .epay-finish-header {
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column
+}
+
+.epay-finish-container .epay-finish-header {
+  color: var(--primary-color);
+  padding-top: 15vh;
+  width: 100%
+}
+
+.epay-finish-header .icon-box-img {
+  margin-bottom: 64rpx
+}
+
+.epay-finish-header .title {
+  color: var(--text-primary);
+  font-size: 44rpx;
+  font-weight: 500;
+  margin-bottom: 32rpx
+}
+
+.epay-finish-header .subtitle {
+  color: var(--text-secondary);
+  font-size: 34rpx;
+  font-weight: 400;
+  margin-bottom: 32rpx;
+  padding: 0 40rpx;
+  word-break: break-all
+}
+
+.epay-finish-footer {
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  height: 35vh;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0 40rpx;
+  width: 100%
+}
+
+.epay-finish-footer,.epay-finish-container .epay-default-button {
+  -webkit-align-items: center;
+  align-items: center;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex
+}
+
+.epay-finish-container .epay-default-button {
+  background: var(--primary-color);
+  border-radius: 16rpx;
+  color: #fff;
+  font-size: 34rpx;
+  font-weight: 500;
+  height: 90rpx;
+  -webkit-justify-content: center;
+  justify-content: center;
+  letter-spacing: 2rpx;
+  max-width: 560rpx;
+  min-width: 360rpx;
+  width: -webkit-fit-content;
+  width: fit-content
+}
+
+.epay-finish-container.fail .epay-finish-footer .epay-default-button {
+  background-color: rgba(0,0,0,.05);
+  color: var(--text-primary)
+}

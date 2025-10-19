@@ -1,0 +1,62 @@
+/* pages/clogin/clogin.wxss */
+.clogin-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 200rpx;
+  box-sizing: border-box;
+}
+.clogin-userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+.clogin-userinfo-avatar {
+  overflow: hidden;
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.clogin-userinfo-nickname {
+  margin-top: 40rpx;
+}
+.clogin-btngroup {
+  margin-top: 200rpx;
+}
+.clogin-btngroup button {
+  margin-bottom: 55rpx;
+}
+
+.clogin-avatar-wrapper{
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: small;
+  color: rgb(126, 123, 123);
+  display: flex;
+  padding: 16rpx 26rpx;
+}
+.clogin-avatar-wrapper span{
+  margin: auto;
+}
+.clogin-avatar-wrapper .avatar{
+  width: 150rpx;
+  height: 150rpx;
+}
+.clogin-nickname-input{
+  padding-top: 45rpx;
+}
+.clogin-nickname-input input{
+  height: 90rpx;
+  padding: 8rpx;
+  border-bottom: 1px solid #ccc;
+}
+.clogin-nickname-input button{
+  margin-top: 70rpx;
+}
+.clogin-btngroup {
+  margin-top: 70rpx;
+}

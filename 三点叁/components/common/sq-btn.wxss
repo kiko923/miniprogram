@@ -1,0 +1,11 @@
+.sqtel.data-v-1ad035d3 {
+  padding: 70rpx 40rpx;
+}
+.ptimg.data-v-1ad035d3 {
+  width: 136rpx;
+  height: 136rpx;
+}
+.telbtn.data-v-1ad035d3 {
+  line-height: 2.8;
+  margin-top: 70rpx;
+}

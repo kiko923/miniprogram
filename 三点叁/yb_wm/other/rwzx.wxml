@@ -1,0 +1,72 @@
+<view class="h100 p03 data-v-3caeef90">
+  <view class="rwimg p-f l0 wh data-v-3caeef90">
+    <mg-img
+      bind:__l="__l"
+      class="data-v-3caeef90"
+      src="{{system.shareIcon}}"
+      vueId="5201675a-1"
+    ></mg-img>
+  </view>
+  <view class="p-r data-v-3caeef90">
+    <view class="rwtop t-c data-v-3caeef90">
+      <view class="cf data-v-3caeef90">我的成长值</view>
+      <view class="f60 cf data-v-3caeef90">60</view>
+    </view>
+    <view class="bs20 b-s bf mb30 data-v-3caeef90">
+      <view class="p3 wei f30 data-v-3caeef90">基础任务</view>
+      <view
+        class="cell data-v-3caeef90"
+        wx:for="{{arr}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <mg-cell
+          bbt="{{v.t}}"
+          bind:__l="__l"
+          btt="{{v.b}}"
+          bttc="c0"
+          class="data-v-3caeef90"
+          cname="p253"
+          h="90"
+          img="https://bkycms.com/addons/yb_wm/web/static/yb_wm/36/2020/09/16/202009161334184075.png"
+          imgr="40"
+          last="1"
+          vueId="{{'5201675a-2-'+i}}"
+          vueSlots="{{['ft']}}"
+          w="90"
+        >
+          <view class="qwc ml20 cf data-v-3caeef90" slot="ft">去完成</view>
+        </mg-cell>
+      </view>
+    </view>
+    <view class="bs20 b-s bf mb30 data-v-3caeef90">
+      <view class="p3 wei f30 data-v-3caeef90">购物任务</view>
+      <view
+        class="cell data-v-3caeef90"
+        wx:for="{{arr2}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <mg-cell
+          bbt="{{v.t}}"
+          bind:__l="__l"
+          btt="{{v.b}}"
+          bttc="c0"
+          class="data-v-3caeef90"
+          cname="p253"
+          h="90"
+          img="https://bkycms.com/addons/yb_wm/web/static/yb_wm/36/2020/09/16/202009161334184075.png"
+          imgr="40"
+          last="1"
+          vueId="{{'5201675a-3-'+i}}"
+          vueSlots="{{['ft']}}"
+          w="90"
+        >
+          <view class="qwc ml20 cf data-v-3caeef90" slot="ft">去完成</view>
+        </mg-cell>
+      </view>
+    </view>
+  </view>
+</view>

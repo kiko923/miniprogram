@@ -1,0 +1,184 @@
+<view class="pb130 data-v-6a97e2f2" wx:if="{{czInfo.other}}">
+  <nav-tab
+    cname
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-6a97e2f2"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','tIdx','$event',[] ] ] ] ] ]}}"
+    ifsize="32"
+    tabs="{{tabs}}"
+    value="{{tIdx}}"
+    vueId="48a3ab03-1"
+  ></nav-tab>
+  <block wx:if="{{tIdx==0}}">
+    <view class="bf mt20 data-v-6a97e2f2">
+      <view class="f24 p03 data-v-6a97e2f2">
+        <view class="hlb flex p20 data-v-6a97e2f2">
+          <view class="f-4 wei4 data-v-6a97e2f2">餐桌类型</view>
+          <view class="f-3 t-c wei4 data-v-6a97e2f2">等待桌数</view>
+          <view class="f-3 t-r wei4 data-v-6a97e2f2">预计等待</view>
+        </view>
+        <view
+          class="flex p20 c9 data-v-6a97e2f2"
+          wx:for="{{czInfo.list}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="f-4 data-v-6a97e2f2">
+            <text class="f30 c3 data-v-6a97e2f2">{{v.name}}</text
+            >{{'('+v.min+'-'+v.max+'人)'}}</view
+          >
+          <view class="f-3 t-c data-v-6a97e2f2">
+            <text class="f30 data-v-6a97e2f2" style="{{'color:'+tColor+';'}}"
+              >{{v.waitNum}}</text
+            >桌</view
+          >
+          <view class="f-3 t-r data-v-6a97e2f2" wx:if="{{v.waitMinute>0}}">
+            <text class="f30 c3 data-v-6a97e2f2">{{v.waitMinute}}</text
+            >分钟</view
+          >
+          <view class="f-3 t-r data-v-6a97e2f2" wx:else>无需等候</view>
+        </view>
+      </view>
+    </view>
+    <view class="mt20 data-v-6a97e2f2">
+      <mg-input
+        arrow="1"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-6a97e2f2"
+        data-event-opts="{{[ [ '^tab',[ [ 'toggleTab',['number'] ] ] ] ]}}"
+        dis="1"
+        ftc="c3"
+        ht="就餐人数"
+        htc="c3 f30"
+        icn="f30 c3 t-r"
+        isr="1"
+        pr="请选择"
+        value="{{params.peopleText}}"
+        vueId="48a3ab03-2"
+      ></mg-input>
+      <view class="data-v-6a97e2f2" hidden="{{!(params.people>0)}}">
+        <mg-cell
+          bind:__l="__l"
+          class="data-v-6a97e2f2"
+          cname="p32"
+          isr="1"
+          vueId="48a3ab03-3"
+          vueSlots="{{['bd']}}"
+        >
+          <view class="data-v-6a97e2f2" slot="bd">
+            <view class="c3 f30 f-bt data-v-6a97e2f2">
+              <text class="data-v-6a97e2f2">餐桌类型</text>
+              <text class="cb data-v-6a97e2f2" wx:if="{{!$root.g0}}"
+                >请根据餐桌类型选择人数</text
+              >
+            </view>
+            <view class="mt15 data-v-6a97e2f2" wx:if="{{$root.g1}}">
+              <view
+                bindtap="__e"
+                class="moudle mb20 p-r o-h data-v-6a97e2f2"
+                data-event-opts="{{[ [ 'tap',[ [ 'clickMode',['$0',i],[ [ ['bqarr','',i] ] ] ] ] ] ]}}"
+                style="{{'border-color:'+(i==aIdx?tColor:'')+';'}}"
+                wx:for="{{bqarr}}"
+                wx:for-index="i"
+                wx:for-item="v"
+                wx:key="i"
+              >
+                <text
+                  class="{{['p-a','data-v-6a97e2f2',i==aIdx?'sjx':'']}}"
+                  style="{{'border-top-color:'+(i==aIdx?tColor:'')+';'}}"
+                ></text>
+                <text
+                  class="p-a gou iconfont icongou cf f18 data-v-6a97e2f2"
+                ></text
+                >{{''+v.name+'：预计等待'+v.waitNum+'桌，'+v.waitMinute+'分钟'}}</view
+              >
+            </view>
+          </view>
+        </mg-cell>
+      </view>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-6a97e2f2"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','tel','$event',[] ],['params'] ] ] ] ]}}"
+        ht="手机号"
+        htc="c3 f30"
+        icn="f30 c3 t-r"
+        isr="1"
+        pr="请输入手机号"
+        value="{{params.tel}}"
+        vueId="48a3ab03-4"
+      ></mg-input>
+    </view>
+    <view class="p253 data-v-6a97e2f2">
+      <view class="be c6 f24 p2 tips data-v-6a97e2f2">
+        <view class="mb10 f-y-c _div data-v-6a97e2f2">
+          <text
+            class="iconfont iconjfgz mr10 data-v-6a97e2f2"
+            style="{{'color:'+tColor+';'}}"
+          ></text
+          >商家提醒：</view
+        >
+        <book-text
+          bind:__l="__l"
+          class="data-v-6a97e2f2"
+          content="{{czInfo.other.notice}}"
+          type="2"
+          vueId="48a3ab03-5"
+        ></book-text>
+      </view>
+    </view>
+    <view class="foot-btnc bf data-v-6a97e2f2">
+      <button
+        bindtap="__e"
+        class="foot-btn data-v-6a97e2f2"
+        data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+        disabled="{{loading}}"
+        loading="{{loading}}"
+        style="{{'background:'+tColor+';'}}"
+      >
+        确认取号
+      </button>
+    </view>
+  </block>
+  <view class="mt10 p2 data-v-6a97e2f2">
+    <block wx:if="{{tIdx==1}}">
+      <dn-order
+        bind:__l="__l"
+        bind:input="__e"
+        bind:refresh="__e"
+        class="data-v-6a97e2f2"
+        data-event-opts="{{[ [ '^refresh',[ ['dnrefresh'] ] ],[ '^input',[ [ '__set_model',[ '','laIdx','$event',[] ] ] ] ] ]}}"
+        datalist="{{dataList}}"
+        labelarr="{{labelArr}}"
+        otype="{{tntabs[0].type}}"
+        value="{{laIdx}}"
+        vueId="48a3ab03-6"
+      ></dn-order>
+      <jzz
+        bgcolor="transparent"
+        bind:__l="__l"
+        class="data-v-6a97e2f2"
+        mygd="{{mygd}}"
+        nodata="{{$root.g2}}"
+        otext="您今天还没有订单"
+        ttext="快去排队取号吧"
+        vueId="48a3ab03-7"
+      ></jzz>
+    </block>
+  </view>
+  <w-picker
+    bind:__l="__l"
+    bind:confirm="__e"
+    class="data-v-6a97e2f2 vue-ref"
+    data-event-opts="{{[ [ '^confirm',[ [ 'onConfirm',['$event','people'] ] ] ] ]}}"
+    data-ref="number"
+    mode="selector"
+    selectList="{{pArr}}"
+    vueId="48a3ab03-8"
+  ></w-picker>
+</view>

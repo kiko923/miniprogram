@@ -1,0 +1,23 @@
+<view
+  class="hot o-h data-v-25a0edea"
+  style="{{'margin:'+''+co.marginTop+u+' '+co.marginLR+u+' '+co.marginBottom+u+';'+'border-radius:'+co.circle+u+';'}}"
+>
+  <mg-img
+    bind:__l="__l"
+    class="data-v-25a0edea"
+    cname="imgha"
+    m="widthFix"
+    src="{{co.img}}"
+    vueId="5596130e-1"
+  ></mg-img>
+  <view
+    bindtap="__e"
+    class="react data-v-25a0edea"
+    data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.divStyles','',i] ] ] ] ] ] ]}}"
+    style="{{'width:'+v.width+'rpx'+';'+'height:'+v.height+'rpx'+';'+'left:'+'10rpx'+';'+'top:'+'10rpx'+';'+'transform:'+'translateX('+v.sX+'rpx) translateY('+v.sY+'rpx)'+';'}}"
+    wx:for="{{co.divStyles}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  ></view>
+</view>

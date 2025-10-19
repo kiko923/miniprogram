@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "jzz": "/components/common/jzz",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

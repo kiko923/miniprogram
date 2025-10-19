@@ -1,0 +1,29 @@
+.zbl.data-v-731d4e23 {
+  padding: 20rpx 20rpx 0;
+}
+.zbc.data-v-731d4e23 {
+  width: 345rpx;
+}
+.zbfm.data-v-731d4e23 {
+  height: 345rpx;
+}
+.zbtx.data-v-731d4e23 {
+  width: 46rpx;
+  height: 46rpx;
+}
+.zbzt.data-v-731d4e23 {
+  width: 140rpx;
+  padding: 15rpx 0 15rpx 20rpx;
+  background: hsla(0, 0%, 42.7%, 0.9);
+  border-radius: 0 60rpx 60rpx 0;
+}
+.zbzt .yd.data-v-731d4e23 {
+  width: 15rpx;
+  height: 15rpx;
+}
+.zban.data-v-731d4e23 {
+  width: 100rpx;
+  height: 100rpx;
+  border: 1px solid #fff;
+  background: rgba(0, 0, 0, 0.5);
+}

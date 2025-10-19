@@ -1,0 +1,153 @@
+<view class="bf data-v-35c9a2e6">
+  <view
+    class="f-row pb20 c0 data-v-35c9a2e6"
+    style="border-bottom: 24rpx solid #f6f6f6"
+  >
+    <view class="f-1 data-v-35c9a2e6">
+      <view class="p13 data-v-35c9a2e6">
+        <view class="f26 data-v-35c9a2e6">可用积分</view>
+        <view class="f60 wei data-v-35c9a2e6" style="padding-left: 0rpx"
+          >{{user.integral}}</view
+        >
+      </view>
+      <view
+        class="p30 f30 f-row l-h1 data-v-35c9a2e6"
+        style="margin-top: 100rpx"
+      >
+        <view
+          bindtap="__e"
+          class="f-1 t-c b-re data-v-35c9a2e6"
+          data-event-opts="{{[ [ 'tap',[ [ 'myIntegral',['$event'] ] ] ] ]}}"
+          style="border-color: #333"
+          >{{jfName+'明细'}}</view
+        >
+        <view
+          bindtap="__e"
+          class="f-1 t-c data-v-35c9a2e6"
+          data-event-opts="{{[ [ 'tap',[ [ 'integralRecord',['$event'] ] ] ] ]}}"
+          >兑换记录</view
+        >
+      </view>
+    </view>
+    <view class="f-1 f-c data-v-35c9a2e6">
+      <view class="topimg data-v-35c9a2e6">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-35c9a2e6"
+          src="{{onImgurl+'/jfsct.png'}}"
+          vueId="16eaf28c-1"
+        ></mg-img>
+      </view>
+    </view>
+  </view>
+  <mg-swiper
+    bind:__l="__l"
+    class="data-v-35c9a2e6"
+    co="{{swiper}}"
+    color="{{tColor}}"
+    u="rpx"
+    vueId="16eaf28c-2"
+  ></mg-swiper>
+  <notice-group
+    bind:__l="__l"
+    class="data-v-35c9a2e6"
+    co="{{ggConfig}}"
+    color="{{tColor}}"
+    list="{{ggList}}"
+    ptype="2"
+    vueId="16eaf28c-3"
+    wx:if="{{$root.g0}}"
+  ></notice-group>
+  <block wx:if="{{$root.g1}}">
+    <view class="p230 data-v-35c9a2e6">
+      <view class="f32 wei data-v-35c9a2e6">热门推荐</view>
+    </view>
+    <view class="bf f-row o-x-s p23 data-v-35c9a2e6">
+      <view
+        bindtap="__e"
+        class="bf f-g-0 goodsc mr30 bs15 b-s-1 data-v-35c9a2e6"
+        data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','/yb_wm/my/integral/details?id='+v.id] ] ] ] ] ] ]}}"
+        wx:for="{{hotList}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <view class="goodsimg data-v-35c9a2e6">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-35c9a2e6"
+            src="{{v.icon}}"
+            vueId="{{'16eaf28c-4-'+i}}"
+          ></mg-img>
+        </view>
+        <view class="jfgb data-v-35c9a2e6">
+          <view class="f-bt data-v-35c9a2e6">
+            <text
+              class="bf2 cf f24 mr10 boxs f-g-0 data-v-35c9a2e6"
+              wx:if="{{v.type=='2'}}"
+              >红</text
+            >
+            <text class="t-o-e f-g-1 data-v-35c9a2e6">{{v.name}}</text>
+          </view>
+          <view class="cfa data-v-35c9a2e6" style="{{'color:'+tColor+';'}}">
+            <view class="t-o-e f30 data-v-35c9a2e6">
+              <text class="data-v-35c9a2e6" wx:if="{{v.score>=0}}"
+                >{{v.score}}</text
+              >
+              <text class="f22 nowei c9 data-v-35c9a2e6" wx:if="{{v.score>=0}}"
+                >{{jfName}}</text
+              >
+              <text
+                class="nowei c9 data-v-35c9a2e6"
+                wx:if="{{v.score>=0&&v.money>=0}}"
+                >+</text
+              >
+              <text class="data-v-35c9a2e6" wx:if="{{v.money>=0}}"
+                >{{v.money}}<text class="f22 c9 data-v-35c9a2e6">{{dw}}</text>
+              </text>
+            </view>
+            <view class="t-o-e t-d-l c9 f22 wei4 data-v-35c9a2e6"
+              >{{sl+v.price}}</view
+            >
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+  <view class="p03 data-v-35c9a2e6">
+    <nav-tab
+      bind:__l="__l"
+      bind:changeTab="__e"
+      bind:input="__e"
+      class="data-v-35c9a2e6"
+      color="{{tColor}}"
+      data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','aIdx','$event',[] ] ] ] ] ]}}"
+      tabs="{{tabs}}"
+      value="{{aIdx}}"
+      vueId="16eaf28c-5"
+    ></nav-tab>
+  </view>
+  <goods-list
+    bind:__l="__l"
+    class="data-v-35c9a2e6"
+    color="{{tColor}}"
+    list="{{dataList}}"
+    vueId="16eaf28c-6"
+  ></goods-list>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-35c9a2e6"
+    imgn="zwjf"
+    mygd="{{mygd}}"
+    nodata="{{$root.g2}}"
+    vueId="16eaf28c-7"
+  ></jzz>
+  <load
+    bind:__l="__l"
+    class="data-v-35c9a2e6"
+    vueId="16eaf28c-8"
+    wx:if="{{showLoading}}"
+  ></load>
+  <tab-bar bind:__l="__l" class="data-v-35c9a2e6" vueId="16eaf28c-9"></tab-bar>
+</view>

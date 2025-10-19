@@ -1,0 +1,69 @@
+<radio-group
+  bindchange="__e"
+  bindinput="__e"
+  class="data-v-47cfdbdc"
+  data-event-opts="{{[ [ 'change',[ [ 'radioChange',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','radioVal','$event',[] ] ] ] ] ]}}"
+  value="{{radioVal}}"
+>
+  <view class="f-raw data-v-47cfdbdc" wx:if="{{rtype==1}}">
+    <label
+      class="weui-cell mr-r1i noafter data-v-47cfdbdc"
+      style="{{item.s0}}"
+      wx:for="{{$root.l0}}"
+      wx:key="index"
+    >
+      <view class="mr10 data-v-47cfdbdc">
+        <radio
+          checked="{{item.$orig.value==radioVal}}"
+          class="weui-check data-v-47cfdbdc"
+          value="{{item.$orig.value}}"
+        ></radio>
+        <text
+          class="{{['iconfont','f40','data-v-47cfdbdc',item.$orig.value==radioVal?'icongx':'iconwgx']}}"
+          style="{{'color:'+(item.$orig.value==radioVal?color||tColor:'')+';'}}"
+        ></text>
+      </view>
+      <view class="data-v-47cfdbdc">{{item.$orig.name}}</view>
+    </label>
+  </view>
+  <block wx:else>
+    <view class="data-v-47cfdbdc" wx:if="{{rtype==2}}">
+      <label class="data-v-47cfdbdc" wx:for="{{$root.l1}}" wx:key="index">
+        <mg-cell
+          bind:__l="__l"
+          btt="{{item.$orig.name}}"
+          bttc="{{'c3 '+bttc}}"
+          class="data-v-47cfdbdc"
+          cname="p253"
+          isr="1"
+          last="{{item.g0}}"
+          vueId="{{'2a669c84-1-'+index}}"
+          vueSlots="{{['default']}}"
+        >
+          <view class="f-y-c data-v-47cfdbdc" slot="ft" wx:if="{{ranktype==1}}">
+            <radio
+              checked="{{item.$orig.value==radioVal}}"
+              class="weui-check data-v-47cfdbdc"
+              value="{{item.$orig.value}}"
+            ></radio>
+            <text
+              class="{{['iconfont','f40','data-v-47cfdbdc',item.$orig.value==radioVal?'icongx':'iconwgx']}}"
+              style="{{'color:'+(item.$orig.value==radioVal?color||tColor:'')+';'}}"
+            ></text>
+          </view>
+          <view class="f-y-c mr30 data-v-47cfdbdc" slot="hd" wx:else>
+            <radio
+              checked="{{item.$orig.value==radioVal}}"
+              class="weui-check data-v-47cfdbdc"
+              value="{{item.$orig.value}}"
+            ></radio>
+            <text
+              class="{{['iconfont','f40','data-v-47cfdbdc',item.$orig.value==radioVal?'icongx':'iconwgx']}}"
+              style="{{'color:'+(item.$orig.value==radioVal?color||tColor:'')+';'}}"
+            ></text>
+          </view>
+        </mg-cell>
+      </label>
+    </view>
+  </block>
+</radio-group>

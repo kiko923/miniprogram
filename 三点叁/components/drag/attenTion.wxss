@@ -1,0 +1,31 @@
+.tipsc.data-v-7365573a {
+  position: fixed;
+  background: #fff;
+  z-index: 10;
+  width: 520rpx;
+  padding: 20rpx;
+  right: 10px;
+  border-radius: 8rpx;
+  box-shadow: 0 0rpx 8rpx 3rpx #d1d1d1;
+}
+.tipsc .img.data-v-7365573a {
+  width: 60rpx;
+  height: 60rpx;
+}
+.tipx.data-v-7365573a {
+  background: #e8e8e8;
+  width: 40rpx;
+  height: 40rpx;
+}
+.f14.data-v-7365573a {
+  font-size: 14rpx;
+}
+.triangle-up.data-v-7365573a {
+  top: -16rpx;
+  right: 57px;
+  width: 0;
+  height: 0;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-bottom: 20rpx solid #fff;
+}

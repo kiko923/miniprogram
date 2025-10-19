@@ -1,0 +1,24 @@
+<view
+  class="data-v-12cc0283"
+  style="{{'margin-top:'+''+co.marginTop+u+';'+'margin-bottom:'+''+co.marginBottom+u+';'+'margin-left:'+''+co.marginLR+u+';'+'margin-right:'+''+co.marginLR+u+';'}}"
+>
+  <video
+    binderror="__e"
+    class="w100 data-v-12cc0283"
+    controls="{{true}}"
+    data-event-opts="{{[ [ 'error',[ [ 'videoErrorCallback',['$event'] ] ] ] ]}}"
+    id="myVideo"
+    src="{{co.upLoad1.img}}"
+    wx:if="{{co.type==1}}"
+  ></video>
+  <video
+    binderror="__e"
+    class="w100 data-v-12cc0283"
+    controls="{{true}}"
+    data-event-opts="{{[ [ 'error',[ [ 'videoErrorCallback',['$event'] ] ] ] ]}}"
+    id="myVideo"
+    poster="{{co.upLoad2.img}}"
+    src="{{co.links2}}"
+    wx:if="{{co.type==3}}"
+  ></video>
+</view>

@@ -1,0 +1,291 @@
+<view
+  class="fixed data-v-422483c0"
+  style="{{'margin-top:'+co.marginTop+'px'+';'+'margin-bottom:'+co.marginBottom+'px'+';'+'margin-left:'+co.marginLR+'px'+';'+'margin-right:'+co.marginLR+'px'+';'}}"
+>
+  <view class="wrap data-v-422483c0">
+    <swiper
+      autoplay="true"
+      circular="true"
+      class="swiper data-v-422483c0"
+      indicatorDots="{{false}}"
+      wx:if="{{co.orPic==2}}"
+    >
+      <swiper-item
+        bindtap="__e"
+        class="data-v-422483c0"
+        data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgUrl','',i] ] ] ] ] ] ]}}"
+        wx:for="{{co.imgUrl}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <image
+          class="wh data-v-422483c0"
+          mode="aspectFill"
+          src="{{v.img}}"
+        ></image>
+      </swiper-item>
+    </swiper>
+    <view class="xfcc data-v-422483c0" wx:if="{{co.orPic==2&&co.isFloat==2}}">
+      <view class="xfc posi-r f-y-c bf bs15 data-v-422483c0">
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c hlr data-v-422483c0"
+          data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.floatUrl1'] ] ] ] ]}}"
+        >
+          <view class="img data-v-422483c0">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-422483c0"
+              src="{{co.floatUrl1.img}}"
+              vueId="5bb5d49c-1"
+            ></mg-img>
+          </view>
+          <view
+            class="f24 c6 mt20 l-n data-v-422483c0"
+            wx:if="{{co.floatUrl1.text}}"
+            >{{co.floatUrl1.text}}</view
+          >
+        </view>
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c data-v-422483c0"
+          data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.floatUrl2'] ] ] ] ]}}"
+        >
+          <view class="img data-v-422483c0">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-422483c0"
+              src="{{co.floatUrl2.img}}"
+              vueId="5bb5d49c-2"
+            ></mg-img>
+          </view>
+          <view
+            class="f24 c6 mt20 l-n data-v-422483c0"
+            wx:if="{{co.floatUrl2.text}}"
+            >{{co.floatUrl2.text}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view
+      class="{{['data-v-422483c0',co.orPic==2?'Locate':'']}}"
+      style="{{'padding-top:'+dwpt+';'+'top:'+dwtop+';'+'background:'+'rgba('+$root.m0+','+co.percent/100+')'+';'+'color:'+co.colorWord+';'}}"
+      wx:if="{{storeInfo.name}}"
+    >
+      <view
+        class="Locate_one f-x-bt p2 data-v-422483c0"
+        style="{{'border-radius:'+co.circle+'px'+';'}}"
+        wx:if="{{co.module==1}}"
+      >
+        <view class="left f-1 data-v-422483c0">
+          <view class="wei f34 f-y-c data-v-422483c0">
+            <open-data class="data-v-422483c0" type="userNickName"></open-data>
+            <text class="f-g-0 data-v-422483c0">{{','+whtime+'好'}}</text>
+          </view>
+          <view
+            bindtap="__e"
+            class="f-y-c f24 data-v-422483c0"
+            data-event-opts="{{[ [ 'tap',[ [ 'goSelect',['$event'] ] ] ] ]}}"
+          >
+            <view
+              class="iconfont iconlocation f28 data-v-422483c0"
+              style="{{'color:'+co.colorWord+';'}}"
+            ></view>
+            <view class="dpmc mr10 t-o-e data-v-422483c0"
+              >{{storeInfo.name}}</view
+            >
+            <view class="data-v-422483c0" style="opacity: 0.8"
+              >{{'距您'+storeInfo.distance}}</view
+            >
+            <block wx:if="{{system.storeSet&&system.storeSet.storeModel==2}}">
+              <view class="f-g-0 ml10 data-v-422483c0">更多门店</view>
+              <view
+                class="iconfont icondown ml5 f28 data-v-422483c0"
+                style="{{'color:'+co.colorWord+';'}}"
+              ></view>
+            </block>
+          </view>
+        </view>
+        <view class="f-c data-v-422483c0">
+          <view
+            bindtap="__e"
+            class="ritem data-v-422483c0"
+            data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.upLoad1'] ] ] ] ]}}"
+          >
+            <view class="img data-v-422483c0">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-422483c0"
+                src="{{co.upLoad1.img}}"
+                vueId="5bb5d49c-3"
+              ></mg-img>
+            </view>
+            <view class="data-v-422483c0" wx:if="{{co.upLoad2.text}}"
+              >{{co.upLoad1.text}}</view
+            >
+          </view>
+          <view
+            bindtap="__e"
+            class="ritem data-v-422483c0"
+            data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.upLoad2'] ] ] ] ]}}"
+          >
+            <view class="img data-v-422483c0">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-422483c0"
+                src="{{co.upLoad2.img}}"
+                vueId="5bb5d49c-4"
+              ></mg-img>
+            </view>
+            <view class="data-v-422483c0" wx:if="{{co.upLoad2.text}}"
+              >{{co.upLoad2.text}}</view
+            >
+          </view>
+        </view>
+      </view>
+      <block wx:else>
+        <view
+          class="Locate_two f-x-bt p2 data-v-422483c0"
+          style="{{'border-radius:'+co.circle+'px'+';'}}"
+          wx:if="{{co.module==2}}"
+        >
+          <view class="left f-1 data-v-422483c0">
+            <view
+              bindtap="__e"
+              class="f-y-c data-v-422483c0"
+              data-event-opts="{{[ [ 'tap',[ [ 'goSelect',['$event'] ] ] ] ]}}"
+            >
+              <view
+                class="iconfont iconlocation f28 mr10 data-v-422483c0"
+                style="{{'color:'+co.colorWord+';'}}"
+              ></view>
+              <view class="wei f30 t-o-e data-v-422483c0"
+                >{{storeInfo.name}}</view
+              >
+              <text
+                class="iconfont iconright ml5 wei f28 data-v-422483c0"
+                style="{{'color:'+co.colorWord+';'}}"
+                wx:if="{{system.storeSet&&system.storeSet.storeModel==2}}"
+              ></text>
+            </view>
+            <view class="btm f24 t-o-e data-v-422483c0"
+              >{{'距离您'+storeInfo.distance}}</view
+            >
+          </view>
+          <view class="f-c data-v-422483c0">
+            <view
+              bindtap="__e"
+              class="ritem data-v-422483c0"
+              data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.upLoad1'] ] ] ] ]}}"
+            >
+              <view class="img data-v-422483c0">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-422483c0"
+                  src="{{co.upLoad1.img}}"
+                  vueId="5bb5d49c-5"
+                ></mg-img>
+              </view>
+              <view class="data-v-422483c0" wx:if="{{co.upLoad2.text}}"
+                >{{co.upLoad1.text}}</view
+              >
+            </view>
+            <view
+              bindtap="__e"
+              class="ritem data-v-422483c0"
+              data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.upLoad2'] ] ] ] ]}}"
+            >
+              <view class="img data-v-422483c0">
+                <mg-img
+                  bind:__l="__l"
+                  class="data-v-422483c0"
+                  src="{{co.upLoad2.img}}"
+                  vueId="5bb5d49c-6"
+                ></mg-img>
+              </view>
+              <view class="data-v-422483c0" wx:if="{{co.upLoad2.text}}"
+                >{{co.upLoad2.text}}</view
+              >
+            </view>
+          </view>
+        </view>
+        <block wx:else>
+          <view
+            class="Locate_two f-x-bt p2 data-v-422483c0"
+            style="{{'border-radius:'+''+co.circle+'px'+';'}}"
+            wx:if="{{co.module==3}}"
+          >
+            <view class="left f-1 data-v-422483c0">
+              <view class="f-y-c data-v-422483c0">
+                <view
+                  class="iconfont iconlocation f28 mr10 wei data-v-422483c0"
+                  style="{{'color:'+co.colorWord+';'}}"
+                ></view>
+                <view class="f-1 wei f30 t-o-e data-v-422483c0"
+                  >{{address}}</view
+                >
+              </view>
+              <view class="f-row data-v-422483c0">
+                <view
+                  bindtap="__e"
+                  class="btm3 f20 f-y-c bs20 data-v-422483c0"
+                  data-event-opts="{{[ [ 'tap',[ [ 'goSelect',['$event'] ] ] ] ]}}"
+                >
+                  <view class="f-y-c o-a data-v-422483c0">
+                    <text class="data-v-422483c0">由</text>
+                    <text class="t-o-e m01 f-1 data-v-422483c0"
+                      >{{storeInfo.name}}</text
+                    >
+                    <text class="data-v-422483c0">送出</text>
+                  </view>
+                  <view
+                    class="iconfont iconright f28 ml5 data-v-422483c0"
+                    style="{{'color:'+co.colorWord+';'}}"
+                    wx:if="{{system.storeSet&&system.storeSet.storeModel==2}}"
+                  ></view>
+                </view>
+              </view>
+            </view>
+            <view class="f-c data-v-422483c0">
+              <view
+                bindtap="__e"
+                class="ritem data-v-422483c0"
+                data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.upLoad1'] ] ] ] ]}}"
+              >
+                <view class="img data-v-422483c0">
+                  <mg-img
+                    bind:__l="__l"
+                    class="data-v-422483c0"
+                    src="{{co.upLoad1.img}}"
+                    vueId="5bb5d49c-7"
+                  ></mg-img>
+                </view>
+                <view class="data-v-422483c0" wx:if="{{co.upLoad2.text}}"
+                  >{{co.upLoad1.text}}</view
+                >
+              </view>
+              <view
+                bindtap="__e"
+                class="ritem data-v-422483c0"
+                data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],['co.upLoad2'] ] ] ] ]}}"
+              >
+                <view class="img data-v-422483c0">
+                  <mg-img
+                    bind:__l="__l"
+                    class="data-v-422483c0"
+                    src="{{co.upLoad2.img}}"
+                    vueId="5bb5d49c-8"
+                  ></mg-img>
+                </view>
+                <view class="data-v-422483c0" wx:if="{{co.upLoad2.text}}"
+                  >{{co.upLoad2.text}}</view
+                >
+              </view>
+            </view>
+          </view>
+        </block>
+      </block>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<view class="mh100 data-v-47a138e7">
+  <view class="gyhead posi-r data-v-47a138e7">
+    <view
+      class="wh data-v-47a138e7"
+      style="{{'background:'+tColor+';'}}"
+    ></view>
+    <view class="posi-a t270 wh data-v-47a138e7">
+      <view class="m03 data-v-47a138e7">
+        <view class="bf mb20 bs20 p3 minhe data-v-47a138e7">
+          <view class="iconwidth bs10 data-v-47a138e7">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-47a138e7"
+              src="{{system.icon}}"
+              vueId="71bb9fda-1"
+            ></mg-img>
+          </view>
+          <view class="f-c c0 f32 mt90 f26 c3 data-v-47a138e7"
+            >{{system.name}}</view
+          >
+          <view class="f28 c6 mt30 data-v-47a138e7">
+            <mg-rtext
+              bind:__l="__l"
+              class="data-v-47a138e7"
+              content="{{system.introduction}}"
+              type="2"
+              vueId="71bb9fda-2"
+            ></mg-rtext>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

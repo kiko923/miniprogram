@@ -1,0 +1,21 @@
+.gehdimg.data-v-ac263e06 {
+  width: 80rpx;
+  height: 80rpx;
+}
+.geplcon.data-v-ac263e06 {
+  margin: 20rpx -10rpx 0;
+}
+.geplitem.data-v-ac263e06 {
+  width: 33.33%;
+  height: 180rpx;
+  margin-bottom: 20rpx;
+}
+.geplimg.data-v-ac263e06 {
+  margin: 0 10rpx;
+  height: 100%;
+  padding: 0rpx 0rpx;
+}
+.ptnum.data-v-ac263e06 {
+  right: 20rpx;
+  bottom: 30rpx;
+}

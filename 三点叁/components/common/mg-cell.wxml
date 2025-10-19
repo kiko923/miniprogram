@@ -1,0 +1,51 @@
+<view
+  bindtap="__e"
+  class="{{['weui-cell','data-v-321ac44c',[last?'last':''],[isl?'left0':''],[isr?'right30':''],[noc?'aligns':''],cname]}}"
+  data-event-opts="{{[ [ 'tap',[ [ '$emit',['tab'] ] ] ] ]}}"
+  hoverClass="{{hc?'weui-cell_active':''}}"
+  style="{{$root.s0}}"
+>
+  <view class="{{['f-g-0','f-c','data-v-321ac44c',hdc]}}">
+    <view
+      class="img o-h data-v-321ac44c"
+      style="{{'width:'+w+'rpx'+';'+'height:'+h+'rpx'+';'+'border-radius:'+brs+';'+'margin-right:'+imgr+'rpx'+';'}}"
+      wx:if="{{img}}"
+    >
+      <mg-img
+        bind:__l="__l"
+        class="data-v-321ac44c"
+        m="{{m}}"
+        src="{{img}}"
+        vueId="197e4b7a-1"
+      ></mg-img>
+    </view>
+    <text
+      class="{{['iconfont','mr30','data-v-321ac44c',iconn]}}"
+      wx:if="{{iconn}}"
+    ></text>
+    <view
+      class="{{['weui-label','data-v-321ac44c',htc]}}"
+      style="{{'width:'+hw+'rpx'+';'}}"
+      wx:if="{{ht}}"
+      >{{ht}}</view
+    >
+    <slot name="hd"></slot>
+  </view>
+  <view class="f-1 data-v-321ac44c" style="{{'min-width:'+bdmw+';'}}">
+    <view class="{{['data-v-321ac44c',bttc]}}" wx:if="{{btt}}">{{btt}}</view>
+    <view class="mt10 c9 f24 data-v-321ac44c" wx:if="{{bbt}}">{{bbt}}</view>
+    <slot name="bd"></slot>
+  </view>
+  <view
+    class="{{['c9','data-v-321ac44c',ftc]}}"
+    style="{{'color:'+color+';'}}"
+    wx:if="{{ft}}"
+    >{{ft}}</view
+  >
+  <slot name="ft"></slot>
+  <text
+    class="{{['iconfont','iconright','c9','arrow','ml5','data-v-321ac44c',ftc,ac]}}"
+    style="{{'color:'+acolor+';'+'font-size:'+asize+'rpx'+';'}}"
+    wx:if="{{arrow}}"
+  ></text>
+</view>

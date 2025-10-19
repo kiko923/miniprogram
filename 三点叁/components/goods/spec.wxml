@@ -1,0 +1,196 @@
+<view class="data-v-e38afce0">
+  <mg-popup
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-e38afce0"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showGg','$event',[] ] ] ] ] ]}}"
+    value="{{showGg}}"
+    vueId="6dccb2d2-1"
+    vueSlots="{{['default']}}"
+    zIndex="{{3000}}"
+  >
+    <view class="bs15 bf ggjz data-v-e38afce0" wx:if="{{loading}}">
+      <view class="dhtmd data-v-e38afce0">
+        <view class="bf6 jzi1 data-v-e38afce0"></view>
+        <view class="bf6 jzi2 p3 data-v-e38afce0"></view>
+        <view class="bf6 jzi2 p3 data-v-e38afce0"></view>
+      </view>
+    </view>
+    <view class="ggc bs15 bf posi-r data-v-e38afce0" wx:else>
+      <view
+        bindtap="__e"
+        class="ggx posi-a r0 data-v-e38afce0"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+      >
+        <text class="iconfont iconyx f56 data-v-e38afce0"></text>
+      </view>
+      <view class="ggtop f-row data-v-e38afce0">
+        <view class="ggh mr30 f-g-0 bs20 data-v-e38afce0">
+          <mg-img
+            bind:__l="__l"
+            class="data-v-e38afce0"
+            src="{{goodsInfo.icon}}"
+            vueId="{{'6dccb2d2-2'+','+'6dccb2d2-1'}}"
+          ></mg-img>
+        </view>
+        <view class="data-v-e38afce0">
+          <view class="f36 wei data-v-e38afce0">{{goodsInfo.name}}</view>
+          <view class="mt15 f24 c7 data-v-e38afce0">产品描述</view>
+          <view class="mt15 f24 c9 t-o-e3 w100 data-v-e38afce0"
+            >{{goodsInfo.body}}</view
+          >
+        </view>
+      </view>
+      <scroll-view class="ggb p23 data-v-e38afce0" scrollY="{{true}}">
+        <view class="m20 data-v-e38afce0">
+          <block wx:if="{{$root.g0}}">
+            <view class="p15 c6 data-v-e38afce0">规格</view>
+            <view class="f-raw data-v-e38afce0">
+              <view
+                bindtap="__e"
+                class="specv t-o-e f26 data-v-e38afce0"
+                data-event-opts="{{[ [ 'tap',[ [ 'clickSpec',[pi] ] ] ] ]}}"
+                style="{{'background:'+(pv.a?tColor:'')+';'+'color:'+(pv.a?'#fff':'')+';'}}"
+                wx:for="{{goodsInfo.specsData}}"
+                wx:for-index="pi"
+                wx:for-item="pv"
+                wx:key="pi"
+                >{{pv.specsName}}</view
+              >
+            </view>
+          </block>
+          <block wx:if="{{$root.g1}}">
+            <view
+              class="data-v-e38afce0"
+              wx:for="{{goodsInfo.attrData}}"
+              wx:for-index="pi"
+              wx:for-item="pv"
+              wx:key="pi"
+            >
+              <view class="p15 c6 f28 data-v-e38afce0">{{pv.attrName}}</view>
+              <view class="f-raw data-v-e38afce0">
+                <view
+                  bindtap="__e"
+                  class="specv t-o-e f26 data-v-e38afce0"
+                  data-event-opts="{{[ [ 'tap',[ [ 'clickAttribute',[pi,ci] ] ] ] ]}}"
+                  style="{{'background:'+(cv.a?tColor:'')+';'+'color:'+(cv.a?'#fff':'')+';'}}"
+                  wx:if="{{cv.name}}"
+                  wx:for="{{pv.attrStr}}"
+                  wx:for-index="ci"
+                  wx:for-item="cv"
+                  wx:key="ci"
+                  >{{cv.name}}</view
+                >
+              </view>
+            </view>
+          </block>
+          <block wx:if="{{$root.g2}}">
+            <view class="p15 c6 data-v-e38afce0"
+              >{{systemGood.custom.feedName||'加料'}}</view
+            >
+            <view class="f-raw data-v-e38afce0">
+              <view
+                bindtap="__e"
+                class="specv t-o-e f26 data-v-e38afce0"
+                data-event-opts="{{[ [ 'tap',[ [ 'clickMaterial',[ci] ] ] ] ]}}"
+                style="{{'background:'+(cv.a?tColor:'')+';'+'color:'+(cv.a?'#fff':'')+';'}}"
+                wx:for="{{goodsInfo.meterialData}}"
+                wx:for-index="ci"
+                wx:for-item="cv"
+                wx:key="ci"
+                >{{cv.materialName}}<text
+                  class="ml10 data-v-e38afce0"
+                  style="{{'color:'+(cv.a?'#fff':tColor)+';'}}"
+                  >{{''+sl+cv.SalesPrice}}</text
+                >
+              </view>
+            </view>
+          </block>
+        </view>
+      </scroll-view>
+      <view
+        class="posi-r ggf bf f-col f-x-ad data-v-e38afce0"
+        wx:if="{{goodsInfo.id}}"
+      >
+        <view class="f-x-bt data-v-e38afce0">
+          <view class="f-g-1 data-v-e38afce0">
+            <view class="f-raw data-v-e38afce0" style="{{'color:'+tColor+';'}}">
+              <view
+                class="f-row mr10 data-v-e38afce0"
+                wx:if="{{$root.m0<$root.m1}}"
+              >
+                <view
+                  class="vipr f-y-c data-v-e38afce0"
+                  style="font-size: 24rpx"
+                >
+                  <view class="vipimg data-v-e38afce0">
+                    <mg-img
+                      bind:__l="__l"
+                      class="data-v-e38afce0"
+                      src="{{onImgurl+'vipimg.png'}}"
+                      vueId="{{'6dccb2d2-3'+','+'6dccb2d2-1'}}"
+                    ></mg-img>
+                  </view>
+                </view>
+                <view
+                  class="vipl f-y-c data-v-e38afce0"
+                  style="font-size: 26rpx"
+                  >{{sl+xzSpecInfo.vipPrice}}</view
+                >
+              </view>
+              <text class="f34 wei mr20 data-v-e38afce0" wx:if="{{$root.g3}}"
+                >{{sl+$root.m2+''}}<text
+                  class="f24 nowei c9 ml10 data-v-e38afce0"
+                  wx:if="{{goodsInfo.currency&&goodsInfo.currency.stockShow!=2}}"
+                  >{{'(库存'+(outin==1?xzSpecInfo.SalesStock:xzSpecInfo.SalesStock)+')'}}</text
+                >
+              </text>
+              <text class="data-v-e38afce0" wx:if="{{$root.g4}}"
+                >{{(systemGood.custom.feedName||'加料')+'+'+sl+xzJlInfo.money}}</text
+              >
+            </view>
+            <view class="f22 c9 t-o-e3 data-v-e38afce0"
+              >{{(xzSpecInfo.id?xzSpecInfo.specsName+',':'')+($root.g5?$root.g6+',':'')+($root.g7?$root.g8:'')}}</view
+            >
+          </view>
+          <view class="f-g-0 f-bt ml30 data-v-e38afce0">
+            <view
+              class="reducecon active f-y-c data-v-e38afce0"
+              wx:if="{{goodsInfo.ggnum>0}}"
+            >
+              <view
+                catchtap="__e"
+                class="cartc f-c data-v-e38afce0"
+                data-event-opts="{{[ [ 'tap',[ [ 'decSpec',['$event'] ] ] ] ]}}"
+              >
+                <text
+                  class="iconfont iconjs f54 data-v-e38afce0"
+                  style="{{'color:'+tColor+';'}}"
+                ></text>
+              </view>
+              <text class="f34 ma c0 data-v-e38afce0">{{goodsInfo.ggnum}}</text>
+            </view>
+            <view
+              catchtap="__e"
+              class="cartc f-c data-v-e38afce0"
+              data-event-opts="{{[ [ 'tap',[ [ 'addSpec',['$event'] ] ] ] ]}}"
+            >
+              <text
+                class="iconfont iconzj f54 data-v-e38afce0"
+                style="{{'color:'+tColor+';'}}"
+              ></text>
+            </view>
+          </view>
+        </view>
+        <button
+          bindtap="__e"
+          class="w100 cf ggbtn mt10 f34 f-c data-v-e38afce0"
+          data-event-opts="{{[ [ 'tap',[ [ 'jrgwc',['$event'] ] ] ] ]}}"
+          style="{{'background:'+tColor+';'}}"
+        >
+          加入购物车
+        </button>
+      </view>
+    </view>
+  </mg-popup>
+</view>

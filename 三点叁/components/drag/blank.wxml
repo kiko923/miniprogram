@@ -1,0 +1,4 @@
+<view
+  class="data-v-90bdf932"
+  style="{{'height:'+''+(co.height+u)+';'+'background:'+co.colorBg+';'}}"
+></view>

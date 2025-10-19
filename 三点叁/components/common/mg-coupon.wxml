@@ -1,0 +1,560 @@
+<view
+  bindtap="__e"
+  class="{{['posi-r','cou1','o-h','bf','c6','f22','data-v-a9fa188c',cname]}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$event'] ] ] ] ]}}"
+  style="{{'background:'+(iswdq?'linear-gradient(90deg, #FFF7E4 40%, #FCDBB2 100%)':'')+';'+'color:'+(iswdq?'#75481C':'')+';'}}"
+  wx:if="{{ptype==1}}"
+>
+  <view class="cout f-row data-v-a9fa188c">
+    <view class="f-g-0 coutl f-c-c mr30 data-v-a9fa188c">
+      <view
+        class="wei cf5 data-v-a9fa188c"
+        style="{{'color:'+(iswdq?'#75481C':'')+';'}}"
+      >
+        <block wx:if="{{co.type==1}}">
+          <text class="data-v-a9fa188c">{{sl}}</text>
+          <text class="f48 ml5 data-v-a9fa188c">{{$root.m0}}</text>
+        </block>
+        <block wx:else>
+          <block wx:if="{{co.type==2}}">
+            <text class="f48 data-v-a9fa188c">{{$root.m1}}</text>
+            <text class="ml5 data-v-a9fa188c">折</text>
+          </block>
+        </block>
+      </view>
+      <view class="data-v-a9fa188c">{{fullName}}</view>
+    </view>
+    <view class="f-g-1 f-y-ad data-v-a9fa188c">
+      <view
+        class="wei f30 t-o-e c3 data-v-a9fa188c"
+        style="{{'color:'+(iswdq?'#75481C':'')+';'}}"
+        >{{(ttype==2?co.couponName:co.name)+''}}</view
+      >
+      <view class="f-x-bt data-v-a9fa188c">
+        <view class="t-o-e data-v-a9fa188c">{{co.useExplain}}</view>
+      </view>
+    </view>
+  </view>
+  <view
+    catchtap="__e"
+    class="p2 coub c9 data-v-a9fa188c"
+    data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+    style="{{'background:'+(iswdq?'transparent':'')+';'+'color:'+(iswdq?'#AE884B':'')+';'}}"
+  >
+    <view class="{{['f-y-c','coubt','data-v-a9fa188c',active?'active':'']}}">
+      <view class="f-g-1 f-y-c mr10 data-v-a9fa188c">
+        <view class="t-o-e data-v-a9fa188c">{{co.explain}}</view>
+        <text
+          class="{{['iconfont','icondown','ml10','coubjt','f24','data-v-a9fa188c',active?'jtactive':'']}}"
+          style="{{'color:'+(iswdq?'#AE884B':'')+';'}}"
+        ></text>
+      </view>
+      <button
+        catchtap="__e"
+        class="coubtn f-c f22 clearbtn data-v-a9fa188c"
+        data-event-opts="{{[ [ 'tap',[ [ 'btnClick',['$event'] ] ] ] ]}}"
+        disabled="{{disabled}}"
+        style="{{'background:'+(iswdq?'linear-gradient(90deg, #FBDC9D, #FEB94A)':typeName.c)+';'+'color:'+(iswdq?'#6F3E07':'')+';'}}"
+      >
+        {{typeName.t}}
+      </button>
+    </view>
+    <view class="{{['coubb','o-h','data-v-a9fa188c',active?'cactive':'']}}">
+      <view class="{{['coubbv','pt20','data-v-a9fa188c',active?'show':'']}}">
+        <mg-rtext
+          bind:__l="__l"
+          class="data-v-a9fa188c"
+          content="{{co.details||co.couponDetails}}"
+          type="2"
+          vueId="6eefc3b6-1"
+        ></mg-rtext>
+      </view>
+    </view>
+  </view>
+  <view
+    class="p-a couqlx cf t-c data-v-a9fa188c"
+    style="{{'background:'+(iswdq?'linear-gradient(-45deg, #FBDC9D, #FEB94A)':'')+';'+'color:'+(iswdq?'#6F3E07':'')+';'}}"
+    >{{''+qlx+''}}</view
+  >
+</view>
+<block wx:else>
+  <view
+    class="{{['posi-r','cou1','o-h','bf','c6','f22','cou2','data-v-a9fa188c',cname]}}"
+    wx:if="{{ptype==2}}"
+  >
+    <view class="bf cout f-row data-v-a9fa188c">
+      <view class="f-g-0 coutl f-c-c mr30 data-v-a9fa188c">
+        <view class="wei cf5 data-v-a9fa188c">
+          <block wx:if="{{co.type==1}}">
+            <text class="data-v-a9fa188c">{{sl}}</text>
+            <text class="f48 ml5 data-v-a9fa188c">{{$root.m2}}</text>
+          </block>
+          <block wx:else>
+            <block wx:if="{{co.type==2}}">
+              <text class="f48 data-v-a9fa188c">{{$root.m3}}</text>
+              <text class="ml5 data-v-a9fa188c">折</text>
+            </block>
+          </block>
+        </view>
+        <view class="t-o-e data-v-a9fa188c">{{fullName}}</view>
+      </view>
+      <view class="f-g-1 f-y-ad data-v-a9fa188c">
+        <view class="wei f30 t-o-e c3 data-v-a9fa188c"
+          >{{co.name||co.couponName}}</view
+        >
+        <view class="f-x-bt data-v-a9fa188c">
+          <view class="t-o-e data-v-a9fa188c">{{co.useExplain}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <block wx:else>
+    <view
+      bindtap="__e"
+      class="{{['posi-r','f-row','cou3','b-d','f20','data-v-a9fa188c',cname]}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$event'] ] ] ] ]}}"
+      style="background: #fff"
+      wx:if="{{ptype==3}}"
+    >
+      <view class="posi-r p20 f-g-0 cou2l f-c-c data-v-a9fa188c">
+        <view class="wei cf5 data-v-a9fa188c">
+          <text class="data-v-a9fa188c">{{sl}}</text>
+          <text class="f48 ml5 data-v-a9fa188c">{{$root.m4}}</text>
+        </view>
+        <view class="mt10 data-v-a9fa188c">{{fullName}}</view>
+        <view class="dot1 b-d bf data-v-a9fa188c"></view>
+        <view class="dot2 b-d bf data-v-a9fa188c"></view>
+      </view>
+      <view class="p23 f-g-1 f-row data-v-a9fa188c">
+        <view class="f-g-1 f-y-bt data-v-a9fa188c">
+          <view class="wei f30 t-o-e data-v-a9fa188c">{{co.name}}</view>
+          <view class="mt20 t-o-e data-v-a9fa188c">{{$root.m5}}</view>
+        </view>
+        <button
+          catchtap="__e"
+          class="f-g-0 bs10 cou3br f-c cf clearbtn data-v-a9fa188c"
+          data-event-opts="{{[ [ 'tap',[ [ 'btnClick',['$event'] ] ] ] ]}}"
+          disabled="{{disabled}}"
+          style="{{'background:'+typeName.c+';'}}"
+        >
+          {{''+typeName.t+''}}
+        </button>
+      </view>
+    </view>
+    <block wx:else>
+      <view
+        bindtap="__e"
+        class="{{[ 'posi-r','bf','bs20','c6','f22','data-v-a9fa188c',cname,[co.isUse==2?'ce5':''] ]}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+        wx:if="{{ptype==4}}"
+      >
+        <view class="bf cout f-row data-v-a9fa188c">
+          <view class="f-g-0 coutl f-c-c mr30 data-v-a9fa188c">
+            <view
+              class="{{['wei','cf5','data-v-a9fa188c',co.isUse==2?'ce5':'']}}"
+            >
+              <block wx:if="{{co.type==1}}">
+                <text class="data-v-a9fa188c">{{sl}}</text>
+                <text class="f48 ml5 data-v-a9fa188c">{{$root.m6}}</text>
+              </block>
+              <block wx:else>
+                <block wx:if="{{co.type==2}}">
+                  <text class="f48 data-v-a9fa188c">{{$root.m7}}</text>
+                  <text class="ml5 data-v-a9fa188c">折</text>
+                </block>
+              </block>
+            </view>
+            <view class="data-v-a9fa188c">{{fullName}}</view>
+          </view>
+          <view class="f-g-1 f-y-ad data-v-a9fa188c">
+            <view
+              class="{{['wei','f30','t-o-e','c3','data-v-a9fa188c',co.isUse==2?'ce5':'']}}"
+              >{{co.couponName}}</view
+            >
+            <view class="f-x-bt data-v-a9fa188c">
+              <view class="t-o-e data-v-a9fa188c">{{co.useExplain}}</view>
+            </view>
+          </view>
+          <view class="f-c data-v-a9fa188c">
+            <radio
+              checked="{{co.checked}}"
+              class="data-v-a9fa188c"
+              color="#07C160"
+              wx:if="{{co.isUse!=1}}"
+            ></radio>
+          </view>
+        </view>
+        <view class="bfc p2 coub c9 data-v-a9fa188c">
+          <view class="f-y-c coubt data-v-a9fa188c">
+            <view class="t-o-e data-v-a9fa188c">{{co.explain}}</view>
+          </view>
+        </view>
+        <view class="p-a couqlx cf t-c data-v-a9fa188c">{{qlx}}</view>
+      </view>
+      <block wx:else>
+        <view
+          class="{{['cou5','p253','p-r','bf','bs20','f24','f-y-c','mb20','data-v-a9fa188c',cname]}}"
+          wx:if="{{ptype==5}}"
+        >
+          <view class="cou5l mr20 p-r data-v-a9fa188c">
+            <mg-img
+              bind:__l="__l"
+              class="data-v-a9fa188c"
+              src="/static/yhq/sjyhq.png"
+              vueId="6eefc3b6-2"
+            ></mg-img>
+            <view class="p-a t0 wh f-c-c cf lh1 data-v-a9fa188c">
+              <view class="data-v-a9fa188c">
+                <block wx:if="{{co.type==1||co.type==3}}">
+                  <text class="data-v-a9fa188c">{{sl}}</text>
+                  <text class="f50 ml5 data-v-a9fa188c">{{$root.m8}}</text>
+                </block>
+                <block wx:else>
+                  <block wx:if="{{co.type==2}}">
+                    <text class="f50 data-v-a9fa188c">{{$root.m9}}</text>
+                    <text class="ml5 data-v-a9fa188c">折</text>
+                  </block>
+                </block>
+              </view>
+            </view>
+          </view>
+          <view class="f-1 f-c-xc mr20 data-v-a9fa188c">
+            <view class="f30 c0 t-o-e data-v-a9fa188c">{{co.name}}</view>
+            <view class="c6 mt10 data-v-a9fa188c"
+              >{{fullName+'，'+co.useExplain}}</view
+            >
+          </view>
+          <view class="f-c-c cou5r data-v-a9fa188c">
+            <button
+              bindtap="__e"
+              class="cf cou5lq bs15 f-c clearbtn data-v-a9fa188c"
+              data-event-opts="{{[ [ 'tap',[ [ 'btnClick',['$event'] ] ] ] ]}}"
+              disabled="{{disabled}}"
+              wx:if="{{!co.islq}}"
+            >
+              领 取
+            </button>
+            <image
+              class="p-a cou5ylq data-v-a9fa188c"
+              src="/static/yhq/lyq.png"
+              wx:else
+            ></image>
+          </view>
+        </view>
+        <block wx:else>
+          <view
+            bindtap="__e"
+            class="{{['posi-r','f-row','cou3','b-d','f20','data-v-a9fa188c',cname]}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$event'] ] ] ] ]}}"
+            wx:if="{{ptype==6}}"
+          >
+            <view class="posi-r p20 f-g-0 cou2l f-c-c data-v-a9fa188c">
+              <view class="wei cf5 data-v-a9fa188c">
+                <text class="data-v-a9fa188c">{{sl}}</text>
+                <text class="f48 ml5 data-v-a9fa188c">{{$root.m10}}</text>
+              </view>
+              <view class="mt10 data-v-a9fa188c">{{fullName}}</view>
+              <view class="dot1 b-d bf data-v-a9fa188c"></view>
+              <view class="dot2 b-d bf data-v-a9fa188c"></view>
+            </view>
+            <view class="p23 f-g-1 f-row data-v-a9fa188c">
+              <view class="f-g-1 f-y-bt data-v-a9fa188c">
+                <view class="wei f30 t-o-e data-v-a9fa188c">{{co.name}}</view>
+                <view class="mt20 t-o-e data-v-a9fa188c">{{$root.m11}}</view>
+              </view>
+              <view class="f-y-c f-g-0 ml30 data-v-a9fa188c">
+                <button
+                  class="bs10 f-c cf clearbtn cou6 f24 data-v-a9fa188c"
+                  disabled="{{disabled}}"
+                  style="{{'background:'+typeName.c+';'}}"
+                >
+                  {{''+typeName.t+''}}
+                </button>
+              </view>
+            </view>
+          </view>
+          <block wx:else>
+            <view
+              class="{{['posi-r','bf','bs20','c6','f22','data-v-a9fa188c',cname]}}"
+              gttype="1"
+              wx:if="{{ptype==7}}"
+            >
+              <view class="bf cout data-v-a9fa188c">
+                <view class="f-bt f-y-c lh1 data-v-a9fa188c">
+                  <view class="cef data-v-a9fa188c">
+                    <text class="f36 ml5 data-v-a9fa188c">{{co.name}}</text>
+                  </view>
+                  <view class="wei f66 cef data-v-a9fa188c">
+                    <text class="f34 data-v-a9fa188c">￥</text
+                    >{{co.money}}</view
+                  >
+                </view>
+                <view class="f-bt f28 c6 data-v-a9fa188c">
+                  <view class="data-v-a9fa188c">{{co.endAt+'后过期'}}</view>
+                  <view class="data-v-a9fa188c">{{fullName}}</view>
+                </view>
+              </view>
+              <view
+                catchtap="__e"
+                class="bfc p3 coub c9 gfbg data-v-a9fa188c"
+                data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+              >
+                <view
+                  class="{{['f-y-c','coubt','data-v-a9fa188c',active?'active':'']}}"
+                >
+                  <view class="f-g-1 t-o-e cb data-v-a9fa188c"
+                    >{{fullName+','+$root.m12+','+sycjName}}</view
+                  >
+                  <text
+                    class="{{['iconfont','icondown','ml10','coubjt','data-v-a9fa188c',active?'jtactive':'']}}"
+                  ></text>
+                </view>
+                <view
+                  class="{{['coubb','o-h','data-v-a9fa188c',active?'cactive':'']}}"
+                >
+                  <view
+                    class="{{['coubbv','pt20','data-v-a9fa188c',active?'show':'']}}"
+                  >
+                    <mg-rtext
+                      bind:__l="__l"
+                      class="data-v-a9fa188c"
+                      content="{{co.introduce}}"
+                      type="2"
+                      vueId="6eefc3b6-3"
+                      wx:if="{{co.introduce}}"
+                    ></mg-rtext>
+                  </view>
+                </view>
+              </view>
+            </view>
+            <block wx:else>
+              <view
+                bindtap="__e"
+                class="{{['cou5','cou8','p253','p-r','bf','bs20','f24','f-y-c','mb20','data-v-a9fa188c',cname]}}"
+                data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$event'] ] ] ] ]}}"
+                wx:if="{{ptype==8}}"
+              >
+                <view class="cou5l mr20 p-r data-v-a9fa188c">
+                  <mg-img
+                    bind:__l="__l"
+                    class="data-v-a9fa188c"
+                    src="/static/yhq/qb.png"
+                    vueId="6eefc3b6-4"
+                  ></mg-img>
+                  <view class="p-a t0 wh f-c-c cf lh1 data-v-a9fa188c">
+                    <view class="data-v-a9fa188c">
+                      <text class="data-v-a9fa188c">{{sl}}</text>
+                      <text class="f50 ml5 mr10 data-v-a9fa188c"
+                        >{{$root.m13}}</text
+                      >
+                    </view>
+                    <view class="f22 mt5 data-v-a9fa188c">代金券</view>
+                  </view>
+                </view>
+                <view class="cou8m f-1 f-c-xc data-v-a9fa188c">
+                  <view class="f-y-c data-v-a9fa188c">
+                    <view class="cou8zs bs10 f20 mr20 data-v-a9fa188c"
+                      >{{co.couponNum+'张'}}</view
+                    >
+                    <view class="c0 f30 f-1 t-o-e data-v-a9fa188c"
+                      >{{co.name}}</view
+                    >
+                  </view>
+                  <view class="c9 mt10 f22 data-v-a9fa188c">
+                    <text class="cqb f24 data-v-a9fa188c">{{sl}}</text>
+                    <text class="cqb f32 data-v-a9fa188c">{{$root.m14}}</text>
+                  </view>
+                </view>
+                <view class="f-c-c cou5r data-v-a9fa188c">
+                  <button
+                    class="cf cou5lq bs15 f-c clearbtn data-v-a9fa188c"
+                    disabled="{{disabled}}"
+                    wx:if="{{!co.islq}}"
+                  >
+                    去抢购
+                  </button>
+                  <image
+                    class="p-a cou5ylq data-v-a9fa188c"
+                    src="/static/yhq/lyq.png"
+                    wx:else
+                  ></image>
+                </view>
+              </view>
+              <block wx:else>
+                <view
+                  bindtap="__e"
+                  class="{{['p-r','bs20','c6','f24','cou9','data-v-a9fa188c',cname]}}"
+                  data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_o2o/order/coupon-bag/qbxq?id='+co.id] ] ] ] ] ] ]}}"
+                  wx:if="{{ptype==9}}"
+                >
+                  <view class="qbyhq p-a data-v-a9fa188c">
+                    <image
+                      class="wh data-v-a9fa188c"
+                      src="/static/yhq/qbyhq.png"
+                    ></image>
+                  </view>
+                  <view class="p-r cou9bd data-v-a9fa188c">
+                    <view class="cout f-y-c data-v-a9fa188c">
+                      <view class="f-g-0 cou9tl mr30 bs10 data-v-a9fa188c">
+                        <mg-img
+                          bind:__l="__l"
+                          class="data-v-a9fa188c"
+                          src="{{co.icon}}"
+                          vueId="6eefc3b6-5"
+                        ></mg-img>
+                      </view>
+                      <view class="f-1 f-y-bt data-v-a9fa188c">
+                        <view class="wei f30 t-o-e2 c3 data-v-a9fa188c"
+                          >{{co.name}}</view
+                        >
+                        <view class="data-v-a9fa188c">
+                          <text class="t-o-e cff0 data-v-a9fa188c"
+                            >{{sl}}<text class="f36 wei data-v-a9fa188c"
+                              >{{co.money}}</text
+                            >
+                          </text>
+                          <text class="t-o-e ml10 t-d-l cb data-v-a9fa188c"
+                            >{{''+sl+co.originalPrice}}</text
+                          >
+                        </view>
+                      </view>
+                      <view class="ml30 f-c-c data-v-a9fa188c">
+                        <view
+                          class="qqg cf f26 f-c data-v-a9fa188c"
+                          style="{{'background:'+(qbbl<1?'':'#ddd')+';'}}"
+                          >{{qbbl<1?'抢购':'已抢完'}}</view
+                        >
+                        <view class="f-y-c mt20 data-v-a9fa188c">
+                          <view class="jdt p-r o-h data-v-a9fa188c">
+                            <view
+                              class="h100 p-a t0 jd data-v-a9fa188c"
+                              style="{{'width:'+qbbl*100+'%'+';'+'background:'+(qbbl<1?'':'#ddd')+';'}}"
+                            ></view>
+                          </view>
+                          <view
+                            class="cff0 ml10 data-v-a9fa188c"
+                            style="{{'color:'+(qbbl<1?'':'#ddd')+';'}}"
+                            >{{$root.m15+'%'}}</view
+                          >
+                        </view>
+                      </view>
+                    </view>
+                    <view
+                      catchtap="__e"
+                      class="p3 bf cou9b data-v-a9fa188c"
+                      data-event-opts="{{[ [ 'tap',[ [ 'e3',['$event'] ] ] ] ]}}"
+                    >
+                      <view
+                        class="{{['f-y-c','coubt','data-v-a9fa188c',active?'active':'']}}"
+                      >
+                        <view class="dpimg bsf mr15 data-v-a9fa188c">
+                          <mg-img
+                            bind:__l="__l"
+                            class="data-v-a9fa188c"
+                            src="{{co.logo}}"
+                            vueId="6eefc3b6-6"
+                          ></mg-img>
+                        </view>
+                        <view class="f-1 t-o-e data-v-a9fa188c"
+                          >{{co.storeName}}</view
+                        >
+                        <text class="data-v-a9fa188c">使用规则</text>
+                        <text
+                          class="{{['iconfont','icondown','ml10','coubjt','data-v-a9fa188c',active?'jtactive':'']}}"
+                        ></text>
+                      </view>
+                      <view
+                        class="{{['coubb','o-h','data-v-a9fa188c',active?'cactive':'']}}"
+                      >
+                        <view
+                          class="{{['coubbv','pt20','data-v-a9fa188c',active?'show':'']}}"
+                        >
+                          <mg-rtext
+                            bind:__l="__l"
+                            class="data-v-a9fa188c"
+                            content="{{co.notice}}"
+                            type="2"
+                            vueId="6eefc3b6-7"
+                            wx:if="{{co.notice}}"
+                          ></mg-rtext>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+                <block wx:else>
+                  <view
+                    bindtap="__e"
+                    class="{{['p-r','bf','bs20','c6','f22','cou10','data-v-a9fa188c',cname]}}"
+                    data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$event'] ] ] ] ]}}"
+                    wx:if="{{ptype==10}}"
+                  >
+                    <view class="bf cout f-y-c data-v-a9fa188c">
+                      <view class="f-g-0 coutl f-c-c mr30 data-v-a9fa188c">
+                        <view class="wei cf5 data-v-a9fa188c">
+                          <text class="data-v-a9fa188c">{{sl}}</text>
+                          <text class="f48 ml5 data-v-a9fa188c"
+                            >{{$root.m16}}</text
+                          >
+                        </view>
+                        <view class="mt20 data-v-a9fa188c">{{fullName}}</view>
+                      </view>
+                      <view class="f-g-1 f-y-bt data-v-a9fa188c">
+                        <view class="wei f30 t-o-e c3 data-v-a9fa188c"
+                          >{{co.name}}</view
+                        >
+                        <view class="mt20 w70 t-o-e data-v-a9fa188c"
+                          >{{$root.m17}}</view
+                        >
+                        <view class="t-o-e data-v-a9fa188c">{{dateText}}</view>
+                      </view>
+                      <text
+                        class="iconfont iconright ml10 c3 data-v-a9fa188c"
+                      ></text>
+                    </view>
+                    <view
+                      catchtap="__e"
+                      class="bfc p23 coub c9 data-v-a9fa188c"
+                      data-event-opts="{{[ [ 'tap',[ [ 'e4',['$event'] ] ] ] ]}}"
+                    >
+                      <view
+                        class="{{['f-y-c','coubt','data-v-a9fa188c',active?'active':'']}}"
+                      >
+                        <view class="f-g-1 t-o-e data-v-a9fa188c"
+                          >{{fullName+','+$root.m18+','+sycjName}}</view
+                        >
+                        <text
+                          class="{{['iconfont','icondown','ml10','coubjt','data-v-a9fa188c',active?'jtactive':'']}}"
+                        ></text>
+                      </view>
+                      <view
+                        class="{{['coubb','o-h','data-v-a9fa188c',active?'cactive':'']}}"
+                      >
+                        <view
+                          class="{{['coubbv','pt20','data-v-a9fa188c',active?'show':'']}}"
+                        >
+                          <mg-rtext
+                            bind:__l="__l"
+                            class="data-v-a9fa188c"
+                            content="{{co.introduce}}"
+                            type="2"
+                            vueId="6eefc3b6-8"
+                            wx:if="{{co.introduce}}"
+                          ></mg-rtext>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="p-a ybk data-v-a9fa188c"></view>
+                    <view class="p-a num cf t-c data-v-a9fa188c"
+                      >{{'x'+co.number+' 张'}}</view
+                    >
+                  </view>
+                </block>
+              </block>
+            </block>
+          </block>
+        </block>
+      </block>
+    </block>
+  </block>
+</block>

@@ -1,0 +1,32 @@
+<view class="data-v-4833a0e8">
+  <view class="fixedtop bf5 data-v-4833a0e8">
+    <view class="f-c wxts f22 c9 data-v-4833a0e8"
+      >温馨提示：领取成功后请到‘个人中心-优惠券’查看</view
+    >
+  </view>
+  <view class="ccbd p3 data-v-4833a0e8">
+    <mg-coupon
+      bind:__l="__l"
+      bind:btntap="__e"
+      class="data-v-4833a0e8"
+      cname="mb30"
+      co="{{v}}"
+      color="{{tColor}}"
+      data-event-opts="{{[ [ '^btntap',[ [ 'btntap',['$0'],[ [ ['dataList','',i,'id'] ] ] ] ] ] ]}}"
+      vueId="{{'d80ab94c-1-'+i}}"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    ></mg-coupon>
+    <jzz
+      bgcolor="transparent"
+      bind:__l="__l"
+      class="data-v-4833a0e8"
+      imgn="zwhb"
+      mygd="{{mygd}}"
+      nodata="{{$root.g0}}"
+      vueId="d80ab94c-2"
+    ></jzz>
+  </view>
+</view>

@@ -1,0 +1,148 @@
+/* 页面容器 */
+.container {
+  display: flex;
+  flex-direction: column;  /* 纵向排列子元素 */
+  justify-content: center;  /* 垂直居中 */
+  align-items: center;  /* 水平居中 */
+  height: 100vh;  /* 使容器的高度占满整个视口 */
+  padding: 20px;
+  box-sizing: border-box; /* 确保padding不会导致超出屏幕 */
+  position: relative; /* 让底部版权声明能绝对定位 */
+  top: -30px;
+  width: 100%; /* 容器宽度占满屏幕 */
+  max-width: 500px; /* 设置最大宽度 */
+  margin: 0 auto; /* 居中容器 */
+}
+
+/* Wi-Fi Logo */
+.wifi-logo {
+  width: 120px; /* 设置合适的宽度 */
+  height: 120px; /* 设置合适的高度 */
+  margin-bottom: 20px; /* Logo下方与内容的间隔 */
+}
+
+/* 页面标题 */
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center; /* 标题居中 */
+}
+
+/* 输入框分组 */
+.input-group {
+  margin-bottom: 20px;
+  width: 100%;  /* 确保输入框分组宽度占满整个容器 */
+}
+
+/* 输入框标签 */
+.input-label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+/* 输入框 */
+.input-field {
+  width: 100%; /* 使输入框自适应屏幕宽度 */
+  height: 60px; /* 设置输入框高度，避免太扁 */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-sizing: border-box; /* 确保 padding 和 border 包括在宽度内 */
+  line-height: 20px; /* 保证文字不与边框重叠 */
+  max-width: 100%; /* 最大宽度100%，防止挤压 */
+}
+
+/* 创建Wi-Fi按钮 */
+.btn-create {
+  font-weight: bold;
+  width: 100%;
+  padding: 10px;
+  background-color: #07c160;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  max-width: 100%; /* 最大宽度100%，防止挤压 */
+}
+.btn-create:active {
+  background-color: #1db667;
+  transform: scale(0.95);
+}
+
+/* 底部版权声明 */
+.footer {
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 手机端适配 */
+@media screen and (max-width: 600px) {
+  /* Wi-Fi Logo 自适应屏幕 */
+  .wifi-logo {
+    width: 100px; /* 调整Logo宽度 */
+    height: 100px; /* 调整Logo高度 */
+    margin-bottom: 30px; /* 增加Logo与内容间距 */
+  }
+
+  /* 页面标题字体 */
+  .page-title {
+    font-size: 18px;
+  }
+
+  /* 版权声明字体调整 */
+  .footer {
+    font-size: 12px;
+  }
+
+  /* 输入框和按钮更适合小屏 */
+  .input-field {
+    height: 50px; /* 输入框高度稍微调整 */
+    font-size: 14px; /* 字体略微减小 */
+  }
+
+  .btn-create {
+    font-size: 18px; /* 按钮字体稍微变小 */
+    padding: 8px; /* 按钮内边距适当减小 */
+    max-width: 100%; /* 最大宽度100%，防止挤压 */
+  }
+}
+
+/* 免责声明文字样式 */
+.disclaimer {
+  font-size: 12px;  /* 设置字体大小 */
+  color: #999999;   /* 设置字体颜色 */
+  text-align: center;  /* 居中显示 */
+  margin-top: -28px;   /* 距离按钮一定距离 */
+}
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox-label checkbox {
+  margin-right: 5px;
+}
+.back-text {
+  font-size: 16px;
+  color: #888;
+  text-decoration: underline;
+  text-align: center;
+  cursor: pointer;
+  position: relative; /* 设置相对定位 */
+  margin-top: 20px;
+}

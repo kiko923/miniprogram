@@ -1,0 +1,74 @@
+<view
+  bindtap="__e"
+  class="bf data-v-7cfa47c7"
+  data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$event'] ] ] ] ]}}"
+  style="{{'padding:'+(co.txtOrImg==0?'25rpx 30rpx 0rpx':''+co.upDownPadding+u+' '+co.leftRightPadding+u)+';'+'margin-top:'+''+co.topMargin+u+';'}}"
+>
+  <view class="p03 f-y-c data-v-7cfa47c7" style="{{$root.s0}}">
+    <view class="f-g-0 data-v-7cfa47c7">
+      <view
+        class="limg mr20 data-v-7cfa47c7"
+        wx:if="{{co.txtOrImg==1&&co.icon[0].url}}"
+      >
+        <mg-img
+          bind:__l="__l"
+          class="data-v-7cfa47c7"
+          m="aspectFit"
+          src="{{co.icon[0].url}}"
+          vueId="3d3aba62-1"
+        ></mg-img>
+      </view>
+      <view
+        class="mr20 ggbt wei data-v-7cfa47c7"
+        style="{{'color:'+co.notice.color+';'+'font-size:'+co.notice.fontSize+';'}}"
+        wx:else
+        >{{co.notice.title}}</view
+      >
+    </view>
+    <view
+      class="f-g-1 ngr b-s1 bs10 data-v-7cfa47c7"
+      style="{{'height:'+(co.txtOrImg==0?'70rpx':'')+';'}}"
+    >
+      <uni-notice-bar
+        backgroundColor="{{co.backgroundColor}}"
+        bind:__l="__l"
+        class="data-v-7cfa47c7"
+        color="{{co.txtOrImg==0?'#8B5C42':tColor}}"
+        scrollable="{{true}}"
+        single="{{true}}"
+        text="{{notice}}"
+        vueId="3d3aba62-2"
+        wx:if="{{type==1&&notice}}"
+      ></uni-notice-bar>
+      <swiper
+        autoplay="{{true}}"
+        circular="true"
+        class="wh data-v-7cfa47c7"
+        interval="2000"
+        vertical="true"
+        wx:else
+      >
+        <swiper-item
+          catchtap="__e"
+          class="f-c-xc data-v-7cfa47c7"
+          data-event-opts="{{[ [ 'tap',[ [ 'goDl',['$0'],[ [ ['nlist','',i] ] ] ] ] ] ]}}"
+          wx:for="{{nlist}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view
+            class="c6 f24 t-o-e data-v-7cfa47c7"
+            style="{{'color:'+(co.txtOrImg==0?'#8B5C42':'')+';'}}"
+            >{{v.title}}</view
+          >
+        </swiper-item>
+      </swiper>
+    </view>
+    <text
+      class="ml10 iconfont iconright data-v-7cfa47c7"
+      style="color: #8b5c42"
+      wx:if="{{co.txtOrImg==0&&type!=1}}"
+    ></text>
+  </view>
+</view>

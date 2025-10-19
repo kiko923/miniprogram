@@ -1,0 +1,8 @@
+<view
+  class="attAccount"
+  style="{{'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'}}"
+>
+  <view>
+    <official-account></official-account>
+  </view>
+</view>

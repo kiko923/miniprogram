@@ -1,0 +1,22 @@
+.gflb.data-v-75993e33 {
+  background-color: #fdeecf;
+}
+.icon.data-v-75993e33 {
+  width: 72rpx;
+  height: 72rpx;
+  margin: 15rpx 20rpx 0 0;
+}
+.lIcon.data-v-75993e33 {
+  left: 160rpx;
+  width: 64rpx;
+  height: 52rpx;
+}
+.RIcon.data-v-75993e33 {
+  right: 160rpx;
+  width: 64rpx;
+  height: 52rpx;
+}
+.sqzj.data-v-75993e33 {
+  width: 138rpx;
+  height: 41rpx;
+}

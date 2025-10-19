@@ -1,0 +1,137 @@
+<view
+  class="margic o-h data-v-40e8a3a2"
+  style="{{'margin:'+''+co.marginTop+u+' '+co.marginLR+u+' '+co.marginBottom+u+';'}}"
+>
+  <view class="f-row data-v-40e8a3a2" wx:if="{{co.type==1}}">
+    <view
+      bindtap="__e"
+      class="{{['bf','margi1','f-1','b-re','o-h','data-v-40e8a3a2',co.shifting>0||v.img?'b-n':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgList1','',i] ] ] ] ] ] ]}}"
+      style="{{'margin-right:'+(i!=1?co.shifting+u:'')+';'+'border-radius:'+co.circle+u+';'+'height:'+imgH+';'}}"
+      wx:if="{{i<2}}"
+      wx:for="{{co.imgList1}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <mg-img
+        bind:__l="__l"
+        class="data-v-40e8a3a2"
+        src="{{v.img}}"
+        vueId="{{'d0f4851a-1-'+i}}"
+        wx:if="{{v.img}}"
+      ></mg-img>
+    </view>
+  </view>
+  <block wx:else>
+    <view class="f-row data-v-40e8a3a2" wx:if="{{co.type==2}}">
+      <view
+        bindtap="__e"
+        class="{{['bf','margi2','f-1','b-re','o-h','data-v-40e8a3a2',co.shifting>0||v.img?'b-n':'']}}"
+        data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgList1','',i] ] ] ] ] ] ]}}"
+        style="{{'margin-right:'+(i!=2?co.shifting+u:'')+';'+'border-radius:'+co.circle+u+';'+'height:'+imgH+';'}}"
+        wx:if="{{i<3}}"
+        wx:for="{{co.imgList1}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      >
+        <mg-img
+          bind:__l="__l"
+          class="data-v-40e8a3a2"
+          src="{{v.img}}"
+          vueId="{{'d0f4851a-2-'+i}}"
+          wx:if="{{v.img}}"
+        ></mg-img>
+      </view>
+    </view>
+    <block wx:else>
+      <view class="f-row data-v-40e8a3a2" wx:if="{{co.type==3}}">
+        <view
+          bindtap="__e"
+          class="{{['bf','f-1','b-re','o-h','data-v-40e8a3a2',co.shifting>0||v.img?'b-n':'']}}"
+          data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgList1','',i] ] ] ] ] ] ]}}"
+          style="{{'margin-right:'+(i!=2?co.shifting+u:'')+';'+'border-radius:'+co.circle+u+';'}}"
+          wx:if="{{i==0}}"
+          wx:for="{{co.imgList1}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <mg-img
+            bind:__l="__l"
+            class="data-v-40e8a3a2"
+            src="{{v.img}}"
+            vueId="{{'d0f4851a-3-'+i}}"
+            wx:if="{{v.img}}"
+          ></mg-img>
+        </view>
+        <view class="f-1 f-col data-v-40e8a3a2">
+          <view
+            bindtap="__e"
+            class="{{['bf','margi2','f-1','b-be','o-h','data-v-40e8a3a2',co.shifting>0||v.img?'b-n':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgList1','',i] ] ] ] ] ] ]}}"
+            style="{{'margin-bottom:'+(i!=2?co.shifting+u:'')+';'+'border-radius:'+co.circle+u+';'+'height:'+co.height+'rpx'+';'}}"
+            wx:if="{{i>0}}"
+            wx:for="{{co.imgList1}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <mg-img
+              bind:__l="__l"
+              class="data-v-40e8a3a2"
+              src="{{v.img}}"
+              vueId="{{'d0f4851a-4-'+i}}"
+              wx:if="{{v.img}}"
+            ></mg-img>
+          </view>
+        </view>
+      </view>
+      <block wx:else>
+        <view class="data-v-40e8a3a2" wx:if="{{co.type==4}}">
+          <view
+            bindtap="__e"
+            class="{{['bf','margi1','b-be','o-h','data-v-40e8a3a2',co.shifting>0||v.img?'b-n':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgList1','',i] ] ] ] ] ] ]}}"
+            style="{{'margin-bottom:'+co.shifting+u+';'+'border-radius:'+co.circle+u+';'+'height:'+imgH+';'}}"
+            wx:if="{{i==0}}"
+            wx:for="{{co.imgList1}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <mg-img
+              bind:__l="__l"
+              class="data-v-40e8a3a2"
+              src="{{v.img}}"
+              vueId="{{'d0f4851a-5-'+i}}"
+              wx:if="{{v.img}}"
+            ></mg-img>
+          </view>
+          <view class="f-row data-v-40e8a3a2">
+            <view
+              bindtap="__e"
+              class="{{['bf','margi1','f-1','b-re','o-h','data-v-40e8a3a2',co.shifting>0||v.img?'b-n':'']}}"
+              data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgList1','',i] ] ] ] ] ] ]}}"
+              style="{{'margin-right:'+(i!=2?co.shifting+u:'')+';'+'border-radius:'+co.circle+u+';'+'height:'+imgH+';'}}"
+              wx:if="{{i>0}}"
+              wx:for="{{co.imgList1}}"
+              wx:for-index="i"
+              wx:for-item="v"
+              wx:key="i"
+            >
+              <mg-img
+                bind:__l="__l"
+                class="data-v-40e8a3a2"
+                src="{{v.img}}"
+                vueId="{{'d0f4851a-6-'+i}}"
+                wx:if="{{v.img}}"
+              ></mg-img>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </block>
+</view>

@@ -1,0 +1,13 @@
+.ggbt.data-v-7cfa47c7 {
+  padding: 1rpx 12rpx 1rpx 0;
+  font-size: 24rpx;
+  border-radius: 7rpx;
+}
+.limg.data-v-7cfa47c7 {
+  width: 80rpx;
+  height: 50rpx;
+}
+.ngr.data-v-7cfa47c7 {
+  padding: 10rpx 0rpx;
+  height: 80rpx;
+}

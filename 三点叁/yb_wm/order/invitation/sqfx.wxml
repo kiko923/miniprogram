@@ -1,0 +1,69 @@
+<view class="container pb115 data-v-75c62b8a">
+  <mg-swiper
+    bind:__l="__l"
+    class="data-v-75c62b8a"
+    co="{{swiper}}"
+    color="{{tColor}}"
+    u="rpx"
+    vueId="31bf3902-1"
+  ></mg-swiper>
+  <view class="main data-v-75c62b8a">
+    <view class="bf mainc data-v-75c62b8a">
+      <view class="p03 data-v-75c62b8a">
+        <view class="p30 f32 wei t-c data-v-75c62b8a"
+          >{{(isbj?'修改':'填写')+'资料'}}</view
+        >
+      </view>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-75c62b8a"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','name','$event',[] ],['params'] ] ] ] ]}}"
+        ht="姓名"
+        hw="130"
+        isr="1"
+        pr="请输入姓名"
+        value="{{params.name}}"
+        vueId="31bf3902-2"
+      ></mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-75c62b8a"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','tel','$event',[] ],['params'] ] ] ] ]}}"
+        ht="手机号"
+        hw="130"
+        isr="1"
+        max="{{11}}"
+        pr="请输入手机号"
+        t="number"
+        value="{{params.tel}}"
+        vueId="31bf3902-3"
+      ></mg-input>
+    </view>
+    <mg-agree
+      bind:__l="__l"
+      bind:input="__e"
+      class="data-v-75c62b8a"
+      color="{{tColor}}"
+      data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','agree','$event',[] ] ] ] ] ]}}"
+      p="13"
+      title="{{''+fxsInfo.agreementTitle}}"
+      value="{{agree}}"
+      vueId="31bf3902-4"
+    ></mg-agree>
+  </view>
+  <view class="foot-btnc posi-r mt30 data-v-75c62b8a">
+    <button
+      bindtap="__e"
+      class="foot-btn bs15 data-v-75c62b8a"
+      data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      hoverClass="btnhc"
+      loading="{{loading}}"
+      style="background: #ff4e3a"
+    >
+      提交
+    </button>
+  </view>
+</view>

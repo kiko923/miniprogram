@@ -1,0 +1,45 @@
+<view class="data-v-1d2f4ca7">
+  <view
+    class="p253 bf5 posi-f w100 l0 data-v-1d2f4ca7"
+    style="{{'top:'+ltop+';'}}"
+    wx:if="{{$root.g0}}"
+  >
+    <scroll-view
+      class="ws-n ipolcs f-y-c data-v-1d2f4ca7"
+      scrollIntoView="{{siv}}"
+      scrollX="true"
+    >
+      <bk-b
+        bind:__l="__l"
+        bind:tab="__e"
+        cName="{{'f-g-0 dis-in mr20 bs60 '+(i!=laidx&&'c3')}}"
+        class="data-v-1d2f4ca7"
+        color="{{i==laidx?tColor:'#F1F2F3'}}"
+        data-event-opts="{{[ [ '^tab',[ [ 'lTab',[i] ] ] ] ]}}"
+        id="{{'l'+i}}"
+        sname="{{snameData}}"
+        t="{{v}}"
+        vueId="{{'4e3fea00-1-'+i}}"
+        wx:for="{{labelarr}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+      ></bk-b>
+    </scroll-view>
+  </view>
+  <view class="{{['data-v-1d2f4ca7',hasLabel?'ipomt':'']}}">
+    <my-order
+      bind:__l="__l"
+      bind:operation="__e"
+      class="data-v-1d2f4ca7"
+      co="{{v}}"
+      data-event-opts="{{[ [ '^operation',[ ['operation'] ] ] ]}}"
+      otype="{{otype}}"
+      vueId="{{'4e3fea00-2-'+i}}"
+      wx:for="{{datalist}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    ></my-order>
+  </view>
+</view>

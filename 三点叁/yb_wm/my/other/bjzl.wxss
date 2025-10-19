@@ -1,0 +1,16 @@
+.maint.data-v-7dfa5098 {
+  padding: 50rpx 0;
+}
+.timg.data-v-7dfa5098 {
+  width: 220rpx;
+  height: 220rpx;
+}
+.avatar-wrapper.data-v-7dfa5098 {
+  padding: 0;
+}
+.foot-btnc.data-v-7dfa5098 {
+  padding: 40rpx;
+}
+.foot-btn.data-v-7dfa5098 {
+  height: 102rpx;
+}

@@ -1,0 +1,25 @@
+.sltop.data-v-4935406d {
+  height: 330rpx;
+}
+.olbd.data-v-4935406d {
+  margin-top: -200rpx;
+}
+.obtn.data-v-4935406d {
+  margin: 0 25rpx 0 0;
+}
+.ydhx.data-v-4935406d {
+  width: 60rpx;
+  margin-bottom: 30rpx;
+  border-top: 4rpx dotted #999;
+}
+.dtanc.data-v-4935406d {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.hgc.data-v-4935406d {
+  top: 30rpx;
+  left: 30rpx;
+  padding: 3rpx 12rpx;
+  border-radius: 0 0 15rpx 0;
+}

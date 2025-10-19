@@ -1,0 +1,64 @@
+<view
+  class="titles o-h data-v-30160810"
+  style="{{'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'+'border-radius:'+co.circle+u+';'}}"
+>
+  <view
+    class="titles-c f-y-c data-v-30160810"
+    style="{{'background:'+co.colorBg+';'}}"
+  >
+    <view
+      bindtap="__e"
+      class="f-1 data-v-30160810"
+      data-event-opts="{{[ [ 'tap',[ [ 'goLink',['/yb_wm/my/integral/my-integral'] ] ] ] ]}}"
+      wx:if="{{co.type==2}}"
+    >
+      <view class="wei data-v-30160810">
+        <text class="f24 data-v-30160810"
+          >{{'我的'+(system.custom.integral||'积分')+''}}</text
+        >
+        <text class="ml10 f38 data-v-30160810"
+          >{{isLogin?user.integral:'***'}}</text
+        >
+      </view>
+      <view class="f24 c9 l-n mt10 data-v-30160810">{{co.upLoad1.text}}</view>
+    </view>
+    <view
+      bindtap="__e"
+      class="f-1 data-v-30160810"
+      data-event-opts="{{[ [ 'tap',[ [ 'goLink',['/yb_wm/other/recharge/yesy'] ] ] ] ]}}"
+      wx:else
+    >
+      <view class="wei data-v-30160810">
+        <text class="f24 data-v-30160810">我的余额</text>
+        <text class="ml10 f38 data-v-30160810"
+          >{{isLogin?user.balance:'***'}}</text
+        >
+      </view>
+      <view class="f24 c9 l-n mt10 data-v-30160810">{{co.upLoad1.text}}</view>
+    </view>
+    <view
+      bindtap="__e"
+      class="blf9 data-v-30160810"
+      data-event-opts="{{[ [ 'tap',[ [ 'goLink',['/yb_wm/other/recharge/smzf'] ] ] ] ]}}"
+      wx:if="{{isLogin}}"
+    >
+      <view class="img ml10 data-v-30160810">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-30160810"
+          src="/static/hym.png"
+          vueId="ae4859d4-1"
+        ></mg-img>
+      </view>
+      <view class="f24 c9 mt10 data-v-30160810">会员码</view>
+    </view>
+    <view class="blf9 data-v-30160810" wx:else>
+      <view
+        bindtap="__e"
+        class="text-btn bs30 f24 p0 c3 f-c data-v-30160810"
+        data-event-opts="{{[ [ 'tap',[ [ 'ljdl',['$event'] ] ] ] ]}}"
+        >登录/注册</view
+      >
+    </view>
+  </view>
+</view>

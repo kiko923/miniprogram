@@ -1,0 +1,19 @@
+<view
+  bindtap="__e"
+  class="search data-v-e2c7a822"
+  data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$event'] ] ] ] ]}}"
+  style="{{'background:'+''+co.colorBg+';'}}"
+>
+  <view
+    class="{{['searchbd','data-v-e2c7a822',co.wordStatus=='center'?'f-c':'']}}"
+    style="{{'margin:'+''+co.marginTop+u+' '+co.marginLR+u+' '+co.marginBottom+u+';'+'border-radius:'+''+co.circle+u+';'+'background:'+''+co.colorInput+';'}}"
+  >
+    <text
+      class="iconfont iconsearch mr10 data-v-e2c7a822"
+      style="{{'color:'+''+co.colorWord+';'}}"
+    ></text>
+    <text class="f24 data-v-e2c7a822" style="{{'color:'+''+co.colorWord+';'}}"
+      >{{co.text}}</text
+    >
+  </view>
+</view>

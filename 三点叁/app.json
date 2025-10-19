@@ -1,0 +1,159 @@
+{
+  "pages": [
+    "yb_wm/index/index",
+    "yb_wm/index/my-index",
+    "yb_wm/index/order-index",
+    "yb_wm/index/goods"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#ffffff",
+    "borderStyle": "white",
+    "backgroundColor": "#F5F5F5",
+    "fontSize": "16px",
+    "iconWidth": "30px",
+    "list": [
+      {
+        "pagePath": "yb_wm/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "yb_wm/index/goods",
+        "text": "点单"
+      },
+      {
+        "pagePath": "yb_wm/index/order-index",
+        "text": "订单"
+      },
+      {
+        "pagePath": "yb_wm/index/my-index",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "yb_wm/order/",
+      "pages": [
+        "order-dl",
+        "pl",
+        "pl-list",
+        "jd",
+        "coupon-bag/list",
+        "other/smjh",
+        "other/custom",
+        "payvip/index",
+        "vip/wkk",
+        "vip/open",
+        "vip/czz",
+        "coupon-bag/qbxq",
+        "coupon-bag/gmjl",
+        "coupon-bag/qrdd",
+        "invitation/yqyl",
+        "invitation/yx-wdfs",
+        "invitation/fxzx",
+        "invitation/tx",
+        "invitation/txmx",
+        "invitation/sqfx",
+        "invitation/syxq",
+        "invitation/wdfs"
+      ]
+    },
+    {
+      "root": "yb_wm/other/",
+      "pages": [
+        "mg-pay",
+        "recharge/index",
+        "recharge/yemx",
+        "recharge/yesy",
+        "recharge/smzf",
+        "info/index",
+        "info/detail",
+        "live-list",
+        "hb",
+        "rwzx",
+        "scyl",
+        "sq-login",
+        "zfyl",
+        "web-view",
+        "zrdf",
+        "fqdf"
+      ]
+    },
+    {
+      "root": "yb_wm/shop/",
+      "pages": [
+        "out/bz",
+        "out/pay-order",
+        "out/sjjs",
+        "in/dmf",
+        "in/syorder-dl",
+        "in/goods",
+        "in/car",
+        "in/pay-order",
+        "in/indd",
+        "in/order-dl",
+        "in/goods-dl",
+        "ffmode/goods",
+        "ffmode/pay-order",
+        "ffmode/order-dl",
+        "out/goods-dl",
+        "select/index",
+        "search/out",
+        "select/select",
+        "storage/index",
+        "storage/list",
+        "lineup/pdqh",
+        "lineup/pdxq",
+        "reserve/index",
+        "reserve/ljyy",
+        "reserve/yyxq",
+        "gfhb/gfhb",
+        "gfhb/gflb"
+      ]
+    },
+    {
+      "root": "yb_wm/my/",
+      "pages": [
+        "address/index",
+        "address/address",
+        "coupon/my",
+        "coupon/center",
+        "coupon/coupon-dl",
+        "coupon/use-coupon",
+        "coupon/dh",
+        "integral/shop-index",
+        "integral/details",
+        "integral/my-integral",
+        "integral/integral-record",
+        "integral/order-dl",
+        "signin/index",
+        "signin/my-signin",
+        "signin/my-coupon",
+        "other/bjzl",
+        "other/kfz",
+        "other/kf",
+        "other/gywm",
+        "other/gywmtwo",
+        "other/bzzx",
+        "other/collection",
+        "other/ptxx"
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation"
+  ]
+}

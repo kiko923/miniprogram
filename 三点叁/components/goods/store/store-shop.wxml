@@ -1,0 +1,59 @@
+<mg-popup
+  bind:__l="__l"
+  bind:input="__e"
+  class="data-v-0f52476c"
+  data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+  value="{{show}}"
+  vueId="73c77322-1"
+  vueSlots="{{['default']}}"
+  zIndex="{{5000}}"
+>
+  <view class="gdmdxx o-y-s bf7 data-v-0f52476c">
+    <view class="p-r f32 c0 wei t-c tit data-v-0f52476c">
+      <text class="f32 nowei c3 data-v-0f52476c">请确认门店信息</text>
+    </view>
+    <view class="flex f-y-c data-v-0f52476c">
+      <view class="f32 wei data-v-0f52476c">{{co.shopData.name}}</view>
+      <view class="ml20 f24 c9 data-v-0f52476c" wx:if="{{storeInfo.distance}}"
+        >{{'距离您'+storeInfo.distance}}</view
+      >
+    </view>
+    <view class="flex f-c pb30 mt10 data-v-0f52476c">
+      <view class="f-1 data-v-0f52476c">
+        <view class="f24 c6 mt10 data-v-0f52476c">
+          <text class="iconfont iconlocation mr10 f24 data-v-0f52476c"></text
+          >{{co.shopData.address}}</view
+        >
+        <view class="f24 c6 mt10 ml32 data-v-0f52476c"
+          >{{'门店电话:'+co.shopData.storeTel}}</view
+        >
+      </view>
+      <view class="f-0 data-v-0f52476c">
+        <view
+          bindtap="__e"
+          class="text-btnf f24 f-c qhbtn c3 data-v-0f52476c"
+          data-event-opts="{{[ [ 'tap',[ [ 'selectShop',['$event'] ] ] ] ]}}"
+          >切换</view
+        >
+      </view>
+    </view>
+    <view class="flex p30 mt20 data-v-0f52476c">
+      <button
+        bindtap="__e"
+        class="f-c shopbtn data-v-0f52476c"
+        data-event-opts="{{[ [ 'tap',[ [ 'selectShop',['$event'] ] ] ] ]}}"
+        style="{{'background:'+'transparent'+';'+'border:'+'1px solid '+tColor+';'+'color:'+tColor+';'}}"
+      >
+        更换门店
+      </button>
+      <button
+        bindtap="__e"
+        class="cf shopbtn data-v-0f52476c"
+        data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+      >
+        确定
+      </button>
+    </view>
+  </view>
+</mg-popup>

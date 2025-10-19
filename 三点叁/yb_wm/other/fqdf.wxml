@@ -1,0 +1,63 @@
+<view class="h100 data-v-328e0e8d">
+  <view class="data-v-328e0e8d">
+    <view class="cf p-r data-v-328e0e8d" style="{{'background:'+tColor+';'}}">
+      <view class="rwimg data-v-328e0e8d">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-328e0e8d"
+          m="aspectFit"
+          src="{{payConfig.icon&&payConfig.icon}}"
+          vueId="6bfa8f6e-1"
+        ></mg-img>
+      </view>
+      <view class="p-a dftxt f32 data-v-328e0e8d"
+        >{{payConfig&&payConfig.help}}</view
+      >
+    </view>
+    <view class="zlbd p-r o-h data-v-328e0e8d">
+      <view class="bf p3 f24 c9 bs10 f-c data-v-328e0e8d">
+        <view class="data-v-328e0e8d">代付金额</view>
+      </view>
+      <view class="bf p3 f24 c9 data-v-328e0e8d">
+        <view class="paymoeny wei f50 cf0 f-c data-v-328e0e8d">
+          <text class="data-v-328e0e8d">{{sl}}</text>
+          <text class="cf0 data-v-328e0e8d">{{pmoney}}</text>
+        </view>
+        <view class="f26 djsc f-c data-v-328e0e8d" wx:if="{{info}}"
+          >剩余支付时间：<text class="ml10 data-v-328e0e8d" wx:if="{{stime}}"
+            >{{stime[2]+':'+stime[3]}}</text
+          >
+        </view>
+      </view>
+    </view>
+    <view class="mt20 p20 bf data-v-328e0e8d">
+      <view class="f24 c9 p253 data-v-328e0e8d">代付说明:</view>
+      <view class="p03 f22 c9 data-v-328e0e8d"
+        >1、对方需要开通微信支付才能帮你付款，如未开通，请重新选择好友发送；</view
+      >
+      <view class="p03 f22 c9 data-v-328e0e8d"
+        >2、如果你将来退款了，钱将退还到好友的微信账户里</view
+      >
+    </view>
+    <view class="foot-btnc data-v-328e0e8d">
+      <button
+        bindtap="__e"
+        class="foot-btn b-s-2 f30 wei data-v-328e0e8d"
+        data-event-opts="{{[ [ 'tap',[ [ 'fqdf',['$event'] ] ] ] ]}}"
+        formType="submit"
+        style="{{'background:'+tColor+';'}}"
+      >
+        发送代付请求
+      </button>
+    </view>
+  </view>
+  <mg-share
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-328e0e8d"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','shareshow','$event',[] ] ] ] ] ]}}"
+    value="{{shareshow}}"
+    vueId="6bfa8f6e-2"
+    wxs="1"
+  ></mg-share>
+</view>

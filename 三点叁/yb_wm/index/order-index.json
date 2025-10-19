@@ -1,0 +1,18 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/components/third/uni-nav-bar",
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "my-order": "/yb_wm/index/components/my-order",
+    "dn-order": "/yb_wm/index/components/dn-order",
+    "jzz": "/components/common/jzz",
+    "tab-bar": "/components/common/tabbar",
+    "mg-modal": "/components/common/modal",
+    "mg-coupon": "/components/common/mg-coupon",
+    "mg-cell": "/components/common/mg-cell",
+    "mg-popup": "/components/common/popup",
+    "mg-radio": "/components/form/mg-radio",
+    "footc": "/components/common/footc",
+    "mg-img": "/components/common/mg-img"
+  }
+}

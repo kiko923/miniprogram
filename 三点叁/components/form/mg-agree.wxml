@@ -1,0 +1,38 @@
+<view class="{{['bf','p23','p-r','data-v-9daa40b8',cname]}}">
+  <checkbox-group
+    bindchange="__e"
+    class="data-v-9daa40b8"
+    data-event-opts="{{[ [ 'change',[ [ 'checkboxChange',['$event'] ] ] ] ]}}"
+  >
+    <label class="f-y-c data-v-9daa40b8">
+      <block wx:if="{{type==1}}">
+        <checkbox
+          checked="{{cbVal}}"
+          class="weui-check data-v-9daa40b8"
+        ></checkbox>
+        <text
+          class="{{['iconfont','mr10','data-v-9daa40b8',cbVal?'icongx':'iconwgx']}}"
+          style="{{'color:'+(cbVal?color:'')+';'}}"
+        ></text>
+        <view class="data-v-9daa40b8">阅读并同意</view>
+        <navigator
+          class="weui-agree__link data-v-9daa40b8"
+          style="{{'color:'+color+';'}}"
+          url="{{'/yb_wm/my/other/gywm?t='+title+'&p='+p}}"
+          >{{'《'+title+'》'}}</navigator
+        >
+      </block>
+      <block wx:else>
+        <checkbox
+          checked="{{cbVal}}"
+          class="weui-check data-v-9daa40b8"
+        ></checkbox>
+        <text
+          class="{{['iconfont','mr10','data-v-9daa40b8',cbVal?'icongx':'icongx']}}"
+          style="{{'color:'+(cbVal?color:'')+';'}}"
+        ></text>
+        <view class="c9 f24 data-v-9daa40b8">{{title}}</view>
+      </block>
+    </label>
+  </checkbox-group>
+</view>

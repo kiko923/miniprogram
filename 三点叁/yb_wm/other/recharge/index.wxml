@@ -1,0 +1,73 @@
+<view class="mh100 pb130 data-v-b5f0d0a4" hidden="{{!(system.color&&recharge.open==1)}}">
+    <view class="remain data-v-b5f0d0a4">
+        <view class="topc p-r data-v-b5f0d0a4" style="{{'background:'+tColor+';'}}">
+            <view class="rwimg p-a r0 data-v-b5f0d0a4">
+                <mg-img bind:__l="__l" class="data-v-b5f0d0a4" m="aspectFit" src="{{onImgurl+'/czbg.png'}}" vueId="7d4d3f8c-1"></mg-img>
+            </view>
+            <view class="f-y-c p-r data-v-b5f0d0a4">
+                <view class="img mr30 data-v-b5f0d0a4">
+                    <mg-img bind:__l="__l" class="data-v-b5f0d0a4" cname="bsf" src="{{user.portrait||'/static/wd/mrtx.png'}}" vueId="7d4d3f8c-2"></mg-img>
+                </view>
+                <view class="cf data-v-b5f0d0a4" wx:if="{{rule.money>-1}}">
+                    <view class="data-v-b5f0d0a4">{{system.custom.balance+'：'+sl+rule.money}}</view>
+                    <view bindtap="__e" class="f-y-c cf mt10 f24 data-v-b5f0d0a4" data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','yemx?idx=1'] ] ] ] ] ] ]}}">交易记录<text class="iconfont iconright ml5 cf f28 data-v-b5f0d0a4"></text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="bdc o-h bf p-r data-v-b5f0d0a4">
+            <view class="f-bt mt20 c3  data-v-b5f0d0a4" wx:if="{{recharge.selectopen=='1'}}">
+                <view class="f-g-0 data-v-b5f0d0a4">选择门店</view>
+                <view bindtap="__e" class="f-g-1 t-o-e f-x-e data-v-b5f0d0a4" data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['number'] ] ] ] ]}}" wx:if="{{params.peopleText}}">{{params.peopleText}}</view>
+                <view bindtap="__e" class="f-g-1 f-x-e data-v-b5f0d0a4" data-event-opts="{{[ [ 'tap',[ [ 'toggleTab',['number'] ] ] ] ]}}" wx:else>请选择 ></view>
+            </view>
+            <view class="f-bt f-w data-v-b5f0d0a4">
+                <view bindtap="__e" class="ckic p02 bs15 bf5 f-col data-v-b5f0d0a4" data-event-opts="{{[ [ 'tap',[ [ 'change',[i] ] ] ] ]}}" style="{{'background:'+(aIdx==i?'#fff':'')+';'+'box-shadow:'+(aIdx==i?'none':'')+';'+'border-color:'+(aIdx==i?tColor:'')+';'+'color:'+(aIdx==i?tColor:'')+';'}}" wx:for="{{$root.l0}}" wx:for-index="i" wx:for-item="v" wx:key="i">
+                    <view class="f-1 f-c data-v-b5f0d0a4">
+                        <view class="{{['f42','data-v-b5f0d0a4',aIdx==i?'f48 wei':'']}}">{{v.m0}}</view>
+                        <view class="{{['ml15','mt10','f20','data-v-b5f0d0a4',aIdx==i?'f30':'']}}">{{dw}}</view>
+                    </view>
+                    <view class="hx ma data-v-b5f0d0a4" style="{{'background:'+(aIdx==i?tColor:'')+';'}}"></view>
+                    <view class="f-1 f-c-c f20 data-v-b5f0d0a4">
+                        <view class="data-v-b5f0d0a4" wx:if="{{v.g0}}">{{'赠送:'+v.$orig.giveMoney+dw}}</view>
+                        <view class="t-o-e data-v-b5f0d0a4" wx:if="{{v.g1}}">{{'赠送'+v.$orig.integral+jfName}}</view>
+                        <view class="data-v-b5f0d0a4" wx:if="{{v.g2}}">{{'赠送:'+v.$orig.giveGrow+'成长值'}}</view>
+                        <view class="data-v-b5f0d0a4" wx:if="{{v.g3}}">赠送优惠券</view>
+                    </view>
+                </view>
+                <view bindtap="__e" class="ckic p02 bs15 bf5 f-col data-v-b5f0d0a4" data-event-opts="{{[ [ 'tap',[ [ 'change',[-1] ] ] ] ]}}" style="{{'background:'+(aIdx==-1?'#fff':'')+';'+'box-shadow:'+(aIdx==-1?'none':'')+';'+'border-color:'+(aIdx==-1?tColor:'')+';'+'color:'+(aIdx==-1?tColor:'')+';'}}" wx:if="{{recharge.moneyOpen==1}}">
+                    <view class="f-1 f-c data-v-b5f0d0a4">
+                        <input bindinput="__e" class="{{['f42','srk','t-c','bt','data-v-b5f0d0a4',aIdx==-1?'f48 wei':'']}}" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','money','$event',[] ] ] ] ] ]}}" focus="{{focus}}" maxlength="6" placeholder="请输入" placeholderClass="f30 t-c" type="digit" value="{{money}}"></input>
+                        <view class="{{['f20','data-v-b5f0d0a4',aIdx==-1?'f30':'']}}">{{dw}}</view>
+                    </view>
+                    <view class="hx ma data-v-b5f0d0a4" style="{{'background:'+(aIdx==-1?tColor:'')+';'}}"></view>
+                    <view class="f-1 f-c-c f20 data-v-b5f0d0a4">
+                        <view class="data-v-b5f0d0a4">其他金额</view>
+                    </view>
+                </view>
+            </view>
+            <view class="bs30 reqnr f24 c6 data-v-b5f0d0a4" style="{{'background:'+'rgba('+$root.m1+',0.2)'+';'}}" wx:if="{{aIdx!=-1}}">
+                <view class="data-v-b5f0d0a4" wx:if="{{xzrule.moneyOpen==1}}">{{'赠送：'+xzrule.giveMoney+dw}}</view>
+                <view class="t-o-e data-v-b5f0d0a4" wx:if="{{xzrule.integralOpen==1}}">{{'赠送：'+xzrule.integral+jfName}}</view>
+                <view class="data-v-b5f0d0a4" wx:if="{{xzrule.growOpen==1}}">{{'赠送：'+xzrule.giveGrow+'成长值'}}</view>
+                <view class="f-row data-v-b5f0d0a4" wx:if="{{xzrule.couponOpen==1}}">
+                    <view class="f-g-0 data-v-b5f0d0a4">赠送：</view>
+                    <view class="data-v-b5f0d0a4">
+                        <view class="f-row data-v-b5f0d0a4" wx:for="{{xzrule.couponArr}}" wx:for-index="i" wx:for-item="v" wx:key="i">
+                            <view class="data-v-b5f0d0a4">{{v.name}}</view>
+                            <view class="ml10 f-g-0 data-v-b5f0d0a4">x 1</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="mt30 data-v-b5f0d0a4">
+                <view class="mb10 wei f30 data-v-b5f0d0a4">使用说明</view>
+                <mg-rtext bind:__l="__l" class="data-v-b5f0d0a4" content="{{recharge.details}}" type="2" vueId="7d4d3f8c-3"></mg-rtext>
+            </view>
+        </view>
+        <view class="foot-btnc cf f30 f-c bf data-v-b5f0d0a4">
+            <button bindtap="__e" class="foot-btn bs15 f30 data-v-b5f0d0a4" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}" disabled="{{loading}}" hoverClass="btnhc" loading="{{loading}}" style="{{'background:'+tColor+';'}}">立即储值</button>
+        </view>
+    </view>
+    <w-picker bind:__l="__l" bind:confirm="__e" class="data-v-b5f0d0a4 vue-ref" data-event-opts="{{[ [ '^confirm',[ [ 'onConfirm',['$event','people'] ] ] ] ]}}" data-ref="number" mode="selector" selectList="{{pArr}}" vueId="7d4d3f8c-4"></w-picker>
+</view>

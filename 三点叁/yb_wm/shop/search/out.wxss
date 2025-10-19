@@ -1,0 +1,31 @@
+.scl.data-v-e442dfba {
+  height: 66rpx;
+  border-radius: 35rpx;
+}
+.lstag.data-v-e442dfba {
+  padding: 16rpx 26rpx;
+  border-radius: 50rpx;
+  line-height: 28rpx;
+}
+.okzt.data-v-e442dfba {
+  width: 35rpx;
+  height: 35rpx;
+  font-size: 24rpx;
+  margin-left: 10rpx;
+  border-radius: 5rpx;
+}
+.wai.data-v-e442dfba {
+  color: #ec9c1f;
+  background: #fff3e3;
+}
+.pai.data-v-e442dfba {
+  color: #35b0a5;
+  background: #ddfafe;
+}
+.mai.data-v-e442dfba {
+  color: #dc5338;
+  background: #ffedea;
+}
+.m05.data-v-e442dfba {
+  margin: 0 8rpx;
+}

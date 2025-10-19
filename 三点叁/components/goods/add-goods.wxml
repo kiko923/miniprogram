@@ -1,0 +1,69 @@
+<view class="{{['f-x-bt','data-v-ad94365a',cname]}}">
+  <view
+    class="{{['f-g-1','wei','t-o-e','data-v-ad94365a',pcname,'cf0a']}}"
+    wx:if="{{isprice}}"
+  >
+    <text class="f26 mr5 data-v-ad94365a">{{sl}}</text
+    >{{(co.activityGoodData.type<1||co.activityGoodData.type>=4?co.price:co.activityGoodData.activityMoney)+''}}<text
+      class="nowei c9 f24 data-v-ad94365a"
+      wx:if="{{isunit}}"
+      >{{'/'+co.unit}}</text
+    >
+    <text class="t-d-l nowei ml10 c9 f24 data-v-ad94365a" wx:if="{{isyprice}}"
+      >{{sl+co.price}}</text
+    >
+  </view>
+  <view
+    catchtap="__e"
+    class="f-g-0 cartggc f-c data-v-ad94365a"
+    data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+    wx:if="{{(co.isSpecs==1||co.isMaterial==1||co.isAttr==1)&&showspec}}"
+  >
+    <view
+      class="text-btnf f22 f-c ggc data-v-ad94365a"
+      style="{{'background:'+(isClose?color||tColor:'#ccc')+';'}}"
+    >
+      <text class="data-v-ad94365a">选 择</text>
+      <text
+        class="dot f-c data-v-ad94365a"
+        style="{{'background:'+(isClose?color||tColor:'#ccc')+';'}}"
+        wx:if="{{co.num>0}}"
+        >{{co.num}}</text
+      >
+    </view>
+  </view>
+  <block wx:else>
+    <view class="f-g-0 f-bt data-v-ad94365a" wx:if="{{showjj}}">
+      <view class="reducecon active f-y-c data-v-ad94365a" wx:if="{{co.num>0}}">
+        <view
+          catchtap="__e"
+          class="cartc f-c data-v-ad94365a"
+          data-event-opts="{{[ [ 'tap',[ [ 'e1',['$event'] ] ] ] ]}}"
+        >
+          <button
+            class="cartdec data-v-ad94365a"
+            style="{{'border-color:'+(color||tColor)+';'}}"
+          >
+            <view
+              class="cartdecab data-v-ad94365a"
+              style="{{'background:'+(isClose?color||tColor:'#ccc')+';'}}"
+            ></view>
+          </button>
+        </view>
+        <text class="{{['f26','ma','c0','data-v-ad94365a',numc]}}"
+          >{{co.num}}</text
+        >
+      </view>
+      <view
+        catchtap="__e"
+        class="cartc f-c data-v-ad94365a"
+        data-event-opts="{{[ [ 'tap',[ [ 'e2',['$event'] ] ] ] ]}}"
+      >
+        <button
+          class="cartadd data-v-ad94365a"
+          style="{{'background:'+(isClose?color||tColor:'#ccc')+';'}}"
+        ></button>
+      </view>
+    </view>
+  </block>
+</view>

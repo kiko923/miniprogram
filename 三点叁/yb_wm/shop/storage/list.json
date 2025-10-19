@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "jzz": "/components/common/jzz",
+    "tab-bar": "/components/common/tabbar",
+    "bk-b": "/components/common/block-b",
+    "mg-cell": "/components/common/mg-cell",
+    "mg-modal": "/components/common/modal",
+    "mg-input": "/components/form/mg-input",
+    "mg-img": "/components/common/mg-img"
+  }
+}

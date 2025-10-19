@@ -1,0 +1,24 @@
+<view
+  class="card data-v-5e459e6d"
+  style="{{'margin-top:'+styles.marginTop+'px'+';'+'margin-bottom:'+styles.marginBottom+'px'+';'}}"
+>
+  <view class="data-v-5e459e6d" style="{{'background:'+styles.colorBg+';'}}">
+    <v-tabs
+      activeColor="{{styles.colorSelect}}"
+      bind:__l="__l"
+      bind:change="__e"
+      bind:input="__e"
+      bold="{{false}}"
+      class="data-v-5e459e6d"
+      color="{{styles.colorWord}}"
+      data-event-opts="{{[ [ '^change',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','current','$event',[] ] ] ] ] ]}}"
+      field="name"
+      lineColor="{{styles.colorSelect}}"
+      lineHeight="5rpx"
+      style="{{'margin-right:'+styles.marginRight+'px'+';'}}"
+      tabs="{{styles.cardList}}"
+      value="{{current}}"
+      vueId="2c177626-1"
+    ></v-tabs>
+  </view>
+</view>

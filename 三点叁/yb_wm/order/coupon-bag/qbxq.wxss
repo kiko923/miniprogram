@@ -1,0 +1,21 @@
+.foot-btnc.data-v-9b61d1ce {
+  padding: 30rpx 40rpx;
+}
+.qbbtn.data-v-9b61d1ce {
+  box-shadow: 0rpx 10rpx 30rpx 8rpx rgba(0, 0, 0, 0.18);
+  height: 96rpx;
+  border-radius: 48rpx;
+}
+.ljgm.data-v-9b61d1ce {
+  width: 230rpx;
+}
+.yd.data-v-9b61d1ce {
+  margin: 15rpx 12rpx 0 8rpx;
+  background: #333;
+  width: 10rpx;
+  height: 10rpx;
+}
+.sjlogo.data-v-9b61d1ce {
+  width: 42rpx;
+  height: 42rpx;
+}

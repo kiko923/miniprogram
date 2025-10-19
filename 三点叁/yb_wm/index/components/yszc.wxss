@@ -1,0 +1,29 @@
+.dlb.data-v-9bfba510 {
+  position: absolute;
+  top: -285rpx;
+}
+.sbtn.data-v-9bfba510 {
+  width: 540rpx;
+  height: 74rpx;
+  background: linear-gradient(-90deg, #e95700, #e95700);
+  border-radius: 47px;
+}
+.sbtn2.data-v-9bfba510 {
+  height: 80rpx;
+}
+.ysbtn.data-v-9bfba510 {
+  background: #999;
+  color: #fff;
+}
+.qdsbtn.data-v-9bfba510 {
+  background: linear-gradient(-90deg, #e95700, #e95700);
+}
+.p-a-yc.data-v-9bfba510 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.p-a-c.data-v-9bfba510 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

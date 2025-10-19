@@ -1,0 +1,41 @@
+<view class="mh100 pb115 data-v-68d6188d">
+  <view
+    bindtap="__e"
+    class="weui-cell f-sh data-v-68d6188d"
+    data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/other/info/detail?id='+v.$orig.id] ] ] ] ] ] ]}}"
+    wx:for="{{$root.l0}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  >
+    <view class="f-1 f-y-bt data-v-68d6188d">
+      <view class="data-v-68d6188d">
+        <view class="f26 t-o-e data-v-68d6188d">{{v.$orig.title}}</view>
+        <view
+          class="f24 t-o-e c9 data-v-68d6188d"
+          wx:if="{{v.$orig.introduction}}"
+          >{{v.$orig.introduction}}</view
+        >
+      </view>
+      <view class="c9 f24 l-n data-v-68d6188d">{{v.m0}}</view>
+    </view>
+    <view class="img ml30 bs10 data-v-68d6188d">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-68d6188d"
+        src="{{v.$orig.icon}}"
+        vueId="{{'00fdf9b6-1-'+i}}"
+      ></mg-img>
+    </view>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-68d6188d"
+    imgn="zwjf"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="00fdf9b6-2"
+  ></jzz>
+  <tab-bar bind:__l="__l" class="data-v-68d6188d" vueId="00fdf9b6-3"></tab-bar>
+</view>

@@ -1,0 +1,35 @@
+.swiper-v.data-v-c9d8e0bc {
+  width: 100%;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.swiper-imgv.data-v-c9d8e0bc {
+  margin-top: 15rpx;
+  width: 88rpx;
+  height: 88rpx;
+}
+.swiper-tv.data-v-c9d8e0bc {
+  font-size: 24rpx;
+  width: 100%;
+  text-align: center;
+}
+.swiper-fbt.data-v-c9d8e0bc {
+  top: 5rpx;
+  right: -5rpx;
+  padding: 0rpx 10rpx;
+  font-size: 18rpx;
+}
+.dbbtnc.data-v-c9d8e0bc {
+  height: 100rpx;
+}
+.smc.data-v-c9d8e0bc {
+  padding: 100rpx 40rpx 30rpx;
+}
+.smimg.data-v-c9d8e0bc {
+  width: 190rpx;
+  height: 190rpx;
+}
+.foot-btn.data-v-c9d8e0bc {
+  height: 84rpx;
+  line-height: 84rpx;
+}

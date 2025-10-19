@@ -1,0 +1,40 @@
+.topimg.data-v-0393e547 {
+  height: 100vw;
+}
+.logoc.data-v-0393e547 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 166rpx;
+  height: 166rpx;
+}
+.snbtnc.data-v-0393e547 {
+  margin-top: 95rpx;
+}
+.btni.data-v-0393e547 {
+  margin: 0 19.5% 50rpx;
+  border: 1px solid #000;
+  height: 80rpx;
+  border-radius: 80rpx;
+}
+.avatar-wrapper.data-v-0393e547 {
+  padding: 0;
+  width: 70px !important;
+  border-radius: 50%;
+}
+.avatar.data-v-0393e547 {
+  display: block;
+  width: 70px;
+  height: 70px;
+}
+.sbtn.data-v-0393e547 {
+  height: 74rpx;
+  background: #ededed;
+  border-radius: 47px;
+}
+.sbtn2.data-v-0393e547 {
+  height: 74rpx;
+}
+.sbtn1.data-v-0393e547 {
+  color: #9b9b9b;
+}

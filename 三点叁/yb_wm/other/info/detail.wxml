@@ -1,0 +1,21 @@
+<view class="bf p23 data-v-d7bea48e">
+  <block wx:if="{{co.id}}">
+    <view class="f40 wei data-v-d7bea48e">{{co.title}}</view>
+    <view class="p20 c9 f-raw f24 data-v-d7bea48e">
+      <view class="yc bs5 c9 f22 mr20 data-v-d7bea48e" wx:if="{{co.storeName}}"
+        >{{co.storeName}}</view
+      >
+      <view class="mr20 data-v-d7bea48e">{{$root.m0}}</view>
+      <view class="t-o-e mr20 data-v-d7bea48e">{{'浏览量:'+co.views}}</view>
+    </view>
+    <view class="mt15 data-v-d7bea48e">
+      <mg-rtext
+        bind:__l="__l"
+        class="data-v-d7bea48e"
+        content="{{co.body}}"
+        type="2"
+        vueId="629f2594-1"
+      ></mg-rtext>
+    </view>
+  </block>
+</view>

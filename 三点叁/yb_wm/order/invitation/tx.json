@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "mg-rtext": "/components/common/functionCmp/rich-text",
+    "mg-popup": "/components/common/popup",
+    "mg-img": "/components/common/mg-img",
+    "mg-input": "/components/form/mg-input",
+    "tab-bar": "/components/common/tabbar",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

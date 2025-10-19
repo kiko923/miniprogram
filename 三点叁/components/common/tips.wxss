@@ -1,0 +1,28 @@
+.tipsc.data-v-47e064b7 {
+  position: fixed;
+  background: #fff;
+  z-index: 10;
+  width: 450rpx;
+  padding: 20rpx;
+  top: 30rpx;
+  right: 20rpx;
+  border-radius: 8rpx;
+  box-shadow: 0 0rpx 10rpx 7rpx #d1d1d1;
+}
+.tipx.data-v-47e064b7 {
+  background: #e8e8e8;
+  width: 40rpx;
+  height: 40rpx;
+}
+.f14.data-v-47e064b7 {
+  font-size: 14rpx;
+}
+.triangle-up.data-v-47e064b7 {
+  top: -20rpx;
+  right: 100rpx;
+  width: 0;
+  height: 0;
+  border-left: 15rpx solid transparent;
+  border-right: 15rpx solid transparent;
+  border-bottom: 20rpx solid #fff;
+}

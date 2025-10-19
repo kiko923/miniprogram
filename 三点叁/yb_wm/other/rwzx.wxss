@@ -1,0 +1,15 @@
+.rwtop.data-v-3caeef90 {
+  padding: 110rpx 40rpx;
+}
+.b-s.data-v-3caeef90 {
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.1);
+}
+.qwc.data-v-3caeef90 {
+  background: #f44;
+  padding: 5rpx 25rpx;
+  border-radius: 50rpx;
+}
+.cell.data-v-3caeef90:after {
+  left: 160rpx;
+  right: 30rpx;
+}

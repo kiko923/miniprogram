@@ -1,0 +1,173 @@
+<view class="h100 data-v-18dcc0a4">
+  <view class="rwimg p-f l0 wh data-v-18dcc0a4">
+    <mg-img
+      bind:__l="__l"
+      class="data-v-18dcc0a4"
+      src="{{scylConfig.icon}}"
+      vueId="044bd733-1"
+      wx:if="{{scylConfig.icon}}"
+    ></mg-img>
+  </view>
+  <block wx:if="{{info}}">
+    <view class="p-r scmain data-v-18dcc0a4">
+      <view class="bd b-s bf bs10 f24 data-v-18dcc0a4">
+        <block wx:if="{{!showjl&&info.state!=1}}">
+          <view class="c9 mb10 data-v-18dcc0a4">参与步骤：</view>
+          <view class="data-v-18dcc0a4"
+            >{{'1.点击右上角“...”将“'+system.name+'”小程序添加至我的小程序'}}</view
+          >
+          <view class="p3 data-v-18dcc0a4">
+            <image
+              class="w100 data-v-18dcc0a4"
+              src="{{onImgurl+'/img/tjsc.png'}}"
+              style="height: 262rpx"
+            ></image>
+          </view>
+          <view class="data-v-18dcc0a4"
+            >2.首页下拉任务栏(下图所示)截图，点击进入小程序并在下方上传，经管理员审核通过后即可获得“<text
+              class="cf5 data-v-18dcc0a4"
+            >
+              <text class="data-v-18dcc0a4" wx:if="{{scylConfig.isCoupon==1}}"
+                >{{'代金券：'+scylConfig.couponArr[0].name+'、'}}</text
+              >
+              <text class="data-v-18dcc0a4" wx:if="{{scylConfig.isBalance==1}}"
+                >{{scylConfig.balance+dw+'、'}}</text
+              >
+              <text class="data-v-18dcc0a4" wx:if="{{scylConfig.isIntegral==1}}"
+                >{{scylConfig.integral+jfName+'、'}}</text
+              >
+              <text class="data-v-18dcc0a4" wx:if="{{scylConfig.isGrowth==1}}"
+                >{{scylConfig.growth+'成长值'}}</text
+              > </text
+            >”</view
+          >
+          <view class="p3 data-v-18dcc0a4">
+            <image
+              class="w100 data-v-18dcc0a4"
+              src="{{onImgurl+'/img/ysc.png'}}"
+              style="height: 274rpx"
+            ></image>
+          </view>
+          <block wx:if="{{info.state==null||info.state==3}}">
+            <view class="mb10 data-v-18dcc0a4">3.立即上传图片，并提交审核</view>
+            <mg-photo
+              bind:__l="__l"
+              bind:changeImg="__e"
+              class="data-v-18dcc0a4"
+              data-event-opts="{{[ [ '^changeImg',[ ['changeImg'] ] ] ]}}"
+              icon="iconxj"
+              max="1"
+              pt="上传图片"
+              vueId="044bd733-2"
+            ></mg-photo>
+          </block>
+        </block>
+        <block wx:if="{{info.state>0&&info.state<3}}">
+          <view
+            class="ysc data-v-18dcc0a4"
+            wx:if="{{info.state==2&&showjl||info.state==1}}"
+          >
+            <image
+              class="img dis-b data-v-18dcc0a4"
+              mode="widthFix"
+              src="{{onImgurl+'/img/scjl.png'}}"
+            ></image>
+            <view class="t-c f30 c0 p20 wei data-v-18dcc0a4"
+              >{{info.state==1?'您的审核已提交，请耐心等待审核！':info.state==2?'您的提交已通过审核，奖励已发放至您的账户':'审核已拒绝！'}}</view
+            >
+          </view>
+          <view
+            class="sjlic f-x-bt f-w data-v-18dcc0a4"
+            wx:if="{{info.state==2&&showjl}}"
+          >
+            <view
+              class="sjli p3 bs10 t-c data-v-18dcc0a4"
+              wx:if="{{scylConfig.isBalance==1}}"
+            >
+              <text class="iconfont iconye t0 cf1c mt10 data-v-18dcc0a4"></text>
+              <view class="t1 mt20 f26 data-v-18dcc0a4">{{balanceName}}</view>
+              <view class="t2 f30 data-v-18dcc0a4"
+                >{{scylConfig.balance+dw}}</view
+              >
+              <view
+                bindtap="__e"
+                class="ck bf mt10 data-v-18dcc0a4"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/other/recharge/yemx'] ] ] ] ] ] ]}}"
+                >查看</view
+              >
+            </view>
+            <view
+              class="sjli p3 bs10 t-c data-v-18dcc0a4"
+              wx:if="{{scylConfig.isIntegral==1}}"
+            >
+              <text
+                class="iconfont iconjf2 t0 cf1c mt10 data-v-18dcc0a4"
+              ></text>
+              <view class="t1 mt20 f26 data-v-18dcc0a4">{{jfName}}</view>
+              <view class="t2 f30 data-v-18dcc0a4"
+                >{{scylConfig.integral+'个'}}</view
+              >
+              <view
+                bindtap="__e"
+                class="ck bf mt10 data-v-18dcc0a4"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/my/integral/my-integral'] ] ] ] ] ] ]}}"
+                >查看</view
+              >
+            </view>
+            <view
+              class="sjli p3 bs10 t-c data-v-18dcc0a4"
+              wx:if="{{scylConfig.isGrowth==1}}"
+            >
+              <text class="iconfont iconzj t0 cf1c mt10 data-v-18dcc0a4"></text>
+              <view class="t1 mt20 f26 data-v-18dcc0a4">成长值</view>
+              <view class="t2 f30 data-v-18dcc0a4">{{scylConfig.growth}}</view>
+              <view
+                bindtap="__e"
+                class="ck bf mt10 data-v-18dcc0a4"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/order/vip/czz'] ] ] ] ] ] ]}}"
+                >查看</view
+              >
+            </view>
+            <view
+              class="sjli p3 bs10 t-c data-v-18dcc0a4"
+              wx:if="{{scylConfig.isCoupon==1}}"
+            >
+              <text
+                class="iconfont iconyhq t0 cf1c mt10 data-v-18dcc0a4"
+              ></text>
+              <view class="t1 mt20 f26 data-v-18dcc0a4">代金券</view>
+              <view
+                class="t2 f30 data-v-18dcc0a4"
+                wx:if="{{scylConfig.couponArr[0].type==1}}"
+                >{{scylConfig.couponArr[0].money+dw}}</view
+              >
+              <view
+                class="t2 f30 data-v-18dcc0a4"
+                wx:if="{{scylConfig.couponArr[0].type==2}}"
+                >{{scylConfig.couponArr[0].discount+'折'}}</view
+              >
+              <view
+                bindtap="__e"
+                class="ck bf mt10 data-v-18dcc0a4"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/my/coupon/my'] ] ] ] ] ] ]}}"
+                >查看</view
+              >
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <button
+      bindtap="__e"
+      class="posi-f b0 w100 bs0 cf data-v-18dcc0a4"
+      data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      loading="{{loading}}"
+      style="{{'bottom:'+(isIpx?'40rpx':0)+';'+'background:'+(info.state==3?'#fa5151':'#00BE00')+';'}}"
+      wx:if="{{info.state==null||info.state==3||info.state==2&&!showjl}}"
+    >
+      {{info.state==null?'提交审核':info.state==2?'审核已通过，查看奖励':'信息有误，请重新提交审核'}}
+    </button>
+    <view class="bgf data-v-18dcc0a4" wx:if="{{isIpx}}"></view>
+  </block>
+</view>

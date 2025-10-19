@@ -1,0 +1,907 @@
+<view
+  class="{{['category','bf','h100v','data-v-66ac98d4',(tcyhqshow||tcggshow)&&'bgfix']}}"
+>
+  <view class="posi-f l0 w100 data-v-66ac98d4">
+    <uni-nav-bar
+      bind:__l="__l"
+      bind:onMore="__e"
+      border="{{false}}"
+      class="data-v-66ac98d4"
+      custommore="{{true}}"
+      data-event-opts="{{[ [ '^onMore',[ ['onmore'] ] ] ]}}"
+      fixed="{{false}}"
+      id="uninavbar"
+      ispr="{{false}}"
+      leftcn="iconjiayuan"
+      rightcn="iconsousuo1"
+      statusBar="{{true}}"
+      title="{{system.name||''}}"
+      uriconopcity="{{0}}"
+      uropcity="{{1}}"
+      vueId="02d1c88e-1"
+    ></uni-nav-bar>
+    <view
+      class="header p03 bf data-v-66ac98d4"
+      style="{{'z-index:'+(showShopInfo?'2001':'')+';'+'height:'+pageHeight.topH2+'rpx'+';'}}"
+    >
+      <view
+        class="header-bd f-c-xc data-v-66ac98d4"
+        style="{{'height:'+pageHeight.topH2+'rpx'+';'}}"
+      >
+        <view class="f-bt data-v-66ac98d4">
+          <view class="f-1 f-y-c data-v-66ac98d4">
+            <view
+              class="f-1 data-v-66ac98d4"
+              style="padding-right: 20rpx"
+              wx:if="{{sjxx.shopData}}"
+            >
+              <view class="f-row f32 wei o-h data-v-66ac98d4">
+                <view
+                  bindtap="__e"
+                  class="f-y-c data-v-66ac98d4"
+                  data-event-opts="{{[ [ 'tap',[ [ 'scdp',['$event'] ] ] ] ]}}"
+                  style="padding-right: 15rpx"
+                >
+                  <text
+                    class="{{['iconfont','mt0','c3','data-v-66ac98d4',issc?'iconxx':'iconkxx']}}"
+                    style="{{'color:'+(issc?tColor:'')+';'}}"
+                  ></text>
+                </view>
+                <view
+                  bindtap="__e"
+                  class="f-y-c f-1 data-v-66ac98d4"
+                  data-event-opts="{{[ [ 'tap',[ [ 'goSelect',['$event'] ] ] ] ]}}"
+                >
+                  <text class="t-o-e f30 data-v-66ac98d4"
+                    >{{storeInfo.name+''}}</text
+                  >
+                </view>
+              </view>
+              <view class="f-row o-h data-v-66ac98d4">
+                <view
+                  class="f-y-c c9 mt5 data-v-66ac98d4"
+                  wx:if="{{orderset.distanceDisplay!=2}}"
+                >
+                  <text
+                    class="nowei data-v-66ac98d4"
+                    wx:if="{{storeInfo.distance}}"
+                    >{{'距离您'+storeInfo.distance}}</text
+                  >
+                </view>
+                <view
+                  bindtap="__e"
+                  class="f-y-c f-1 data-v-66ac98d4"
+                  data-event-opts="{{[ [ 'tap',[ [ 'goSelect',['$event'] ] ] ] ]}}"
+                >
+                  <text
+                    class="ml20 f24 c9 nowei t-o-e data-v-66ac98d4"
+                    wx:if="{{system.storeSet.storeModel==2}}"
+                    >切换门店</text
+                  >
+                  <text
+                    class="iconfont iconright ml5 c9 f24 mt8 data-v-66ac98d4"
+                    wx:if="{{system.storeSet.storeModel==2}}"
+                  ></text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="f-row ml30 data-v-66ac98d4" wx:if="{{$root.g0}}">
+            <view class="f-c buytype data-v-66ac98d4" wx:if="{{$root.g1}}">
+              <view
+                bindtap="__e"
+                class="{{['type','bs30','f-c','f24','c9','data-v-66ac98d4',buyType==v.value?'atype cf f28':'']}}"
+                data-event-opts="{{[ [ 'tap',[ [ 'changeBuyType',['$0'],[ [ ['ModeArr','',i] ] ] ] ] ] ]}}"
+                style="{{'background1:'+(buyType==v.value?tColor:'')+';'}}"
+                wx:for="{{ModeArr}}"
+                wx:for-index="i"
+                wx:for-item="v"
+                wx:key="i"
+                >{{''+v.name+''}}</view
+              >
+            </view>
+            <view class="bf6 f-c myicon bsf data-v-66ac98d4" wx:else>
+              <text
+                bindtap="__e"
+                class="iconfont iconwd c3 data-v-66ac98d4"
+                data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',2],['url','/yb_cy/my/index'] ] ] ] ] ] ]}}"
+              ></text>
+            </view>
+          </view>
+        </view>
+        <view
+          class="f-bt mt10 c9 data-v-66ac98d4"
+          wx:if="{{sjxx.discount.newReduction>0||sjxx.discount.reduce.type}}"
+        >
+          <view class="f-1 f24 flex data-v-66ac98d4">
+            <view
+              class="f-0 data-v-66ac98d4"
+              wx:if="{{sjxx.discount.newReduction>0}}"
+            >
+              <text
+                class="text-btnf f22 mr10 p-3-10 bs10 cf5f borr data-v-66ac98d4"
+                >{{'新客立减'+sjxx.discount.newReduction}}</text
+              >
+            </view>
+            <view
+              class="f-1 t-o-e hihth data-v-66ac98d4"
+              wx:if="{{sjxx.discount.reduce.type}}"
+            >
+              <text
+                class="text-btnf f22 mr10 p-3-10 bs10 cf5f borr data-v-66ac98d4"
+                >{{mjtxt}}</text
+              >
+            </view>
+          </view>
+        </view>
+        <view class="f-bt mt20 c9 data-v-66ac98d4">
+          <view class="f-1 f-y-c f24 data-v-66ac98d4">
+            <text
+              class="iconfont icontishi mr15 data-v-66ac98d4"
+              style="{{'color:'+tColor+';'}}"
+            ></text>
+            <text class="t-o-e data-v-66ac98d4">{{sjxx.moreSet.notice}}</text>
+          </view>
+          <view
+            bindtap="__e"
+            class="f22 ml20 f-y-c data-v-66ac98d4"
+            data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+            >更多<text
+              class="iconfont icondown f22 ml5 c9 data-v-66ac98d4"
+            ></text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view
+    class="h100 data-v-66ac98d4"
+    style="{{'padding-top:'+pageHeight.topH+'px'+';'}}"
+  >
+    <view class="bodyer bf data-v-66ac98d4" hidden="{{!(showhdp==0)}}">
+      <mg-swiper
+        bind:__l="__l"
+        class="data-v-66ac98d4"
+        co="{{lbswiper}}"
+        color="{{tColor}}"
+        u="rpx"
+        vueId="02d1c88e-2"
+      ></mg-swiper>
+      <view class="m20 b-s-1 p02 bs20 data-v-66ac98d4" wx:if="{{$root.g2>0}}">
+        <mg-cell
+          arrow="{{0}}"
+          bind:__l="__l"
+          btt="{{'商家推荐'||sjxx.orderSet.data.recommend}}"
+          class="data-v-66ac98d4"
+          cname="p20 f30"
+          last="1"
+          vueId="02d1c88e-3"
+        ></mg-cell>
+        <goods
+          addgb="{{isClose}}"
+          addtype="2"
+          bind:__l="__l"
+          bind:add="__e"
+          bind:dec="__e"
+          class="data-v-66ac98d4"
+          dList="{{goodsList}}"
+          data-event-opts="{{[ [ '^dec',[ ['dec'] ] ],[ '^add',[ ['add'] ] ] ]}}"
+          outin="{{outin}}"
+          storeid="{{storeInfo.id}}"
+          type="2"
+          vueId="02d1c88e-4"
+        ></goods>
+      </view>
+    </view>
+    <view class="category-c f-row data-v-66ac98d4" wx:if="{{sjxx.moreSet}}">
+      <scroll-view
+        class="left-c data-v-66ac98d4"
+        scrollIntoView="{{lsiv}}"
+        scrollWithAnimation="true"
+        scrollY="{{true}}"
+        style="{{'padding-bottom:'+leftpb+';'}}"
+      >
+        <block wx:if="{{sjxx.moreSet.style==2}}">
+          <view
+            bindtap="__e"
+            class="{{['title-c','title-c2','data-v-66ac98d4',sIndex==i?'onSelected2':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'choose',[i] ] ] ] ]}}"
+            id="{{'l'+i}}"
+            wx:for="{{$root.l0}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view
+              class="title-bx cf5f f18 nowei data-v-66ac98d4"
+              wx:if="{{v.$orig.isRequire!=2}}"
+              >{{(v.$orig.isRequire==1?'必选':v.$orig.customName)+''}}</view
+            >
+            <view
+              class="{{['title-n','f-c-xc','data-v-66ac98d4',i==(sIndex+1)?'ysyj':'',i==(sIndex-1)?'yxyj':'']}}"
+              style="{{'border-color:'+(sIndex==i?tColor:'')+';'}}"
+            >
+              <block wx:if="{{sjxx.categorySet.display==3}}">
+                <view class="f-y-e data-v-66ac98d4">
+                  <view
+                    class="title-img data-v-66ac98d4"
+                    wx:if="{{v.$orig.icon}}"
+                  >
+                    <mg-img
+                      bind:__l="__l"
+                      class="data-v-66ac98d4"
+                      m="aspectFit"
+                      src="{{v.$orig.icon}}"
+                      vueId="{{'02d1c88e-5-'+i}}"
+                    ></mg-img>
+                  </view>
+                  <text class="data-v-66ac98d4">{{v.m0}}</text>
+                </view>
+                <text
+                  class="{{['t-o-e','data-v-66ac98d4',v.$orig.icon?'mt15':'']}}"
+                  wx:if="{{v.m1}}"
+                  >{{v.m2}}</text
+                >
+              </block>
+              <block wx:else>
+                <block wx:if="{{sjxx.categorySet.display==2}}">
+                  <view class="f-x-c data-v-66ac98d4">
+                    <view
+                      class="title-img data-v-66ac98d4"
+                      wx:if="{{v.$orig.icon}}"
+                    >
+                      <mg-img
+                        bind:__l="__l"
+                        class="data-v-66ac98d4"
+                        m="aspectFit"
+                        src="{{v.$orig.icon}}"
+                        vueId="{{'02d1c88e-6-'+i}}"
+                      ></mg-img>
+                    </view>
+                  </view>
+                  <text
+                    class="{{['t-c','t-o-e','data-v-66ac98d4',v.$orig.icon?'mt15':'']}}"
+                    >{{v.$orig.name}}</text
+                  >
+                </block>
+                <view class="f-x-c data-v-66ac98d4" wx:else>
+                  <text class="t-o-e2 data-v-66ac98d4">{{v.$orig.name}}</text>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+        <block wx:else>
+          <view
+            bindtap="__e"
+            class="{{['title-c','data-v-66ac98d4',sIndex==i?'onSelected':'']}}"
+            data-event-opts="{{[ [ 'tap',[ [ 'choose',[i] ] ] ] ]}}"
+            id="{{'l'+i}}"
+            wx:for="{{$root.l1}}"
+            wx:for-index="i"
+            wx:for-item="v"
+            wx:key="i"
+          >
+            <view
+              class="title-b data-v-66ac98d4"
+              style="{{'background:'+tColor+';'}}"
+              wx:if="{{sIndex==i}}"
+            ></view>
+            <view
+              class="title-bx cf5f f18 nowei data-v-66ac98d4"
+              wx:if="{{v.$orig.isRequire!=2}}"
+              >{{(v.$orig.isRequire==1?'必选':v.$orig.customName)+''}}</view
+            >
+            <view
+              class="{{['title-n','f-c-xc','data-v-66ac98d4',i==sIndex+1?'ysyj':'',i==sIndex-1?'yxyj':'']}}"
+            >
+              <block wx:if="{{sjxx.categorySet.display==3}}">
+                <view class="f-y-e data-v-66ac98d4">
+                  <view
+                    class="title-img data-v-66ac98d4"
+                    wx:if="{{v.$orig.icon}}"
+                  >
+                    <mg-img
+                      bind:__l="__l"
+                      class="data-v-66ac98d4"
+                      m="aspectFit"
+                      src="{{v.$orig.icon}}"
+                      vueId="{{'02d1c88e-7-'+i}}"
+                    ></mg-img>
+                  </view>
+                  <text class="data-v-66ac98d4">{{v.m3}}</text>
+                </view>
+                <text
+                  class="{{['t-o-e','data-v-66ac98d4',v.$orig.icon?'mt15':'']}}"
+                  wx:if="{{v.m4}}"
+                  >{{v.m5}}</text
+                >
+              </block>
+              <block wx:else>
+                <block wx:if="{{sjxx.categorySet.display==2}}">
+                  <view class="f-x-c data-v-66ac98d4">
+                    <view
+                      class="title-img data-v-66ac98d4"
+                      wx:if="{{v.$orig.icon}}"
+                    >
+                      <mg-img
+                        bind:__l="__l"
+                        class="data-v-66ac98d4"
+                        m="aspectFit"
+                        src="{{v.$orig.icon}}"
+                        vueId="{{'02d1c88e-8-'+i}}"
+                      ></mg-img>
+                    </view>
+                  </view>
+                  <text
+                    class="{{['t-c','t-o-e','data-v-66ac98d4',v.$orig.icon?'mt15':'']}}"
+                    >{{v.$orig.name}}</text
+                  >
+                </block>
+                <view class="f-x-c data-v-66ac98d4" wx:else>
+                  <text class="t-o-e2 data-v-66ac98d4">{{v.$orig.name}}</text>
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
+        <view class="title-c data-v-66ac98d4">
+          <view class="title-n data-v-66ac98d4"></view>
+        </view>
+        <view class="title-c data-v-66ac98d4">
+          <view class="title-n data-v-66ac98d4"></view>
+        </view>
+        <view class="title-c data-v-66ac98d4">
+          <view class="title-n data-v-66ac98d4"></view>
+        </view>
+      </scroll-view>
+      <scroll-view
+        bindscroll="__e"
+        bindscrolltoupper="__e"
+        class="f-g-1 right-c data-v-66ac98d4"
+        data-event-opts="{{[ [ 'scroll',[ [ 'myscroll',['$event'] ] ] ],[ 'scrolltoupper',[ [ 'myscrolltoupper',['$event'] ] ] ] ]}}"
+        lowerThreshold="100"
+        scrollIntoView="{{rsiv}}"
+        scrollY="{{true}}"
+        style="{{'padding-bottom:'+rightpb+';'}}"
+        wx:if="{{sjxx.moreSet.goodload==1}}"
+      >
+        <view
+          class="c-item data-v-66ac98d4"
+          id="{{'r'+pi}}"
+          wx:for="{{$root.l3}}"
+          wx:for-index="pi"
+          wx:for-item="pv"
+          wx:key="id"
+        >
+          <view class="c-title data-v-66ac98d4">{{pv.$orig.name}}</view>
+          <scroll-view
+            class="ml20 data-v-66ac98d4"
+            scrollX="{{true}}"
+            wx:if="{{sjxx.moreSet.show_classification==1}}"
+          >
+            <view class="flex f-nw w-100 data-v-66ac98d4" wx:if="{{pv.g3}}">
+              <view
+                bindtap="__e"
+                class="bf5 bs10 c0 p13 mr20 f24 f-g-0 data-v-66ac98d4"
+                data-event-opts="{{[ [ 'tap',[ [ 'changeCatrgory',['$0',cci,pi],[ [ ['catrgoryList','id',pv.$orig.id],['children','',cci] ] ] ] ] ] ]}}"
+                style="{{'background:'+(cci==cIndex&&sIndex==pi?tColor:'')+';'+'color:'+(cci==cIndex&&sIndex==pi?'#fff':'')+';'}}"
+                wx:for="{{pv.$orig.children}}"
+                wx:for-index="cci"
+                wx:for-item="ccv"
+                wx:key="cci"
+                >{{''+ccv.name+''}}</view
+              >
+            </view>
+          </scroll-view>
+          <view
+            bindtap="__e"
+            class="conw2 f-row p2 data-v-66ac98d4"
+            data-event-opts="{{[ [ 'tap',[ [ 'goodinfo',['$0'],[ [ ['catrgoryList','id',pv.$orig.id],['goods','',i,'id'] ] ] ] ] ] ]}}"
+            wx:for="{{pv.l2}}"
+            wx:for-index="i"
+            wx:for-item="co"
+            wx:key="i"
+          >
+            <view class="f-g-0 bf6 left bs5 p-r data-v-66ac98d4">
+              <mg-img
+                bind:__l="__l"
+                class="data-v-66ac98d4"
+                cname="wh"
+                src="{{co.$orig.icon}}"
+                vueId="{{'02d1c88e-9-'+pi+'-'+i}}"
+              ></mg-img>
+              <view
+                class="p-a ysq f-c b0 cf w100 f22 data-v-66ac98d4"
+                wx:if="{{co.$orig.stock<=0}}"
+                >已售罄</view
+              >
+            </view>
+            <view class="f-g-1 ml20 f24 c9 data-v-66ac98d4">
+              <view class="f30 t-o-e2 c0 data-v-66ac98d4"
+                >{{co.$orig.name}}</view
+              >
+              <view class="flex data-v-66ac98d4">
+                <view
+                  class="mt8 data-v-66ac98d4"
+                  wx:if="{{co.$orig.aloneType=='1'}}"
+                >
+                  <text
+                    class="text-btnf f22 mr10 p-3-10 bs5 data-v-66ac98d4"
+                    style="{{'background:'+'#e6e3e3'+';'+'color:'+'#666'+';'}}"
+                    >单点不配送</text
+                  >
+                </view>
+                <view class="mt8 data-v-66ac98d4">
+                  <text
+                    class="text-btnf f22 mr10 p-3-10 bs5 data-v-66ac98d4"
+                    style="{{'background:'+'rgba('+co.m6+',0.1)'+';'+'color:'+co.$orig.labelColor+';'}}"
+                    wx:if="{{co.$orig.labelName}}"
+                    >{{co.$orig.labelName}}</text
+                  >
+                  <text
+                    class="text-btnf f22 mr10 p-3-10 bs5 data-v-66ac98d4"
+                    style="{{'background:'+ztqs+';'+'color:'+tColor+';'}}"
+                    wx:if="{{co.$orig.activityGoodData.type>3}}"
+                    >{{co.$orig.activityGoodData.type==4?'第二件'+co.m7+'折':'买一送一'}}</text
+                  >
+                  <text
+                    class="mt8 data-v-66ac98d4"
+                    wx:if="{{co.$orig.maxNum>0||co.$orig.minNum>1}}"
+                  >
+                    <text
+                      class="cf5f mr20 data-v-66ac98d4"
+                      wx:if="{{co.$orig.minNum>1}}"
+                      >{{co.$orig.minNum+'份起售'}}</text
+                    >
+                    <text
+                      class="cf5f data-v-66ac98d4"
+                      wx:if="{{co.$orig.maxNum>0}}"
+                      >{{'限'+co.$orig.maxNum+'份'}}</text
+                    >
+                  </text>
+                </view>
+              </view>
+              <view
+                class="mt8 t-o-e2 f22 data-v-66ac98d4"
+                wx:if="{{co.$orig.body}}"
+                >{{co.$orig.body}}</view
+              >
+              <view
+                class="mt8 f-raw data-v-66ac98d4"
+                wx:if="{{system.switch.saleShow==1||system.switch.stockShow==1}}"
+              >
+                <text
+                  class="mr30 data-v-66ac98d4"
+                  wx:if="{{co.$orig.salesNum>0&&system.switch.saleShow==1}}"
+                  >{{'销量'+co.$orig.salesNum}}</text
+                >
+                <text
+                  class="mr30 data-v-66ac98d4"
+                  wx:if="{{system.switch.stockShow==1}}"
+                  >{{'库存'+co.$orig.stock}}</text
+                >
+              </view>
+              <view class="mt8 f-row data-v-66ac98d4" wx:if="{{co.m8<co.m9}}">
+                <view class="vipr f-y-c data-v-66ac98d4">
+                  <view class="vipimg data-v-66ac98d4">
+                    <mg-img
+                      bind:__l="__l"
+                      class="data-v-66ac98d4"
+                      src="{{onImgurl+'vipimg.png'}}"
+                      vueId="{{'02d1c88e-10-'+pi+'-'+i}}"
+                    ></mg-img>
+                  </view>
+                </view>
+                <view class="vipl f-y-c data-v-66ac98d4"
+                  >{{sl+co.$orig.vipPrice}}</view
+                >
+              </view>
+              <view class="f-x-bt mt8 data-v-66ac98d4">
+                <view class="f-g-1 wei t-o-e c3 f36 data-v-66ac98d4">
+                  <block
+                    wx:if="{{co.$orig.activityGoodData.type<1||co.$orig.activityGoodData.type>=4}}"
+                  >
+                    <text class="f30 mr5 data-v-66ac98d4">{{sl}}</text
+                    >{{co.$orig.price+''}}</block
+                  >
+                  <block wx:else>
+                    <text class="f30 mr5 data-v-66ac98d4">{{sl}}</text
+                    >{{co.$orig.activityGoodData.activityMoney+''}}<text
+                      class="t-d-l nowei ml10 c9 f24 data-v-66ac98d4"
+                      >{{sl+co.$orig.price}}</text
+                    >
+                  </block>
+                </view>
+                <view
+                  catchtap="__e"
+                  class="f-g-0 cartggc f-c data-v-66ac98d4"
+                  data-event-opts="{{[ [ 'tap',[ [ 'add',[ [ 'o',['addwz',1],[ 'g',co.$orig ] ] ] ] ] ] ]}}"
+                  wx:if="{{co.$orig.isSpecs==1||co.$orig.isMaterial==1||co.$orig.isAttr==1}}"
+                >
+                  <view
+                    class="text-btnf f24 f-c ggc data-v-66ac98d4"
+                    style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                  >
+                    <text class="data-v-66ac98d4">选 择</text>
+                    <text
+                      class="dot f-c data-v-66ac98d4"
+                      style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                      wx:if="{{co.$orig.num>0}}"
+                      >{{co.$orig.num}}</text
+                    >
+                  </view>
+                </view>
+                <view class="f-g-0 f-bt data-v-66ac98d4" wx:else>
+                  <view
+                    class="reducecon active f-y-c data-v-66ac98d4"
+                    wx:if="{{co.$orig.num>0}}"
+                  >
+                    <view
+                      catchtap="__e"
+                      class="cartc f-c data-v-66ac98d4"
+                      data-event-opts="{{[ [ 'tap',[ [ 'dec',[ [ 'o',['addwz',1],[ 'g',co.$orig ] ] ] ] ] ] ]}}"
+                    >
+                      <button
+                        class="cartdec data-v-66ac98d4"
+                        style="{{'border-color:'+(isClose?tColor:'#ccc')+';'}}"
+                      >
+                        <view
+                          class="cartdecab data-v-66ac98d4"
+                          style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                        ></view>
+                      </button>
+                    </view>
+                    <text class="f36 ma c0 data-v-66ac98d4"
+                      >{{co.$orig.num}}</text
+                    >
+                  </view>
+                  <view
+                    catchtap="__e"
+                    class="cartc f-c data-v-66ac98d4"
+                    data-event-opts="{{[ [ 'tap',[ [ 'add',[ [ 'o',['addwz',1],[ 'g',co.$orig ] ] ] ] ] ] ]}}"
+                  >
+                    <button
+                      class="cartadd data-v-66ac98d4"
+                      style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                    ></button>
+                  </view>
+                </view>
+              </view>
+              <view
+                class="mt5 f-row f22 data-v-66ac98d4"
+                style="{{'color:'+tColor+';'}}"
+                wx:if="{{co.$orig.activityGoodData.type>0}}"
+              >
+                <view
+                  class="f-row bs5 sptjc data-v-66ac98d4"
+                  style="{{'background:'+ztqs+';'+'color:'+tColor+';'}}"
+                  wx:if="{{co.$orig.activityGoodData.type<4}}"
+                >
+                  <text
+                    class="iconfont iconspzk f22 data-v-66ac98d4"
+                    style="{{'color:'+tColor+';'}}"
+                  ></text>
+                  <view class="data-v-66ac98d4"
+                    >{{''+(co.$orig.activityGoodData.type==1?'特价':co.$orig.activityGoodData.type==2?co.m10+'折':'商品立减'+sl+co.$orig.activityGoodData.discount)+''}}</view
+                  >
+                  <view
+                    class="ml10 sphdir data-v-66ac98d4"
+                    style="{{'border-color:'+tColor+';'}}"
+                    wx:if="{{co.$orig.activityGoodData.limitNum>0}}"
+                    >{{'限'+co.$orig.activityGoodData.limitNum+'份'}}</view
+                  >
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="conw2mb data-v-66ac98d4"></view>
+      </scroll-view>
+      <view class="f-g-1 bf data-v-66ac98d4" wx:else>
+        <scroll-view
+          class="wh right-c data-v-66ac98d4"
+          scrollIntoView="{{rsiv2}}"
+          scrollY="{{true}}"
+          style="{{'padding-bottom:'+rightpb+';'}}"
+        >
+          <block wx:if="{{$root.g4}}">
+            <view class="c-item data-v-66ac98d4" id="r0" wx:if="{{$root.g5}}">
+              <view class="c-title data-v-66ac98d4"
+                >{{catrgoryList[sIndex].name}}</view
+              >
+              <view
+                bindtap="__e"
+                class="conw2 f-row p2 data-v-66ac98d4"
+                data-event-opts="{{[ [ 'tap',[ [ 'goodinfo',['$0'],[ [ ['catrgoryList.'+sIndex+'.goods','',i,'id'] ] ] ] ] ] ]}}"
+                wx:for="{{$root.l4}}"
+                wx:for-index="i"
+                wx:for-item="co"
+                wx:key="i"
+              >
+                <view class="f-g-0 bf6 left bs5 p-r data-v-66ac98d4">
+                  <mg-img
+                    bind:__l="__l"
+                    class="data-v-66ac98d4"
+                    cname="wh"
+                    src="{{co.$orig.icon}}"
+                    vueId="{{'02d1c88e-11-'+i}}"
+                  ></mg-img>
+                  <view
+                    class="p-a ysq f-c b0 cf w100 f22 data-v-66ac98d4"
+                    wx:if="{{co.$orig.stock<=0}}"
+                    >已售罄</view
+                  >
+                </view>
+                <view class="f-g-1 ml20 f24 c9 data-v-66ac98d4">
+                  <view class="f30 t-o-e2 c0 data-v-66ac98d4"
+                    >{{co.$orig.name}}</view
+                  >
+                  <view class="flex data-v-66ac98d4">
+                    <view
+                      class="mt8 data-v-66ac98d4"
+                      wx:if="{{co.$orig.aloneType=='1'}}"
+                    >
+                      <text
+                        class="text-btnf f22 mr10 p-3-10 bs5 data-v-66ac98d4"
+                        style="{{'background:'+'#e6e3e3'+';'+'color:'+'#666'+';'}}"
+                        >单点不配送</text
+                      >
+                    </view>
+                    <view class="mt8 data-v-66ac98d4">
+                      <text
+                        class="text-btnf f22 mr10 p-3-10 bs5 data-v-66ac98d4"
+                        style="{{'background:'+'rgba('+co.m11+',0.1)'+';'+'color:'+co.$orig.labelColor+';'}}"
+                        wx:if="{{co.$orig.labelName}}"
+                        >{{co.$orig.labelName}}</text
+                      >
+                      <text
+                        class="text-btnf f22 mr10 p-3-10 bs5 data-v-66ac98d4"
+                        style="{{'background:'+ztqs+';'+'color:'+tColor+';'}}"
+                        wx:if="{{co.$orig.activityGoodData.type>3}}"
+                        >{{co.$orig.activityGoodData.type==4?'第二件'+co.m12+'折':'买一送一'}}</text
+                      >
+                      <text
+                        class="mt8 data-v-66ac98d4"
+                        wx:if="{{co.$orig.maxNum>0||co.$orig.minNum>1}}"
+                      >
+                        <text
+                          class="cf5f mr20 data-v-66ac98d4"
+                          wx:if="{{co.$orig.minNum>1}}"
+                          >{{co.$orig.minNum+'份起售'}}</text
+                        >
+                        <text
+                          class="cf5f data-v-66ac98d4"
+                          wx:if="{{co.$orig.maxNum>0}}"
+                          >{{'限'+co.$orig.maxNum+'份'}}</text
+                        >
+                      </text>
+                    </view>
+                  </view>
+                  <view
+                    class="mt8 t-o-e2 f22 data-v-66ac98d4"
+                    wx:if="{{co.$orig.body}}"
+                    >{{co.$orig.body}}</view
+                  >
+                  <view
+                    class="mt8 f-raw data-v-66ac98d4"
+                    wx:if="{{system.switch.saleShow==1||system.switch.stockShow==1}}"
+                  >
+                    <text
+                      class="mr30 data-v-66ac98d4"
+                      wx:if="{{co.$orig.salesNum>0&&system.switch.saleShow==1}}"
+                      >{{'销量'+co.$orig.salesNum}}</text
+                    >
+                    <text
+                      class="mr30 data-v-66ac98d4"
+                      wx:if="{{system.switch.stockShow==1}}"
+                      >{{'库存'+co.$orig.stock}}</text
+                    >
+                  </view>
+                  <view
+                    class="mt8 f-row data-v-66ac98d4"
+                    wx:if="{{co.m13<co.m14}}"
+                  >
+                    <view class="vipr f-y-c data-v-66ac98d4">
+                      <view class="vipimg data-v-66ac98d4">
+                        <mg-img
+                          bind:__l="__l"
+                          class="data-v-66ac98d4"
+                          src="{{onImgurl+'vipimg.png'}}"
+                          vueId="{{'02d1c88e-12-'+i}}"
+                        ></mg-img>
+                      </view>
+                    </view>
+                    <view class="vipl f-y-c data-v-66ac98d4"
+                      >{{sl+co.$orig.vipPrice}}</view
+                    >
+                  </view>
+                  <view class="f-x-bt mt8 data-v-66ac98d4">
+                    <view class="f-g-1 wei t-o-e c3 f36 data-v-66ac98d4">
+                      <block
+                        wx:if="{{co.$orig.activityGoodData.type<1||co.$orig.activityGoodData.type>=4}}"
+                      >
+                        <text class="f30 mr5 data-v-66ac98d4">{{sl}}</text
+                        >{{co.$orig.price+''}}</block
+                      >
+                      <block wx:else>
+                        <text class="f30 mr5 data-v-66ac98d4">{{sl}}</text
+                        >{{co.$orig.activityGoodData.activityMoney+''}}<text
+                          class="t-d-l nowei ml10 c9 f24 data-v-66ac98d4"
+                          >{{sl+co.$orig.price}}</text
+                        >
+                      </block>
+                    </view>
+                    <view
+                      catchtap="__e"
+                      class="f-g-0 cartggc f-c data-v-66ac98d4"
+                      data-event-opts="{{[ [ 'tap',[ [ 'add',[ [ 'o',['addwz',1],[ 'g',co.$orig ] ] ] ] ] ] ]}}"
+                      wx:if="{{co.$orig.isSpecs==1||co.$orig.isMaterial==1||co.$orig.isAttr==1}}"
+                    >
+                      <view
+                        class="text-btnf f24 f-c ggc data-v-66ac98d4"
+                        style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                      >
+                        <text class="data-v-66ac98d4">选 择</text>
+                        <text
+                          class="dot f-c data-v-66ac98d4"
+                          style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                          wx:if="{{co.$orig.num>0}}"
+                          >{{co.$orig.num}}</text
+                        >
+                      </view>
+                    </view>
+                    <view class="f-g-0 f-bt data-v-66ac98d4" wx:else>
+                      <view
+                        class="reducecon active f-y-c data-v-66ac98d4"
+                        wx:if="{{co.$orig.num>0}}"
+                      >
+                        <view
+                          catchtap="__e"
+                          class="cartc f-c data-v-66ac98d4"
+                          data-event-opts="{{[ [ 'tap',[ [ 'dec',[ [ 'o',['addwz',1],[ 'g',co.$orig ] ] ] ] ] ] ]}}"
+                        >
+                          <button
+                            class="cartdec data-v-66ac98d4"
+                            style="{{'border-color:'+(isClose?tColor:'#ccc')+';'}}"
+                          >
+                            <view
+                              class="cartdecab data-v-66ac98d4"
+                              style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                            ></view>
+                          </button>
+                        </view>
+                        <text class="f36 ma c0 data-v-66ac98d4"
+                          >{{co.$orig.num}}</text
+                        >
+                      </view>
+                      <view
+                        catchtap="__e"
+                        class="cartc f-c data-v-66ac98d4"
+                        data-event-opts="{{[ [ 'tap',[ [ 'add',[ [ 'o',['addwz',1],[ 'g',co.$orig ] ] ] ] ] ] ]}}"
+                      >
+                        <button
+                          class="cartadd data-v-66ac98d4"
+                          style="{{'background:'+(isClose?tColor:'#ccc')+';'}}"
+                        ></button>
+                      </view>
+                    </view>
+                  </view>
+                  <view
+                    class="mt5 f-row f22 data-v-66ac98d4"
+                    style="{{'color:'+tColor+';'}}"
+                    wx:if="{{co.$orig.activityGoodData.type>0}}"
+                  >
+                    <view
+                      class="f-row bs5 sptjc data-v-66ac98d4"
+                      style="{{'background:'+ztqs+';'+'color:'+tColor+';'}}"
+                      wx:if="{{co.$orig.activityGoodData.type<4}}"
+                    >
+                      <text
+                        class="iconfont iconspzk f22 data-v-66ac98d4"
+                        style="{{'color:'+tColor+';'}}"
+                      ></text>
+                      <view class="data-v-66ac98d4"
+                        >{{''+(co.$orig.activityGoodData.type==1?'特价':co.$orig.activityGoodData.type==2?co.m15+'折':'商品立减'+sl+co.$orig.activityGoodData.discount)+''}}</view
+                      >
+                      <view
+                        class="ml10 sphdir data-v-66ac98d4"
+                        style="{{'border-color:'+tColor+';'}}"
+                        wx:if="{{co.$orig.activityGoodData.limitNum>0}}"
+                        >{{'限'+co.$orig.activityGoodData.limitNum+'份'}}</view
+                      >
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </block>
+          <view class="conw2mb data-v-66ac98d4"></view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <block wx:if="{{sjxx.shopData}}">
+    <tcyhq
+      bind:__l="__l"
+      bind:close="__e"
+      bind:input="__e"
+      class="data-v-66ac98d4"
+      co="{{tcCoupon}}"
+      color="{{tColor}}"
+      data-event-opts="{{[ [ '^close',[ ['e1'] ] ],[ '^input',[ [ '__set_model',[ '','tcyhqshow','$event',[] ] ] ] ] ]}}"
+      value="{{tcyhqshow}}"
+      vueId="02d1c88e-13"
+    ></tcyhq>
+    <goods-car
+      bind:__l="__l"
+      bind:add="__e"
+      bind:celar="__e"
+      bind:dec="__e"
+      bind:updateShow="__e"
+      buytype="{{buyType}}"
+      carBtm="{{system.outTabbar!=1?isIpx?'155':'115':'0'}}"
+      carlistPab="{{system.outTabbar!=1?isIpx?'265':'225':'110'}}"
+      class="data-v-66ac98d4 vue-ref"
+      data-event-opts="{{[ [ '^updateShow',[ [ '__set_sync',['$0','showCar','$event'],[''] ] ] ],[ '^dec',[ ['dec'] ] ],[ '^add',[ ['add'] ] ],[ '^celar',[ ['celarCar'] ] ] ]}}"
+      data-ref="goodscar"
+      goodsList="{{catrgoryList}}"
+      id="goodscar"
+      show="{{showCar}}"
+      sjxx="{{sjxx}}"
+      startmoney="{{startMoney}}"
+      vueId="02d1c88e-14"
+    ></goods-car>
+    <store-info
+      bind:__l="__l"
+      bind:input="__e"
+      class="data-v-66ac98d4"
+      co="{{sjxx}}"
+      data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showShopInfo','$event',[] ] ] ] ] ]}}"
+      qlist="{{sjyhq}}"
+      sjqb="{{sjqb}}"
+      value="{{showShopInfo}}"
+      vueId="02d1c88e-15"
+    ></store-info>
+    <store-shop
+      bind:__l="__l"
+      bind:input="__e"
+      bind:selectShop="__e"
+      class="data-v-66ac98d4"
+      co="{{sjxx}}"
+      data-event-opts="{{[ [ '^selectShop',[ ['goSelect'] ] ],[ '^input',[ [ '__set_model',[ '','showShopSelect','$event',[] ] ] ] ] ]}}"
+      storeInfo="{{storeInfo}}"
+      value="{{showShopSelect}}"
+      vueId="02d1c88e-16"
+    ></store-shop>
+  </block>
+  <spec
+    bind:__l="__l"
+    bind:add="__e"
+    bind:input="__e"
+    class="data-v-66ac98d4"
+    co="{{goodsInfo}}"
+    data-event-opts="{{[ [ '^add',[ ['add'] ] ],[ '^input',[ [ '__set_model',[ '','showGg','$event',[] ] ] ] ] ]}}"
+    outin="{{outin}}"
+    storeid="{{storeInfo.id}}"
+    systemGood="{{system}}"
+    value="{{showGg}}"
+    vueId="02d1c88e-17"
+  ></spec>
+  <tab-bar bind:__l="__l" class="data-v-66ac98d4" vueId="02d1c88e-18"></tab-bar>
+  <load
+    bind:__l="__l"
+    class="data-v-66ac98d4"
+    vueId="02d1c88e-19"
+    wx:if="{{showloading}}"
+  ></load>
+  <load
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-66ac98d4"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showjz','$event',[] ] ] ] ] ]}}"
+    type="2"
+    value="{{showjz}}"
+    vueId="02d1c88e-20"
+  ></load>
+</view>

@@ -1,0 +1,58 @@
+<view class="mh100 pb130 data-v-3cd506d2" wx:if="{{jfName}}">
+  <view class="bf data-v-3cd506d2">
+    <view class="f-c-c p30 data-v-3cd506d2">
+      <view class="f28 data-v-3cd506d2">{{'当前'+jfName}}</view>
+      <view class="f56 cf7 wei data-v-3cd506d2">{{integral}}</view>
+    </view>
+    <view class="f-x-bt data-v-3cd506d2">
+      <view
+        bindtap="__e"
+        class="f-c p3 data-v-3cd506d2"
+        data-event-opts="{{[ [ 'tap',[ [ 'integralMall',['$event'] ] ] ] ]}}"
+      >
+        <text class="iconfont iconjfsc mr10 cf7 f34 data-v-3cd506d2"></text>
+        <text class="data-v-3cd506d2">{{jfName+'商城'}}</text>
+      </view>
+      <view
+        bindtap="__e"
+        class="f-c p3 data-v-3cd506d2"
+        data-event-opts="{{[ [ 'tap',[ [ 'integralRule',['$event'] ] ] ] ]}}"
+      >
+        <text class="iconfont iconjfgz mr10 cf7 f34 data-v-3cd506d2"></text>
+        <text class="data-v-3cd506d2">{{jfName+'规则'}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bf mt30 data-v-3cd506d2">
+    <view class="f32 wei p3 bor-b data-v-3cd506d2">{{jfName+'记录'}}</view>
+    <view
+      class="p3 bf bor-b data-v-3cd506d2"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="f-x-bt data-v-3cd506d2">
+        <view class="t-o-e f28 data-v-3cd506d2">{{v.note}}</view>
+        <view class="cf7 f28 data-v-3cd506d2">
+          <text class="data-v-3cd506d2" wx:if="{{v.type=='1'}}">+</text>
+          <text class="data-v-3cd506d2" if="v.type=='2'" wx:else>-</text
+          >{{v.integral}}</view
+        >
+      </view>
+      <view class="f-x-bt data-v-3cd506d2">
+        <view class="c9 f24 m10 data-v-3cd506d2">{{v.createdAt}}</view>
+      </view>
+    </view>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-3cd506d2"
+    imgn="zwjf"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="144f23cc-1"
+  ></jzz>
+  <tab-bar bind:__l="__l" class="data-v-3cd506d2" vueId="144f23cc-2"></tab-bar>
+</view>

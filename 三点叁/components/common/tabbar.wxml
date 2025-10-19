@@ -1,0 +1,40 @@
+<view>
+  <block wx:if="{{$root.g0}}">
+    <view
+      class="navbar f-row"
+      style="{{'backgroun:'+navbar.colorBg+';'+'border-top:'+'1rpx solid '+navbar.border_color+';'+'bottom:'+(isIpx?'40rpx':'')+';'}}"
+    >
+      <view
+        bindtap="__e"
+        class="navbargator f-g-1 f-y-c"
+        data-event-opts="{{[ [ 'tap',[ [ 'goPage',['$0',idx],[ [ ['navbar.navs','',idx] ] ] ] ] ] ]}}"
+        wx:if="{{!item.item}}"
+        wx:for="{{navbar.navs}}"
+        wx:for-index="idx"
+        wx:key="idx"
+      >
+        <view class="navbar-view f-c-c">
+          <image
+            class="navbar-icon"
+            mode="aspectFit"
+            src="{{item.active?item.icon.active:item.icon.normal}}"
+            wx:if="{{item.icon}}"
+          ></image>
+          <block wx:else>
+            <text
+              class="{{[item.icon2,'iconfont f42']}}"
+              style="{{'color:'+(item.active?navbar.color:navbar.colorOff)+';'}}"
+              wx:if="{{item.icon2}}"
+            ></text>
+          </block>
+          <view
+            class="navbar-text"
+            style="{{'color:'+(item.active?navbar.color:navbar.colorOff)+';'}}"
+            >{{item.text+''}}</view
+          >
+        </view>
+      </view>
+    </view>
+    <view class="bgf" wx:if="{{isIpx}}"></view>
+  </block>
+</view>

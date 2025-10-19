@@ -1,0 +1,126 @@
+/**index.wxss**/
+page {
+  height: 100vh;
+  background: linear-gradient(135deg, #FFE4E1 0%, #E6E6FA 100%);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100rpx;
+}
+
+.logo {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #333;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 0 60rpx;
+}
+
+.main-text {
+  margin-bottom: 60rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.decor-bar {
+  width: 240rpx;
+  height: 8rpx;
+  background: linear-gradient(to right, #2563eb, #4ade80);
+  margin-bottom: 40rpx;
+  border-radius: 4rpx;
+}
+
+.highlight {
+  font-size: 90rpx;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  line-height: 1.4;
+  text-align: right;
+  width: 100%;
+}
+
+.second {
+  color: #2F4F4F;
+  background: none;
+  -webkit-background-clip: unset;
+}
+
+.subtitle {
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 80rpx;
+  line-height: 1.5;
+  max-width: 600rpx;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-wrap;
+}
+
+.code-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40rpx;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30rpx;
+  border-radius: 16rpx;
+}
+
+.slogan {
+  color: #333;
+  font-size: 28rpx;
+}
+
+.start-btn {
+  background: linear-gradient(to right, #4169E1, #00CED1);
+
+  color: white;
+  padding: 30rpx 40rpx;
+  border-radius: 50rpx;
+  font-size: 35rpx;
+  border: none;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  width: auto;
+  min-width: 240rpx;
+}
+
+.company-title {
+  font-size: 90rpx;
+  font-weight: 600;
+  background-image: linear-gradient(to right, #2563eb, #4ade80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  margin-bottom: 0;
+  display: inline-block;
+  line-height: 1.4;
+  letter-spacing: 4rpx;
+}

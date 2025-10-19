@@ -1,0 +1,36 @@
+<view class="wh bf data-v-0393e547">
+    <view class="topimg p-r data-v-0393e547">
+        <mg-img bind:__l="__l" class="data-v-0393e547" src="{{onImgurl+'img/sqbg.png'}}" vueId="037bf7bc-1"></mg-img>
+        <view class="p-a logoc data-v-0393e547">
+            <mg-img bind:__l="__l" class="data-v-0393e547" src="{{system.icon}}" vueId="037bf7bc-2"></mg-img>
+        </view>
+    </view>
+    <view class="snbtnc data-v-0393e547">
+        <button bindtap="__e" class="btni cf f-c f28 data-v-0393e547" data-event-opts="{{[ [ 'tap',[ [ 'getUserProfile',['$event'] ] ] ] ]}}" style="{{'background:'+tColor+';'+'border-color:'+tColor+';'}}">用户登录</button>
+        <button bindtap="__e" class="btni bf f-c f28 data-v-0393e547" data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',4] ] ] ] ] ] ]}}" style="{{'border-color:'+tColor+';'+'color:'+tColor+';'}}">取消</button>
+    </view>
+    <mg-modal bind:__l="__l" bind:input="__e" class="data-v-0393e547" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','value','$event',[] ] ] ] ] ]}}" value="{{value}}" vueId="037bf7bc-3" vueSlots="{{['default']}}" width="632rpx" zIndex="{{3000}}">
+        <view class="w100 data-v-0393e547">
+            <view class="mla bf bs15 p43 data-v-0393e547">
+                <view class="t-c mt20 data-v-0393e547">
+                    <view class="f30 wei data-v-0393e547">选择用户图像和昵称</view>
+                    <view class="mt90 data-v-0393e547">
+                        <button bindchooseavatar="__e" class="avatar-wrapper data-v-0393e547" data-event-opts="{{[ [ 'chooseavatar',[ [ 'onChooseAvatar',['$event'] ] ] ] ]}}" openType="chooseAvatar">
+                            <image class="avatar data-v-0393e547" src="{{avatarUrl}}"></image>
+                        </button>
+                    </view>
+                    <view class="p2 f-bt f-y-c mt30 b-b-e data-v-0393e547">
+                        <view class="f-g-0 pb10 c0 f24 data-v-0393e547">昵称</view>
+                        <view class="f-g-1 pb10 t-l ml20 data-v-0393e547">
+                            <input bindchange="__e" bindinput="__e" class="f24 data-v-0393e547" data-event-opts="{{[ [ 'change',[ [ 'onInput',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','nickname','$event',[] ] ] ] ] ]}}" placeholder="请选择或输入昵称" type="nickname" value="{{nickname}}"></input>
+                        </view>
+                    </view>
+                </view>
+                <view class="mt90 f-c flex data-v-0393e547">
+                    <button bindtap="__e" class="sbtn sbtn1 f-c f26 f-g-1 data-v-0393e547" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}">拒绝</button>
+                    <button bindtap="__e" class="sbtn sbtn2 f-c c0 f26 f-g-1 ml20 data-v-0393e547" data-event-opts="{{[ [ 'tap',[ [ 'goLogin',['$event'] ] ] ] ]}}" style="{{'background:'+tColor+';'}}">允许</button>
+                </view>
+            </view>
+        </view>
+    </mg-modal>
+</view>

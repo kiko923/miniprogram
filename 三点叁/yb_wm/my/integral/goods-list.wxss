@@ -1,0 +1,17 @@
+.jfgb.data-v-582cf343 {
+  padding: 12rpx 20rpx;
+}
+.bf2.data-v-582cf343 {
+  background: #ff5012;
+}
+.goodsc.data-v-582cf343 {
+  width: 330rpx;
+}
+.goodsimg.data-v-582cf343 {
+  width: 330rpx;
+  height: 330rpx;
+}
+.boxs.data-v-582cf343 {
+  border-radius: 8rpx;
+  padding: 0 7rpx;
+}

@@ -1,0 +1,134 @@
+<view class="bf mh100 data-v-35e79514">
+  <nav-tab
+    bind:__l="__l"
+    bind:changeTab="__e"
+    bind:input="__e"
+    class="data-v-35e79514"
+    cname="mb10"
+    data-event-opts="{{[ [ '^changeTab',[ ['changeTab'] ] ],[ '^input',[ [ '__set_model',[ '','tIdx','$event',[] ] ] ] ] ]}}"
+    ifsize="32"
+    tabs="{{tabs}}"
+    value="{{tIdx}}"
+    vueId="f5cf8ba0-1"
+  ></nav-tab>
+  <block wx:if="{{tIdx==0}}">
+    <mg-swiper
+      bind:__l="__l"
+      class="data-v-35e79514"
+      co="{{swiper}}"
+      color="{{tColor}}"
+      u="rpx"
+      vueId="f5cf8ba0-2"
+    ></mg-swiper>
+    <view class="aybd p-r bf bs30 data-v-35e79514">
+      <view class="p330 f24 c9 t-c data-v-35e79514">{{storageset.slogan}}</view>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-35e79514"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userName','$event',[] ],['params'] ] ] ] ]}}"
+        ht="姓名"
+        htc="c3 f32"
+        icn="f30 c3"
+        isr="1"
+        pr="请输入姓名"
+        value="{{params.userName}}"
+        vueId="f5cf8ba0-3"
+      ></mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-35e79514"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userTel','$event',[] ],['params'] ] ] ] ]}}"
+        ht="手机号"
+        htc="c3 f32"
+        icn="f30 c3"
+        isr="1"
+        max="{{11}}"
+        pr="请输入手机号"
+        t="number"
+        value="{{params.userTel}}"
+        vueId="f5cf8ba0-4"
+      ></mg-input>
+      <mg-input
+        arrow="1"
+        bind:__l="__l"
+        bind:tab="__e"
+        class="data-v-35e79514"
+        data-event-opts="{{[ [ '^tab',[ [ 'toggleTab',['alcohol'] ] ] ] ]}}"
+        dis="1"
+        ftc="c3"
+        ht="酒水品牌"
+        htc="c3 f32"
+        icn="f30 c3"
+        isr="1"
+        pr="请选择"
+        tr="1"
+        value="{{params.name}}"
+        vueId="f5cf8ba0-5"
+      ></mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-35e79514"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','totalNum','$event',[] ],['params'] ] ] ] ]}}"
+        ht="数量"
+        htc="c3 f32"
+        icn="f30 c3"
+        isr="1"
+        pr="请输入数量"
+        t="number"
+        value="{{params.totalNum}}"
+        vueId="f5cf8ba0-6"
+      ></mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-35e79514"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','note','$event',[] ],['params'] ] ] ] ]}}"
+        ht="备注"
+        htc="c3 f32"
+        icn="f30 c3"
+        isr="1"
+        pr="请输入备注信息"
+        value="{{params.note}}"
+        vueId="f5cf8ba0-7"
+      ></mg-input>
+      <mg-agree
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-35e79514"
+        cname="p43"
+        color="{{tColor}}"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','agree','$event',[] ] ] ] ] ]}}"
+        p="14"
+        title="寄存协议"
+        value="{{agree}}"
+        vueId="f5cf8ba0-8"
+      ></mg-agree>
+      <view class="foot-btnc p-r p03 data-v-35e79514">
+        <button
+          bindtap="__e"
+          class="foot-btn data-v-35e79514"
+          data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+          disabled="{{!agree||loading}}"
+          style="{{'background:'+(agree?tColor:'#f5f5f5')+';'}}"
+        >
+          提交
+        </button>
+      </view>
+    </view>
+    <w-picker
+      bind:__l="__l"
+      bind:confirm="__e"
+      class="data-v-35e79514 vue-ref"
+      data-event-opts="{{[ [ '^confirm',[ [ 'onConfirm',['$event','name'] ] ] ] ]}}"
+      data-ref="alcohol"
+      mode="selector"
+      selectList="{{typeList}}"
+      vueId="f5cf8ba0-9"
+      wx:if="{{$root.g0}}"
+    ></w-picker>
+  </block>
+  <block wx:if="{{tIdx==1}}"></block>
+</view>

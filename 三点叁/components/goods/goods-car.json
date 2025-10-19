@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "add-goods": "/components/goods/add-goods",
+    "mg-popup": "/components/common/popup",
+    "sq-btn": "/components/common/sq-btn",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

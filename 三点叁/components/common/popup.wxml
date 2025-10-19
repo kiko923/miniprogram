@@ -1,0 +1,20 @@
+<view
+  class="{{[ 'data-v-584df2c7','am-popup',className,[value?'am-popup-show':''],[animation?'animation':''] ]}}"
+>
+  <view
+    bindtap="__e"
+    catchtouchmove="__e"
+    class="am-popup-mask data-v-584df2c7"
+    data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'maskTap',['$event'] ] ] ] ]}}"
+    style="{{$root.s0}}"
+    wx:if="{{mask}}"
+  ></view>
+  <view
+    catchtouchmove="__e"
+    class="{{['am-popup-content','data-v-584df2c7',position]}}"
+    data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"
+    style="{{'z-index:'+zIndex+';'+'transition-duration:'+dhsj+';'}}"
+  >
+    <slot></slot>
+  </view>
+</view>

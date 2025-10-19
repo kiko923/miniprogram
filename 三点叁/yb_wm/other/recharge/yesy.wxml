@@ -1,0 +1,69 @@
+<view class="bf mh100 data-v-28ae520e">
+  <view
+    class="yytop t-c data-v-28ae520e"
+    style="border-bottom: 24rpx solid #f6f6f6"
+  >
+    <view class="data-v-28ae520e">{{'可用'+system.custom.balance}}</view>
+    <view class="wei f60 mb30 data-v-28ae520e" style="{{'color:'+tColor+';'}}">
+      <text class="f24 mr10 data-v-28ae520e">{{sl}}</text>{{user.balance}}</view
+    >
+    <view
+      bindtap="__e"
+      class="ma ljcz f-c cf data-v-28ae520e"
+      data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','index'] ] ] ] ] ] ]}}"
+      style="{{'background:'+tColor+';'}}"
+      wx:if="{{recharge.open==1}}"
+      >立即充值</view
+    >
+  </view>
+  <view class="p21 mt30 data-v-28ae520e">
+    <mg-cell
+      acolor="#9F9F9F"
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="扫码支付"
+      bttc="f30"
+      class="data-v-28ae520e"
+      cname="p43 c0"
+      data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['url','smzf'] ] ] ] ] ] ]}}"
+      ftc="f28"
+      last="1"
+      vueId="b0f0f6e8-1"
+      vueSlots="{{['ft']}}"
+    >
+      <view
+        class="f24 wei mr20 data-v-28ae520e"
+        slot="ft"
+        style="color: #c8cacd"
+        >可使用钱包直接支付</view
+      >
+    </mg-cell>
+    <mg-cell
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="消费记录"
+      bttc="f30"
+      class="data-v-28ae520e"
+      cname="p43 c0"
+      data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['url','yemx'] ] ] ] ] ] ]}}"
+      ftc="f28"
+      last="1"
+      vueId="b0f0f6e8-2"
+    ></mg-cell>
+    <mg-cell
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="储值说明"
+      bttc="f30"
+      class="data-v-28ae520e"
+      cname="p43 c0"
+      data-event-opts="{{[ [ '^tab',[ ['cjwt'] ] ] ]}}"
+      ftc="f28"
+      last="1"
+      vueId="b0f0f6e8-3"
+    ></mg-cell>
+  </view>
+</view>

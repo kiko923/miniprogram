@@ -1,0 +1,36 @@
+<view class="p30 data-v-2e48278c">
+  <mg-cell
+    bbt="{{'申请时间：'+v.$orig.createdAt}}"
+    bind:__l="__l"
+    bind:tab="__e"
+    btt="{{v.m0}}"
+    bttc="f30"
+    class="data-v-2e48278c"
+    data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['url','txxq?id='+v.$orig.id] ] ] ] ] ] ]}}"
+    ftc="f-s-1 t-r"
+    hc="1"
+    isr="1"
+    vueId="{{'0f7780e3-1-'+i}}"
+    vueSlots="{{['ft']}}"
+    wx:for="{{$root.l0}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  >
+    <view class="data-v-2e48278c" slot="ft">
+      <view class="f30 c3 data-v-2e48278c">{{'-'+v.$orig.money}}</view>
+      <view
+        class="{{['mt10','f26','data-v-2e48278c',v.$orig.state==2?'c00':v.$orig.state==3?'crb':'cf3']}}"
+        >{{v.$orig.state==2?'已通过':v.$orig.state==3?'已拒绝':'待审核'}}</view
+      >
+    </view>
+  </mg-cell>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-2e48278c"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="0f7780e3-2"
+  ></jzz>
+</view>

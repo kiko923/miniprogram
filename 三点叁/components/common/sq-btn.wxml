@@ -1,0 +1,70 @@
+<button
+  bindgetAuthorize="__e"
+  bindgetuserinfo="__e"
+  class="{{['data-v-1ad035d3','sqbtn',cname]}}"
+  data-event-opts="{{[ [ 'getuserinfo',[ [ 'mpGetUserInfo',['$event'] ] ] ],[ 'getAuthorize',[ [ 'onGetAuthorize',['$event'] ] ] ] ]}}"
+  openType="{{api.platform=='ali'?'getAuthorize':'getUserInfo'}}"
+  scope="userInfo"
+  style="{{$root.s0}}"
+  wx:if="{{type==1}}"
+>
+  {{t}}
+</button>
+<button
+  bindgetphonenumber="__e"
+  class="{{['data-v-1ad035d3','sqbtn',cname]}}"
+  data-event-opts="{{[ [ 'getphonenumber',[ [ 'mpGetphonenumber',['$event'] ] ] ] ]}}"
+  openType="getPhoneNumber"
+  style="{{$root.s1}}"
+  wx:if="{{type==2}}"
+>
+  {{t}}
+</button>
+<button
+  bindtap="__e"
+  class="{{['data-v-1ad035d3','sqbtn',cname]}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}"
+  hoverClass="be"
+  openType="share"
+  style="{{$root.s2}}"
+  wx:if="{{type==3}}"
+>
+  {{t}}
+</button>
+<view class="data-v-1ad035d3" wx:if="{{type==4}}">
+  <mg-modal
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-1ad035d3"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+    ismr="{{true}}"
+    value="{{show}}"
+    vueId="051d3460-1"
+    vueSlots="{{['default']}}"
+    width="600rpx"
+    zIndex="{{3000}}"
+  >
+    <view class="bf bs30 sqtel t-c data-v-1ad035d3">
+      <view class="ptimg bsf ma data-v-1ad035d3">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-1ad035d3"
+          src="{{system.icon}}"
+          vueId="{{'051d3460-2'+','+'051d3460-1'}}"
+        ></mg-img>
+      </view>
+      <view class="f36 mt30 mb20 l-h1 data-v-1ad035d3">{{system.name}}</view>
+      <view class="data-v-1ad035d3">绑定手机号后，将会获得更多权益哦！</view>
+      <button
+        bindgetphonenumber="__e"
+        class="f30 telbtn cf data-v-1ad035d3"
+        data-event-opts="{{[ [ 'getphonenumber',[ [ 'mpGetphonenumber',['$event'] ] ] ] ]}}"
+        disabled="{{loading}}"
+        openType="getPhoneNumber"
+        style="{{'background:'+tColor+';'}}"
+      >
+        立即绑定
+      </button>
+    </view>
+  </mg-modal>
+</view>

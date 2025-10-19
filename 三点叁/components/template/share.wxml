@@ -1,0 +1,41 @@
+<mg-popup
+  bind:__l="__l"
+  bind:input="__e"
+  class="data-v-152af834"
+  close="1"
+  data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','show','$event',[] ] ] ] ] ]}}"
+  value="{{show}}"
+  vueId="1fdb2abe-1"
+  vueSlots="{{['default']}}"
+  zIndex="{{5000}}"
+>
+  <view class="p0 data-v-152af834">
+    <view class="bf p3 fxc data-v-152af834">
+      <view class="f-c data-v-152af834">
+        <view class="hx data-v-152af834"></view>
+        <view class="m02 f32 wei data-v-152af834">分享到</view>
+        <view class="hx data-v-152af834"></view>
+      </view>
+      <view class="sharec f-row data-v-152af834">
+        <view class="f-1 f-c-c posi-r data-v-152af834" wx:if="{{wxs}}">
+          <view class="fximg bsf f-c data-v-152af834">
+            <text class="iconfont iconwxfx f60 c6 data-v-152af834"></text>
+          </view>
+          <view class="mt20 f24 data-v-152af834">分享好友</view>
+          <button class="sharebtn data-v-152af834" openType="share"></button>
+        </view>
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c data-v-152af834"
+          data-event-opts="{{[ [ 'tap',[ [ 'hbfx',['$event'] ] ] ] ]}}"
+          wx:if="{{hbs}}"
+        >
+          <view class="fximg bsf f-c data-v-152af834">
+            <text class="iconfont iconxzfx f56 c6 data-v-152af834"></text>
+          </view>
+          <view class="mt20 f24 data-v-152af834">海报分享</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</mg-popup>

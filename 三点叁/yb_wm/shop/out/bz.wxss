@@ -1,0 +1,15 @@
+page {
+  background: #fff;
+}
+.m05.data-v-2720caca {
+  margin: 0 5rpx;
+}
+.kjsr.data-v-2720caca {
+  margin: 35rpx 0;
+  color: #8f8f8f;
+}
+.label.data-v-2720caca {
+  border: 1px solid #efefef;
+  padding: 8rpx 15rpx;
+  margin: 0 20rpx 20rpx 0;
+}

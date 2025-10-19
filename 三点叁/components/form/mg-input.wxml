@@ -1,0 +1,17 @@
+<mg-cell arrow="{{arrow}}" bind:__l="__l" bind:tab="__e" class="data-v-75b9cb55" cname="{{cname}}" data-event-opts="{{[ [ '^tab',[ [ '$emit',['tab'] ] ] ] ]}}" ft="{{ft}}" ftc="{{ftc}}" ht="{{ht}}" htc="{{'f30 '+htc}}" hw="{{hw}}" iconn="{{iconn}}" isl="{{isl}}" isr="{{isr}}" last="{{last}}" sname="{{sname}}" vueId="3d92774f-1" vueSlots="{{['bd','hd','ft']}}" wx:if="{{formt==1}}">
+    <view slot="bd">
+        <input bindinput="__e" catchtap="__e" class="{{['weui-input','data-v-75b9cb55',icn]}}" data-event-opts="{{[ [ 'tap',[ [ '',['$event'] ] ] ],[ 'input',[ [ '__set_model',[ '','inputVal','$event',[] ] ] ] ] ]}}" disabled="{{dis}}" maxlength="{{max}}" placeholder="{{pr}}" placeholderStyle="color:#BBBBBB;" type="{{t}}" value="{{inputVal}}" wx:if="{{!dis}}"></input>
+        <view class="{{['weui-input','t-o-e','data-v-75b9cb55',icn]}}" style="{{'color:'+(inputVal?'':'#BBBBBB')+';'}}" wx:else>{{inputVal||pr}}</view>
+    </view>
+    <view class="data-v-75b9cb55" slot="hd">
+        <slot name="hd"></slot>
+    </view>
+    <view class="data-v-75b9cb55" slot="ft">
+        <slot name="ft"></slot>
+    </view>
+</mg-cell>
+<block wx:else>
+    <mg-cell bind:__l="__l" class="data-v-75b9cb55" cname="{{cname}}" ht="{{ht}}" hw="{{hw}}" isl="{{isl}}" isr="{{isr}}" last="{{last}}" sname="{{sname}}" vueId="3d92774f-2" vueSlots="{{['ft']}}" wx:if="{{formt==2}}">
+        <switch bindchange="__e" checked="{{value==1}}" class="data-v-75b9cb55" color="{{tColor}}" data-event-opts="{{[ [ 'change',[ [ 'switchChange',['$event'] ] ] ] ]}}" slot="ft" style="transform:scale(0.85);"></switch>
+    </mg-cell>
+</block>

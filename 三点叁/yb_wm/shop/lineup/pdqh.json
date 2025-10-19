@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "mg-input": "/components/form/mg-input",
+    "w-picker": "/components/form/w-picker",
+    "book-text": "/components/common/functionCmp/rich-text",
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "dn-order": "/yb_wm/index/components/dn-order",
+    "jzz": "/components/common/jzz",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

@@ -1,0 +1,87 @@
+<view
+  class="{{['data-v-9e06b9cc','product',co.type==1?'f-x-bt f-w':co.type==2?'f-raw':'']}}"
+  style="{{'background:'+(co.typeBg==3?'url('+co.img+')':co.typeBg==2?co.colorBg:'')+';'+'margin:'+''+co.marginTop+u+' '+co.marginLR+u+' '+co.marginBottom+u+';'}}"
+  wx:if="{{$root.g0}}"
+>
+  <view
+    bindtap="__e"
+    class="{{['spi','mb20','o-h','p-r','data-v-9e06b9cc',co.type==2?'spi2':co.type==3?'spi3 f-row':co.type==4?'spi4':'']}}"
+    data-event-opts="{{[ [ 'tap',[ [ 'goodinfo',['$0'],[ [ ['list','',i,'id'] ] ] ] ] ] ]}}"
+    style="{{'background:'+co.colorProductBg+';'+'border-radius:'+co.circle+u+';'+'width:'+(co.type==1?'49%':co.type==2?'32%':'')+';'}}"
+    wx:if="{{co.type<=4}}"
+    wx:for="{{list}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  >
+    <view class="img f-g-0 data-v-9e06b9cc">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-9e06b9cc"
+        src="{{v.icon}}"
+        vueId="{{'0bc97717-1-'+i}}"
+      ></mg-img>
+    </view>
+    <view
+      class="spbtm p2 bf f-y-bt f-g-1 data-v-9e06b9cc"
+      style="{{'background:'+co.colorProductBg+';'}}"
+    >
+      <view class="{{['data-v-9e06b9cc',co.type!=3?'l-h1':'']}}">
+        <view
+          class="f30 t-o-e2 lh40 data-v-9e06b9cc"
+          style="{{'color:'+co.colorTitle+';'}}"
+          >{{v.name}}</view
+        >
+        <view
+          class="{{['mt15','f20','c9','data-v-9e06b9cc',co.type!=3?'t-o-e':'t-o-e3']}}"
+          wx:if="{{v.body}}"
+          >{{v.body}}</view
+        >
+      </view>
+      <view class="f-y-c data-v-9e06b9cc">
+        <view
+          class="f-1 f-y-e ln data-v-9e06b9cc"
+          style="{{'color:'+co.colorBtn+';'}}"
+        >
+          <view
+            class="data-v-9e06b9cc"
+            wx:if="{{v.activityGoodData.type<1||v.activityGoodData.type>=4}}"
+            >{{sl+v.price}}</view
+          >
+          <block wx:else>
+            <view class="data-v-9e06b9cc"
+              >{{sl+v.activityGoodData.activityMoney}}</view
+            >
+            <view class="t-d-l ml10 c9 f24 data-v-9e06b9cc"
+              >{{sl+v.price}}</view
+            >
+          </block>
+        </view>
+        <text
+          class="{{['iconfont','f40','data-v-9e06b9cc',co.typeBtn==1?'icongwc':co.typeBtn==2?'iconkxj':'iconsxj']}}"
+          style="{{'color:'+co.colorBtn+';'}}"
+        ></text>
+      </view>
+    </view>
+    <view
+      class="p-a zsjtb data-v-9e06b9cc"
+      wx:if="{{co.typePay<=3&&co.typePay>0}}"
+    >
+      <image
+        class="pimg data-v-9e06b9cc"
+        src="{{'/static/pay'+co.typePay+'.png'}}"
+      ></image>
+      <view class="p-a f22 cf ptxt l-h1 data-v-9e06b9cc">{{co.typeText}}</view>
+    </view>
+  </view>
+</view>
+<jzz
+  bgcolor="transparent"
+  bind:__l="__l"
+  class="data-v-9e06b9cc"
+  mygd="{{isget}}"
+  nodata="{{isget}}"
+  otext="暂无商品"
+  vueId="0bc97717-2"
+  wx:else
+></jzz>

@@ -1,0 +1,14 @@
+.dbbtnc.data-v-60a84c42 {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 998;
+  padding: 30rpx;
+}
+.dbr.data-v-60a84c42 {
+  min-width: 210rpx;
+  height: 80rpx;
+  font-size: 30rpx;
+  border-radius: 80rpx;
+}

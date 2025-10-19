@@ -1,0 +1,48 @@
+<view
+  class="titles o-h data-v-cf05b776"
+  style="{{'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'+'border-radius:'+co.circle+u+';'}}"
+>
+  <view
+    class="titles-c f-y-c data-v-cf05b776"
+    style="{{'background:'+co.colorBg+';'}}"
+  >
+    <view
+      bindtap="__e"
+      class="{{['f-1','f-y-c','data-v-cf05b776',co.wordStatus=='center'?'f-x-c':'']}}"
+      data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$0'],['co.upLoad1'] ] ] ] ]}}"
+    >
+      <view class="img f-g-0 mr10 data-v-cf05b776" wx:if="{{co.upLoad1.img}}">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-cf05b776"
+          src="{{co.upLoad1.img}}"
+          vueId="7894f60a-1"
+        ></mg-img>
+      </view>
+      <view
+        class="f32 wei l-n data-v-cf05b776"
+        style="{{'color:'+co.upLoad1.colorWord+';'}}"
+        >{{co.upLoad1.text}}</view
+      >
+    </view>
+    <view
+      bindtap="__e"
+      class="f-y-c data-v-cf05b776"
+      data-event-opts="{{[ [ 'tap',[ [ 'goLink',['$0'],['co.upLoad2'] ] ] ] ]}}"
+    >
+      <view
+        class="f24 c9 data-v-cf05b776"
+        style="{{'color:'+co.upLoad2.colorWord+';'}}"
+        >{{co.upLoad2.text}}</view
+      >
+      <view class="img ml10 data-v-cf05b776" wx:if="{{co.upLoad2.img}}">
+        <mg-img
+          bind:__l="__l"
+          class="data-v-cf05b776"
+          src="{{co.upLoad2.img}}"
+          vueId="7894f60a-2"
+        ></mg-img>
+      </view>
+    </view>
+  </view>
+</view>

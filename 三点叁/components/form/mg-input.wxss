@@ -1,0 +1,12 @@
+.weui-input.data-v-75b9cb55 {
+  width: 100%;
+  font-size: 30rpx;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: inherit;
+}
+.weui-input.data-v-75b9cb55:disabled {
+  background: transparent;
+}

@@ -1,0 +1,7 @@
+<view wx:if="{{src}}">
+  <web-view
+    bindmessage="__e"
+    data-event-opts="{{[ [ 'message',[ [ 'getMessage',['$event'] ] ] ] ]}}"
+    src="{{src}}"
+  ></web-view>
+</view>

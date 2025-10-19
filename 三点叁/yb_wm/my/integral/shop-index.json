@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+    "mg-swiper": "/components/common/functionCmp/swiper",
+    "entry-button-group": "/components/drag/btn",
+    "goods-list": "/yb_wm/my/integral/goods-list",
+    "jzz": "/components/common/jzz",
+    "notice-group": "/components/common/functionCmp/notice-group",
+    "load": "/components/common/load",
+    "nav-tab": "/components/common/functionCmp/nav-tab",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

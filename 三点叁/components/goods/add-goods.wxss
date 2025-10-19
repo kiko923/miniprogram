@@ -1,0 +1,20 @@
+.ggc.data-v-ad94365a {
+  position: relative;
+  border-radius: 30rpx;
+  height: 43rpx;
+  padding: 3rpx 15rpx;
+  width: 97rpx;
+}
+.dot.data-v-ad94365a {
+  position: absolute;
+  width: 36rpx;
+  height: 36rpx;
+  right: -10rpx;
+  top: -18rpx;
+  border-radius: 50%;
+  color: #fff;
+  border: 1rpx solid #fff;
+}
+.mr5.data-v-ad94365a {
+  margin-right: 5rpx;
+}

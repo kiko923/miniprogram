@@ -1,0 +1,25 @@
+.mrltc.data-v-97376f32 {
+  width: 50rpx;
+  height: 50rpx;
+}
+.b-l-ts.data-v-97376f32 {
+  background: linear-gradient(180deg, #f38529, #fe912c);
+}
+.b-l-sy.data-v-97376f32 {
+  background: linear-gradient(180deg, #a57afa, #a175f8);
+}
+.b-l-kc.data-v-97376f32 {
+  background: linear-gradient(180deg, #07c160, #09bb07);
+}
+.b-l-yy.data-v-97376f32 {
+  background: linear-gradient(180deg, #05cbe0, #02aaba);
+}
+.b-l-pd.data-v-97376f32 {
+  background: linear-gradient(180deg, #ffcd42, #fabc0a);
+}
+.b-r.data-v-97376f32 {
+  width: 1px;
+  height: 23rpx;
+  background: #999;
+  margin: 0 12rpx;
+}

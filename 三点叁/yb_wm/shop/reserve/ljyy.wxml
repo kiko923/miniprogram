@@ -1,0 +1,166 @@
+<view class="bf9 mvh100 pb130 data-v-27089f2a" hidden="{{!yyxx.set}}">
+  <view class="main data-v-27089f2a">
+    <view class="bf bs20 b-s data-v-27089f2a">
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        bind:tab="__e"
+        class="data-v-27089f2a"
+        data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['url','index?change=1&storeId='+params.storeId] ] ] ] ] ],[ '^input',[ [ '__set_model',[ '$0','ydxx','$event',[] ],['params'] ] ] ] ]}}"
+        dis="1"
+        icn="f30"
+        iconn="iconbianji"
+        isr="1"
+        last="1"
+        pr="请修改预定信息"
+        value="{{params.ydxx}}"
+        vueId="7942f33d-1"
+        vueSlots="{{['ft']}}"
+      >
+        <view class="data-v-27089f2a" slot="ft" style="{{'color:'+tColor+';'}}"
+          >修改</view
+        >
+      </mg-input>
+    </view>
+    <view class="bf bs20 b-s mt30 data-v-27089f2a">
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-27089f2a"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userName','$event',[] ],['params'] ] ] ] ]}}"
+        icn="f30"
+        iconn="iconwd f34"
+        isr="1"
+        pr="请填写联系人姓名"
+        value="{{params.userName}}"
+        vueId="7942f33d-2"
+        vueSlots="{{['ft']}}"
+      >
+        <view class="c3 f30 data-v-27089f2a" slot="ft">
+          <mg-radio
+            arr="{{sexArr}}"
+            bind:__l="__l"
+            bind:input="__e"
+            class="data-v-27089f2a"
+            data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','sex','$event',[] ],['params'] ] ] ] ]}}"
+            rsname="{{rsnameData}}"
+            value="{{params.sex}}"
+            vueId="{{'7942f33d-3'+','+'7942f33d-2'}}"
+          ></mg-radio>
+        </view>
+      </mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-27089f2a"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','userTel','$event',[] ],['params'] ] ] ] ]}}"
+        icn="f30"
+        iconn="icondh4 f34"
+        isr="1"
+        max="{{11}}"
+        pr="请输入手机号"
+        t="number"
+        value="{{params.userTel}}"
+        vueId="7942f33d-4"
+        vueSlots="{{['default','hd']}}"
+      >
+        <view class="f-y-c sjhqh hlr data-v-27089f2a" slot="hd">
+          <text class="data-v-27089f2a">+86</text>
+          <text class="iconfont icondown c3 f28 ml5 data-v-27089f2a"></text>
+        </view>
+        <sq-btn
+          bind:__l="__l"
+          bind:refresh="__e"
+          class="data-v-27089f2a"
+          cname="text-btnf f24 ml20 p0 b00"
+          data-event-opts="{{[ [ '^refresh',[ ['setTel'] ] ] ]}}"
+          h="50"
+          slot="ft"
+          t="自动填写"
+          type="2"
+          vueId="{{'7942f33d-5'+','+'7942f33d-4'}}"
+          w="120"
+          wx:if="{{!user.userTel}}"
+        ></sq-btn>
+      </mg-input>
+      <mg-input
+        bind:__l="__l"
+        bind:input="__e"
+        class="data-v-27089f2a"
+        data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '$0','note','$event',[] ],['params'] ] ] ] ]}}"
+        icn="f30"
+        iconn="icondd"
+        isr="1"
+        last="1"
+        max="25"
+        pr="如有其它需求,请备注说明"
+        value="{{params.note}}"
+        vueId="7942f33d-6"
+        vueSlots="{{['ft']}}"
+      >
+        <view class="data-v-27089f2a" slot="ft">{{$root.g0+'/25'}}</view>
+      </mg-input>
+    </view>
+    <view
+      class="bf bs20 b-s mt30 p23 l-n data-v-27089f2a"
+      wx:if="{{params.xzyy&&params.xzyy[4].value.money>0}}"
+    >
+      <view class="f30 wei mb15 data-v-27089f2a">定金说明</view>
+      <mg-rtext
+        bind:__l="__l"
+        class="data-v-27089f2a"
+        content="{{yyxx.set.introduction}}"
+        type="2"
+        vueId="7942f33d-7"
+      ></mg-rtext>
+    </view>
+  </view>
+  <view class="foot-btnc bf9 data-v-27089f2a">
+    <block wx:if="{{params.xzyy&&params.xzyy[4].value.money>0}}">
+      <view class="p-a ydjc bf f24 data-v-27089f2a">
+        <view class="f-y-c data-v-27089f2a"
+          >{{'距离就餐时间不足'+yyxx.set.cancelTime+'分钟，商家接单后支付金额无法返还'}}</view
+        >
+        <view class="p-a xxsj data-v-27089f2a"></view>
+      </view>
+      <view class="yd2 f-y-c data-v-27089f2a">
+        <view class="f-1 ml20 data-v-27089f2a">
+          <view
+            class="f-row f-y-e wbba data-v-27089f2a"
+            style="{{'color:'+tColor+';'}}"
+          >
+            <text class="data-v-27089f2a">{{sl}}</text>
+            <text class="f34 wei ml5 data-v-27089f2a"
+              >{{params.xzyy[4].value.money}}</text
+            >
+          </view>
+          <view class="f22 c9 data-v-27089f2a"
+            >支付即表示您已同意上述规则说明</view
+          >
+        </view>
+        <button
+          bindtap="__e"
+          class="yd2r f34 f-c cf data-v-27089f2a"
+          data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+          disabled="{{loading}}"
+          loading="{{loading}}"
+          style="{{'background:'+tColor+';'}}"
+        >
+          立即支付
+        </button>
+      </view>
+    </block>
+    <button
+      bindtap="__e"
+      class="foot-btn data-v-27089f2a"
+      data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      hoverClass="btnhc"
+      loading="{{loading}}"
+      style="{{'background:'+tColor+';'}}"
+      wx:else
+    >
+      立即预约
+    </button>
+  </view>
+</view>

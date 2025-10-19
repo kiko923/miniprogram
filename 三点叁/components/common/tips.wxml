@@ -1,0 +1,14 @@
+<view
+  bindtap="__e"
+  class="tipsc f26 f-row data-v-47e064b7"
+  data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"
+  wx:if="{{showTips}}"
+>
+  <view class="data-v-47e064b7"
+    >点击“...”添加到我的小程序，首页下拉即可快速访问哦</view
+  >
+  <view class="f-g-0 tipx f-c bsf data-v-47e064b7">
+    <text class="iconfont iconx cf f14 data-v-47e064b7"></text>
+  </view>
+  <view class="posi-a triangle-up data-v-47e064b7"></view>
+</view>

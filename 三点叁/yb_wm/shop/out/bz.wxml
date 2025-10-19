@@ -1,0 +1,45 @@
+<view class="data-v-2720caca">
+  <view class="p3 data-v-2720caca">
+    <view class="bf9 bs10 p2 data-v-2720caca">
+      <textarea
+        bindinput="__e"
+        class="w100 c6 data-v-2720caca"
+        data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','note','$event',[] ] ] ] ] ]}}"
+        maxlength="50"
+        placeholder="请输入备注、偏好等要求"
+        placeholderClass="f24"
+        style="height: 160rpx"
+        value="{{note}}"
+      ></textarea>
+      <view class="f-x-e f24 c9 data-v-2720caca"
+        >{{$root.g0}}<text class="m05 data-v-2720caca">/</text>50个字</view
+      >
+    </view>
+    <view class="kjsr data-v-2720caca" wx:if="{{$root.g1}}">快捷输入</view>
+    <view class="f-raw data-v-2720caca">
+      <view
+        bindtap="__e"
+        class="label bs10 f-c c6 f26 data-v-2720caca"
+        data-event-opts="{{[ [ 'tap',[ [ 'djnote',['$0'],[ [ ['larr','',i] ] ] ] ] ] ]}}"
+        wx:for="{{larr}}"
+        wx:for-index="i"
+        wx:for-item="v"
+        wx:key="i"
+        >{{v}}</view
+      >
+    </view>
+  </view>
+  <view class="foot-btnc posi-r mt30 data-v-2720caca">
+    <button
+      bindtap="__e"
+      class="foot-btn b00 bs15 data-v-2720caca"
+      data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}"
+      disabled="{{loading}}"
+      hoverClass="btnhc"
+      loading="{{loading}}"
+      style="{{'background:'+btncolor+';'}}"
+    >
+      提交
+    </button>
+  </view>
+</view>

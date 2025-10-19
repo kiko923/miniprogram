@@ -1,0 +1,23 @@
+<view
+  bindtap="__e"
+  class="tipsc f26 f-row data-v-7365573a"
+  data-event-opts="{{[ [ 'tap',[ [ 'close',['$event'] ] ] ] ]}}"
+  style="{{'top:'+$root.g0.customNavh+'px'+';'}}"
+  wx:if="{{showTips}}"
+>
+  <view class="f-1 f-y-c data-v-7365573a">
+    <view class="img f-g-0 bsf mr20 data-v-7365573a">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-7365573a"
+        src="{{co.img}}"
+        vueId="22061a28-1"
+      ></mg-img>
+    </view>
+    <view class="data-v-7365573a">{{co.text}}</view>
+  </view>
+  <view class="f-g-0 tipx f-c bsf data-v-7365573a">
+    <text class="iconfont iconx cf f14 data-v-7365573a"></text>
+  </view>
+  <view class="posi-a triangle-up data-v-7365573a"></view>
+</view>

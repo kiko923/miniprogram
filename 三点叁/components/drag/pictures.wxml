@@ -1,0 +1,22 @@
+<view
+  class="pictures o-h data-v-a3cf39a2"
+  style="{{'margin-top:'+co.marginTop+u+';'+'margin-bottom:'+co.marginBottom+u+';'+'margin-left:'+co.marginLR+u+';'+'margin-right:'+co.marginLR+u+';'}}"
+>
+  <view
+    bindtap="__e"
+    class="imgc o-h data-v-a3cf39a2"
+    data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgUrl','',i] ] ] ] ] ] ]}}"
+    style="{{'border-radius:'+co.circle+u+';'+'height:'+''+(u=='px'?$root.m0:co.height)+u+';'+'margin-top:'+(i>0?co.paddingTop+'px':'')+';'}}"
+    wx:for="{{co.imgUrl}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  >
+    <mg-img
+      bind:__l="__l"
+      class="data-v-a3cf39a2"
+      src="{{v.img}}"
+      vueId="{{'3f1a4dbe-1-'+i}}"
+    ></mg-img>
+  </view>
+</view>

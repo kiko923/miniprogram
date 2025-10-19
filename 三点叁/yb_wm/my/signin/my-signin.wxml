@@ -1,0 +1,53 @@
+<view class="mh100 pb115 data-v-f0b45460">
+  <view class="bf mb30 data-v-f0b45460" wx:if="{{type=='1'}}">
+    <view class="f-c-c p30 data-v-f0b45460">
+      <view class="f28 data-v-f0b45460">{{'当前'+jfName}}</view>
+      <view class="f56 cf7 wei data-v-f0b45460">{{integral}}</view>
+    </view>
+    <view class="f-x-bt data-v-f0b45460">
+      <view
+        bindtap="__e"
+        class="f-c p3 data-v-f0b45460"
+        data-event-opts="{{[ [ 'tap',[ [ 'integralMall',['$event'] ] ] ] ]}}"
+      >
+        <text class="iconfont iconjfsc mr10 cf7 f34 data-v-f0b45460"></text>
+        <text class="data-v-f0b45460">{{jfName+'商城'}}</text>
+      </view>
+      <view
+        bindtap="__e"
+        class="f-c p3 data-v-f0b45460"
+        data-event-opts="{{[ [ 'tap',[ [ 'integralRule',['$event'] ] ] ] ]}}"
+      >
+        <text class="iconfont iconjfgz mr10 cf7 f34 data-v-f0b45460"></text>
+        <text class="data-v-f0b45460">{{jfName+'规则'}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="bf data-v-f0b45460">
+    <view class="f32 wei p3 hlb data-v-f0b45460">签到记录</view>
+    <view
+      class="p3 bf hlb data-v-f0b45460"
+      wx:for="{{dataList}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="f-x-bt data-v-f0b45460">
+        <view class="t-o-e f28 data-v-f0b45460">{{v.note}}</view>
+        <view class="cf7 f28 data-v-f0b45460">{{'+'+v.integral}}</view>
+      </view>
+      <view class="f-x-bt data-v-f0b45460">
+        <view class="c9 f24 m10 data-v-f0b45460">{{v.createdAt}}</view>
+      </view>
+    </view>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-f0b45460"
+    imgn="zwyyd"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="eeacb6a4-1"
+  ></jzz>
+</view>

@@ -1,0 +1,70 @@
+.qdh.data-v-773ca2ce {
+  width: 100%;
+  height: 387rpx;
+}
+.qdc.data-v-773ca2ce {
+  margin-top: -120rpx;
+}
+.bf2.data-v-773ca2ce {
+  background: #ff5012;
+}
+.cf2.data-v-773ca2ce {
+  color: #ff5012;
+}
+.goxd.data-v-773ca2ce {
+  width: 160rpx;
+  height: 58rpx;
+  border: 1rpx solid #ff5012;
+  border-radius: 28px;
+}
+.qddays.data-v-773ca2ce,
+.qddayw.data-v-773ca2ce {
+  width: 67rpx;
+  height: 84rpx;
+  border-radius: 8rpx;
+  margin-left: 30rpx;
+}
+.qddays.data-v-773ca2ce:first-child {
+  margin-left: 0;
+}
+.icw.data-v-773ca2ce {
+  width: 34rpx;
+  height: 24rpx;
+}
+.dhe.data-v-773ca2ce {
+  height: 40rpx;
+}
+.w630.data-v-773ca2ce {
+  width: 630rpx;
+}
+.p24.data-v-773ca2ce {
+  padding: 30rpx 0 40rpx 0;
+}
+.goodsc.data-v-773ca2ce {
+  width: 305rpx;
+}
+.goodsimg.data-v-773ca2ce {
+  width: 305rpx;
+  height: 305rpx;
+}
+.boxs.data-v-773ca2ce {
+  border-radius: 8rpx;
+  padding: 0 7rpx;
+}
+.sbtn.data-v-773ca2ce {
+  width: 540rpx;
+  height: 94rpx;
+  background: linear-gradient(-90deg, #ff5217, #ff772d);
+  border-radius: 47px;
+}
+.ysbtn.data-v-773ca2ce {
+  background: linear-gradient(-90deg, #ff5217, #ff772d);
+  opacity: 0.5;
+  color: #ffdbcc;
+}
+.cfc.data-v-773ca2ce {
+  color: #ff481c;
+}
+.p050.data-v-773ca2ce {
+  padding: 5rpx 0;
+}

@@ -1,0 +1,12 @@
+<view
+  bindtap="__e"
+  catchtouchmove="__e"
+  class="{{['u-mask','data-v-0d13b9e9',zoom?'u-mask-zoom':'',show?'u-mask-show':'']}}"
+  data-event-opts="{{[ [ 'tap',[ [ 'click',['$event'] ] ] ],[ 'touchmove',[ [ 'e0',['$event'] ] ] ] ]}}"
+  hoverStopPropagation="{{true}}"
+  style="{{$root.s0}}"
+>
+  <view class="data-v-0d13b9e9" style="{{$root.s1}}">
+    <slot></slot>
+  </view>
+</view>

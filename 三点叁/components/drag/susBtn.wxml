@@ -1,0 +1,24 @@
+<view
+  class="{{['susBtn','posi-f','p2','data-v-3185a4d5',co.type=='left'?'l0':'r0']}}"
+  style="{{'top:'+co.shifting*2+'rpx'+';'}}"
+  wx:if="{{co.status==1}}"
+>
+  <view
+    bindtap="__e"
+    class="imgc bf bsf f-c data-v-3185a4d5"
+    data-event-opts="{{[ [ 'tap',[ [ 'goTo',['$0'],[ [ ['co.imgUrl','',i] ] ] ] ] ] ]}}"
+    wx:for="{{co.imgUrl}}"
+    wx:for-index="i"
+    wx:for-item="v"
+    wx:key="i"
+  >
+    <view class="img data-v-3185a4d5">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-3185a4d5"
+        src="{{v.img}}"
+        vueId="{{'140191cb-1-'+i}}"
+      ></mg-img>
+    </view>
+  </view>
+</view>

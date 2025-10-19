@@ -1,0 +1,165 @@
+<view class="pb130 mh100 distribution data-v-bceffe6a" wx:if="{{fxsSq.name}}">
+  <uni-nav-bar
+    bind:__l="__l"
+    border="{{opcity>=1}}"
+    class="data-v-bceffe6a"
+    fixed="{{true}}"
+    id="uninavbar"
+    isleft="{{true}}"
+    ispr="{{false}}"
+    statusBar="{{true}}"
+    title="{{name}}"
+    uriconopcity="{{iconOpcity}}"
+    uropcity="{{opcity}}"
+    vueId="b92b1dbc-1"
+  ></uni-nav-bar>
+  <view
+    class="hbg posi-a data-v-bceffe6a"
+    style="{{'background:'+tColor+';'}}"
+  ></view>
+  <view class="bs20 fx1c f-row posi-r data-v-bceffe6a">
+    <view class="img bsf mr30 data-v-bceffe6a">
+      <mg-img
+        bind:__l="__l"
+        class="data-v-bceffe6a"
+        src="{{user.portrait}}"
+        vueId="b92b1dbc-2"
+      ></mg-img>
+    </view>
+    <view class="f-1 data-v-bceffe6a">
+      <view class="f-x-bt data-v-bceffe6a">
+        <view class="f38 wei f-1 cf data-v-bceffe6a">{{fxsSq.name}}</view>
+        <view
+          bindtap="__e"
+          class="yqhb f-c f24 cf data-v-bceffe6a"
+          data-event-opts="{{[ [ 'tap',[ [ 'ljyq',['$event'] ] ] ] ]}}"
+          >邀请伙伴</view
+        >
+      </view>
+      <view class="mt10 cf f24 data-v-bceffe6a"
+        >{{'申请时间：'+fxsSq.examineAt}}</view
+      >
+    </view>
+  </view>
+  <view class="fx2c posi-r data-v-bceffe6a">
+    <mg-cell
+      bgc="none"
+      bind:__l="__l"
+      class="data-v-bceffe6a"
+      cname="p3"
+      isr="1"
+      last="1"
+      vueId="b92b1dbc-3"
+      vueSlots="{{['bd']}}"
+    >
+      <view class="f-y-c data-v-bceffe6a" slot="bd">
+        <view
+          bindtap="__e"
+          class="f-1 f-c-c b-r-d data-v-bceffe6a"
+          data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url',v.url] ] ] ] ] ] ]}}"
+          wx:for="{{syarr}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="f32 wei cf data-v-bceffe6a">{{v.n}}</view>
+          <view class="f26 cf m20 data-v-bceffe6a">{{v.t}}</view>
+        </view>
+      </view>
+    </mg-cell>
+  </view>
+  <view class="fx2c m02 bs20 bf b-s-3 pb20 posi-r data-v-bceffe6a">
+    <mg-cell
+      bind:__l="__l"
+      class="data-v-bceffe6a"
+      cname="p23"
+      isr="1"
+      last="1"
+      vueId="b92b1dbc-4"
+      vueSlots="{{['bd']}}"
+    >
+      <view class="f-y-c data-v-bceffe6a" slot="bd">
+        <view
+          class="f-1 f-c-c b-r-d data-v-bceffe6a"
+          wx:for="{{tjarr}}"
+          wx:for-index="i"
+          wx:for-item="v"
+          wx:key="i"
+        >
+          <view class="f32 wei data-v-bceffe6a">{{v.n}}</view>
+          <view class="f24 c9 mt20 data-v-bceffe6a">{{v.t}}</view>
+        </view>
+      </view>
+    </mg-cell>
+    <view class="f-c-c p23 data-v-bceffe6a" wx:if="{{ldxConfig.open==1}}">
+      <button
+        bindtap="__e"
+        class="clearbtn sbtn f-c cf f30 data-v-bceffe6a"
+        data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['t',1],['url','tx?t=2'] ] ] ] ] ] ]}}"
+        style="{{'background:'+tColor+';'}}"
+      >
+        提现
+      </button>
+    </view>
+  </view>
+  <view class="p34 mt10 data-v-bceffe6a">
+    <mg-cell
+      ac="iconright1"
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="分销订单"
+      bttc="f30"
+      class="data-v-bceffe6a"
+      cname="p30"
+      data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],['url','syxq'] ] ] ] ] ] ]}}"
+      ftc="f24 cd"
+      iconn="iconcz f44 icname"
+      last="1"
+      vueId="b92b1dbc-5"
+    ></mg-cell>
+    <mg-cell
+      ac="iconright1"
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="我的团队"
+      bttc="f30"
+      class="data-v-bceffe6a"
+      cname="p30"
+      data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],['url','wdfs'] ] ] ] ] ] ]}}"
+      ftc="f24 cd"
+      iconn="icondhjl f44 icname"
+      last="1"
+      vueId="b92b1dbc-6"
+    ></mg-cell>
+    <mg-cell
+      ac="iconright1"
+      arrow="1"
+      bind:__l="__l"
+      bind:tab="__e"
+      btt="提现明细"
+      bttc="f30"
+      class="data-v-bceffe6a"
+      cname="p30"
+      data-event-opts="{{[ [ '^tab',[ [ 'go',[ [ 'o',['t',1],['url','txmx?t=2'] ] ] ] ] ] ]}}"
+      ftc="f24 cd"
+      iconn="iconjfgz f40 icname"
+      last="1"
+      vueId="b92b1dbc-7"
+      wx:if="{{ldxConfig.open==1}}"
+    ></mg-cell>
+  </view>
+  <mg-share
+    bind:__l="__l"
+    bind:input="__e"
+    class="data-v-bceffe6a"
+    co="{{shareCo}}"
+    data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','shareshow','$event',[] ] ] ] ] ]}}"
+    hbs="{{shareCo.isget}}"
+    ptype="2"
+    value="{{shareshow}}"
+    vueId="b92b1dbc-8"
+    wxs="1"
+  ></mg-share>
+</view>

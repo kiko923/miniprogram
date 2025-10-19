@@ -1,0 +1,40 @@
+<view class="mh100 data-v-2ab81a0b">
+  <view class="bf data-v-2ab81a0b">
+    <view class="f32 wei p3 hlb data-v-2ab81a0b">优惠券列表</view>
+    <view
+      class="p3 bf hlb data-v-2ab81a0b"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <view class="f-x-bt data-v-2ab81a0b">
+        <view class="t-o-e f28 data-v-2ab81a0b">{{v.$orig.couponName}}</view>
+        <view class="wei cf5 data-v-2ab81a0b">
+          <block wx:if="{{v.$orig.type==1}}">
+            <text class="data-v-2ab81a0b">{{sl}}</text>
+            <text class="f48 ml5 data-v-2ab81a0b">{{v.m0}}</text>
+          </block>
+          <block wx:else>
+            <block wx:if="{{v.$orig.type==2}}">
+              <text class="f48 data-v-2ab81a0b">{{v.m1}}</text>
+              <text class="ml5 data-v-2ab81a0b">折</text>
+            </block>
+          </block>
+        </view>
+      </view>
+      <view class="f-x-bt data-v-2ab81a0b">
+        <view class="c9 f24 m10 data-v-2ab81a0b">{{v.$orig.useExplain}}</view>
+      </view>
+    </view>
+  </view>
+  <jzz
+    bgcolor="transparent"
+    bind:__l="__l"
+    class="data-v-2ab81a0b"
+    imgn="zwcz"
+    mygd="{{mygd}}"
+    nodata="{{$root.g0}}"
+    vueId="1cfceeaa-1"
+  ></jzz>
+</view>

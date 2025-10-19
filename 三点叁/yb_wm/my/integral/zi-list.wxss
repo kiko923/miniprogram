@@ -1,0 +1,26 @@
+.ggc.data-v-d99ee3d4 {
+  height: 72vh;
+}
+.ggc .ggx.data-v-d99ee3d4 {
+  top: 20rpx;
+  right: 20rpx;
+}
+.ggc .ggh.data-v-d99ee3d4 {
+  height: 10vh;
+}
+.ggc .ggb.data-v-d99ee3d4 {
+  height: 100%;
+}
+.ggc .ggb .specv.data-v-d99ee3d4 {
+  min-width: 185rpx;
+  padding: 0 30rpx;
+  height: 70rpx;
+  border-radius: 8rpx;
+  text-align: center;
+  line-height: 70rpx;
+  background: #eff3f6;
+  margin: 0 20rpx 20rpx 0;
+}
+.ggc .ggf.data-v-d99ee3d4 {
+  height: 19vh;
+}

@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mg-popup": "/components/common/popup",
+    "mg-coupon": "/components/common/mg-coupon",
+    "tab-bar": "/components/common/tabbar",
+    "mg-img": "/components/common/mg-img",
+    "mg-cell": "/components/common/mg-cell"
+  }
+}

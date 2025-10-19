@@ -1,0 +1,28 @@
+<view class="epay-container" wx:if="{{!isPayFinish}}">
+    <view class="epay-amount">
+        <text class="epay-amount-prefix">￥</text>
+        <text class="epay-amount-value">{{money}}</text>
+    </view>
+    <button bindtap="submitPay" class="epay-pay-btn {{disablePay?'disabled':''}}" wx:if="{{!isPhoneNumber}}">立即支付</button>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" class="epay-pay-btn {{disablePay?'disabled':''}}" wx:if="{{isPhoneNumber}}">登录并支付</button>
+</view>
+<view class="epay-finish-container" wx:if="{{isPayFinish&&isPaySuccess}}">
+    <view class="epay-finish-header">
+        <icon class="icon-box-img" type="success" size="90"></icon>
+        <view class="title">支付成功</view>
+        <view class="subtitle">请返回浏览器查看结果</view>
+    </view>
+    <view class="epay-finish-footer">
+        <view bind:tap="exitApp" class="epay-default-button">返回</view>
+    </view>
+</view>
+<view class="epay-finish-container fail" wx:if="{{isPayFinish&&!isPaySuccess}}">
+    <view class="epay-finish-header">
+        <icon class="icon-box-img" type="warn" size="90"></icon>
+        <view class="title">支付失败</view>
+        <view class="subtitle">{{payFailMsg}}</view>
+    </view>
+    <view class="epay-finish-footer">
+        <view bind:tap="exitApp" class="epay-default-button">返回</view>
+    </view>
+</view>

@@ -1,0 +1,52 @@
+<view
+  class="bagbg data-v-70582dc3"
+  style="{{'margin-top:'+''+co.marginTop+u+';'+'margin-bottom:'+''+co.marginBottom+u+';'+'margin-left:'+''+co.marginLR+u+';'+'margin-right:'+''+co.marginLR+u+';'+'border-radius:'+''+co.circle+u+';'+'background-color:'+''+co.colorBg+';'}}"
+>
+  <view class="{{['data-v-70582dc3','p3']}}">
+    <mg-cell
+      bgc="transparent"
+      bind:__l="__l"
+      btt="{{co.title||'我的券包'}}"
+      bttc="f32 wei"
+      class="data-v-70582dc3"
+      cname="p0 cf"
+      color="#fff"
+      ftc="f24 c6"
+      hc="1"
+      last="1"
+      vueId="6eb6a030-1"
+    ></mg-cell>
+  </view>
+  <scroll-view
+    class="f-1 ws-n f26 data-v-70582dc3"
+    scrollX="true"
+    wx:if="{{$root.g0}}"
+  >
+    <view
+      class="dis-in mobdli mr20 ml20 data-v-70582dc3"
+      style="{{'width:'+(v.g1>1?630+'rpx':710+'rpx')+';'}}"
+      wx:for="{{$root.l0}}"
+      wx:for-index="i"
+      wx:for-item="v"
+      wx:key="i"
+    >
+      <mg-coupon
+        cname
+        bind:__l="__l"
+        bind:btntap="__e"
+        class="data-v-70582dc3"
+        co="{{v.$orig}}"
+        data-event-opts="{{[ [ '^btntap',[ [ 'btntap',['$0'],[ [ ['sjqb','',i,'id'] ] ] ] ] ] ]}}"
+        ptype="8"
+        vueId="{{'6eb6a030-2-'+i}}"
+        wx:if="{{i<2||zkshow}}"
+      ></mg-coupon>
+    </view>
+  </scroll-view>
+  <view class="bf p3 t-c data-v-70582dc3" wx:else>
+    <view class="pb20 c9 f-c data-v-70582dc3">
+      <text class="iconfont icondjs mr10 f28 data-v-70582dc3"></text>
+      <text class="data-v-70582dc3">暂无券包活动</text>
+    </view>
+  </view>
+</view>

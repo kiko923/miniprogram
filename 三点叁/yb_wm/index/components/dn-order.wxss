@@ -1,0 +1,23 @@
+.payimg.data-v-1d2f4ca7 {
+  width: 153rpx;
+  height: 155rpx;
+}
+.pt60.data-v-1d2f4ca7 {
+  padding-top: 50rpx;
+}
+.btn.data-v-1d2f4ca7 {
+  border-radius: 0;
+}
+.btn.data-v-1d2f4ca7::after {
+  transform-origin: 50% 50%;
+  border-radius: 0;
+}
+.p25.data-v-1d2f4ca7 {
+  padding: 20rpx 50rpx;
+}
+.ipolcs.data-v-1d2f4ca7 {
+  height: 65rpx;
+}
+.ipomt.data-v-1d2f4ca7 {
+  margin-top: 95rpx;
+}

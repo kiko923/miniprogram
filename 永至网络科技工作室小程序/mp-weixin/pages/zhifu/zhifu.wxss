@@ -1,0 +1,167 @@
+/* 全局布局 */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  background-color: #f5f6fa;
+  height: 100vh;
+}
+
+/* 顶部 Logo 和标题 */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.logo {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 10rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+/* 支付类型选择 */
+.pay-type {
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+/* 金额输入框 */
+.amount-box {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 30rpx; /* 增加内边距，使输入框更大 */
+  border-radius: 15rpx; /* 圆角 */
+  font-size: 60rpx; /* 增大字体 */
+  width: 85%; /* 适当增加宽度 */
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0, 0, 0, 0.15); /* 添加阴影，增加立体感 */
+  border: 2rpx solid #ddd; /* 细边框 */
+}
+
+/* 货币符号 */
+.currency {
+  font-size: 65rpx;
+  font-weight: bold;
+  color: #333;
+  margin-right: 15rpx;
+}
+
+/* 输入框 */
+.amount-input {
+  flex: 1;
+  font-size: 65rpx; /* 增大字体 */
+  height: 80rpx; /* 固定高度确保垂直居中 */
+  text-align: right; /* 右对齐 */
+  border: none;
+  outline: none; /* 去除点击时的边框 */
+  color: #333;
+    overflow: visible; /* 防止文字溢出隐藏 */
+  line-height: 1.5;  /* 行高适配字体大小 */
+}
+
+
+/* 备注 */
+.remark {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.add-remark {
+  color: #007aff;
+}
+
+/* 数字键盘 */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10rpx;
+  width: 80%;
+}
+
+.key {
+  background-color: #fff;
+  font-size: 40rpx;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 5rpx rgba(0, 0, 0, 0.2);
+}
+
+.key:active {
+  background-color: #ddd;
+}
+
+.confirm {
+  grid-column: span 3;
+  background-color: #007aff;
+  color: white;
+  font-size: 40rpx;
+}
+/* 数字键盘 */
+/* 数字键盘 */
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 1.5fr; /* 3 列 + 右侧确认键 */
+  gap: 10rpx; /* 增加间距 */
+  width: 90%; /* 增大整体键盘宽度 */
+  margin-top: 30rpx;
+}
+
+/* 数字按键 */
+.key {
+  background-color: #fff;
+  font-size: 50rpx; /* 增大字体 */
+  text-align: center;
+  padding: 40rpx; /* 增加按键大小 */
+  border-radius: 15rpx; /* 调整圆角 */
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+/* “0” 占两列 */
+.key.zero {
+  grid-column: span 2;
+}
+
+/* 删除键 */
+.delete {
+  background-color: #ddd;
+}
+
+/* 确认支付键 */
+.confirm-key {
+  grid-row: span 3;
+  background-color: #007aff;
+  color: white;
+  font-size: 50rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+  padding: 30rpx; /* 增大键尺寸 */
+}
+.polling-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.status-text {
+  font-size: 16px;
+  color: #ff9900;
+  font-weight: bold;
+}

@@ -1,0 +1,29 @@
+<view class="pt30 data-v-407025d1">
+    <view class="p23 f-y-c bf hlt hlb data-v-407025d1">
+        <input bindblur="__e" bindinput="__e" class="f-1 mr30 srk f30 data-v-407025d1" data-event-opts="{{[ [ 'input',[ [ '__set_model',[ '','dhm','$event',['trim'] ] ] ] ],[ 'blur',[ ['$forceUpdate'] ] ] ]}}" placeholder="请输入兑换码" value="{{dhm}}"></input>
+        <text bindtap="__e" class="iconfont iconyx f42 data-v-407025d1" data-event-opts="{{[ [ 'tap',[ [ 'cleanKey',['$event'] ] ] ] ]}}" style="color:#CBCBCB;"></text>
+    </view>
+    <view bindtap="__e" class="f-c c9 f24 p23 data-v-407025d1" data-event-opts="{{[ [ 'tap',[ [ 'go',[ [ 'o',['url','/yb_wm/order/coupon-bag/gmjl'] ] ] ] ] ] ]}}">
+        <view class="data-v-407025d1">购买记录</view>
+        <text class="iconfont iconright f28 data-v-407025d1"></text>
+    </view>
+    <view class="foot-btnc data-v-407025d1">
+        <button bindtap="__e" class="foot-btn f30 bf data-v-407025d1" data-event-opts="{{[ [ 'tap',[ [ 'dhcx',['$event'] ] ] ] ]}}" loading="{{loading}}" style="{{'background:'+(!dhm?'#999':tColor)+';'}}">立即兑换</button>
+    </view>
+    <mg-modal bind:__l="__l" bind:input="__e" class="data-v-407025d1" data-event-opts="{{[ [ '^input',[ [ '__set_model',[ '','showyhq','$event',[] ] ] ] ] ]}}" ismr="{{true}}" value="{{showyhq}}" vueId="10c0e10b-1" vueSlots="{{['default']}}" width="630rpx" zIndex="{{3000}}">
+        <view class="bf bs30 data-v-407025d1">
+            <view class="p3 data-v-407025d1">
+                <view class="t-c f32 mb20 c6 data-v-407025d1">查询结果</view>
+                <view class="p2 data-v-407025d1">{{'兑换码名称：'+dhmInfo.name}}</view>
+                <view class="f-y-c p2 data-v-407025d1" wx:for="{{dhmInfo.couponArr}}" wx:for-index="i" wx:for-item="v">
+                    <view class="f-1 mr30 data-v-407025d1">{{v.name}}</view>
+                    <view class="data-v-407025d1">x1</view>
+                </view>
+            </view>
+            <view class="hlt f-row wei data-v-407025d1" style="height:100rpx;">
+                <button bindtap="__e" class="tcbtn f-1 bf f-c f32 data-v-407025d1" data-event-opts="{{[ [ 'tap',[ [ 'e0',['$event'] ] ] ] ]}}" hoverClass="be">取消</button>
+                <button bindtap="__e" class="tcbtn f-1 bf f-c f32 data-v-407025d1" data-event-opts="{{[ [ 'tap',[ [ 'save',['$event'] ] ] ] ]}}" hoverClass="be" loading="{{dhloading}}" style="{{'color:'+tColor+';'}}">立即兑换</button>
+            </view>
+        </view>
+    </mg-modal>
+</view>

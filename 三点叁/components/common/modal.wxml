@@ -1,0 +1,20 @@
+<view class="data-v-74f7f07a" hidden="{{!(vs?value:true)}}">
+  <view
+    bindtap="__e"
+    catchtouchmove="__e"
+    class="{{['i-modal-mask','data-v-74f7f07a',value?'i-modal-mask-show':'']}}"
+    data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ],[ 'tap',[ [ 'maskTap',['$event'] ] ] ] ]}}"
+    style="{{'z-index:'+zIndex+';'}}"
+  ></view>
+  <view
+    catchtouchmove="__e"
+    class="{{['i-modal','data-v-74f7f07a',value?'i-modal-show':'']}}"
+    data-event-opts="{{[ [ 'touchmove',[ [ '',['$event'] ] ] ] ]}}"
+    style="{{'width:'+''+width+';'+'z-index:'+zIndex+';'}}"
+  >
+    <slot wx:if="{{ismr}}"></slot>
+    <view class="f-c-c p23 bf data-v-74f7f07a" wx:else>
+      <slot></slot>
+    </view>
+  </view>
+</view>
