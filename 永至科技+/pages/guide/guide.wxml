@@ -1,0 +1,50 @@
+<navigation-bar back="{{true}}" background="{{isDarkMode?'#1a1a1a':'#FFF'}}" class="navigation-bar" color="{{isDarkMode?'white':'black'}}" title="使用指南"></navigation-bar>
+<view class="container">
+    <view class="guide-content">
+        <view class="guide-title">视频去水印使用指南</view>
+        <view class="section">
+            <view class="section-title">支持的平台</view>
+            <view class="platform-list">
+                <view class="platform-tag">抖音</view>
+                <view class="platform-tag">快手</view>
+                <view class="platform-tag">小红书</view>
+                <view class="platform-tag">微博</view>
+                <view class="platform-tag">哔哩哔哩</view>
+                <view class="platform-tag">更多平台</view>
+            </view>
+        </view>
+        <view class="section">
+            <view class="section-title">使用步骤</view>
+            <view class="step-list">
+                <view class="step-item">
+                    <view class="step-number">1</view>
+                    <view class="step-content">
+                        <view class="step-text">打开视频平台，找到想要下载的视频</view>
+                    </view>
+                </view>
+                <view class="step-item">
+                    <view class="step-number">2</view>
+                    <view class="step-content">
+                        <view class="step-text">点击分享按钮，复制视频链接</view>
+                    </view>
+                </view>
+                <view class="step-item">
+                    <view class="step-number">3</view>
+                    <view class="step-content">
+                        <view class="step-text">返回小程序，粘贴链接并点击解析</view>
+                    </view>
+                </view>
+                <view class="step-item">
+                    <view class="step-number">4</view>
+                    <view class="step-content">
+                        <view class="step-text">点击保存按钮，将视频保存到相册</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tips-box">
+            <view class="tips-content">请尊重原创作者版权，下载的视频仅供个人学习使用</view>
+        </view>
+        <button bindtap="goToHome" class="guide-btn">开始使用</button>
+    </view>
+</view>

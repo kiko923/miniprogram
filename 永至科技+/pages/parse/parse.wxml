@@ -1,0 +1,122 @@
+<view class="container">
+    <view class="input-section">
+        <view class="header">
+            <view class="title">全网视频去水印</view>
+            <view class="subtitle">支持主流平台无水印解析图集和视频</view>
+        </view>
+        <image class="banner-image" mode="aspectFit" src="https://cdn.jiejing.fun/xcx/banner2025.png"></image>
+        <view class="input-box">
+            <input bindinput="onInput" class="url-input" placeholder="粘贴视频链接..." value="{{url}}"></input>
+            <view bindtap="handleActionBtn" class="action-btn {{url?'clear':'paste'}}">{{url?'清空':'粘贴'}}</view>
+        </view>
+        <view class="button-group">
+            <button bindtap="goToFaq" class="feature-btn">
+                <text class="btn-text">答疑</text>
+                <text class="btn-text">反馈</text>
+            </button>
+            <button bindtap="startParse" class="parse-btn-container">
+                <view class="parse-btn">
+                    <image class="parse-btn-img" mode="aspectFit" src="/images/click.png"></image>
+                    <text class="parse-btn-text">一键解析</text>
+                </view>
+            </button>
+            <button bindtap="goToHistory" class="feature-btn">
+                <text class="btn-text">历史</text>
+                <text class="btn-text">记录</text>
+            </button>
+        </view>
+    </view>
+    <view class="result-section" wx:if="{{result && result.data}}">
+        <scroll-view class="content-scroll" scrollY="true">
+            <view class="scroll-content">
+                <!-- 单个视频或图片显示 -->
+                <view class="single-content" wx:if="{{result.data.url_list.length === 1}}">
+                    <video 
+                        wx:if="{{result.data.type === 'video'}}"
+                        controls 
+                        bindfullscreenchange="onVideoFullscreenChange" 
+                        id="myVideo" 
+                        poster="{{result.data.cover}}" 
+                        showCenterPlayBtn="{{true}}" 
+                        src="{{result.data.url_list[0]}}">
+                    </video>
+                    <!-- 视频控制按钮 -->
+                    <view class="video-controls" wx:if="{{result.data.type === 'video'}}">
+                    </view>
+                    <image 
+                        wx:else
+                        binderror="handleImageError" 
+                        bindtap="previewImage" 
+                        class="single-image" 
+                        data-index="0" 
+                        mode="aspectFit" 
+                        src="{{result.data.url_list[0]}}">
+                    </image>
+                </view>
+
+                <!-- 多图片显示 -->
+                <view class="image-grid-wrapper" wx:elif="{{result.data.url_list.length > 1}}">
+                    <view class="selection-header">
+                        <view class="selection-count">已选择 {{selectedCount}}/{{result.data.url_list.length}} 张</view>
+                        <view class="selection-actions">
+                            <text bindtap="toggleSelectAll" class="select-all-btn">
+                                {{isAllSelected ? '取消全选' : '全选'}}
+                            </text>
+                        </view>
+                    </view>
+                    <view class="content-text-container" wx:if="{{result.data.title}}">
+                    <input disabled class="content-text-input" value="{{result.data.title}}"></input>
+                    <view bindtap="copyText" class="content-text-copy" data-text="{{result.data.title}}">复制</view>
+                </view>
+                    <view class="image-grid-container">
+                        <view 
+                            class="image-item {{selectedImages[index] ? 'selected' : ''}}" 
+                            wx:for="{{result.data.url_list}}" 
+                            wx:key="index" 
+                            data-index="{{index}}">
+                            <image 
+                                binderror="handleImageError" 
+                                bindtap="previewImage" 
+                                data-index="{{index}}" 
+                                mode="aspectFill" 
+                                src="{{item}}">
+                            </image>
+                            <view 
+                                catchtap="toggleSelectImage" 
+                                class="image-checkbox" 
+                                data-index="{{index}}">
+                                <view class="checkbox-inner {{selectedImages[index] ? 'checked' : ''}}"></view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <!-- 操作按钮 -->
+                <input  class="content-text-input" value="{{result.data.title}}"></input>
+                <view class="action-buttons">
+                    <button bindtap="saveCover" class="secondary-btn">封面</button>
+                    <button bindtap="saveAllContent" class="primary-btn">一键保存</button>
+                    <button bindtap="shareContent" class="secondary-btn" openType="share">分享</button>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="result-title">
+            <text>{{result.data.title||'解析结果'}}</text>
+            <button bindtap="copyText" class="copy-btn" data-text="{{result.data.title}}">复制文案</button>
+        </view>
+        <view class="media-grid" wx:if="{{result.pics&&result.pics.length}}">
+            <view bindtap="previewImage" class="media-item" data-url="{{item}}" wx:for="{{result.pics}}" wx:key="index">
+                <image class="media-img" mode="aspectFill" src="{{item}}"></image>
+            </view>
+        </view>
+        <view class="empty-result" wx:if="{{!result}}">
+            <view class="shortcut-wrapper">
+                <text bindtap="copyShortcutLink" class="shortcut-link">下载「全网视频去水印」快捷指令版</text>
+            </view>
+            <view class="copyright-text">⚠️ 版权归平台和作者所有，本小程序不储存任何内容</view>
+        </view>
+    </view>
+</view>
+<view class="footer-info" wx:if="{{!result}}">
+    <view bindtap="copyShortcutLink" class="shortcut-link">下载「全网视频去水印」快捷指令版</view>
+    <view class="copyright-text">版权归平台和作者所有，本小程序不储存任何内容</view>
+</view>

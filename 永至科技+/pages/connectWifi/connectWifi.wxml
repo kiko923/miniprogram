@@ -1,0 +1,27 @@
+<view class="container">
+  <!-- 显示 Wi-Fi Logo -->
+  <image class="wifi-logo" src="/static/img/wifi.png" mode="aspectFit"></image>
+  
+  <!-- 显示 Wi-Fi 名称 -->
+  <view class="wifi-name">
+    Wi-Fi名称：<text class="wifi-name-text">{{wifiName}}</text>
+  </view>
+  
+  <!-- 连接 Wi-Fi 按钮 -->
+  <button class="btn-connect" bindtap="connectWifi">连接 Wi-Fi</button>
+
+  <!-- 分享按钮 -->
+  <button class="btn-share" open-type="share">分享WiFi</button>
+
+  <!-- 制作Wi-Fi页面说明文字 -->
+  <!--<view class="create-wifi-text" bindtap="copyContent">-->
+  <view class="create-wifi-text" bindtap="navigateToCreateWifi">
+    制作WiFi页面
+  </view>
+
+  <!-- 底部版权声明 -->
+  <view class="footer">
+    © 永至科技
+  </view>
+  
+</view>

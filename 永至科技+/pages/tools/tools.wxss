@@ -1,0 +1,112 @@
+/* tools.wxss */
+page {
+  height: 100vh;
+  background: linear-gradient(135deg, #FFE4E1 0%, #E6E6FA 100%);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 60rpx;
+  padding-bottom: 120rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 40rpx;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30rpx;
+  padding: 20rpx 0;
+}
+
+/* 底部 tab 栏样式 */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.05);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.tab-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  height: 100%;
+}
+
+.tab-icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 4rpx;
+}
+
+.tab-text {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.tab-item.active .tab-text {
+  color: #2563eb;
+}
+
+.tab-item.active .tab-icon {
+  opacity: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.grid-item {
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx;
+}
+
+.grid-image {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 20rpx;
+  margin-bottom: 16rpx;
+}
+
+.grid-text {
+  font-size: 24rpx;
+  color: #333;
+  font-weight: 500;
+} 

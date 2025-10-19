@@ -1,0 +1,211 @@
+<navigation-bar back="{{false}}" background="{{isDarkMode?'#1a1a1a':'#FFF'}}" class="navigation-bar" color="{{isDarkMode?'white':'black'}}" title="无水印下载"></navigation-bar>
+<pin-prompt customNavbar class="pin-prompt" logo="/images/logo.png" name="融融去水印"></pin-prompt>
+<view class="loading-mask" wx:if="{{loading}}">
+    <view class="loading-content">
+        <view class="loading-spinner"></view>
+        <text class="loading-text">正在解析中...</text>
+    </view>
+</view>
+<view class="container">
+    <view class="input-section">
+        <view class="header">
+            <view class="title">全网视频去水印</view>
+            <view class="subtitle">支持主流平台无水印解析图集和视频</view>
+        </view>
+        <image class="banner-image" mode="aspectFit" src="https://cdn.jiejing.fun/xcx/banner2025.png"></image>
+        <view class="input-box">
+            <input bindinput="onInput" class="url-input" placeholder="粘贴视频链接..." value="{{url}}"></input>
+            <view bindtap="handleActionBtn" class="action-btn {{url?'clear':'paste'}}">{{url?'清空':'粘贴'}}</view>
+        </view>
+        <view class="button-group">
+            <button bindtap="goToFaq" class="feature-btn">
+                <text class="btn-text">答疑</text>
+                <text class="btn-text">反馈</text>
+            </button>
+            <button bindtap="parseVideo" class="parse-btn-container">
+                <view class="parse-btn">
+                    <image class="parse-btn-img" mode="aspectFit" src="/images/click.png"></image>
+                    <text class="parse-btn-text">一键解析</text>
+                </view>
+            </button>
+            <button bindtap="goToHistory" class="feature-btn">
+                <text class="btn-text">历史</text>
+                <text class="btn-text">记录</text>
+            </button>
+        </view>
+    </view>
+    <view class="result-section" wx:if="{{result}}">
+        <block wx:if="{{result.isVideo&&result.isImages}}">
+            <scroll-view class="content-scroll" scrollY="true">
+                <view class="scroll-content">
+                    <view class="single-image-container isSensitivePlatform" wx:if="{{isSensitivePlatform}}">
+                        <image binderror="handleImageError" bindtap="previewImage" class="single-image" data-index="0" mode="aspectFit" src="{{result.images[0]}}"></image>
+                    </view>
+                    <block wx:else>
+                        <view class="video-container">
+                            <video controls bindfullscreenchange="onVideoFullscreenChange" id="myVideo" poster="{{result.cover}}" showCenterPlayBtn="{{true}}" src="{{result.video_url}}"></video>
+                        </view>
+                        <view class="content-text-container" wx:if="{{result.text&&!isSensitivePlatform}}">
+                            <input disabled class="content-text-input" value="{{result.text}}"></input>
+                            <view bindtap="copyText" class="content-text-copy" data-text="{{result.text}}">复制</view>
+                        </view>
+                        <view class="image-grid-wrapper">
+                            <view class="section-title">图片内容</view>
+                            <view class="single-image-container {{isSensitivePlatform?'isSensitivePlatform':''}}" wx:if="{{result.images.length===1}}">
+                                <image binderror="handleImageError" bindtap="previewImage" class="single-image" data-index="0" mode="{{isSensitivePlatform?'aspectFit':'widthFix'}}" src="{{result.images[0]}}"></image>
+                            </view>
+                            <view wx:else>
+                                <view class="selection-header">
+                                    <view class="selection-count">已选择 {{selectedCount}}/{{result.images.length}} 张</view>
+                                    <view class="selection-actions">
+                                        <text bindtap="toggleSelectAll" class="select-all-btn">
+                      {{isAllSelected?'取消全选':'全选'}}
+                    </text>
+                                    </view>
+                                </view>
+                                <view class="image-grid-container">
+                                    <view class="image-item {{selectedImages[index]?'selected':''}}" data-index="{{index}}" wx:for="{{result.images}}" wx:key="index">
+                                        <image binderror="handleImageError" bindtap="previewImage" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+                                        <view catchtap="toggleSelectImage" class="image-checkbox" data-index="{{index}}">
+                                            <view class="checkbox-inner {{selectedImages[index]?'checked':''}}"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="bottom-space"></view>
+                </view>
+            </scroll-view>
+            <view class="action-buttons">
+                <button bindtap="saveAllContent" class="primary-btn full-width-btn" wx:if="{{isSensitivePlatform}}">一键保存全部内容</button>
+                <block wx:else>
+                    <button bindtap="copyText" class="secondary-btn" data-text="{{result.text}}">文案</button>
+                    <button bindtap="saveAllContent" class="primary-btn">一键保存</button>
+                    <button bindtap="shareContent" class="secondary-btn" openType="share">分享</button>
+                </block>
+            </view>
+        </block>
+        <scroll-view class="content-scroll" scrollY="true" wx:elif="{{result.isVideo}}">
+            <view class="scroll-content">
+                <view class="video-container">
+                    <video controls bindfullscreenchange="onVideoFullscreenChange" id="myVideo" poster="{{result.cover_url||result.cover}}" showCenterPlayBtn="{{true}}" src="{{result.video_url}}"></video>
+                </view>
+                <view class="content-text-container" wx:if="{{result.text&&!isSensitivePlatform}}">
+                    <input disabled class="content-text-input" value="{{result.text}}"></input>
+                    <view bindtap="copyText" class="content-text-copy" data-text="{{result.text}}">复制</view>
+                </view>
+                <view class="action-buttons">
+                    <button bindtap="saveAllContent" class="primary-btn full-width-btn" wx:if="{{isSensitivePlatform}}">一键保存全部内容</button>
+                    <block wx:else>
+                        <button bindtap="saveCover" class="secondary-btn" data-cover="{{result.cover_url||result.cover}}">封面</button>
+                        <button bindtap="saveVideo" class="primary-btn">保存视频</button>
+                        <button bindtap="shareContent" class="secondary-btn" openType="share">分享</button>
+                    </block>
+                </view>
+            </view>
+        </scroll-view>
+        <block wx:elif="{{result.isImages}}">
+            <scroll-view class="content-scroll" scrollY="true">
+                <view class="scroll-content">
+                    <view class="image-grid-wrapper">
+                        <view class="single-image-container {{isSensitivePlatform?'isSensitivePlatform':''}}" wx:if="{{result.images.length===1}}">
+                            <image binderror="handleImageError" bindtap="previewImage" class="single-image" data-index="0" mode="{{isSensitivePlatform?'aspectFit':'widthFix'}}" src="{{result.images[0]}}"></image>
+                        </view>
+                        <view wx:else>
+                            <view class="selection-header">
+                                <view class="selection-count">已选择 {{selectedCount}}/{{result.images.length}} 张</view>
+                                <view class="selection-actions">
+                                    <text bindtap="toggleSelectAll" class="select-all-btn">
+                    {{isAllSelected?'取消全选':'全选'}}
+                  </text>
+                                </view>
+                            </view>
+                            <view class="image-grid-container">
+                                <view class="image-item {{selectedImages[index]?'selected':''}}" data-index="{{index}}" wx:for="{{result.images}}" wx:key="index">
+                                    <image binderror="handleImageError" bindtap="previewImage" data-index="{{index}}" mode="aspectFill" src="{{item}}"></image>
+                                    <view catchtap="toggleSelectImage" class="image-checkbox" data-index="{{index}}">
+                                        <view class="checkbox-inner {{selectedImages[index]?'checked':''}}"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="floating-tip" wx:if="{{showImageCountTip}}">解析出{{result.images.length}}张照片，选择后点击一键保存</view>
+                    </view>
+                    <view class="content-text" wx:if="{{result.text&&!isSensitivePlatform}}">{{result.text}}</view>
+                    <view class="bottom-space"></view>
+                </view>
+            </scroll-view>
+            <view class="action-buttons">
+                <button bindtap="saveAllContent" class="primary-btn full-width-btn" wx:if="{{isSensitivePlatform}}">一键保存全部内容</button>
+                <block wx:else>
+                    <button bindtap="copyText" class="secondary-btn" data-text="{{result.text}}">文案</button>
+                    <button bindtap="saveAllContent" class="primary-btn">一键保存</button>
+                    <button bindtap="shareContent" class="secondary-btn" openType="share">分享</button>
+                </block>
+            </view>
+        </block>
+        <view class="result-title">
+            <text>{{result.title||'解析结果'}}</text>
+            <button bindtap="copyText" class="copy-btn" data-text="{{result.title}}">复制文案</button>
+        </view>
+        <view class="media-grid" wx:if="{{result.pics&&result.pics.length}}">
+            <view bindtap="previewImage" class="media-item" data-url="{{item}}" wx:for="{{result.pics}}" wx:key="index">
+                <image class="media-img" mode="aspectFill" src="{{item}}"></image>
+            </view>
+        </view>
+        <view class="empty-result" wx:if="{{!result}}">
+            <view class="shortcut-wrapper">
+                <text bindtap="copyShortcutLink" class="shortcut-link">下载「全网视频去水印」快捷指令版</text>
+            </view>
+            <view class="copyright-text">⚠️ 版权归平台和作者所有，本小程序不储存任何内容</view>
+        </view>
+    </view>
+</view>
+
+
+
+
+<view class="share-modal" wx:if="{{showShareModal}}">
+    <view class="share-content">
+        <view bindtap="closeShareModal" class="share-close">×</view>
+        <view class="share-title">保存成功，请前往相册查看</view>
+        <view class="share-desc">领取下方优惠红包🧧赞助作者，感谢支持</view>
+        <view class="coupons-list">
+            <view class="coupons-row" wx:for="{{[0,2,4,6]}}" wx:for-item="rowIndex" wx:key="*this">
+                <view bindtap="openMiniProgram" class="coupon-item" data-index="{{rowIndex}}" wx:if="{{coupons[rowIndex]}}">
+                    <image class="coupon-icon" mode="aspectFit" src="{{coupons[rowIndex].icon}}"></image>
+                    <view class="coupon-info">
+                        <view class="coupon-name">{{coupons[rowIndex].name}}</view>
+                        <view class="coupon-desc">{{coupons[rowIndex].desc}}</view>
+                    </view>
+                </view>
+                <view bindtap="openMiniProgram" class="coupon-item" data-index="{{rowIndex+1}}" wx:if="{{coupons[rowIndex+1]}}">
+                    <image class="coupon-icon" mode="aspectFit" src="{{coupons[rowIndex+1].icon}}"></image>
+                    <view class="coupon-info">
+                        <view class="coupon-name">{{coupons[rowIndex+1].name}}</view>
+                        <view class="coupon-desc">{{coupons[rowIndex+1].desc}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="share-btns">
+            <button class="share-btn" openType="share">分享小程序给好友</button>
+        </view>
+    </view>
+</view>
+<view class="modal-mask" wx:if="{{showErrorModal}}">
+    <view class="modal-content">
+        <view class="modal-header">解析失败</view>
+        <view class="modal-body">不支持的平台或 URL 链接</view>
+        <view class="modal-footer">
+            <button bindtap="closeErrorModal" class="modal-btn cancel">取消</button>
+            <button bindtap="sendFeedback" class="modal-btn confirm">反馈</button>
+        </view>
+    </view>
+</view>
+<view class="image-error-info" wx:if="{{currentErrorInfo}}">{{currentErrorInfo}}</view>
+<view class="footer-info" wx:if="{{!result}}">
+    <view bindtap="copyShortcutLink" class="shortcut-link">下载「全网视频去水印」快捷指令版</view>
+    <view class="copyright-text">版权归平台和作者所有，本小程序不储存任何内容</view>
+</view>

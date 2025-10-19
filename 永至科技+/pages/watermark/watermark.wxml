@@ -1,0 +1,116 @@
+<!--index.wxml-->
+
+
+<scroll-view class="page-container" scroll-y type="list">
+  <view class="main-content">
+    
+    <!-- 头部信息卡片 -->
+    <view class="info-card">
+      <view class="info-header">
+        <view class="info-icon">🎨</view>
+        <view class="info-content">
+          <view class="info-title">云端智能水印</view>
+          <view class="info-subtitle">高质量原图处理，专业水印效果</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 图片上传卡片 -->
+    <view class="upload-card">
+      <view class="card-header">
+        <view class="card-title">
+          <view class="title-icon">📸</view>
+          <text>选择图片</text>
+        </view>
+        <view class="card-badge" wx:if="{{selectedImages.length > 0}}">{{selectedImages.length}}</view>
+      </view>
+      
+      <view class="upload-zone" bindtap="selectImages">
+        <view class="upload-content">
+          <view class="upload-icon-large">
+            <view class="icon-bg">
+              <text class="icon-text">+</text>
+            </view>
+          </view>
+          <view class="upload-main-text">点击选择图片</view>
+          <view class="upload-sub-text">支持批量选择，自动使用原图质量</view>
+        </view>
+      </view>
+      
+      <!-- 图片预览网格 -->
+      <view class="image-preview-grid" wx:if="{{selectedImages.length > 0}}">
+        <view class="grid-header">
+          <view class="grid-title">已选择的图片</view>
+          <view class="clear-btn" bindtap="clearAllImages">
+            <text class="clear-icon">🗑️</text>
+            <text>清空</text>
+          </view>
+        </view>
+        <view class="image-grid">
+          <view class="image-card" wx:for="{{selectedImages}}" wx:key="index">
+            <image src="{{item}}" mode="aspectFill" class="preview-image"></image>
+            <view class="image-overlay">
+              <view class="remove-button" bindtap="removeImage" data-index="{{index}}">
+                <text class="remove-icon">×</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 操作按钮卡片 -->
+    <view class="action-card">
+      <!-- 水印类型选择 -->
+      <view class="watermark-type-section">
+        <view class="type-title">水印类型</view>
+        <view class="type-options">
+          <view class="type-option {{watermarkType === 'wm1' ? 'selected' : ''}}" bindtap="selectWatermarkType" data-type="wm1">
+            <view class="option-radio">
+              <view class="radio-dot" wx:if="{{watermarkType === 'wm1'}}"></view>
+            </view>
+            <text class="option-text">类型1</text>
+          </view>
+          <view class="type-option {{watermarkType === 'wm2' ? 'selected' : ''}}" bindtap="selectWatermarkType" data-type="wm2">
+            <view class="option-radio">
+              <view class="radio-dot" wx:if="{{watermarkType === 'wm2'}}"></view>
+            </view>
+            <text class="option-text">类型2</text>
+          </view>
+        </view>
+      </view>
+
+      <button 
+        class="primary-button {{selectedImages.length > 0 ? 'enabled' : 'disabled'}}" 
+        bindtap="startProcess" 
+        disabled="{{selectedImages.length === 0 || processing}}"
+      >
+        <view wx:if="{{processing}}" class="loading-spinner"></view>
+        {{processing ? '处理中...' : '提交'}}
+      </button>
+    </view>
+
+    <!-- 进度提示 - 浮动卡片 -->
+    <view class="progress-float" wx:if="{{processing}}">
+      <view class="progress-container">
+        <view class="progress-icon-wrapper">
+          <view class="progress-icon">⚡</view>
+        </view>
+        <view class="progress-content">
+          <view class="progress-header">
+            <view class="progress-title">正在处理</view>
+            <view class="progress-count">{{processedCount}}/{{totalCount}}</view>
+          </view>
+          <view class="progress-bar-wrapper">
+            <view class="progress-bar-track">
+              <view class="progress-bar-fill" style="width: {{progressPercent}}%"></view>
+            </view>
+            <view class="progress-text">{{progressPercent}}%</view>
+          </view>
+          <view class="progress-tip">云端处理中，请稍候...</view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</scroll-view>

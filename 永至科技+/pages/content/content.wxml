@@ -1,0 +1,155 @@
+<view class="safe-area-container {{isDarkMode?'dark-mode':''}}">
+    <navigation-bar back="{{true}}" background="{{isDarkMode?'#1a1a1a':'#FFF'}}" class="navigation-bar" color="{{isDarkMode?'white':'black'}}" title="全网视频去水印解析"></navigation-bar>
+    <scroll-view enableFlex class="content-scroll" scrollY="true">
+        <view class="loading-container" wx:if="{{isLoading}}">
+            <view class="loading-spinner"></view>
+            <view class="loading-text">正在加载内容...</view>
+        </view>
+        <view class="error-container" wx:elif="{{isError}}">
+            <image class="error-image" mode="aspectFit" src="/images/error.png"></image>
+            <view class="error-title">加载失败</view>
+            <view class="error-message">{{errorMsg||'内容加载失败'}}</view>
+            <view class="error-tips">
+                <text>您可以尝试：</text>
+                <text>• 检查网络连接</text>
+                <text>• 确认链接是否有效</text>
+                <text>• 返回首页重新解析</text>
+            </view>
+            <view class="error-actions">
+                <button bindtap="goToHome" class="error-action primary">返回首页</button>
+                <button class="error-action secondary" openType="share">分享给好友</button>
+            </view>
+        </view>
+        <view class="content-container" wx:elif="{{hasVideo}}">
+            <view class="top-actions">
+                <button bindtap="goBack" class="top-action-button home">
+                    <image class="button-icon home-icon" mode="aspectFit" src="/images/home.png"></image>
+                    <text>返回首页解析</text>
+                </button>
+                <button class="top-action-button share" openType="share">
+                    <view class="button-icon share-icon-new"></view>
+                    <text>分享给好友</text>
+                </button>
+            </view>
+            <view class="video-card">
+                <video autoplay="{{false}}" bindenterpictureinpicture="onEnterPictureInPicture" bindfullscreenchange="onFullScreenChange" bindleavepictureinpicture="onLeavePictureInPicture" controls="{{true}}" enablePictureInPicture="{{true}}" enablePlayGesture="{{true}}" id="contentVideo" loop="{{true}}" objectFit="contain" poster="{{video.cover}}" showCenterPlayBtn="{{true}}" showFullscreenBtn="{{true}}" showPlayBtn="{{true}}" src="{{video.url}}"></video>
+            </view>
+            <view class="content-text-container" wx:if="{{text}}">
+                <view class="content-text-title">视频描述</view>
+                <view class="content-text">{{text}}</view>
+            </view>
+            <view class="content-text-container">
+                <view class="content-text-title">原始链接</view>
+                <view class="source-link-container">
+                    <input disabled class="source-link-input" value="{{parsedUrl}}"></input>
+                    <view bindtap="copySourceLink" class="source-link-copy">复制</view>
+                </view>
+            </view>
+        </view>
+        <view class="content-container" wx:elif="{{hasImages}}">
+            <view class="top-actions">
+                <button bindtap="goBack" class="top-action-button home">
+                    <image class="button-icon home-icon" mode="aspectFit" src="/images/home.png"></image>
+                    <text>返回首页解析</text>
+                </button>
+                <button class="top-action-button share" openType="share">
+                    <view class="button-icon share-icon-new"></view>
+                    <text>分享给好友</text>
+                </button>
+            </view>
+            <view class="image-control">
+                <view class="image-counter">共 {{images.length}} 张图片，已选 {{selectedCount}} 张</view>
+                <view bindtap="toggleSelectAll" class="select-all">
+                    <text>{{isAllSelected?'取消全选':'全选'}}</text>
+                </view>
+            </view>
+            <view class="image-grid">
+                <view class="image-item {{item.selected?'selected':''}}" wx:for="{{images}}" wx:key="index">
+                    <image bindtap="previewSingleImage" class="grid-image" data-index="{{index}}" lazyLoad="true" mode="aspectFill" src="{{item.url}}"></image>
+                    <view bindtap="toggleSelectImage" class="image-select-box" data-index="{{index}}">
+                        <view class="image-select-indicator" wx:if="{{item.selected}}">✓</view>
+                    </view>
+                </view>
+            </view>
+            <view class="content-text-container" wx:if="{{text}}">
+                <view class="content-text-title">图片描述</view>
+                <view class="content-text">{{text}}</view>
+            </view>
+            <view class="content-text-container">
+                <view class="content-text-title">原始链接</view>
+                <view class="source-link-container">
+                    <input disabled class="source-link-input" value="{{parsedUrl}}"></input>
+                    <view bindtap="copySourceLink" class="source-link-copy">复制</view>
+                </view>
+            </view>
+        </view>
+        <view class="empty-container" wx:else>
+            <image class="empty-image" mode="aspectFit" src="/images/empty.png"></image>
+            <view class="empty-text">未找到内容</view>
+            <button bindtap="goToHome" class="empty-action">返回首页</button>
+        </view>
+    </scroll-view>
+    <view class="bottom-safe-area">
+        <view class="action-bar" wx:if="{{hasVideo&&!isLoading&&!isError}}">
+            <button bindtap="copyText" class="action-button text" wx:if="{{text}}">
+                <view class="button-icon copy-icon"></view>
+                <text>复制文案</text>
+            </button>
+            <button bindtap="saveVideo" class="action-button primary">
+                <view class="button-icon download-icon"></view>
+                <text>保存视频</text>
+            </button>
+            <button bindtap="saveVideoCover" class="action-button secondary" wx:if="{{video.cover}}">
+                <view class="button-icon image-icon"></view>
+                <text>保存封面</text>
+            </button>
+        </view>
+        <view class="action-bar" wx:if="{{hasImages&&!isLoading&&!isError}}">
+            <button bindtap="copyText" class="action-button text" wx:if="{{text}}">
+                <view class="button-icon copy-icon"></view>
+                <text>复制文案</text>
+            </button>
+            <button bindtap="saveAllImages" class="action-button primary">
+                <view class="button-icon download-icon"></view>
+                <text>保存图片</text>
+            </button>
+            <button bindtap="previewImages" class="action-button secondary">
+                <view class="button-icon preview-icon"></view>
+                <text>预览图片</text>
+            </button>
+        </view>
+        <view class="action-bar" wx:if="{{!hasVideo&&!hasImages&&!isLoading&&!isError}}">
+            <button bindtap="goToHome" class="action-button full">
+                <text>返回首页</text>
+            </button>
+        </view>
+    </view>
+</view>
+<view class="share-modal" wx:if="{{showShareModal}}">
+    <view class="share-content">
+        <view bindtap="closeShareModal" class="share-close">×</view>
+        <view class="share-title">保存成功，请前往相册查看</view>
+        <view class="share-desc">领取下方优惠红包🧧赞助作者，感谢支持</view>
+        <view class="coupons-list">
+            <view class="coupons-row" wx:for="{{[0,2,4,6]}}" wx:for-item="rowIndex" wx:key="*this">
+                <view bindtap="openMiniProgram" class="coupon-item" data-index="{{rowIndex}}" wx:if="{{coupons[rowIndex]}}">
+                    <image class="coupon-icon" mode="aspectFit" src="{{coupons[rowIndex].icon}}"></image>
+                    <view class="coupon-info">
+                        <view class="coupon-name">{{coupons[rowIndex].name}}</view>
+                        <view class="coupon-desc">{{coupons[rowIndex].desc}}</view>
+                    </view>
+                </view>
+                <view bindtap="openMiniProgram" class="coupon-item" data-index="{{rowIndex+1}}" wx:if="{{coupons[rowIndex+1]}}">
+                    <image class="coupon-icon" mode="aspectFit" src="{{coupons[rowIndex+1].icon}}"></image>
+                    <view class="coupon-info">
+                        <view class="coupon-name">{{coupons[rowIndex+1].name}}</view>
+                        <view class="coupon-desc">{{coupons[rowIndex+1].desc}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="share-btns">
+            <button class="share-btn" openType="share">分享小程序给好友</button>
+        </view>
+    </view>
+</view>

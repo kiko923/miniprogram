@@ -1,0 +1,32 @@
+<navigation-bar back="{{true}}" background="{{isDarkMode?'#1a1a1a':'#FFF'}}" class="navigation-bar" color="{{isDarkMode?'white':'black'}}" title="快捷指令教程"></navigation-bar>
+<view class="container">
+  <view class="content">
+    <view class="title">部分国外平台视频下载教程</view>
+    <view class="section">
+      <view class="section-title">支持的平台</view>
+      <view class="platform-list">
+        <text>Instagram</text>
+        <text>YouTube</text>
+        <text>X/Twitter</text>
+        <text>TikTok</text>
+        <text>Facebook</text>
+        <text>Threads</text>
+      </view>
+    </view>
+    <view class="section">
+      <view class="section-title">使用方法</view>
+      <view class="step-list">
+        <view class="step" data-step="1">在 App Store 中安装快捷指令</view>
+        <view class="step" data-step="2">打开下方链接添加快捷指令</view>
+        <view bindtap="copyLink" class="link">https://jiejing.fun/sites/70.html<text class="copy-text">点击复制</text>
+        </view>
+        <view class="step" data-step="3">在对应平台复制视频链接</view>
+        <view class="step" data-step="4">点击快捷指令即可下载</view>
+      </view>
+    </view>
+    <view class="tips">首次使用需要在「设置」中允许运行快捷指令</view>
+  </view>
+  <view bindtap="backToHome" class="float-home-btn">
+    <image class="home-icon" mode="aspectFit" src="/images/home.png"></image>
+  </view>
+</view>

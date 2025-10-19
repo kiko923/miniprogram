@@ -1,0 +1,10 @@
+<!--about.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="profile-section">
+      <image class="logo" src="https://img.znnu.com/favicon.ico" mode="aspectFit"></image>
+      <view class="company-name">永至科技</view>
+      <view class="description">专注于为用户提供优质的技术服务</view>
+    </view>
+  </view>
+</view> 

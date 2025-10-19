@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar"
+  },
+  "navigationStyle": "custom",
+  "backgroundColor": "#f8f8f8",
+  "backgroundTextStyle": "light",
+  "navigationBarTextStyle": "black",
+  "darkmode": true,
+  "themeLocation": "theme.json",
+  "__warning__": "invalid page.json [\"darkmode\"]、page.json [\"themeLocation\"]"
+}

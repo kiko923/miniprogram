@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "pin-prompt": "/components/pin-prompt/pin-prompt"
+  },
+  "navigationBarTextStyle": "black",
+  "navigationStyle": "custom"
+}

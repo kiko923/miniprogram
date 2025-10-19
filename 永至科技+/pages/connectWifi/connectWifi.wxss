@@ -1,0 +1,128 @@
+.container {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.btn-connect {
+  font-weight: bold;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  background-color: #07c160;
+  color: white;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 20px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-connect:active {
+  background-color: #1db667;
+  transform: scale(0.95);
+}
+
+.wifi-logo {
+  width: 200px; /* 增大宽度 */
+  height: 200px; /* 增大高度 */
+  margin-bottom: 50px; /* 调整间距 */
+  transition: opacity 0.3s ease;
+}
+
+.wifi-logo:hover {
+  opacity: 0.9;
+}
+
+.wifi-name {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.wifi-name-text {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.footer {
+  font-weight: bold;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 新增分享按钮的样式 */
+.btn-share {
+  font-weight: bold;
+  width: auto;
+  max-width: 500px;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #f06, #f79); /* 渐变背景 */
+  color: white;
+  text-align: center;
+  border-radius: 100px; /* 圆角按钮 */
+  font-size: 18px;
+  box-sizing: border-box;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+  transition: all 0.3s ease;
+}
+
+.btn-share:active {
+  transform: scale(0.95); /* 点击效果 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 点击时减少阴影 */
+}
+
+.btn-share:hover {
+  background: linear-gradient(45deg, #ff69b4, #ff8c00); /* 悬停时渐变背景变化 */
+}
+/* 制作Wi-Fi页面说明文字的样式 */
+.create-wifi-text {
+  width: 100%;
+  font-size: 15px;
+  color: #888;
+  text-decoration: underline;
+  text-align: center;
+  cursor: pointer;
+  position: relative; /* 设置相对定位 */
+  margin-top: 10px;
+}
+@media screen and (max-width: 600px) {
+  .wifi-logo {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+  }
+  .btn-connect {
+    width: 90%;
+    max-width: 300px;
+    font-size: 20px;
+  }
+  .wifi-name {
+    font-size: 14px;
+  }
+  .footer {
+    font-size: 12px;
+  }
+  .create-wifi-text {
+    font-size: 12px;
+  }
+}
+
+
+

@@ -1,0 +1,176 @@
+.container {
+  background: #fff;
+  min-height: 100vh;
+  padding: 24rpx
+}
+
+.guide-content {
+  background: #f9f9fc;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, .05);
+  padding: 32rpx
+}
+
+.guide-title {
+  color: #333;
+  font-size: 36rpx;
+  font-weight: 600;
+  text-align: center
+}
+
+.guide-title,
+.section {
+  margin-bottom: 40rpx
+}
+
+.section-title {
+  color: #333;
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+  padding-left: 24rpx;
+  position: relative
+}
+
+.section-title::before {
+  background: #005bea;
+  border-radius: 4rpx;
+  content: "";
+  height: 28rpx;
+  left: 0;
+  position: absolute;
+  top: 6rpx;
+  width: 8rpx
+}
+
+.platform-list {
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16rpx
+}
+
+.platform-tag {
+  background: #eef4ff;
+  border-radius: 30rpx;
+  color: #005bea;
+  font-size: 26rpx;
+  padding: 12rpx 24rpx
+}
+
+.step-list {
+  padding-left: 16rpx
+}
+
+.step-item {
+  align-items: flex-start;
+  margin-bottom: 24rpx
+}
+
+.step-item,
+.step-number {
+  display: -webkit-flex;
+  display: flex
+}
+
+.step-number {
+  align-items: center;
+  background: #005bea;
+  border-radius: 50%;
+  color: #fff;
+  flex-shrink: 0;
+  font-size: 24rpx;
+  height: 40rpx;
+  justify-content: center;
+  margin-right: 16rpx;
+  width: 40rpx
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 6rpx
+}
+
+.step-text {
+  color: #333;
+  font-size: 28rpx;
+  line-height: 1.5
+}
+
+.tips-box {
+  background: #fff7e6;
+  border-radius: 12rpx;
+  margin-bottom: 40rpx;
+  padding: 20rpx 24rpx
+}
+
+.tips-content {
+  color: #fa8c16;
+  font-size: 26rpx;
+  line-height: 1.5;
+  text-align: center
+}
+
+.guide-btn {
+  align-items: center;
+  background: #005bea;
+  border-radius: 44rpx;
+  color: #fff;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 30rpx;
+  font-weight: 500;
+  height: 88rpx;
+  justify-content: center;
+  margin-top: 32rpx;
+  width: 100%
+}
+
+.guide-btn:active {
+  opacity: .9
+}
+
+@media (prefers-color-scheme:dark) {
+  .container {
+    background: #1a1a1a
+  }
+
+  .guide-content {
+    background: #2d2d2d;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, .15)
+  }
+
+  .guide-title,
+  .section-title {
+    color: #fff
+  }
+
+  .section-title::before {
+    background: #4096ff
+  }
+
+  .platform-tag {
+    background: #253047;
+    color: #4096ff
+  }
+
+  .step-number {
+    background: #4096ff
+  }
+
+  .step-text {
+    color: #ddd
+  }
+
+  .tips-box {
+    background: #2b2111
+  }
+
+  .tips-content {
+    color: #ffc069
+  }
+
+  .guide-btn {
+    background: #4096ff
+  }
+}

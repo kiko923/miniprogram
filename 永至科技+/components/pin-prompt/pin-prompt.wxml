@@ -1,0 +1,46 @@
+<view class="container" style="top:{{position.top}}px;right:{{position.right}}px;" wx:if="{{showHint}}">
+    <view class="arrow" style="border-bottom-color:{{background||'#fff'}};"></view>
+    <view bindtap="showDetail" class="body" wx:if="{{type==='bar'}}">
+        <view class="bar" style="background:{{background}};">
+            <text class="text" style="color:{{color}}">{{text}}</text>
+        </view>
+    </view>
+    <view class="body" wx:if="{{type==='card'}}">
+        <view class="card">
+            <view class="step">
+                <view class="label">1</view>
+                <view class="step-1__desc">
+                    <view>点击右上角</view>
+                    <image src="./assets/dots.png" style="width:20px;height:20px;margin-left:4px;"></image>
+                </view>
+            </view>
+            <view class="step">
+                <view class="label">2</view>
+                <view>
+                    <view>选择「添加到我的小程序」</view>
+                    <image class="image" mode="aspectFit" src="./assets/step-2.png" style="width:100%;height:60px;"></image>
+                </view>
+            </view>
+            <view class="step">
+                <view class="label">3</view>
+                <view>
+                    <view>微信首页下拉，快速进入小程序</view>
+                    <view class="quick-entry">
+                        <view class="quick-entry-title">我的小程序</view>
+                        <view class="mini-app">
+                            <image class="logo" src="{{logo}}"></image>
+                            <view class="name">{{name}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tail">
+            <view bindtap="onTapClose" class="got-it">我知道了</view>
+        </view>
+    </view>
+    <view class="body" wx:if="{{type==='custom'}}">
+        <slot></slot>
+    </view>
+</view>
+<view bindtap="onTapBackdrop" class="backdrop" wx:if="{{showBackdrop||show&&backdrop}}"></view>

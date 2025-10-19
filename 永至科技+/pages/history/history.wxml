@@ -1,0 +1,71 @@
+<navigation-bar back="{{true}}" background="{{isDarkMode?'#1a1a1a':'#FFF'}}" class="navigation-bar" color="{{isDarkMode?'white':'black'}}" title="历史记录"></navigation-bar>
+<view class="container">
+    <view class="tabs">
+        <view bindtap="switchTab" class="tab {{activeTab==='video'?'active':''}}" data-tab="video">视频</view>
+        <view bindtap="switchTab" class="tab {{activeTab==='images'?'active':''}}" data-tab="images">图集</view>
+    </view>
+    <view class="sort-menu">
+        <view bindtap="changeSort" class="sort-item {{sortType==='time'?'active':''}}" data-type="time">
+            <text>时间排序</text>
+            <view class="sort-icon">
+                <text class="sort-arrow {{sortOrder==='desc'&&sortType==='time'?'active':''}}">↓</text>
+                <text class="sort-arrow {{sortOrder==='asc'&&sortType==='time'?'active':''}}">↑</text>
+            </view>
+        </view>
+        <view bindtap="changeSort" class="sort-item {{sortType==='platform'?'active':''}}" data-type="platform">
+            <text>平台排序</text>
+            <view class="sort-icon">
+                <text class="sort-arrow {{sortOrder==='desc'&&sortType==='platform'?'active':''}}">↓</text>
+                <text class="sort-arrow {{sortOrder==='asc'&&sortType==='platform'?'active':''}}">↑</text>
+            </view>
+        </view>
+    </view>
+    <view class="history-list" wx:if="{{activeTab==='video'}}">
+        <block wx:if="{{videoHistory.length>0}}">
+            <view bindtap="onHistoryItemTap" class="history-item" data-index="{{index}}" data-type="video" wx:for="{{videoHistory}}" wx:key="index">
+                <view class="item-left">
+                    <image class="item-cover {{item.platform==='instagram'||item.platform==='youtube'||item.platform==='twitter'||item.platform==='tiktok'||item.platform==='threads'?'instagram-blur':''}}" mode="aspectFill" src="{{item.cover_url}}"></image>
+                    <view class="instagram-blur-overlay" wx:if="{{item.platform==='instagram'||item.platform==='youtube'||item.platform==='twitter'||item.platform==='tiktok'||item.platform==='threads'}}">点击查看完整内容</view>
+                </view>
+                <view class="item-right">
+                    <view class="item-text">{{item.text||'无文案'}}</view>
+                    <view class="item-footer">
+                        <view class="item-time">{{item.formattedTime}}</view>
+                        <view class="platform-tag platform-{{item.platform}}" wx:if="{{item.platform&&item.platform!=='unknown'}}">{{item.platform==='instagram'?'Instagram':item.platform==='youtube'?'YouTube':item.platform==='twitter'?'X':item.platform==='tiktok'?'TikTok':item.platform==='threads'?'Threads':item.platform==='douyin'?'抖音':item.platform==='kuaishou'?'快手':item.platform==='xiaohongshu'?'小红书':item.platform==='bilibili'?'哔哩哔哩':item.platform==='weibo'?'微博':item.platform}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="empty-tip" wx:else>暂无视频历史记录</view>
+    </view>
+    <view class="history-list" wx:if="{{activeTab==='images'}}">
+        <block wx:if="{{imagesHistory.length>0}}">
+            <view bindtap="onHistoryItemTap" class="history-item" data-index="{{index}}" data-type="images" wx:for="{{imagesHistory}}" wx:key="index">
+                <view class="item-left">
+                    <image binderror="onImageError" bindload="onImageLoad" class="item-cover {{item.platform==='instagram'||item.platform==='youtube'||item.platform==='twitter'||item.platform==='tiktok'||item.platform==='threads'?'instagram-blur':''}} {{imageLoadStatus[index]==='loading'?'loading':''}} {{imageLoadStatus[index]==='error'?'error':''}}" data-index="{{index}}" mode="aspectFill" src="{{item.cover_url||item.images[0]}}"></image>
+                    <view class="loading-placeholder" wx:if="{{imageLoadStatus[index]==='loading'}}">加载中...</view>
+                    <view class="error-placeholder" wx:if="{{imageLoadStatus[index]==='error'}}">加载失败</view>
+                    <view class="instagram-blur-overlay" wx:if="{{item.platform==='instagram'||item.platform==='youtube'||item.platform==='twitter'||item.platform==='tiktok'||item.platform==='threads'}}">点击查看完整内容</view>
+                    <view class="image-count" wx:if="{{item.images.length>1}}">
+                        <text>{{item.images.length}}张</text>
+                    </view>
+                </view>
+                <view class="item-right">
+                    <view class="item-text">{{item.text||'无文案'}}</view>
+                    <view class="item-footer">
+                        <view class="item-time">{{item.formattedTime}}</view>
+                        <view class="platform-tag platform-{{item.platform}}" wx:if="{{item.platform&&item.platform!=='unknown'}}">{{item.platform==='instagram'?'Instagram':item.platform==='youtube'?'YouTube':item.platform==='twitter'?'X':item.platform==='tiktok'?'TikTok':item.platform==='threads'?'Threads':item.platform==='douyin'?'抖音':item.platform==='kuaishou'?'快手':item.platform==='xiaohongshu'?'小红书':item.platform==='bilibili'?'哔哩哔哩':item.platform==='weibo'?'微博':item.platform}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="empty-tip" wx:else>暂无图集历史记录</view>
+    </view>
+    <view class="bottom-fixed">
+        <view class="history-tip">历史记录保留在本地，删除缓存会自动清空</view>
+        <view class="bottom-buttons">
+            <view bindtap="clearHistory" class="clear-btn">清空记录</view>
+            <view bindtap="goBack" class="go-back-btn">返回首页</view>
+        </view>
+    </view>
+</view>

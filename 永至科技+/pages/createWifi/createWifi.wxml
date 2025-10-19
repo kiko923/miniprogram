@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 显示 Wi-Fi Logo -->
+  <image class="wifi-logo" src="/static/img/wifi.png" mode="aspectFit"></image>
+
+  <!-- 页面标题 -->
+  <view class="page-title">生成 Wi-Fi 小程序码</view>
+
+  <!-- 添加一个虚拟输入框来禁用自动填充 -->
+  <input type="text" style="display:none" autocomplete="off" />
+
+  <!-- 输入Wi-Fi名称 -->
+  <view class="input-group">
+    <view class="input-label">Wi-Fi 名称</view>
+    <input class="input-field" placeholder="请输入Wi-Fi名称(已支持中文和空格)"
+           bindinput="onWifiNameInput" autocomplete="off" autocorrect="off" spellcheck="false" />
+  </view>
+
+  <!-- 输入Wi-Fi密码 -->
+  <view class="input-group">
+    <view class="input-label">Wi-Fi 密码</view>
+    <input class="input-field" type="password" placeholder="请输入Wi-Fi密码"
+           bindinput="onPasswordInput" autocomplete="off" autocorrect="off" spellcheck="false" />
+  </view>
+
+  <!-- 创建Wi-Fi按钮 -->
+  <button class="btn-create" bindtap="createWifi">生成</button>
+  
+  <!-- 免责声明 -->
+  <view class="disclaimer">
+    声明：本小程序不会储存任何WiFi信息，您的隐私将得到保护。
+  </view>
+
+  <!-- 返回按钮 -->
+  <view class="back-text" bindtap="back">
+    返回
+  </view>
+</view>
+
+<!-- 底部版权声明 -->
+<view class="footer">
+  © 永至科技
+</view>

@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/parse2/parse2",
+    "pages/parse/parse",
+    "pages/content/content",
+    "pages/history/history",
+    "pages/faq/faq",
+    "pages/guide/guide",
+    "pages/webview/webview",
+    "pages/connectWifi/connectWifi",
+    "pages/createWifi/createWifi",
+    "pages/clogin/clogin",
+    "pages/tools/tools",
+    "pages/about/about",
+    "pages/user/user",
+    "pages/pay/pay",
+    "pages/watermark/watermark"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseLocation",
+    "chooseAddress"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "永至科技",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/tab/index.png",
+        "selectedIconPath": "/images/tab/index-active.png"
+      },
+      {
+        "pagePath": "pages/tools/tools",
+        "text": "工具",
+        "iconPath": "/images/tab/tools.png",
+        "selectedIconPath": "/images/tab/tools-active.png"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于",
+        "iconPath": "/images/tab/about.png",
+        "selectedIconPath": "/images/tab/about-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "/images/tab/user.png",
+        "selectedIconPath": "/images/tab/user-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

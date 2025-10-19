@@ -1,0 +1,36 @@
+<navigation-bar back="{{true}}" background="{{isDarkMode?'#1a1a1a':'#FFF'}}" class="navigation-bar" color="{{isDarkMode?'white':'black'}}" title="答疑反馈"></navigation-bar>
+<view class="container">
+    <view class="faq-list">
+        <view class="faq-item" wx:for="{{faqs}}" wx:key="index">
+            <view class="faq-question">
+                <text>{{item.question}}</text>
+            </view>
+            <view class="faq-answer">
+                <text>{{item.answer}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="empty-tip" wx:if="{{faqs.length===0}}">
+        <image class="empty-image" mode="aspectFit" src="/images/empty.png"></image>
+        <view class="empty-text">暂无常见问题</view>
+        <button bindtap="backToHome" class="go-back-btn">返回首页</button>
+    </view>
+    <view class="bottom-btn-container">
+        <button bindtap="showFeedbackModal" class="feedback-btn">我要反馈</button>
+        <button bindtap="backToHome" class="go-back-btn">返回首页</button>
+    </view>
+</view>
+<view class="feedback-modal" wx:if="{{showFeedbackModal}}">
+    <view class="feedback-content">
+        <view class="feedback-header">
+            <view class="feedback-title">问题反馈</view>
+            <view bindtap="closeFeedbackModal" class="feedback-close">×</view>
+        </view>
+        <view class="feedback-body">
+            <textarea bindinput="onFeedbackInput" class="feedback-input" maxlength="500" placeholder="请详细描述您遇到的问题或建议..." value="{{feedbackText}}"></textarea>
+        </view>
+        <view class="feedback-footer">
+            <button bindtap="submitFeedback" class="feedback-submit-btn">立即提交</button>
+        </view>
+    </view>
+</view>
