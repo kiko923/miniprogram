@@ -24,7 +24,7 @@ Page({
   // 选择要处理的图片
   selectImages() {
     wx.chooseMedia({
-      count: 9, // 最多选择9张
+      count: 20, // 最多选择20张
       mediaType: ['image'],
       sourceType: ['album', 'camera'],
       sizeType: ['original'], // 默认勾选原图
@@ -290,7 +290,7 @@ Page({
           try {
             console.log('云端响应:', uploadRes.data);
             const response = JSON.parse(uploadRes.data);
-            
+            console.log('图片URL:', response.data.file_url);
             if (response.success) {
               // 云端处理成功，下载处理后的图片
               this.downloadAndSaveImage(response.data.file_url, imageIndex)
